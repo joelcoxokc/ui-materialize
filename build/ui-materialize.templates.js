@@ -1,0 +1,12 @@
+angular.module("ui.materialize").run(["$templateCache", function($templateCache) {$templateCache.put("templates/views/ui-materialize.view.html","<div class=ui-materialize></div>");
+$templateCache.put("templates/directives/mzCol/mzCol.template.html","");
+$templateCache.put("templates/directives/mzFlex/mzFlex.template.html","");
+$templateCache.put("templates/directives/mzCollection/mzCollection.template.html","");
+$templateCache.put("templates/directives/mzFooter/mzFooter.template.html","");
+$templateCache.put("templates/directives/mzInclude/mzInclude.template.html","");
+$templateCache.put("templates/directives/mzMain/mzMain.template.html","");
+$templateCache.put("templates/directives/mzNav/mzNav.template.html","");
+$templateCache.put("templates/directives/mzTab/mzTab.template.html","");
+$templateCache.put("templates/directives/mzTabContent/mzTabContent.template.html","");
+$templateCache.put("templates/directives/mzView/mzView.template.html","");
+$templateCache.put("templates/directives/mzTabs/mzTabs.template.html","");}]);

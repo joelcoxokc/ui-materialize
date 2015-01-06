@@ -163,6 +163,8 @@
         var minFilter = plug.filter(['**/*.min.*', '!**/*.map']);
         var indexFilter = plug.filter(['index.html']);
 
+        var libs = gulp.src([paths.build + 'ui-materialize.js', paths.build + 'ui-materialize.templates.js', paths.build + 'content/ui-materialize.min.css'], {read:false})
+
         var stream = gulp
             // Write the revisioned files
             .src([].concat(minified, index)) // add all built min files and index.html
@@ -176,6 +178,7 @@
         .pipe(inject('content/vendor.min.css', 'inject-vendor'))
             .pipe(inject('content/all.min.css'))
             .pipe(inject('vendor.min.js', 'inject-vendor'))
+            .pipe(plug.inject(libs, {ignorePath: paths.build.substring(1),read: false, name:'inject-libs'}))
             .pipe(inject('all.min.js'))
             .pipe(gulp.dest(paths.build)) // write the rev files
         .pipe(indexFilter.restore()) // remove filter, back to original stream

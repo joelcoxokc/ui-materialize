@@ -71,6 +71,44 @@ gulp
  * @return {Stream}
  */
 gulp
+    .task('stage:libs',
+        plug.sequence(
+            'stage:libs:styl',
+            'stage:libs:js',
+            'stage:libs:templates'
+        ))
+    .task('stage:libs:styl', dev.styl({
+        src:paths.styl.index,
+        name:'ui-materialize.min.css',
+        dest:paths.build + 'content'
+    }))
+    .task('stage:libs:js', dev.js({
+        src: paths.libs.scripts,
+        name: 'ui-materialize.js',
+        dest: paths.build,
+    }))
+    .task('stage:libs:templates', dev.templates({
+        src: paths.libs.templates,
+        name:'ui-materialize.templates.js',
+        dest: paths.build,
+        config: {
+            module:'ui.materialize',
+            standalone: false,
+            root:'templates/',
+            base:__dirname + '/src/libs/ui-materialize'
+        }
+    }))
+
+
+/**
+ * styles
+ *
+ * @task    css             Minify and bundle the CSS
+ * @task    vendor:css      Minify and bundle the Vendor CSS
+ *
+ * @return {Stream}
+ */
+gulp
     .task('styles',
         plug.sequence(
             'css',
@@ -108,6 +146,7 @@ gulp
 gulp
     .task('stage',
         plug.sequence(
+            'stage:libs',
             'stage:scripts',
             'stage:styles',
             'stage:inject',

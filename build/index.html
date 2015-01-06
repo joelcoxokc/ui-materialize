@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App</title>
+
+    <!-- inject-vendor:css -->
+    <link rel="stylesheet" href="/content/vendor.min-01a3ae75.css">
+    <!-- endinject -->
+
+    <!-- inject-libs:css -->
+    <link rel="stylesheet" href="/content/ui-materialize.min-946e9d80.css">
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/content/all.min-3d96b2c2.css">
+    <!-- endinject -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+  </head>
+  <body ng-controller="AppController as app" class="nav-fixed">
+
+    <mz-flex>
+        <mz-nav class='white fixed'>
+            <div ui-view="nav"></div>
+        </mz-nav>
+        <mz-view></mz-view>
+        <mz-footer color="grey darken-3">
+            <div ui-view="footer"></div>
+        </mz-footer>
+    </mz-flex>
+
+
+    <!-- inject-vendor:js -->
+    <script src="/vendor.min-ae4f556a.js"></script>
+    <!-- endinject -->
+
+    <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+
+    <!-- inject-libs:js -->
+    <script src="/ui-materialize.js"></script>
+    <script src="/ui-materialize.templates.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="/all.min-fd42cb16.js"></script>
+    <!-- endinject -->
+    <script>
+    </script>
+  </body>
+</html>
