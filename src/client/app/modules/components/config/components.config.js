@@ -29,7 +29,7 @@
             });
 
         ////////////////////////
-        function resolveUsers(User){
+        function resolveUsers(User) {
             return User.all()
                 .then(function (responce) {
                     return responce.data;

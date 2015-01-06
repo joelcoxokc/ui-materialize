@@ -77,8 +77,8 @@ gulp
             'stage:libs:js',
             'stage:libs:templates'
         ))
-    .task('stage:libs:styl', dev.styl({
-        src:paths.styl.index,
+    .task('stage:libs:styl', stage.styl({
+        src:paths.libs.styl,
         name:'ui-materialize.min.css',
         dest:paths.build + 'content'
     }))
@@ -146,6 +146,7 @@ gulp
 gulp
     .task('stage',
         plug.sequence(
+            'clean',
             'stage:libs',
             'stage:scripts',
             'stage:styles',

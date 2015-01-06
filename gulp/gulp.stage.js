@@ -111,6 +111,20 @@
             //        .pipe(plug.concat('all.min.css')) // Before bytediff or after
             .pipe(gulp.dest(paths.build + 'content'));
     };
+    Stage.styl = function(options) {
+
+        return function (){
+
+            return gulp.src(options.src)
+                .pipe(plug.stylus())
+                .pipe(plug.concat(options.name))
+                .pipe(plug.autoprefixer('last 2 version', '> 5%'))
+                .pipe(plug.bytediff.start())
+                .pipe(plug.minifyCss({}))
+                .pipe(plug.bytediff.stop(utils.bytediffFormatter))
+                .pipe(gulp.dest(options.dest))
+        }
+    };
 
     /**
      * Minify and bundle the Vendor CSS

@@ -89,14 +89,10 @@
 
     angular
         .module('ui.materialize')
-        .service('uiMaterializeService', uiMaterializeService)
-        .factory('uiMaterializeFactory', uiMaterializeFactory);
+        .filter('uiMaterializeFilter', uiMaterializeFilter);
 
     /* @ngInject */
-    function uiMaterializeService() {}
-
-    /* @ngInject */
-    function uiMaterializeFactory() {}
+    function uiMaterializeFilter() {}
 
 }).call(this);
 ;(function() {
@@ -105,10 +101,14 @@
 
     angular
         .module('ui.materialize')
-        .filter('uiMaterializeFilter', uiMaterializeFilter);
+        .service('uiMaterializeService', uiMaterializeService)
+        .factory('uiMaterializeFactory', uiMaterializeFactory);
 
     /* @ngInject */
-    function uiMaterializeFilter() {}
+    function uiMaterializeService() {}
+
+    /* @ngInject */
+    function uiMaterializeFactory() {}
 
 }).call(this);
 
@@ -156,6 +156,47 @@
             }
             // scope.$apply()
             ///////////////////////////////
+            /**
+             *      toggle
+             *      @description
+             *      @param  {Object}        description
+             *      @return {Object}        description
+             */
+            function toggle (param) {}
+
+        }
+    }
+
+}).call(this);
+
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('ui.materialize')
+        .directive('mzFlex', mzFlex);
+
+    /* @inject */
+    function mzFlex() {
+        return {
+            template: '<div class="mz-flex" data-ng-transclude></div>',
+            restrict: 'E',
+            scope: true,
+            replace:true,
+            transclude: true,
+            link: link
+        };
+
+        ////////////////
+
+        function link(scope, element, attrs) {
+
+            ///////////////////////////////
+
+            $('body').addClass('has-flex')
+            $('html').addClass('has-flex')
+
             /**
              *      toggle
              *      @description
@@ -692,47 +733,6 @@
 
     angular
         .module('ui.materialize')
-        .directive('mzFlex', mzFlex);
-
-    /* @inject */
-    function mzFlex() {
-        return {
-            template: '<div class="mz-flex" data-ng-transclude></div>',
-            restrict: 'E',
-            scope: true,
-            replace:true,
-            transclude: true,
-            link: link
-        };
-
-        ////////////////
-
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
-            $('body').addClass('has-flex')
-            $('html').addClass('has-flex')
-
-            /**
-             *      toggle
-             *      @description
-             *      @param  {Object}        description
-             *      @return {Object}        description
-             */
-            function toggle (param) {}
-
-        }
-    }
-
-}).call(this);
-
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('ui.materialize')
         .directive('mzFooter', mzFooter);
 
     /* @inject */
@@ -885,17 +885,17 @@
 
     angular
         .module('ui.materialize')
-        .directive('mzTabContent', mzTabContent);
+        .directive('mzTab', mzTab);
 
     /* @inject */
-    function mzTabContent() {
+    function mzTab() {
         return {
-            template: '<div id="{{target}}" class="mz-tab-content" data-ng-transclude></div>',
+            template: '<li class="tab" ><a href="{{link}}" class="pink-text text-accent-1">{{name}}</a></li>',
             restrict: 'E',
             scope: {
-                target:'@'
+                link:'@',
+                name:'@'
             },
-            replace:true,
             transclude: true,
             link: link
         };
@@ -925,17 +925,17 @@
 
     angular
         .module('ui.materialize')
-        .directive('mzTab', mzTab);
+        .directive('mzTabContent', mzTabContent);
 
     /* @inject */
-    function mzTab() {
+    function mzTabContent() {
         return {
-            template: '<li class="tab" ><a href="{{link}}" class="pink-text text-accent-1">{{name}}</a></li>',
+            template: '<div id="{{target}}" class="mz-tab-content" data-ng-transclude></div>',
             restrict: 'E',
             scope: {
-                link:'@',
-                name:'@'
+                target:'@'
             },
+            replace:true,
             transclude: true,
             link: link
         };
