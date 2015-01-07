@@ -4,15 +4,15 @@
 
     angular
         .module('ui.materialize')
-        .directive('mzView', mzView);
+        .directive('mzCollapsible', mzCollapsible);
 
     /* @inject */
-    function mzView() {
+    function mzCollapsible() {
         return {
-            template: '<main class="mz-view"><ui-view class="mz-body"></ui-view></main>',
+            templateUrl: 'templates/mzCollapsible.view.html',
             restrict: 'E',
             scope: true,
-            replace:true,
+            transclude: true,
             link: link
         };
 

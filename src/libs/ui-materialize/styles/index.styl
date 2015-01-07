@@ -1,6 +1,10 @@
+// @require nib
+
+
 @import '_vars'
-@import '_mixins'
+@import '_easing'
 @import '_util'
+@import '_mixins'
 @import '../directives/mzFlex/mzFlex'
 @import '../directives/mzNav/mzNav'
 @import '../directives/mzView/mzView'
@@ -11,6 +15,10 @@
 @import '../directives/mzTab/mzTab'
 @import '../directives/mzTabContent/mzTabContent'
 @import '../directives/mzCollection/mzCollection'
+@import '../directives/mzSideNav/mzSideNav'
+@import '../directives/mzCollapsible/mzCollapsible'
+@import '../directives/mzBody/mzBody'
+@import '../directives/mzContainer/mzContainer'
 
 .ui-materialize {
 
@@ -26,4 +34,80 @@
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 0px;
+
+max-out()
+    max-width 100vw
+    min-width 100vw
+    max-height 100vh
+    min-height 100vh
+    width 100vw
+    height 100vh
+
+
+html
+    .has-flex
+        box-sizing(border-box)
+        max-out()
+        overflow-x hidden
+
+        *
+            box-sizing(border-box)
+
+
+body
+    .has-flex
+        box-sizing(border-box)
+        max-out()
+        overflow-x hidden
+
+.mz-flex
+    flex-container()
+    flex-direction: row
+    min-height 100%
+    max-height 100%
+    min-width 100vw
+    max-width 100%
+    height 100%
+    width 100%
+
+    scroll-vertical()
+
+    &.mz-flex-column
+        flex-direction: row
+
+    nav
+        box-sizing(border-box)
+        flex: 1 0 auto
+        flex-direction: row
+        width: 100%
+
+    .mz-main
+        box-sizing(border-box)
+        flex: 2 0 auto
+        flex-container()
+        flex-direction: row
+    .mz-view
+        box-sizing(border-box)
+        flex-container()
+        flex: 1 0 auto
+
+    .mz-body
+        box-sizing(border-box)
+        flex: 1 0 auto
+        flex-direction: column
+        width: cacl(100% - $side-nav-width)
+
+
+
+
+    footer
+        box-sizing(border-box)
+        flex: 1 0 auto
+
+.mz-side-nav-toggle {
+
+    i {
+        font-size: 2rem
+    }
+}
 

@@ -1,4 +1,4 @@
-;(function() {
+;;(function() {
 
     'use strict';
 
@@ -22,7 +22,7 @@
             link: link
         };
 
-        ////////////////
+////////////////////////////////////////////////////////////////////////////////////
 
         //////
         //////     @mz-collection  CONTROLLER
@@ -52,7 +52,11 @@
                 hasExpanded: 'mz-c-has-expanded'
             };
 
-            /*-----------------------------*/
+            /*-----------------------------
+
+
+
+            */
 
             _this.selectedIndex = function() {
                 return _this.items.indexOf(selectedItem);

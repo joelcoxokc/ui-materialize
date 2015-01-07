@@ -8,7 +8,9 @@
 
     /* @ngInject */
     function AppController($scope, $storage, TweenMax, Cubic) {
-
+        jQuery(document).ready(function() {
+             $('.collapsible').collapsible();
+        })
     }
 
 }).call(this);

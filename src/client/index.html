@@ -29,18 +29,22 @@
 
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-
+    <script>
+        window.log = function(name){
+            var args = Array.prototype.slice.call(arguments).slice(1)
+            console.log.apply(console, ['['+arguments[0]+']'].concat(args));
+        }
+    </script>
   </head>
-  <body ng-controller="AppController as app" class="nav-fixed">
-
-    <mz-flex>
-        <mz-nav class='white fixed'>
-            <div ui-view="nav"></div>
-        </mz-nav>
-        <mz-view></mz-view>
-        <mz-footer color="grey darken-3">
-            <div ui-view="footer"></div>
-        </mz-footer>
+  <body ng-controller="AppController as app" class="nav-fixed darken-3">
+    <mz-flex size='10'>
+        <mz-side-nav fixed=true side="left"></mz-side-nav>
+        <mz-body>
+            <mz-nav color='grey darken-4'>
+                <div ui-view="nav"></div>
+            </mz-nav>
+            <mz-view></mz-view>
+        </mz-body>
     </mz-flex>
 
 
@@ -80,9 +84,9 @@
     <script src="app/modules/components/components.module.js"></script>
     <script src="app/modules/gettingStarted/gettingStarted.module.js"></script>
     <script src="app/io.js"></script>
+    <script src="app/core/api/user.api.js"></script>
     <script src="app/core/config/core.constants.js"></script>
     <script src="app/core/config/routes.config.js"></script>
-    <script src="app/core/api/user.api.js"></script>
     <script src="app/core/controllers/app.controller.js"></script>
     <script src="app/core/controllers/grid.controller.js"></script>
     <script src="app/core/controllers/home.controller.js"></script>
@@ -95,8 +99,8 @@
     <script src="app/modules/components/filters/components.filter.js"></script>
     <script src="app/modules/components/services/components.service.js"></script>
     <script src="app/modules/gettingStarted/api/gettingStarted.api.js"></script>
-    <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
     <script src="app/modules/gettingStarted/controllers/gettingStarted.controller.js"></script>
+    <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
     <script src="app/modules/gettingStarted/directives/gettingStarted.directive.js"></script>
     <script src="app/modules/gettingStarted/filters/gettingStarted.filter.js"></script>
     <script src="app/modules/gettingStarted/services/gettingStarted.service.js"></script>

@@ -15,7 +15,8 @@
         log = $.util.log,
         utils = require('./utils'),
         _     = require('lodash'),
-        bower = require('main-bower-files');
+        bower = require('main-bower-files'),
+        nib = require('nib');
     Dev.vendor = {};
     Dev.libs = {};
 
@@ -67,14 +68,69 @@
 
         return function (){
 
-            return gulp.src(options.src)
-                .pipe($.plumber())
-                .pipe($.stylus())
-                .pipe($.concat(options.name))
-                .pipe($.plumber.stop())
+            var stream = gulp.src(options.src)
+                .pipe($.sourcemaps.init())
+                    .pipe($.plumber())
+                    .pipe($.stylus())
+                    .pipe($.concat(options.name))
+                    .pipe($.autoprefixer({
+                        browsers: ['last 2 versions'],
+                        cascade: false
+                    }))
+                    .pipe($.plumber.stop())
+                .pipe($.sourcemaps.write())
                 .pipe(gulp.dest(options.dest))
                 .pipe($.livereload())
+
+            // if (options.name !== 'libs') {
+            return stream;
+            // }
+
+            // merge(stream, sourceMaps())
+
+
+
+            function compress() {
+
+                return gulp.src('./.tmp/libs/ui-materialized.styl')
+                    .pipe(stylus({
+                      use: nib(),
+                      compress: true
+                    }))
+                    .pipe(gulp.dest('./css/build'));
+            }
+            function useNib() {
+
+                return gulp.src('./css/nib.styl')
+                    .pipe(stylus({use: [nib()]}))
+                    .pipe(gulp.dest('./css/build'));
+            }
+
+            function SetLinenos() {
+
+                return gulp.src('./css/linenos.styl')
+                    .pipe(stylus({linenos: true}))
+                    .pipe(gulp.dest('./css/build'));
+            }
+            function sourceMaps() {
+                gulp.src('./styl/sourcemaps-inline.styl')
+                    .pipe(stylus({
+                      sourcemap: {
+                        inline: true,
+                        sourceRoot: '..',
+                        basePath: 'css'
+                      }
+                    }))
+                    .pipe(gulp.dest('./css/build'));
+            }
         }
+
+
+
+
+
+
+
     };
 
 

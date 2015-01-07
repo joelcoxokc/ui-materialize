@@ -9,7 +9,7 @@
     /* @inject */
     function mzMain() {
         return {
-            template: '<main data-ng-transclude></main>',
+            template: '<main class="mz-main" data-ng-transclude></main>',
             restrict: 'E',
             scope: true,
             transclude: true,

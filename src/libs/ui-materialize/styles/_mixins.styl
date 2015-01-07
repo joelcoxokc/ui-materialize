@@ -31,3 +31,69 @@ $create-side-varient(side=false, side-label, side2=false, side2-label, size=fals
     else
         &
             padding $defaults-size
+
+all-widths(width)
+    width:width
+    min-width:width
+    max-width:width
+
+all-heights(height)
+    height:height
+    min-height:height
+    max-height:height
+
+
+
+
+
+mz-side-varients(side, base-width, base-position, container-width=100%, container-position, container-direction, base-width-open, container-x-open=0px)
+
+    .mz-side-nav
+
+        &.side-{side}
+
+            if side is left
+                left 0
+            if side is right
+                right 0
+
+            position base-position
+
+            all-heights(100%)
+
+            width = base-width
+
+            easeOutExpo(width, 500ms)
+
+            .nav-side-{side}-container
+
+                easeOutExpo(left,500ms)
+
+                all-widths(container-width)
+
+                if side is left
+
+                    left: container-direction
+
+                if side is right
+
+                    right: container-direction
+
+                if container-position
+                    position: container-position
+
+        &.nav-{side}-open
+
+            all-widths(base-width-open)
+
+            .nav-side-{side}-container
+
+                if side is left
+
+                    left: container-x-open
+
+                if side is right
+
+                    right: container-x-open
+
+

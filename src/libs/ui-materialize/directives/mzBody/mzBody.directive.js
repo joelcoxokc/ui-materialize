@@ -4,23 +4,26 @@
 
     angular
         .module('ui.materialize')
-        .directive('mzView', mzView);
+        .directive('mzBody', mzBody);
 
     /* @inject */
-    function mzView() {
+    function mzBody() {
         return {
-            template: '<main class="mz-view"><ui-view class="mz-body"></ui-view></main>',
             restrict: 'E',
             scope: true,
-            replace:true,
+            transclude: true,
             link: link
         };
 
         ////////////////
 
-        function link(scope, element, attrs) {
-
+        function link(scope, element, attrs, ctrl, transclude) {
+            element.addClass('mz-body')
             ///////////////////////////////
+
+            transclude(scope, function (clone) {
+                element.append(clone);
+            });
 
             /**
              *      toggle
