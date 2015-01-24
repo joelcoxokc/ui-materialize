@@ -5,6 +5,7 @@
   "data": "/../../data/",
   "test": "./src/client/test/",
   "html": "./src/client/**/*.html",
+  "all": "./src/lib/**/*",
   "jade": "./src/client/**/*.jade",
   "jadetemplates": "./src/client/app/**/*.jade",
   "htmltemplates": "./src/client/app/**/*.html",

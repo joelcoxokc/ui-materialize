@@ -15,6 +15,8 @@
     /* @ngInject */
     function Core ($stateProvider, $urlRouterProvider) {
 
+        // console.log($NavigationProvider);
+
         $urlRouterProvider.otherwise('/');
 
         $stateProvider

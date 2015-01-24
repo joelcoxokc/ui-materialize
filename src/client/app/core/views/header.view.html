@@ -1,14 +1,27 @@
-<div class="nav-wrapper">
-  <div class="container">
-    <!-- <a ui-sref="home" class="brand-logo indigo-text waves-effect waves-light"><strong class="pink-text text-accent-1">ui</strong>Materialize</a> -->
-    <ul id="nav-mobile" class="left side-nav">
-      <li class="waves-effect waves-light"><a class="blue-text" ui-sref="gettingStarted">Getting Started</a></li>
-      <li class="waves-effect waves-light"><a class="blue-text" ui-sref="grid">Grid</a></li>
-      <li class="waves-effect waves-light"><a class="blue-text" ui-sref="components">Components</a></li>
-    </ul>
-    <ul id="nav-mobile" class="right side-nav">
-      <li><a href="#" mz-side-nav-toggle="left" toggle='open'><i class="mdi-navigation-menu pink-text text-accent-1"></i></a></li>
+<!-- <div class="nav-wrapper">
+  <div class="container"> -->
+    <mz-nav-brand ui-sref="home" class="waves-effect waves-light">
+      <strong class="pink-text text-accent-1">ui</strong>Materialize
+    </mz-nav-brand>
+
+    <nav-tools side="left" links="blue-text text-accent-1">
+      <nav-action
+        waves=true
+        state=gettingStarted
+        >Getting Started</nav-action>
+      <nav-action
+        waves=true
+        state=grid
+        >Grid</nav-action>
+      <nav-action
+        waves=true
+        state=components
+        >Components</nav-action>
+
+    </nav-tools>
+    <nav-tools side="right" links="pink-text text-accent-1">
+      <li><a href="#" class="linked" mz-side-nav-toggle="right" toggle='open'><i class="mdi-navigation-menu"></i></a></li>
       <!-- <li class="waves-effect waves-light"><a class="pink-text" href="">JavaScript</a></li> -->
-    </ul>
-  </div>
-</div>
+    </nav-tools>
+<!--   </div>
+</div> -->

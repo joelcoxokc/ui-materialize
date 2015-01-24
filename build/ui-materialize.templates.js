@@ -1,0 +1,16 @@
+angular.module("ui.materialize").run(["$templateCache", function($templateCache) {$templateCache.put("templates/views/ui-materialize.view.html","<div class=\"ui-materialize\">\n</div>");
+$templateCache.put("templates/components/mzCollapsible/mzCollapsible.template.html","");
+$templateCache.put("templates/components/mzCollection/mzCollection.template.html","");
+$templateCache.put("templates/components/mzInclude/mzInclude.template.html","");
+$templateCache.put("templates/components/mzTab/mzTab.template.html","");
+$templateCache.put("templates/components/mzTabContent/mzTabContent.template.html","");
+$templateCache.put("templates/components/mzTabs/mzTabs.template.html","");
+$templateCache.put("templates/layout/mzCol/mzCol.template.html","");
+$templateCache.put("templates/layout/mzBody/mzBody.template.html","");
+$templateCache.put("templates/layout/mzContainer/mzContainer.template.html","");
+$templateCache.put("templates/layout/mzFlex/mzFlex.template.html","");
+$templateCache.put("templates/layout/mzFooter/mzFooter.template.html","");
+$templateCache.put("templates/layout/mzMain/mzMain.template.html","");
+$templateCache.put("templates/layout/mzMaterialize/mzMaterialize.template.html","");
+$templateCache.put("templates/layout/mzView/mzView.template.html","");
+$templateCache.put("templates/navigation/nav-side/nav-side.template.html","<aside class=\"nav-side-right-container\">\n    <header class=\"mz-side-nav-heading\">\n        <button type=\"button\"\n                mz-side-nav-toggle=\"right\"\n                toggle=\'open\'\n                class=\"nav-action no-margin waves-effect waves-light\"\n                icon=\"mdi-navigation-menu\"\n                next-icon=\'mdi-navigation-arrow-forward\'\n                ></button>\n        <!-- <li><a href=\"#\" class=\"linked\" mz-side-nav-toggle=\"right\" toggle=\'open\'><i class=\"mdi-navigation-menu\"></i></a></li> -->\n    </header>\n    <section class=\"mz-side-nav-content\">\n\n        <div class=\"nav-action-group\">\n            <div class=\"action-group-top\">\n                <!-- <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-navigation-menu pink-text text-accent-1\"></i></button> -->\n            </div>\n\n            <div class=\"action-group-bottom\">\n                <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-editor-insert-chart blue-text text-accent-1\"></i></button>\n                <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-device-storage blue-text text-accent-1\"></i></button>\n                <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-device-now-widgets blue-text text-accent-1\"></i></button>\n                <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-content-send blue-text text-accent-1\"></i></button>\n                <button class=\"nav-action waves-effect waves-light\"><i class=\"mdi-action-settings-power blue-text text-accent-1\"></i></button>\n            </div>\n        </div>\n    </section>\n</aside>");}]);

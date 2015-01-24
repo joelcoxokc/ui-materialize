@@ -125,24 +125,22 @@
             }
         }
 
-
-
-
-
-
-
     };
 
 
     Dev.templates = function(options) {
         log('Creating an AngularJS $templateCache');
         return function(){
+            var jadeFilter = $.filter('**/*.jade');
             return gulp
                 .src(options.src)
+                .pipe(jadeFilter)
+                .pipe($.jade())
+                .pipe(jadeFilter.restore())
                 // .pipe($.bytediff.start())
-                .pipe($.minifyHtml({
-                    empty: true
-                }))
+                // .pipe($.minifyHtml({
+                //     empty: true
+                // }))
                 // .pipe($.bytediff.stop(utils.bytediffFormatter))
                 .pipe($.angularTemplatecache(options.name, options.config))
                 .pipe(gulp.dest(options.dest))
