@@ -1,0 +1,31 @@
+.nav-side-toggle
+    position relative
+    & > i
+        position absolute
+        flex-container()
+        align-items center
+        justify-content center
+        width 100%
+        height 100%
+        text-align center
+        top 0
+        left 0
+        // font-size 3rem
+        transition all 1s cubic-bezier(0.19,0.99,0.01,0.99)
+        &.next-icon
+            opacity 0
+            transform rotate(90deg)
+    &.next
+        background-color #212121 !important
+        color: white
+        &:hover
+            & > i
+                color: #ff4081 !important
+        & > i
+            &.first-icon
+                opacity 0
+                transform rotate(-90deg)
+            &.next-icon
+                opacity 1
+                transform rotate(0deg)
+

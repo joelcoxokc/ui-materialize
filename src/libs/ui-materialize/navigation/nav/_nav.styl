@@ -10,35 +10,11 @@ $dark-bg = #212121
 
 // .mz-nav-side
 
-.nav-side-toggle
-    position relative
-    & > i
-        position absolute
-        flex-container()
-        align-items center
-        justify-content center
-        width 100%
-        height 100%
-        text-align center
-        top 0
-        left 0
-        // font-size 3rem
-        transition all 1s cubic-bezier(0.19,0.99,0.01,0.99)
-        &.next-icon
-            opacity 0
-            transform rotate(90deg)
-    &.next > i
-        &.first-icon
-            opacity 0
-            transform rotate(-90deg)
-        &.next-icon
-            opacity 1
-            transform rotate(0deg)
 
-
-nav
-    &.mz-nav-container,
-    &.mz-nav-container > .mz-nav-container-view
+nav,
+.mz-nav
+    &.mz-nav-container.nav-container-top,
+    &.mz-nav-container.nav-container-top > .mz-nav-container-view
         flex-container()
         flex-direction row
         flex 1 0 auto
@@ -52,15 +28,6 @@ nav
         color white
         flex 0 0 $nav-side-width
 
-    .nav-tools
-        flex-container()
-        flex-direction row
-        flex 1 0 auto
-
-        &.nav-tools-right
-            justify-content flex-end
-
-
 
 
 
@@ -72,144 +39,8 @@ nav
     min-height $nav-top-height
     height $nav-top-height
     &.nav-top-fixed
-        .mz-nav-container
+        .mz-nav-container.nav-container-top
             top 0
             left 0
             position fixed
-            z-index 100
-
-    // .nav-tools
-
-.nav-left
-    &.nav-left-fixed
-        .nav-side-right-container
-            position fixed
-            z-index 102
-    &.nav-left-open
-        opacity 1
-        visibility visible
-        width $nav-side-width
-        min-width $nav-side-width
-        max-width $nav-side-width
-
-    &.nav-left-fold
-        opacity 1
-        visibility visible
-        width $nav-side-width-fold
-        min-width $nav-side-width-fold
-        max-width $nav-side-width-fold
-
-        height 100%
-        min-height 100%
-        max-height 100%
-
-.nav-right
-    flex-container()
-    flex-direction column
-    order 2
-    height 100%
-    opacity 0
-
-    // flex 1
-    visibility hidden
-    overflow-x hidden
-    position relative
-    background white
-    // background-color: white
-
-    box-shadow(4px 0 6px rgba(0,0,0,0.1));
-    // easeOutExpo(width,500ms)
-    transition all 600ms cubic-bezier(0.19,0.99,0.01,0.99)
-
-    .nav-side-right-container
-        // easeOutExpo(width,500ms)
-        transition all 600ms cubic-bezier(0.19,0.99,0.01,0.99)
-        // transition all 600ms ease
-        background-color $dark-bg
-        flex-container()
-        flex-direction column
-        position relative
-        width 100%
-        height 100%
-
-
-.nav-right
-
-    &.nav-right-open
-        opacity 1
-        visibility visible
-        width $nav-side-width
-        min-width $nav-side-width
-        max-width $nav-side-width
-
-    &.nav-right-fold
-        opacity 1
-        visibility visible
-        width $nav-side-width-fold
-        min-width $nav-side-width-fold
-        max-width $nav-side-width-fold
-
-        height 100%
-        min-height 100%
-        max-height 100%
-
-    &.nav-right-fixed
-        .nav-side-right-container
-            position fixed
-            top 0
-            right 0
-            z-index 102
-
-        &.nav-right-fold
-            .nav-side-right-container
-                width $nav-side-width-fold
-                min-width $nav-side-width-fold
-                max-width $nav-side-width-fold
-
-        &.nav-right-open
-            .nav-side-right-container
-                width $nav-side-width
-                min-width $nav-side-width
-                max-width $nav-side-width
-
-
-.nav-action
-    display block
-    margin-top 2px
-    min-width $nav-action-width-fold
-    max-width $nav-action-width-fold
-    min-height $nav-action-width-fold
-    max-height $nav-action-width-fold
-    background-color $dark-bg !important
-    color #eeeeee
-    text-align center
-    vertical-align middle
-    border none
-    box-shadow(inset -10px 10px 10px rgba(0,0,0,0.1) !important)
-    & > i
-        font-size 2rem
-
-    &:hover
-        background-color #ff80ab !important
-        box-shadow(inset 0 0 0 rgba(0,0,0,0.1) !important)
-        > *
-            color $dark-bg !important
-
-    &.no-margin
-        margin 0
-
-.nav-right
-    .mz-side-nav-content
-        position relative
-        height calc(100% - 64px)
-        .nav-action-group
-            flex 1 0 auto
-            position relative
-            height 100%
-            .action-group-top
-                position absolute
-                top 0
-            .action-group-bottom
-                position absolute
-                bottom 0
-                align-self flex-end
+            z-index 1001

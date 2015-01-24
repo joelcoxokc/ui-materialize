@@ -70,7 +70,7 @@
         ///
         RightNavigation.prototype.startWatch = function(value, classList) {
             this.watch('isOpen', function (value) {
-                console.log('test');
+                // console.log('test');
                 if (value) {
                     this.open();
                 } else {
@@ -79,6 +79,12 @@
             });
         };
 
+        ////////////////////////
+        ///
+        ///
+        RightNavigation.prototype.useLargeAction = function() {
+            this.addClass('has-large-action');
+        }
 
         return RightNavigation;
 

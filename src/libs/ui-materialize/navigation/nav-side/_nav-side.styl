@@ -1,144 +1,150 @@
-//////
-//////     side-nav
-//////
-// .mz-side-nav {
+nav-side-open-widths(fixed=false)
+    if fixed
+        sidewidth = $nav-side-width
+    else
+        sidewidth = 100%
+    width sidewidth
+    min-width sidewidth
+    max-width sidewidth
 
-//     flex-container();
+nav-side-fold-widths(fixed=false)
+    if fixed
+        sidewidth = $nav-side-width-fold
+    else
+        sidewidth = 100%
 
-//     top: 0
-//     z-index: 12
-//     flex 1 0 auto
-//     position: relative
-//     flex-direction row
-//     background-color: white
-//     // transition: width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000)
-//     easeOutExpo(width,500ms)
+    width sidewidth
+    min-width sidewidth
+    max-width sidewidth
 
-//     box-shadow(4px 0 6px rgba(0,0,0,0.1));
+nav-container-defaults()
+    flex-container()
+    transition all 600ms cubic-bezier(0.19,0.99,0.01,0.99)
+    // background-color $dark-bg
+    flex-direction column
+    position relative
+    z-index 1000
+    heights(100%, true)
+    nav-side-open-widths()
 
-//     li {
-//         float: none;
-//         line-height: 64px;
-//         padding: 0 15px;
-//         transition: background-color .3s
-//         &:hover, &.active { background-color: #ddd; }
-
-//         a {
-//             display: block;
-//             padding: 0 15px;
-//             color: #444;
-//         }
-//     }
-// }
-
-
-nav-side-container-varients(side)
-
-    .mz-side-nav
-
-        &.mz-nav-side-{left}-container
-            flex: 1 0 auto
-
-            top: 0
-            z-index: 13
-            position: absolute
-
-            all-heights(100%)
-            all-widths(100%)
-
-            if side is left
-
-                left: -($side-nav-width);
-                order: -1;
-
-            else if side is right
-
-                right: -($side-nav-width);
-                order: 2;
-
-
-.mz-nav-side-left-container {
-
+nav-side-heading-defaults()
+    flex-container()
+    flex-direction column
     flex: 1 0 auto
-
-    top: 0
-    z-index: 13
-    position: absolute
-    left: -($side-nav-width)
-    width: 100%
-    height: 100%
-    min-width: 100%
-    max-width: 100%
-    min-height: 100%
-    max-height: 100%
-
-}
-
-.mz-side-nav-heading
-    flex: 1 0 auto
-    height: $side-nav-heading-height
-    min-height: $side-nav-heading-height
-    max-height: $side-nav-heading-height
+    heights($side-nav-heading-height, true)
 
     &.heading-tall
-        height $side-nav-heading-height-tall
-        min-height $side-nav-heading-height-tall
-        max-height $side-nav-heading-height-tall
+        heights($side-nav-heading-height-tall, true)
 
-
-.mz-side-nav-content
+nav-side-content-defaults()
+    flex-container()
+    flex-direction column
     flex: 1 0 auto
     position relative
     vertical-scroll();
 
+nav-side-defaults(side, order)
+    order order
+    /*
+        ==================================== SIDE > CONTAINER
+    */
+    & > .nav-{side}-container
+        nav-container-defaults()
+        /*
+            ========= > CONTAINER > HEADING
+        */
+        & > .mz-nav-side-heading
+            nav-side-heading-defaults()
+            .nav-action.header-action-huge
+                position absolute
+                widths(100px, true)
+                heights(100px, true)
+                top 0
+                right 0
+                z-index 1003
+                border-radius 2px
+        /*
+            ========= > CONTAINER > CONTENT
+        */
+        & > .mz-nav-side-content
+            nav-side-content-defaults()
 
-side-varents-md()
+    /*
+        ==================================== SIDE OPEN
+    */
+    &.nav-{side}-open
+        opacity 1
+        visibility visible
+        nav-side-open-widths(true)
 
-    md-left                    = left
-    md-left-base-width         = 0px
-    md-left-base-position      = fixed
-    md-left-container-width    = 100%
-    md-left-container-position = relative
-    md-left-container-left     = -($side-nav-width)
-    md-left-base-width-open    = $side-nav-width
-    md-left-container-x-open   = 0px
-    mz-side-varients(left, md-left-base-width, md-left-base-position, md-left-container-width, md-left-container-left, md-left-base-width-open, md-left-container-x-open)
+    /*
+        ==================================== SIDE FOLD
+    */
+    &.nav-{side}-fold
+        opacity 1
+        visibility visible
+        nav-side-fold-widths(true)
+        heights(100%, true)
 
-side-container-varients-sm()
+    /*
+        ==================================== SIDE FRONT
+    */
+    &.nav-{side}-front
+        .nav-{side}-container
+            z-index 1002
 
-    mz-side-varients(left, 0px, fixed, 100%, absolute, -($side-nav-width), $side-nav-width, 0px)
-
-
-.mz-flex
-    side-varients-md()
-
-    &.has-mz-container
-        side-container-varients-sm(left, 0px, fixed, 100%, absolute, -($side-nav-width), $side-nav-width, 0px)
-        side-container-varients-sm(right, 0px, fixed, 100%, absolute, -($side-nav-width), $side-nav-width, 0px)
-
-
-
-// +break-sm
-//     .mx-flex
-//         &.mz-side-nav
-//             &.nav-left
-
-//                 position: fixed
-//                 width: $side-nav-fold-width
-//                 min-width: $side-nav-fold-width
-//                 max-width: $side-nav-fold-width
-
-//             &.nav-left-open
-//                 width $side-nav-width-mobile
-//                 max-width $side-nav-width-mobile
-//                 min-width $side-nav-width-mobile
-
-//                 .nav-side-left-container
-//                     left -($side-nav-width-mobile) +10px
-
-
-
-
+    /*
+        ==================================== SIDE FIXED
+    */
+    &.nav-{side}-fixed
+        /*
+            =================== SIDE FIXED & OPEN
+        */
+        &.nav-{side}-open
+            .nav-{side}-container
+                nav-side-open-widths(true)
+        /*
+            =================== SIDE FIXED & FOLD
+        */
+        &.nav-{side}-fold
+            .nav-{side}-container
+                nav-side-fold-widths(true)
+        /*
+            =================== SIDE FIXED > CONTAINER
+        */
+        .nav-{side}-container
+            position fixed
+            top 0
+            if side is right
+                right 0
+            if side is left
+                left 0
+            nav-side-open-widths(true)
+    &.has-large-action
+        .mz-nav-side-heading
+            padding-top 88px
 
 
 
+/*
+============================== NAV SIDE
+*/
+.mz-side-nav
+    flex-container()
+    flex-direction column
+    height 100%
+    order -1
+    opacity 0
+    visibility hidden
+    overflow-x hidden
+    position relative
+
+    transition all 600ms cubic-bezier(0.19,0.99,0.01,0.99)
+    box-shadow(4px 0 6px rgba(0,0,0,0.1))
+    nav-side-open-widths()
+
+    &.nav-left
+        nav-side-defaults(left, -1)
+
+    &.nav-right
+        nav-side-defaults(right, 2)

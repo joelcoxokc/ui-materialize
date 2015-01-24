@@ -26,7 +26,7 @@
             ctrl.body = element;
 
             element.addClass('mz-body');
-            console.log('BODY',  scope);
+            // console.log('BODY',  scope);
             ///////////////////////////////
             transclude(scope, function (clone) {
                 element.append(clone);

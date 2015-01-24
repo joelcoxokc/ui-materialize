@@ -192,7 +192,8 @@
             defaults.right = {
                 open : false,
                 fixed: true,
-                fold:  true
+                fold:  true,
+                front: true,
             };
             defaults.top = {
                 hide:    false,

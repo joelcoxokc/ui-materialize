@@ -6,20 +6,21 @@
         .module('ui.materialize.nav')
         .directive('mzNav', mzNav);
 
-    ///
-    ///  @directive    mz-nav
-    ///  @decription   Controlls the global functionality for the <mz-nav> directive
-    ///  @usage
-    ///
-    ///     <mz-nav
-    ///         color= <background-color>
-    ///         side= <top | right | bottom | left>
-    ///         size=  <small | medium | large>
-    ///         fixed= <boolean>
-    ///         brand= <app-brand> ***** This replaces the mz-nav-brand directive
-    ///         view= <ui-view-name>
-    ///     ></mz-nav>
-    ///
+    /*
+        mzNav
+    ===================
+        @directive     |    mz-nav
+        @decription    |    Controlls the global functionality for the <mz-nav> directive
+        @usage         |
+                       |    <mz-nav
+                                 color= <background-color>
+                                 side= <top | right | bottom | left>
+                                 size=  <small | medium | large>
+                                 fixed= <boolean>
+                                 brand= <app-brand> ***** This replaces the mz-nav-brand directive
+                                 view= <ui-view-name>
+                             ></mz-nav>
+    ====================/*
     /* @inject */
     function mzNav($rootScope, $document, Scopify) {
         return {
@@ -47,6 +48,7 @@
             config = {};
 
             side = 'top' || attrs.side;
+            scope.side = side
 
             attrs.fixed && (config.fixed = true);
             attrs.size &&  (config[attrs.size] = true);
@@ -69,7 +71,8 @@
         .module('ui.materialize')
         .run(["$templateCache", function($templateCache) {
             $templateCache.put('templates/mzNav.template.html',
-                  '<nav class="{{color}} mz-nav-container">'+
+
+                  '<nav class="{{color}} mz-nav-container nav-container-top">'+
 
                     '<mz-nav-brand ng-if="brand" class="">{{brand}}</mz-nav-brand>'+
                     '<div data-ng-if="view" class="mz-nav-container-view" ui-view="{{view}}"></div>'+
