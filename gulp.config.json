@@ -49,32 +49,58 @@
     "./bower_components/toastr/toastr.css"
   ],
   "libs":{
-    "root":"./src/libs/ui-materialize",
-    "scripts":"./src/libs/ui-materialize/**/*.js",
-    "templates":"./src/libs/ui-materialize/**/*.html",
-    "styl":"./src/libs/ui-materialize/styles/index.styl",
-    "allStyl":"./src/libs/ui-materialize/**/*.styl",
-    "dest":"./.tmp/libs/"
+    "root":            "./src/libs/",
+    "scriptsPath":     "./src/libs/js/",
+    "scripts":         "./src/libs/js/**/*.js",
+    "stylPath":        "./src/libs/stylus/",
+    "stylIndex":       "./src/libs/stylus/index.styl",
+    "styl":            "./src/libs/stylus/**/*.styl",
+    "templatesPath":   "./src/libs/templates/",
+    "html":            "./src/libs/templates/**/*.html",
+    "jade":            "./src/libs/templates/**/*.jade",
+    "build": {
+      "stylesPath":    "./src/libs/build/styles",
+      "styles":        "./src/libs/build/styles/**/*.css",
+      "scriptsPath":   "./src/libs/build/scripts",
+      "scripts":       "./src/libs/build/scripts/**/*.js",
+      "templatesPath": "./src/libs/build/templates",
+      "templates":     "./src/libs/build/templates/**/*.js"
+    }
   },
-  "styl":{
-    "index":"./src/client/**/index.styl",
-    "all":"./src/client/**/*.styl",
-    "dirs":"./src/client/**/**styles/"
+  "client": {
+    "styl":{
+      "index":"./src/client/**/index.styl",
+      "all":"./src/client/**/*.styl",
+      "dirs":"./src/client/**/styles/"
+    },
+    "css": [
+      "./src/client/content/customtheme.css",
+      "./src/client/content/styles.css"
+    ],
+    "js": [
+      "./src/client/app/**/*module*.js",
+      "./src/client/app/**/*.js",
+      "!./src/client/app/**/*.spec.js",
+      "!./src/client/app/**/*.test.js",
+      "!./src/client/app/**/*-spaghetti.js"
+    ],
+    "build": {
+      "root":          "./src/build",
+      "all":           "./src/build/**/*",
+      "stylesPath":    "./src/build/styles",
+      "styles":        "./src/build/styles/**/*.css",
+      "scriptsPath":   "./src/build/scripts",
+      "scripts":       "./src/build/scripts/**/*.js",
+      "templatesPath": "./src/build/templates",
+      "templates":     "./src/build/templates/**/*.js"
+    }
   },
-  "css": [
-    "./src/client/content/customtheme.css",
-    "./src/client/content/styles.css"
-  ],
-  "js": [
-    "./src/client/app/**/*module*.js",
-    "./src/client/app/**/*.js",
-    "!./src/client/app/**/*.spec.js",
-    "!./src/client/app/**/*.test.js",
-    "!./src/client/app/**/*-spaghetti.js"
-  ],
-  "specs": [
-    "./src/client/test/specs/*.spec.js"
-  ],
+  "vendor": {
+    "build": {
+      "path":          "./src/build/vendor",
+      "all":           "./src/build/vendor/**/*"
+    }
+  },
   "nodejs": [
     "./src/server/**/*.js"
   ],
