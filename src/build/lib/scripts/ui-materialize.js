@@ -15,176 +15,6 @@
     'use strict';
 
     angular
-        .module('ui.materialize.core', [
-            'mz.core.materialize',
-            'mz.core.controllers',
-            'mz.core.transclude',
-            'mz.core.transclude-replace',
-
-        ]);
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('mz.core.materialize', [])
-        .directive('mzMaterialize', mzMaterialize)
-        .run(mzRunner);
-
-    function mzRunner($rootScope) {
-        $rootScope.$toggleLeftSideNav = function() {
-        }
-    }
-
-    /* @inject */
-    function mzMaterialize() {
-        return {
-            template: '<div class="mz-materialize" ng-class="classList" data-ng-transclude></div>',
-            restrict: 'E',
-            replace:true,
-            transclude:true,
-            scope: true,
-            controller: 'mzController as mz',
-                link: link
-            };
-
-        ////////////////
-
-        function link(scope, element, attrs, ctrl, transclude) {
-            element.addClass('mz-materialize');
-            $('body').addClass('has-flex');
-            $('html').addClass('has-flex');
-            scope.classList = {};
-            ctrl.init(element);
-            ///////////////////////////////
-        }
-    }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('mz.core.transclude-replace', [])
-        .directive('ngTranscludeReplace', ngTranscludeReplace);
-
-    /* @inject */
-    function ngTranscludeReplace() {
-        return {
-            terminal: true,
-            restrict: 'EA',
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs, ctrl, transclude) {
-
-            if (!transclude) {
-                $log.error('orphan',
-                     'Illegal use of ngTranscludeReplace directive in the template! ' +
-                     'No parent directive that requires a transclusion found. ');
-                return;
-            }
-
-            transclude(function (clone) {
-                if (clone.length) {
-                    $element.replaceWith(clone);
-                } else {
-                    $element.remove();
-                }
-            });
-            ///////////////////////////////
-        }
-    }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('mz.core.transclude', [])
-        .directive('ngTransclude', ngTransclude)
-        .config(transcludeHelper);
-
-    /* @ngInject */
-    function transcludeHelper($provide) {
-
-        $provide.decorator('ngTranscludeDirective', ['$delegate', function ($delegate) {
-            $delegate.shift();
-
-            return $delegate;
-        }]);
-    }
-
-    /* @inject */
-    function ngTransclude() {
-        return {
-            restrict: 'EAC',
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs, ctrl, transclude) {
-            var iScopeType = attrs.ngTransclude || 'sibling';
-
-            switch (iScopeType) {
-                case 'sibling':
-                    transclude(function (clone) {
-                        element.empty();
-                        element.append(clone);
-                    });
-                    break;
-                case 'parent':
-                    transclude(scope, function (clone) {
-                        element.empty();
-                        element.append(clone);
-                    });
-                    break;
-                case 'child':
-                    var iChildScope = scope.$new();
-
-                    transclude(iChildScope, function (clone) {
-                        element.empty();
-                        element.append(clone);
-                        element.on('$destroy', function () {
-                            iChildScope.$destroy();
-                        });
-                    });
-                    break;
-                default:
-                    var count = parseInt(iScopeType);
-                    if (!isNaN(count)) {
-                        var toClone = scope;
-                        for (var idx = 0; idx < count; idx++) {
-                            if (toClone.$parent) {
-                                toClone = toClone.$parent;
-                            } else {
-                                break;
-                            }
-                        }
-
-                        transclude(toClone, function (clone) {
-                            element.empty();
-                            element.append(clone);
-                        });
-                    }
-                }
-            ///////////////////////////////
-        }
-    }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
         .module('mz.components.blur', [])
         .directive('mzBlur', mzBlur);
 
@@ -1118,6 +948,176 @@
     'use strict';
 
     angular
+        .module('ui.materialize.core', [
+            'mz.core.materialize',
+            'mz.core.controllers',
+            'mz.core.transclude',
+            'mz.core.transclude-replace',
+
+        ]);
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('mz.core.materialize', [])
+        .directive('mzMaterialize', mzMaterialize)
+        .run(mzRunner);
+
+    function mzRunner($rootScope) {
+        $rootScope.$toggleLeftSideNav = function() {
+        }
+    }
+
+    /* @inject */
+    function mzMaterialize() {
+        return {
+            template: '<div class="mz-materialize" ng-class="classList" data-ng-transclude></div>',
+            restrict: 'E',
+            replace:true,
+            transclude:true,
+            scope: true,
+            controller: 'mzController as mz',
+                link: link
+            };
+
+        ////////////////
+
+        function link(scope, element, attrs, ctrl, transclude) {
+            element.addClass('mz-materialize');
+            $('body').addClass('has-flex');
+            $('html').addClass('has-flex');
+            scope.classList = {};
+            ctrl.init(element);
+            ///////////////////////////////
+        }
+    }
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('mz.core.transclude-replace', [])
+        .directive('ngTranscludeReplace', ngTranscludeReplace);
+
+    /* @inject */
+    function ngTranscludeReplace() {
+        return {
+            terminal: true,
+            restrict: 'EA',
+            link: link
+        };
+        ////////////////
+        ///
+        ///
+        function link(scope, element, attrs, ctrl, transclude) {
+
+            if (!transclude) {
+                $log.error('orphan',
+                     'Illegal use of ngTranscludeReplace directive in the template! ' +
+                     'No parent directive that requires a transclusion found. ');
+                return;
+            }
+
+            transclude(function (clone) {
+                if (clone.length) {
+                    $element.replaceWith(clone);
+                } else {
+                    $element.remove();
+                }
+            });
+            ///////////////////////////////
+        }
+    }
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('mz.core.transclude', [])
+        .directive('ngTransclude', ngTransclude)
+        .config(transcludeHelper);
+
+    /* @ngInject */
+    function transcludeHelper($provide) {
+
+        $provide.decorator('ngTranscludeDirective', ['$delegate', function ($delegate) {
+            $delegate.shift();
+
+            return $delegate;
+        }]);
+    }
+
+    /* @inject */
+    function ngTransclude() {
+        return {
+            restrict: 'EAC',
+            link: link
+        };
+        ////////////////
+        ///
+        ///
+        function link(scope, element, attrs, ctrl, transclude) {
+            var iScopeType = attrs.ngTransclude || 'sibling';
+
+            switch (iScopeType) {
+                case 'sibling':
+                    transclude(function (clone) {
+                        element.empty();
+                        element.append(clone);
+                    });
+                    break;
+                case 'parent':
+                    transclude(scope, function (clone) {
+                        element.empty();
+                        element.append(clone);
+                    });
+                    break;
+                case 'child':
+                    var iChildScope = scope.$new();
+
+                    transclude(iChildScope, function (clone) {
+                        element.empty();
+                        element.append(clone);
+                        element.on('$destroy', function () {
+                            iChildScope.$destroy();
+                        });
+                    });
+                    break;
+                default:
+                    var count = parseInt(iScopeType);
+                    if (!isNaN(count)) {
+                        var toClone = scope;
+                        for (var idx = 0; idx < count; idx++) {
+                            if (toClone.$parent) {
+                                toClone = toClone.$parent;
+                            } else {
+                                break;
+                            }
+                        }
+
+                        transclude(toClone, function (clone) {
+                            element.empty();
+                            element.append(clone);
+                        });
+                    }
+                }
+            ///////////////////////////////
+        }
+    }
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
         .module('mz.layout.body', [])
         .directive('mzBody', mzBody);
 
@@ -1952,21 +1952,7 @@
         .module('mz.nav.footer', [])
         .directive('mzNavFooter', mzNavFooter);
 
-    /*
-        mzNav
-    ===================
-        @directive     |    mz-nav
-        @decription    |    Controlls the global functionality for the <mz-nav> directive
-        @usage         |
-                       |    <mz-nav
-                                 color= <background-color>
-                                 side= <top | right | bottom | left>
-                                 size=  <small | medium | large>
-                                 fixed= <boolean>
-                                 brand= <app-brand> ***** This replaces the mz-nav-brand directive
-                                 view= <ui-view-name>
-                             ></mz-nav>
-    ====================/*
+
     /* @inject */
     function mzNavFooter($rootScope, $document) {
         return {
@@ -2186,96 +2172,6 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('mz.core.ctrl', [])
-        .controller('mzController', mzController);
-
-    /* @ngAnotate */
-    function mzController($scope, $q, $RightNavigationService, $NavBarService, mzNavApi, $rootScope) {
-        // $scope.mzNav = mzNavApi;
-        var _this = this;
-
-        this.$navs = {};
-        this.$settings = {
-            top:   {},
-            bottom:{},
-            right:{
-                actions:[]
-            },
-            left:{},
-        };
-        console.log(mzNavApi);
-
-
-
-        this.init = function(element) {
-            this.element = element;
-
-        };
-
-        this.addNav = function(side, element, attrs, config, scope) {
-            var NavService = useService(side);
-            this.$navs[side] = new NavService(side, element, attrs, config, scope);
-            this.$navs[side].activate();
-
-            this.invokeRegistry(side);
-
-            console.log(this.$navs[side]);
-
-            $rootScope.$on('$stateChangeStart', function (event, state) {
-
-                if (mzNavApi.config.navBar.hideOn[state.name]) {
-                    element.addClass('hidden');
-                } else {
-                    element.removeClass('hidden');
-                }
-            });
-        }
-
-        this.invokeRegistry = function(side) {
-            _.forEach(this.$settings[side].actions, function (action) {
-                _this.$navs[side][action]()
-            });
-        }
-
-        this.registerAction = function(side, action){
-
-            this.$settings[side].actions.push(action);
-        }
-        // $scope.addClass = function(classList) {
-        //     this.element.addClass(classList)
-        // };
-        // $scope.removeClass = function(classList) {
-        //     this.element.addClass(classList)
-        // };
-
-        function useService(service){
-            var services;
-
-            services = {
-                right: $RightNavigationService,
-                top:   $NavBarService
-            };
-            return services[service];
-        }
-
-    }
-
-}).call(this);
-
-;(function() {
-    'use strict';
-
-    angular
-        .module('mz.core.controllers', [
-            'mz.core.ctrl'
-        ]);
-
-}).call(this);
 ;(function() {
 
     'use strict';
@@ -3263,6 +3159,96 @@
 
 }).call(this);
 
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('mz.core.ctrl', [])
+        .controller('mzController', mzController);
+
+    /* @ngAnotate */
+    function mzController($scope, $q, $RightNavigationService, $NavBarService, mzNavApi, $rootScope) {
+        // $scope.mzNav = mzNavApi;
+        var _this = this;
+
+        this.$navs = {};
+        this.$settings = {
+            top:   {},
+            bottom:{},
+            right:{
+                actions:[]
+            },
+            left:{},
+        };
+        console.log(mzNavApi);
+
+
+
+        this.init = function(element) {
+            this.element = element;
+
+        };
+
+        this.addNav = function(side, element, attrs, config, scope) {
+            var NavService = useService(side);
+            this.$navs[side] = new NavService(side, element, attrs, config, scope);
+            this.$navs[side].activate();
+
+            this.invokeRegistry(side);
+
+            console.log(this.$navs[side]);
+
+            $rootScope.$on('$stateChangeStart', function (event, state) {
+
+                if (mzNavApi.config.navBar.hideOn[state.name]) {
+                    element.addClass('hidden');
+                } else {
+                    element.removeClass('hidden');
+                }
+            });
+        }
+
+        this.invokeRegistry = function(side) {
+            _.forEach(this.$settings[side].actions, function (action) {
+                _this.$navs[side][action]()
+            });
+        }
+
+        this.registerAction = function(side, action){
+
+            this.$settings[side].actions.push(action);
+        }
+        // $scope.addClass = function(classList) {
+        //     this.element.addClass(classList)
+        // };
+        // $scope.removeClass = function(classList) {
+        //     this.element.addClass(classList)
+        // };
+
+        function useService(service){
+            var services;
+
+            services = {
+                right: $RightNavigationService,
+                top:   $NavBarService
+            };
+            return services[service];
+        }
+
+    }
+
+}).call(this);
+
+;(function() {
+    'use strict';
+
+    angular
+        .module('mz.core.controllers', [
+            'mz.core.ctrl'
+        ]);
+
+}).call(this);
 ;(function() {
     'use strict';
 
