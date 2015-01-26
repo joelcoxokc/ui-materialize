@@ -1,0 +1,192 @@
+::-webkit-scrollbar {
+    height: 0px !important;
+    width: 0px !important;
+    display: none !important;
+}
+
+nav-side-open-widths(fixed=false)
+    if fixed
+        sidewidth = $nav-side-width
+    else
+        sidewidth = 100%
+    width sidewidth
+    min-width sidewidth
+    max-width sidewidth
+
+nav-side-fold-widths(fixed=false)
+    if fixed
+        sidewidth = $nav-side-width-fold
+    else
+        sidewidth = 100%
+
+    width sidewidth
+    min-width sidewidth
+    max-width sidewidth
+
+nav-container-defaults()
+    flex-container()
+    transition all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
+    // background-color $dark-bg
+    flex-direction column
+    position relative
+    z-index 1000
+    heights(100%, true)
+    nav-side-open-widths()
+
+nav-side-heading-defaults()
+    flex-container()
+    flex-direction column
+    flex: 1 0 auto
+    heights($side-nav-heading-height, true)
+
+    &.heading-tall
+        heights($side-nav-heading-height-tall, true)
+
+nav-side-content-defaults()
+    flex-container()
+    flex-direction column
+    flex: 1 0 auto
+    // overflow-x hidden
+
+    // max-height calc(100% - 64px)
+    // height calc(100% - 64px)
+    position relative
+
+
+    // overflow auto !important
+    // height calc(100% - 40px)
+
+
+
+nav-side-defaults(side, order)
+    order order
+    /*
+        ==================================== SIDE > CONTAINER
+    */
+    & > .nav-{side}-container
+        nav-container-defaults()
+        // overflow hidden
+        // scroll-vertical()
+        height 100%
+        /*
+            ========= > CONTAINER > HEADING
+        */
+        & > .mz-nav-side-heading
+            nav-side-heading-defaults()
+            .nav-action.header-action-huge
+                position absolute
+                widths(100px, true)
+                heights(100px, true)
+                top 0
+                right 0
+                z-index 1003
+                border-radius 2px
+                box-shadow(-10px 10px 30px rgba(0,0,0,0.5) !important)
+                & > i
+                    font-size 3rem
+                    font-weight bold
+        /*
+            ========= > CONTAINER > CONTENT
+        */
+
+        & > .mz-nav-side-content
+            nav-side-content-defaults()
+            .nav-side-content-wrap
+                position absolute
+                top 0
+                right 0
+                left 0
+                bottom 0
+                width inherit
+                height inherit
+                // overflow auto !important
+
+
+
+
+    /*
+        ==================================== SIDE OPEN
+    */
+    &.nav-{side}-open
+        opacity 1
+        visibility visible
+        nav-side-open-widths(true)
+
+    /*
+        ==================================== SIDE FOLD
+    */
+    &.nav-{side}-fold
+        opacity 1
+        visibility visible
+        nav-side-fold-widths(true)
+        heights(100%, true)
+
+    /*
+        ==================================== SIDE FRONT
+    */
+    &.nav-{side}-front
+        .nav-{side}-container
+            z-index 1002
+
+    /*
+        ==================================== SIDE FIXED
+    */
+    &.nav-{side}-fixed
+        /*
+            =================== SIDE FIXED & OPEN
+        */
+        &.nav-{side}-open
+            .nav-{side}-container
+                nav-side-open-widths(true)
+        /*
+            =================== SIDE FIXED & FOLD
+        */
+        &.nav-{side}-fold
+            .nav-{side}-container
+                nav-side-fold-widths(true)
+        /*
+            =================== SIDE FIXED > CONTAINER
+        */
+        .nav-{side}-container
+            position fixed
+            top 0
+            if side is right
+                right 0
+            if side is left
+                left 0
+            nav-side-open-widths(true)
+
+    &.has-large-action
+        .mz-nav-side-heading
+            margin-top 36px
+
+
+
+
+/*
+============================== NAV SIDE
+*/
+.mz-side-nav
+    flex-container()
+    flex-direction column
+    height 100%
+    order -1
+    opacity 0
+    visibility hidden
+    position relative
+    transition all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
+    box-shadow(4px 0 6px rgba(0,0,0,0.1))
+    nav-side-open-widths()
+
+    min-width $nav-side-width
+
+    &.nav-left
+        nav-side-defaults(left, -1)
+
+    &.nav-right
+        nav-side-defaults(right, 2)
+
+
+// .nav-right-container::-webkit-scrollbar {
+//     display: none;
+// }

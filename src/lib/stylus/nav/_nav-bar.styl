@@ -1,0 +1,46 @@
+$nav-top-height = 64px
+
+$nav-side-width = 250px
+$nav-side-width-fold = 64px;
+
+$nav-action-width = 250px
+$nav-action-width-fold = 64px
+
+$dark-bg = #212121
+
+// .mz-nav-side
+
+nav,
+.mz-nav
+    &.mz-nav-container.nav-container-top,
+    &.mz-nav-container.nav-container-top > .mz-nav-container-view
+        flex-container()
+        flex-direction row
+        flex 1 0 auto
+
+    .mz-nav-brand,
+    .brand-logo
+        position relative
+        font-size 2.1rem
+        text-align center
+        padding 0
+        color white
+        flex 0 0 $nav-side-width
+
+
+
+.nav-top
+    flex 1 0 auto
+    flex-container()
+    position relative
+    min-height $nav-top-height
+    min-height $nav-top-height
+    height $nav-top-height
+    &.nav-top-fixed
+        .mz-nav-container.nav-container-top
+            top 0
+            left 0
+            position fixed
+            z-index 1001
+    &.hidden
+        display none

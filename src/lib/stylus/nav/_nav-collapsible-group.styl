@@ -1,0 +1,91 @@
+.nav-right,
+.nav-left
+    .nav-collapsible-group
+        .collapsible
+            margin 0
+            border none
+
+            .nav-collapse
+                display block
+                padding 0
+                line-height 60px
+                float none
+                width 250px
+                transition 0
+                box-shadow(inset -10px 10px 10px rgba(0,0,0,0.1) !important)
+
+                .collapsible-header, a.collapsible-header
+                    display block
+                    cursor pointer
+                    // background-color transparent
+                    border none
+                    line-height inherit
+                    height inherit
+                    color white
+                    margin 0
+                    .nav-action-text
+                        display none
+
+                    & > i
+                        line-height inherit
+
+                .collapsible-body
+                    border none
+                    border: 0;
+                    background-color: #212121;
+                    li a
+                        box-shadow(inset 0 0 0 rgba(0,0,0,0) !important)
+                        margin: 0
+
+                &:hover,
+                &:active,
+                &.active
+                    background-color #ff4081
+                    box-shadow(inset 0 0 0 rgba(0,0,0,0.1) !important)
+
+
+    &.nav-right-fixed,
+    &.nav-left-fixed
+        .nav-collapsible-group
+            .collapsible
+                height inherit
+                margin 0
+
+
+    &.nav-left-fold,
+    &.nav-right-fold
+        .nav-collapsible-group
+            .collapsible
+                .nav-collapse
+                    min-height $nav-action-width-fold
+
+                    & > i
+                        transition color 300ms ease
+                    &:hover,
+                    &:active,
+                    &.active
+                        color white
+                        & > i
+                            color white
+
+    &.nav-left-open,
+    &.nav-right-open
+        .nav-collapsible-group
+            .collapsible
+                .nav-collapse
+                    min-height 48px
+
+                    & > .nav-action-text,
+                    & > .collapsible-header,
+                    & > a.collapsible-header
+                        display block
+                        padding-left 24px
+                        .nav-action-text
+                            display inline
+                    & > i
+                        background-color none;
+
+                    &:hover,
+                    &:active,
+                    &.active
+                        background-color #000000

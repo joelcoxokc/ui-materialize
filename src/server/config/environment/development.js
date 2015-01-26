@@ -46,7 +46,7 @@ module.exports = function(app) {
     console.log('serving from ' + './src/client/ and ./');
     app.use(reload())
     app.use('/', express.static('./src/client/'));
-    app.use('/', express.static('./.tmp/'));
+    app.use('/', express.static('./src/build/'));
     app.use('/', express.static('./'));
 
     function rootDir(arg) {
