@@ -33,18 +33,18 @@
             var NavService = useService(side);
             this.$navs[side] = new NavService(side, element, attrs, config, scope);
             this.$navs[side].activate();
-
             this.invokeRegistry(side);
 
-            console.log(this.$navs[side]);
+
+
 
             $rootScope.$on('$stateChangeStart', function (event, state) {
 
-                if (mzNavApi.config.navBar.hideOn[state.name]) {
-                    element.addClass('hidden');
-                } else {
-                    element.removeClass('hidden');
-                }
+                // if (mzNavApi.config.navBar.hideOn[state.name]) {
+                //     element.addClass('hidden');
+                // } else {
+                //     element.removeClass('hidden');
+                // }
             });
         }
 

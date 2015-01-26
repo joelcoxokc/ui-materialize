@@ -3194,18 +3194,18 @@
             var NavService = useService(side);
             this.$navs[side] = new NavService(side, element, attrs, config, scope);
             this.$navs[side].activate();
-
             this.invokeRegistry(side);
 
-            console.log(this.$navs[side]);
+
+
 
             $rootScope.$on('$stateChangeStart', function (event, state) {
 
-                if (mzNavApi.config.navBar.hideOn[state.name]) {
-                    element.addClass('hidden');
-                } else {
-                    element.removeClass('hidden');
-                }
+                // if (mzNavApi.config.navBar.hideOn[state.name]) {
+                //     element.addClass('hidden');
+                // } else {
+                //     element.removeClass('hidden');
+                // }
             });
         }
 
@@ -3586,31 +3586,37 @@
         .module('mz.nav.services.right', [])
         .service('$RightNavigationService', RightNavigationService);
 
+
     /* @ngInject */
     function RightNavigationService($NavService) {
         var RightNavigation, defaults;
 
+        RightNavigation.prototype = _.create($NavService.prototype, {'constructor':RightNavigation});
+        RightNavigation.prototype.activate       = protoActivate;
+        RightNavigation.prototype.open           = protoOpen;
+        RightNavigation.prototype.close          = protoClose;
+        RightNavigation.prototype.fold           = protoFold;
+        RightNavigation.prototype.unfold         = protoUnfold;
+        RightNavigation.prototype.startWatch     = protoStartWatch;
+        RightNavigation.prototype.useLargeAction = protoUseLargeAction;
 
-        RightNavigation = function(side, element, attrs, config) {
+        return RightNavigation;
+
+        function RightNavigation(side, element, attrs, config) {
             $NavService.apply(this, arguments);
             var self = this;
-
         };
 
-        RightNavigation.prototype = _.create($NavService.prototype, {'constructor':RightNavigation})
-
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.activate = function() {
-            this.resetClassList();
+        function protoActivate() {
+            // this.resetClassList();
+            var _this = this;
             this.startWatch();
+            _.forEach(this.classes, function (className) {
+                _this.element.addClass(className)
+            });
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.open = function() {
+        function protoOpen() {
 
             this.element.addClass(this.classes.open);
             if (this.config.fold) {
@@ -3619,10 +3625,7 @@
             this.broadcast('nav:'+this.side+':opened');
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.close = function() {
+        function protoClose() {
             this.element.removeClass(this.classes.open);
             if (this.config.fold) {
                 this.fold();
@@ -3630,26 +3633,17 @@
             this.broadcast('nav:'+this.side+':closed');
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.fold = function() {
+        function protoFold() {
             this.element.addClass(this.classes.fold);
             this.broadcast('nav:'+this.side+':folded');
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.unfold = function(value, classList) {
+        function protoUnfold(value, classList) {
             this.element.removeClass(this.classes.fold);
             this.broadcast('nav:'+this.side+':unfold');
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.startWatch = function(value, classList) {
+        function protoStartWatch(value, classList) {
             this.watch('isOpen', function (value) {
                 // console.log('test');
                 if (value) {
@@ -3660,14 +3654,10 @@
             });
         };
 
-        ////////////////////////
-        ///
-        ///
-        RightNavigation.prototype.useLargeAction = function() {
-            this.addClass('has-large-action');
+        function protoUseLargeAction() {
+            this.element.addClass('has-large-action');
         }
 
-        return RightNavigation;
 
 
         //////////////////////
@@ -3704,9 +3694,6 @@
 
             var _this = this;
 
-            this.addClass     = element.addClass;
-            this.removeClass  = element.removeClass;
-            this.toggleClass  = element.toggleClass;
 
             this.side      = side;
             this.attrs     = attrs;
@@ -3730,7 +3717,8 @@
             _.assign(this.scope, createScope(this.config));
 
             this.resetClassList(this.config);
-            this.addClass(this.class);
+            this.element.addClass(this.class);
+
 
             /// Privledged Methods
 
@@ -3745,7 +3733,8 @@
             function createClassList(isDefault, classEnding) {
                 var className = _this.class+'-'+classEnding;
                 _this.classes[classEnding] = className;
-                isDefault ? _this.addClass(className) : _this.removeClass(className); }
+                // isDefault ? _this.addClass(className) : _this.removeClass(className);
+            }
 
           }; // end Navigation function
 
@@ -3770,7 +3759,7 @@
 
         function getDefaults(defaultSide){
             return ({
-                right: { open:false , fixed:true , fold:false , front:true }     ,
+                right: { open:false , fixed:true , fold:true , front:true }     ,
                 top:   { hide:false , fixed:true , expand:false , medium:true }  }
                 )[defaultSide]; };
 

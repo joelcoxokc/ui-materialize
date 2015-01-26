@@ -19,9 +19,6 @@
 
             var _this = this;
 
-            this.addClass     = element.addClass;
-            this.removeClass  = element.removeClass;
-            this.toggleClass  = element.toggleClass;
 
             this.side      = side;
             this.attrs     = attrs;
@@ -45,7 +42,8 @@
             _.assign(this.scope, createScope(this.config));
 
             this.resetClassList(this.config);
-            this.addClass(this.class);
+            this.element.addClass(this.class);
+
 
             /// Privledged Methods
 
@@ -60,7 +58,8 @@
             function createClassList(isDefault, classEnding) {
                 var className = _this.class+'-'+classEnding;
                 _this.classes[classEnding] = className;
-                isDefault ? _this.addClass(className) : _this.removeClass(className); }
+                // isDefault ? _this.addClass(className) : _this.removeClass(className);
+            }
 
           }; // end Navigation function
 
@@ -85,7 +84,7 @@
 
         function getDefaults(defaultSide){
             return ({
-                right: { open:false , fixed:true , fold:false , front:true }     ,
+                right: { open:false , fixed:true , fold:true , front:true }     ,
                 top:   { hide:false , fixed:true , expand:false , medium:true }  }
                 )[defaultSide]; };
 
