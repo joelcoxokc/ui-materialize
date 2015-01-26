@@ -789,6 +789,21 @@ jQuery(document).ready(function() {
 
     angular
         .module('components')
+        .controller('ComponentsController', ComponentsController);
+
+    /* @ngInject */
+    function ComponentsController(resolveUsers) {
+        this.users = resolveUsers;
+
+    }
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('components')
         .directive('components', components);
 
     /* @ngInject */
@@ -806,21 +821,6 @@ jQuery(document).ready(function() {
         return directive;
 
         function link(scope, element, attrs, ctrl, transclude) {}
-
-    }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('components')
-        .controller('ComponentsController', ComponentsController);
-
-    /* @ngInject */
-    function ComponentsController(resolveUsers) {
-        this.users = resolveUsers;
 
     }
 
@@ -1116,6 +1116,18 @@ jQuery(document).ready(function() {
 
     angular
         .module('layout')
+        .filter('layoutFilter', layoutFilter);
+
+    /* @ngInject */
+    function layoutFilter() {}
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('layout')
         .directive('layout', layout);
 
     /* @ngInject */
@@ -1135,18 +1147,6 @@ jQuery(document).ready(function() {
         function link(scope, element, attrs, ctrl, transclude) {}
 
     }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('layout')
-        .filter('layoutFilter', layoutFilter);
-
-    /* @ngInject */
-    function layoutFilter() {}
 
 }).call(this);
 ;(function() {
