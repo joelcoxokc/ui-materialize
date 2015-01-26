@@ -15,7 +15,7 @@
     "appDir": "./src/client/app",
     "coreDir": "./src/client/app",
     "modulesDir": "./src/client/app/modules",
-    "libsDir": "./src/libs",
+    "libsDir": "./src/lib",
     "cwd": "/Users/joelcox/dev/site/joelcox.io"
   }
 }

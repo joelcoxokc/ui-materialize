@@ -6,7 +6,7 @@
     var glob = require('glob');
     var karma = require('karma').server;
     var merge = require('merge-stream');
-    var paths = require('../gulp.config.json');
+    var paths = require('../paths.json');
     var plato = require('plato');
     var plug = require('gulp-load-plugins')();
     var reload = browserSync.reload;
@@ -204,6 +204,9 @@
     Utils.formatPercent =  function(num, precision) {
         return (num * 100).toFixed(precision);
     }
+
+
+
 
     /**
      * Copy the Vendor JavaScript

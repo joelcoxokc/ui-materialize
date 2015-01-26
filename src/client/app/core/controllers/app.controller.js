@@ -7,7 +7,7 @@
         .controller('AppController', AppController);
 
     /* @ngInject */
-    function AppController($scope, $storage, TweenMax, Cubic, EventDispatcher, mzNavApi) {
+    function AppController($scope, $storage, TweenMax, Cubic) {
 
         // console.log(mzNavApi)
         // console.log(EventDispatcher);

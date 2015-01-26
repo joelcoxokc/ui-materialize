@@ -1,0 +1,120 @@
+{
+  "client": "./src/client/",
+  "server": "./src/server/",
+  "api": "/api",
+  "data": "/../../data/",
+  "test": "./src/client/test/",
+  "html": "./src/client/**/*.html",
+  "all": "./src/lib/**/*",
+  "jade": "./src/client/**/*.jade",
+  "jadetemplates": "./src/client/app/**/*.jade",
+  "htmltemplates": "./src/client/app/**/*.html",
+  "vendorjs": [
+    "./bower_components/jquery/dist/jquery.min.js",
+    "./bower_components/angular/angular.min.js",
+    "./bower_components/angular-animate/angular-animate.min.js",
+    "./bower_components/angular-route/angular-route.min.js",
+    "./bower_components/angular-sanitize/angular-sanitize.min.js",
+    "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "./bower_components/toastr/toastr.min.js",
+    "./bower_components/moment/min/moment.min.js",
+    "./bower_components/extras.angular.plus/ngplus-overlay.js"
+  ],
+  "bowerFiles": [
+    "jquery",
+    "angular",
+    "angular-animate",
+    "angular-route",
+    "angular-sanitize",
+    "bootstrap",
+    "toastr",
+    "moment",
+    "extras.angular.plus"
+  ],
+  "tmp":{
+    "root":"./.tmp",
+    "libs":"./.tmp/libs/**/*",
+    "scripts":"./.tmp/scripts/**/*",
+    "scriptsPath":"./.tmp/scripts/",
+    "styles":"./.tmp/styles/**/*.css",
+    "templates":"./.tmp/templates/**/*.js",
+    "stylesPath":"./.tmp/styles",
+    "templatesPath":"./.tmp/templates",
+    "vendor":"./.tmp/vendor/**/*",
+    "vendorPath":"./.tmp/vendor"
+  },
+  "vendorcss": [
+    "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "./bower_components/font-awesome/css/font-awesome.min.css",
+    "./bower_components/toastr/toastr.css"
+  ],
+  "lib":{
+    "root":            "./src/lib/",
+    "scriptsPath":     "./src/lib/js/",
+    "scripts":         "./src/lib/js/**/*.js",
+    "stylPath":        "./src/lib/stylus/",
+    "stylIndex":       "./src/lib/stylus/index.styl",
+    "styl":            "./src/lib/stylus/**/*.styl",
+    "templatesPath":   "./src/lib/templates/",
+    "html":            "./src/lib/templates/**/*.html",
+    "jade":            "./src/lib/templates/**/*.jade",
+    "build": {
+      "stylesPath":    "./src/build/lib/styles",
+      "styles":        "./src/build/lib/styles/**/*.css",
+      "scriptsPath":   "./src/build/lib/scripts",
+      "scripts":       "./src/build/lib/scripts/**/*.js",
+      "templatesPath": "./src/build/lib/templates",
+      "templates":     "./src/build/lib/templates/**/*.js",
+      "fonts":         "./src/build/lib/fonts"
+    }
+  },
+  "client": {
+    "index": "./src/client/index.html",
+    "root": "./src/client/",
+    "html": "./src/client/app/**/*.html",
+    "jade": "./src/client/**/*.jade",
+    "styl":{
+      "index":"./src/client/**/index.styl",
+      "all":"./src/client/**/*.styl",
+      "dirs":"./src/client/**/styles/"
+    },
+    "css": [
+      "./src/client/content/customtheme.css",
+      "./src/client/content/styles.css"
+    ],
+    "scripts": [
+      "./src/client/app/**/*.js",
+      "!./src/client/app/**/*.spec.js",
+      "!./src/client/app/**/*.test.js"
+    ],
+    "build": {
+      "root":          "./src/build",
+      "all":           "./src/build/**/*",
+      "stylesPath":    "./src/build/styles",
+      "styles":        "./src/build/styles/**/*.css",
+      "scriptsPath":   "./src/build/scripts",
+      "scripts":       "./src/build/scripts/**/*.js",
+      "templatesPath": "./src/build/templates",
+      "templates":     "./src/build/templates/**/*.js",
+      "images":        "./src/build/styles/images"
+    }
+  },
+  "vendor": {
+    "build": {
+      "path":          "./src/build/vendor",
+      "all":           "./src/build/vendor/**/*"
+    }
+  },
+  "nodejs": [
+    "./src/server/**/*.js"
+  ],
+  "fonts": [
+    "./bower_components/font-awesome/fonts/**/*.*",
+    "./bower_components/materialize/font/**/*.*"
+  ],
+  "images": [
+    "./src/client/content/images/**/*"
+  ],
+  "report": "./report/",
+  "build": "./build/"
+}

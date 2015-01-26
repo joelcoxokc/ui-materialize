@@ -12,23 +12,7 @@ var express = require('express'),
 
 var configuation = {
 
-    DATABASE_URI:      '',
 
-    someAP: {
-        API_ID:        '',
-        API_KEY:       '',
-        API_TOKEN:     '',
-        API_SECRET:    '',
-        API_CALLBACK:  '',
-    },
-
-    anotherAPI: {
-        API_ID:        '',
-        API_KEY:       '',
-        API_TOKEN:     '',
-        API_SECRET:    '',
-        API_CALLBACK:  '',
-    }
 };
 /////////////////////////////////
 ///     @Environment Configuation
