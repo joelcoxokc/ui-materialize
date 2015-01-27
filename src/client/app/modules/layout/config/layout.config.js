@@ -1,15 +1,16 @@
 ;(function() { 'use strict';
+
     angular
         .module('layout')
-        .config(layoutConfig);
+        .config(layoutConfig)
+        ;
 
     /* @ngInject */
     function layoutConfig($stateProvider) {
         $stateProvider
-            .state('layout', {
-                url: '/layout',
-                templateUrl:'app/modules/layout/views/layout.view.html'
-            });
-    }
+            .state('layout',
+                { url         : '/layout'
+                , templateUrl : 'app/modules/layout/views/layout.view.html'
+                }  );   }
 
-}).call(this);
+  }).call(this);

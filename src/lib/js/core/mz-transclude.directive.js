@@ -8,10 +8,11 @@
 
     /* @ngInject */
     function transcludeHelper($provide) {
-        $provide.decorator('ngTranscludeDirective',
+        $provide.decorator(  'ngTranscludeDirective',
             [ '$delegate'
             , function ($delegate) { $delegate.shift();  return $delegate; }
-            ]   );   }
+            ]   );
+      }
 
     /* @inject */
     function ngTransclude() {

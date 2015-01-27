@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('layout')
-        .factory('layoutFactory', layoutFactory);
+        .factory('layoutFactory', layoutFactory)
+        ;
 
     /* @ngInject */
-    function layoutFactory() {
+    function layoutFactory() { }
 
-    }
-
-}).call(this);
+  }).call(this);

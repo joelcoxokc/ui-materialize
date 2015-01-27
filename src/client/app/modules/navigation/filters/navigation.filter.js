@@ -1,9 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('navigation')
-        .filter('navigationFilter', navigationFilter);
+        .filter('navigationFilter', navigationFilter)
+        ;
 
     /* @ngInject */
     function navigationFilter() {}
 
-}).call(this);
+  }).call(this);

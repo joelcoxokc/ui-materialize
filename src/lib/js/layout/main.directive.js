@@ -12,12 +12,8 @@
                , scope     : true
                , transclude: true
                , replace   : true
-               , link      : link
+               , link      : function link(scope, element, attrs) {}
                };
-
-        ////////////////
-
-        function link(scope, element, attrs) {}
-
       }
+
   }).call(this);

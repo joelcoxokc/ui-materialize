@@ -24,4 +24,4 @@
             , 'mz.components.tooltip'
             ]  );
 
-    }).call(this);
+  }).call(this);

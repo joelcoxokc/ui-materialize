@@ -18,8 +18,8 @@
                      ' Must have a parent directive that requires transclusion. ');
                 return; }
             transclude(function (clone) { clone.length ? $element.replaceWith(clone) : $element.remove(); });
-            }
+          }
 
-        } // end function ngTranscludeReplace
+      } // end function ngTranscludeReplace
 
-    }).call(this);
+  }).call(this);

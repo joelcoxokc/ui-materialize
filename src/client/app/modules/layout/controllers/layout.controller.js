@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('layout')
-        .controller('layoutController', layoutController);
+        .controller('layoutController', layoutController)
+        ;
 
     /* @ngInject */
-    function layoutController() {
+    function layoutController() { }
 
-    }
-
-}).call(this);
+  }).call(this);

@@ -7,15 +7,16 @@
 
     /* @inject */
     function mzInclude() {
-
-        return { restrict:'E' , link:link };
+        return { restrict : 'E'
+               , link     : link
+               };
 
         ////////////////
 
         function link(scope, element, attrs, ctrl, transclude) {
-            transclude(scope, function (cone) {
-                element.append(cone);
-            });
+            transclude(scope, function (cone) { element.append(cone); });
           }
+
       }
+
   }).call(this);

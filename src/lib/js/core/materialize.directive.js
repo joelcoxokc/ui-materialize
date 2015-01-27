@@ -24,8 +24,9 @@
             $('body').addClass('has-flex');
             $('html').addClass('has-flex');
             scope.classList = {};
-            ctrl.init(element); }
+            ctrl.init(element);
+          }
 
-        } // end function mzMaterailize
+      } // end function mzMaterailize
 
-    }).call(this);
+  }).call(this);

@@ -1,31 +1,21 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.services.notification', [])
-        .provider('mzNotificationService', mzNotificationService);
+        .provider('mzNotificationService', mzNotificationService)
+        ;
 
     /* @ngAnotate */
     function mzNotificationService() {
-
-        var _this = this;
-
-        this.init = function(element) {
-            this.element = element;
-        };
-
+        // var _this = this;
+        this.init = function(element) { this.element = element; };
 
         this.$get = function($injector) {
-
-            function Notifications() {
-                var _this;
-
-                _this = this;
-
-            }
-
+            function Notifications() { /* var _this = this; */ }
             Notifications.prototype.enable = function() {};
-
             return $injector.instantiate(Notifications);
-        }
-    }
+          }
 
-}).call(this);
+      }
+
+  }).call(this);

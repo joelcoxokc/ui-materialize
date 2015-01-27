@@ -1,24 +1,18 @@
 ;(function() { 'use strict';
+
     angular
         .module('gettingStarted')
-        .directive('gettingStarted', gettingStarted);
+        .directive('gettingStarted', gettingStarted)
+        ;
 
     /* @ngInject */
     function gettingStarted() {
+        return  { restrict  : 'EA'
+                , scope     : true
+                , template  : '<div data-ng-transclude></div>'
+                , transclude: true
+                , controller: 'gettingStartedController as vm'
+                , link      : function link(scope, element, attrs, ctrl, transclude) {}
+                };   }
 
-        var directive = {
-            restrict: 'EA',
-            scope:true,
-            template:'<div data-ng-transclude></div>',
-            transclude:true,
-            controller: 'gettingStartedController as vm',
-            link:link
-        };
-
-        return directive;
-
-        function link(scope, element, attrs, ctrl, transclude) {}
-
-    }
-
-}).call(this);
+  }).call(this);

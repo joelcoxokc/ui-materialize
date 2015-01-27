@@ -7,11 +7,11 @@
 
     /* @inject */
     function mzMedia() {
-        return { restrict  : 'E'
-               , scope     : true
-               , transclude: true
-               , link      : function link(scope, element, attrs) {}
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
                }; // templateUrl: 'templates/mzMedia.view.html',
-        }
+      }
 
-    }).call(this);
+  }).call(this);

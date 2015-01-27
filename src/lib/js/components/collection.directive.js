@@ -12,31 +12,27 @@
         return { scope:{} , restrict: 'E' , controller: controller , link:link };
         // template: '<section class="mz-collection" data-ng-transclude></section>', scope:true, replace:true, transclude:true,
 
-        //////
-        //////     @mz-collection  CONTROLLER
-        //////
+        ///  @mz-collection  CONTROLLER
         function controller($scope, $animate) {
-            var _this, selectedItem, selectedItemIndex, itemHasOptions,
-            showItemOptions, itemClasses, collectionClasses, itemindexes;
+            // var itemHasOptions,  showItemOptions, itemClasses, itemindexes;
+            // var _this = this;
 
-            selectedItem      = null;
-            selectedItemIndex = null;
+            var selectedItem      = null;
+            var selectedItemIndex = null;
+            var collectionClasses =
+                { hasItems:    'mz-c-has-items'
+                , hasExpanded: 'mz-c-has-expanded'
+                };
 
-            _this = this;
             this.isOpen      = false;
             this.itemindexes = {};
             this.items       = [];
-
             this.itemClasses =
                 { $hasOptions:  'mz-ci-has-options'
                 , $isSelected:  'mz-ci-selected'
                 , $isExpanded:  'mz-ci-expanded'
                 , $isFolded:    'mz-ci-folded'
                 , $hasIcon:     'mz-ci-has-icon'
-                };
-            collectionClasses =
-                { hasItems:    'mz-c-has-items'
-                , hasExpanded: 'mz-c-has-expanded'
                 };
 
             this.selectedIndex = function() { return this.items.indexOf(selectedItem); };
@@ -72,7 +68,7 @@
                 selectedItem = item;
                 selectedItemIndex = itemIndex;
                 item.$isSelected = true;
-                (  item.onSelect || angular.noop  )();
+                (  item.onSelect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
                 if (shouldEmitEvent) {
                     $scope.$emit('$mzCollectionItem.change', { type:'item' , itemIndex:itemIndex , item:item });  }
                 this.expandItem(item);   };
@@ -82,7 +78,7 @@
                     selectedItem = selectedItemIndex = null;
                     item.$isSelected = false;
                     item.$isExpanded = false;
-                    (  item.onDeselect || angular.noop  )();
+                    (  item.onDeselect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
                     item.$broadcast && item.$broadcast('$itemDeselected');  }  };
 
             this.foldItem   = function (item) {};
@@ -93,19 +89,18 @@
 
             } // end function controller
 
-        //////
-        //////     @mz-collection  LINK
-        //////
-        function link(scope, element, attrs, ctrl) {
-            // ctrl.init(element);
-            ///////////////////////////////
-            }
+        ///  @mz-collection  LINK
+            function link(scope, element, attrs, ctrl) {
+              // ctrl.init(element);
+              ///////////////////////////////
+              }
 
-        } // end function mzCollection
+      } // end function mzCollection
 
     /* @inject */
     function mzCollectionItem($animate, $document) {
         return { restrict:'E' , require:'^mzCollection' , link:link };
+
         //////     @mz-collection-item  LINK
         function link(scope, element, attrs, api) {
             var $content;
@@ -120,8 +115,7 @@
             ///////////////////////////////
 
             scope.onSelect = function() {
-                var timeline = new TimelineLite();
-                timeline
+                (new TimelineLite())
                     .to(element, 0.2,
                         { ease        : Cubic.easeInOut
                         , marginTop   : '10px'
@@ -165,11 +159,12 @@
                 event.preventDefault();
                 scope.$apply(function() {  api.select(scope);  });
                 // console.log(api.selectedIndex());
-                }
+              }
 
             scope.$on('$destroy', function() {  element.unbind('click', toggleItemOpenState);  });
 
-      }; // end function link
-    } // end directive mzCollectionItem
+          }; // end function link
+
+      } // end directive mzCollectionItem
 
   }).call(this);
