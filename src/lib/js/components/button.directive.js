@@ -1,25 +1,18 @@
-;function() { 'use strict';
+;(function() { 'use strict';
+
     angular
         .module('mz.components.button', [])
-        .directive('mzBtn', mzBtn);
+        .directive('mzButton', mzButton)
+        ;
 
     /* @inject */
+
     function mzButton() {
-        return {
-            // templateUrl: 'templates/mzButton.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) { }
+               }; // templateUrl: 'templates/mzButton.view.html',
         }
-    }
 
-}).call(this);
+    }).call(this);

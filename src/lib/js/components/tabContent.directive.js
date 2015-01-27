@@ -1,4 +1,4 @@
-;function() { 'use strict';
+;(function() { 'use strict';
     angular
         .module('mz.components.tab-content', [])
         .directive('mzTabContent', mzTabContent);

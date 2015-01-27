@@ -1,4 +1,4 @@
-;function() { 'use strict';
+;(function() { 'use strict';
     angular
         .module('mz.core.transclude', [])
         .directive('ngTransclude', ngTransclude)

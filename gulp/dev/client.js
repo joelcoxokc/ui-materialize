@@ -45,9 +45,7 @@
                         .pipe(gulp.dest(paths.client.build.images))
                         ; }
             , inject: function() {
-                    var source = gulp.src(
-                          [paths.client.scripts, paths.client.build.templates, paths.client.css, paths.client.build.styles]
-                          , {read:false}  );
+              var source = gulp.src( paths.client.scripts.concat( paths.client.build.templates, paths.client.css, paths.client.build.styles ) , {read:false}  );
                     return gulp.src(paths.client.index)
                         .pipe(  $.inject(source, { relative:true , ignorePath:'../build' })  )
                         .pipe(  gulp.dest(paths.client.root)       )

@@ -170,13 +170,14 @@
      * @return {Stream}
      */
     Utils.vendor.css = function(source, dest) { log('Compressing, bundling, copying vendor CSS');
-        return gulp.src(  source || bower()  )                    // source
-            .pipe(plug.filter(['**/*.css'])                       // vendor filter
+        return gulp.src(source || bower())                        // source
+            .pipe(plug.filter(['**/*.css']))                      // vendor filter
             .pipe(plug.concat('vendor.min.css'))
             .pipe(plug.bytediff.start())
             .pipe(plug.minifyCss({}))
             .pipe(plug.bytediff.stop(Utils.bytediffFormatter))
             .pipe(gulp.dest(  dest || paths.build+'content'  ))   // destination
-            ;  };
+            ;
+        };
 
     })(module.exports);
