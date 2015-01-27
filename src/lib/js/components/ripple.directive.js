@@ -1,25 +1,17 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.ripple', [])
-        .directive('mzRipple', mzRipple);
+        .directive('mzRipple', mzRipple)
+        ;
 
     /* @inject */
     function mzRipple() {
-        return {
-            // templateUrl: 'templates/mzRipple.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+               }; // templateUrl: 'templates/mzRipple.view.html',
         }
-    }
 
-}).call(this);
+    }).call(this);

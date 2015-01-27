@@ -1,25 +1,17 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.table', [])
-        .directive('mzTable', mzTable);
+        .directive('mzTable', mzTable)
+        ;
 
     /* @inject */
     function mzTable() {
-        return {
-            // templateUrl: 'templates/mzTable.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+               }; // templateUrl: 'templates/mzTable.view.html',
         }
-    }
 
-}).call(this);
+    }).call(this);

@@ -6,7 +6,6 @@
         ;
 
     /* @inject */
-
     function mzButton() {
         return { restrict   : 'E'
                , scope      : true
