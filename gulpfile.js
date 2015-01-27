@@ -53,7 +53,7 @@
         .task(  'dev:lib'            ,  $.sequence(
                                             'dev:lib:templates'  ,
                                             'dev:lib:scripts'    ,
-                                            'dev:lib:analyze'    ,
+                                            // 'dev:lib:analyze' ,
                                             'dev:lib:styles'     ,
                                             'dev:lib:inject'     )  );
 
@@ -70,7 +70,7 @@
                                                // 'dev:client:analyze'    ,
                                                'dev:client:scripts'    ,
                                                'dev:client:styles'     ,
-                                               'dev:client:images'     ,
+                                               // 'dev:client:images'     ,
                                                'dev:client:inject'     )  );
 
 // //  ####  STAGE  #####

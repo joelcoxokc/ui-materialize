@@ -1,4 +1,4 @@
-;function() { 'use strict';
+;(function() { 'use strict';
     angular
         .module('mz.nav.toggle', [])
         .directive('mzToggleNav', mzToggleNav)
