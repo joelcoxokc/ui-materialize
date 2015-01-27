@@ -13,6 +13,7 @@
         // console.log($Navigation.navs.right)
 
 
+
         jQuery(document).ready(function() {
             $('.collapsible').collapsible();
         })

@@ -2,12 +2,12 @@
 
     angular
         .module('mz.nav.brand', [])
-        .directive('mzNavBrand', mzNavBrand)
+        .directive('navBrand', navBrand)
         ;
 
     /* @ngInject */
 
-    function mzNavBrand() {
+    function navBrand() {
 
         return { template  : '<a class=""></a>'
                , restrict  : 'E'

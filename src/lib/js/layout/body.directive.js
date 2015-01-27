@@ -11,7 +11,7 @@
         return  { restrict:'E'
                 , require:'^mzMaterialize'
                 , scope:true
-                , transclude:true
+                // , transclude:true
                 , link:link
                 };
 
@@ -21,9 +21,9 @@
 
             ctrl.body = element;
             element.addClass('mz-body');
-            transclude(scope, function (clone) {
-                element.append(clone);
-            });
+            // transclude(scope, function (clone) {
+            //     element.append(clone);
+            // });
           }
       }
   }).call(this);

@@ -74,8 +74,6 @@
             this.element.addClass('has-large-action');
         }
 
-
-
         //////////////////////
         /// service helpers
 

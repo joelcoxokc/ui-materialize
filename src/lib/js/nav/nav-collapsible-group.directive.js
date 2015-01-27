@@ -16,7 +16,19 @@
                };
         //////////////
 
-        function controller() {}
+        /* @ngInject */
+        function controller() {
+
+            this.children = {};
+
+            this.init = function(element) {
+                this.element = element;
+            }
+
+            this.open = function() {
+
+            }
+        }
 
         function link(scope, element, attrs, ctrl, transclude) {
 
@@ -38,6 +50,8 @@
                     element.addClass('nav-collapsible-group-'+attrs.side); }
 
                 jQuery(document).ready(function() {
-                    attrs.links && $(element).find('.linked').addClass(attrs.links);  });
+                    attrs.links && $(element).find('.linked').addClass(attrs.links);
+                    // $('.collapsible').collapsible();
+                });
             } // end function link
     } }).call(this);

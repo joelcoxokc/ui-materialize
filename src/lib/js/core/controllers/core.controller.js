@@ -17,7 +17,6 @@
             },
             left:{},
         };
-        console.log(mzNavApi);
 
 
 
