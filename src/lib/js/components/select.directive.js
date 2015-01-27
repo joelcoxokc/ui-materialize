@@ -1,25 +1,17 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.select', [])
-        .directive('mzSelect', mzSelect);
+        .directive('mzSelect', mzSelect)
+        ;
 
     /* @inject */
     function mzSelect() {
-        return {
-            // templateUrl: 'templates/mzSelect.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+               }; // templateUrl: 'templates/mzSelect.view.html',
         }
-    }
 
-}).call(this);
+    }).call(this);
