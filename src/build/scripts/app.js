@@ -773,6 +773,15 @@ jQuery(document).ready(function() {
                       'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
                       'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
                 )
+
+            .state('components.buttons', {
+                url    : '/buttons'          ,
+                views  : {
+                      '@'     : {  templateUrl:'app/modules/components/views/buttons.view.html',
+                                   controller:'ComponentsController as vm'                        } ,
+                      'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
+                      'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
+                )
             ;
 
         /*  @ngInject */
@@ -804,6 +813,18 @@ jQuery(document).ready(function() {
 
     angular
         .module('components')
+        .filter('componentsFilter', componentsFilter);
+
+    /* @ngInject */
+    function componentsFilter() {}
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
+    angular
+        .module('components')
         .directive('components', components);
 
     /* @ngInject */
@@ -823,18 +844,6 @@ jQuery(document).ready(function() {
         function link(scope, element, attrs, ctrl, transclude) {}
 
     }
-
-}).call(this);
-;(function() {
-
-    'use strict';
-
-    angular
-        .module('components')
-        .filter('componentsFilter', componentsFilter);
-
-    /* @ngInject */
-    function componentsFilter() {}
 
 }).call(this);
 ;(function() {

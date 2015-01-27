@@ -1,10 +1,8 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('mz.components.button', [])
-        .directive('mzButton', mzButton);
+        .directive('mzBtn', mzBtn);
 
     /* @inject */
     function mzButton() {
