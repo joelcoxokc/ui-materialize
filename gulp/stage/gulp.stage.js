@@ -23,80 +23,54 @@
      * Lint the code, create coverage report, and a visualizer
      * @return {Stream}
      */
-    Stage.analyze = function() {
-        log('Analyzing source with JSHint, JSCS, and Plato');
-
+    Stage.analyze = function() { log('Analyzing source with JSHint, JSCS, and Plato');
         var jshint = utils.analyzejshint([].concat(paths.js, paths.specs, paths.nodejs));
         var jscs = utils.analyzejscs([].concat(paths.js, paths.nodejs));
-
         utils.startPlatoVisualizer();
-
-        return merge(jshint, jscs);
-    };
+        return merge(jshint, jscs);   };
 
     /**
      * Create $templateCache from the html templates
      * @return {Stream}
      */
-    Stage.templatecache = function() {
-
-        log('Creating an AngularJS $templateCache');
-
-        return gulp
-            .src(paths.htmltemplates)
+    Stage.templatecache = function() { log('Creating an AngularJS $templateCache');
+        return gulp.src(paths.htmltemplates)
             // .pipe(plug.bytediff.start())
-            .pipe(plug.minifyHtml({
-                empty: true
-            }))
+            .pipe(plug.minifyHtml({ empty:true }))
             // .pipe(plug.bytediff.stop(utils.bytediffFormatter))
-            .pipe(plug.angularTemplatecache('templates.js', {
-                module: 'core',
-                standalone: false,
-                root: 'app/'
-            }))
-            .pipe(gulp.dest(paths.build));
-    };
+            .pipe(plug.angularTemplatecache('templates.js', { module:'core' , standalone:false , root:'app/' }))
+            .pipe(gulp.dest(paths.build))
+            ;  };
 
     /**
      * Minify and bundle the app's JavaScript
      * @required            analyze, templatecache
      * @return {Stream}
      */
-    Stage.js = function() {
-        log('Bundling, minifying, and copying the app\'s JavaScript');
-
+    Stage.js = function() { log('Bundling, minifying, and copying the app\'s JavaScript');
         var source = [].concat(paths.js, paths.build + 'templates.js');
-        return gulp
-            .src(source)
+        return gulp.src(source)
             // .pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
             .pipe(plug.concat('all.min.js'))
-            .pipe(plug.ngAnnotate({
-                add: true,
-                single_quotes: true
-            }))
+            .pipe(plug.ngAnnotate({ add:true , single_quotes:true }))
             .pipe(plug.bytediff.start())
-            .pipe(plug.uglify({
-                mangle: true
-            }))
+            .pipe(plug.uglify({ mangle:true }))
             .pipe(plug.bytediff.stop(utils.bytediffFormatter))
             // .pipe(plug.sourcemaps.write('./'))
-            .pipe(gulp.dest(paths.build));
-    };
+            .pipe(gulp.dest(paths.build))
+            ;  };
 
     /**
      * Copy the Vendor JavaScript
      * @return {Stream}
      */
-    Stage.vendor.js = function() {
-        return utils.vendor.js();
-    };
+    Stage.vendor.js = function() { return utils.vendor.js(); };
 
     /**
      * Minify and bundle the CSS
      * @return {Stream}
      */
-    Stage.css = function() {
-        log('Bundling, minifying, and copying the app\'s CSS');
+    Stage.css = function() { log('Bundling, minifying, and copying the app\'s CSS');
         var styles = [].concat(paths.css, paths.styl.index);
         var filter = plug.filter('**/*.styl');
         return gulp.src(styles)
@@ -109,12 +83,11 @@
             .pipe(plug.minifyCss({}))
             .pipe(plug.bytediff.stop(utils.bytediffFormatter))
             //        .pipe(plug.concat('all.min.css')) // Before bytediff or after
-            .pipe(gulp.dest(paths.build + 'content'));
-    };
+            .pipe(gulp.dest(paths.build + 'content'))
+            ;  };
+
     Stage.styl = function(options) {
-
-        return function (){
-
+        return (  function (){
             return gulp.src(options.src)
                 .pipe(plug.stylus())
                 .pipe(plug.concat(options.name))
@@ -123,55 +96,37 @@
                 .pipe(plug.minifyCss({}))
                 .pipe(plug.bytediff.stop(utils.bytediffFormatter))
                 .pipe(gulp.dest(options.dest))
-        }
-    };
+                ;   });   };
 
     /**
      * Minify and bundle the Vendor CSS
      * @return {Stream}
      */
-    Stage.vendor.css = function() {
-        return utils.vendor.css();
-    };
+    Stage.vendor.css = function() { return utils.vendor.css(); };
 
     /**
      * Copy fonts
      * @return {Stream}
      */
-    Stage.fonts = function() {
-        var dest = paths.build + 'fonts';
-        log('Copying fonts');
-        return gulp
-            .src(paths.fonts)
-            .pipe(gulp.dest(dest));
-    };
+    Stage.fonts = function() { log('Copying fonts');
+        return gulp.src(paths.fonts).pipe(gulp.dest( paths.build+'fonts' ));  };
 
     /**
      * Compress images
      * @return {Stream}
      */
-    Stage.images = function() {
-
-        var dest = paths.build + 'content/images';
-        log('Compressing, caching, and copying images');
-        return gulp
-            .src(paths.images)
-            .pipe(plug.imagemin({
-                optimizationLevel: 3
-            }))
-            .pipe(gulp.dest('./build/content/images/'));
-    };
-
+    Stage.images = function() { log('Compressing, caching, and copying images');
+        // var dest = paths.build + 'content/images';
+        return ( gulp.src(paths.images)
+            .pipe(plug.imagemin({ optimizationLevel:3 }))
+            .pipe(gulp.dest('./build/content/images/')) );  };
 
     /**
      * Inject all the files into the new index.html
      * rev, but no map
      * @return {Stream}
      */
-    Stage.inject = function() {
-
-        log('Rev\'ing files and building index.html');
-
+    Stage.inject = function() { log("Rev'ing files and building index.html");
         var minified = paths.build + '**/*.min.*';
         var index = paths.client + 'index.html';
         var minFilter = plug.filter(['**/*.min.*', '!**/*.map']);
@@ -179,83 +134,53 @@
 
         var libs = gulp.src([paths.build + 'ui-materialize.js', paths.build + 'ui-materialize.templates.js', paths.build + 'content/ui-materialize.min.css'], {read:false})
 
-        var stream = gulp
+        var stream = gulp.src([].concat(minified, index)) // add all built min files and index.html
             // Write the revisioned files
-            .src([].concat(minified, index)) // add all built min files and index.html
             .pipe(minFilter) // filter the stream to minified css and js
             .pipe(plug.rev()) // create files with rev's
             .pipe(gulp.dest(paths.build)) // write the rev files
             .pipe(minFilter.restore()) // remove filter, back to original stream
-
-        // inject the files into index.html
-        .pipe(indexFilter) // filter to index.html
-        .pipe(inject('content/vendor.min.css', 'inject-vendor'))
+            // inject the files into index.html
+            .pipe(indexFilter) // filter to index.html
+            .pipe(inject('content/vendor.min.css', 'inject-vendor'))
             .pipe(inject('content/all.min.css'))
             .pipe(inject('vendor.min.js', 'inject-vendor'))
             .pipe(plug.inject(libs, {ignorePath: paths.build.substring(1),read: false, name:'inject-libs'}))
             .pipe(inject('all.min.js'))
             .pipe(gulp.dest(paths.build)) // write the rev files
-        .pipe(indexFilter.restore()) // remove filter, back to original stream
-
-        // replace the files referenced in index.html with the rev'd files
-        .pipe(plug.revReplace()) // Substitute in new filenames
-        .pipe(gulp.dest(paths.build)) // write the index.html file changes
-        .pipe(plug.rev.manifest()) // create the manifest (must happen last or we screw up the injection)
-        .pipe(gulp.dest(paths.build)); // write the manifest
+            .pipe(indexFilter.restore()) // remove filter, back to original stream
+            // replace the files referenced in index.html with the rev'd files
+            .pipe(plug.revReplace()) // Substitute in new filenames
+            .pipe(gulp.dest(paths.build)) // write the index.html file changes
+            .pipe(plug.rev.manifest()) // create the manifest (must happen last or we screw up the injection)
+            .pipe(gulp.dest(paths.build)) // write the manifest
+            ;
 
         function inject(path, name) {
             var pathGlob = paths.build + path;
-            var options = {
-                ignorePath: paths.build.substring(1),
-                read: false
-            };
-            if (name) {
-                options.name = name;
-            }
-            return plug.inject(gulp.src(pathGlob), options);
-        }
-    };
+            var options = { read:false , ignorePath:paths.build.substring(1) };
+            name && options.name = name;
+            return plug.inject(gulp.src(pathGlob), options);  }  };
 
     /**
      * Notify on build and or stage
      * rev, but no map
      * @return {Stream}
      */
-    Stage.notify = function(event, msg) {
-        log('Building the optimized app');
-
-        return gulp.src('').pipe(plug.notify({
-            onLast: true,
-            message: 'Deployed code!'
-        }));
-    };
+    Stage.notify = function(event, msg) { log('Building the optimized app');
+        return gulp.src('').pipe(plug.notify({ onLast:true , message:'Deployed code!' }));  };
 
     /**
      * Watch files and build
      */
-    Stage.watch = function() {
-
-        log('Watching all files');
-
-        var css = ['gulpfile.js'].concat(paths.css, paths.vendorcss);
+    Stage.watch = function() { log('Watching all files');
+        var css    = ['gulpfile.js'].concat(paths.css, paths.vendorcss);
         var images = ['gulpfile.js'].concat(paths.images);
-        var js = ['gulpfile.js'].concat(paths.js);
+        var js     = ['gulpfile.js'].concat(paths.js);
+        gulp.watch(js    , ['scripts']).on('change', logWatch);
+        gulp.watch(css   , ['styles' ]).on('change', logWatch);
+        gulp.watch(images, ['images' ]).on('change', logWatch);
 
-        gulp
-            .watch(js, ['scripts'])
-            .on('change', logWatch);
+        function logWatch(event) { log('*** File '+event.path+' was '+event.type+', running tasks...'); }  };
 
-        gulp
-            .watch(css, ['styles'])
-            .on('change', logWatch);
-
-        gulp
-            .watch(images, ['images'])
-            .on('change', logWatch);
-
-        function logWatch(event) {
-            log('*** File ' + event.path + ' was ' + event.type + ', running tasks...');
-        }
-    };
-
-})(module.exports);
+    })(module.exports);

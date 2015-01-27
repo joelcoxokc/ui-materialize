@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.controllers.nav', [])
         .controller('mzNavController', mzNavController);

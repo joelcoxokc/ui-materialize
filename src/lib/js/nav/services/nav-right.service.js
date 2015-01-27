@@ -1,6 +1,4 @@
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.right', [])
         .service('$RightNavigationService', RightNavigationService);

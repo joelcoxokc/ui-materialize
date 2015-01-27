@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.footer', [])
         .service('$FooterNavService', $FooterNavService);

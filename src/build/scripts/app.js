@@ -1,6 +1,4 @@
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('app', [
             'ngAnimate',
@@ -89,9 +87,7 @@ jQuery(document).ready(function() {
 
 });
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('core', [
         'duScroll',
         'ngAnimate',
@@ -101,9 +97,7 @@ jQuery(document).ready(function() {
     ]);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('app.modules', [
             'gettingStarted',
@@ -111,10 +105,7 @@ jQuery(document).ready(function() {
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .factory('User', User);
@@ -228,9 +219,7 @@ jQuery(document).ready(function() {
 })();
 
 /* global _:false */
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .config(Core)
@@ -290,10 +279,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .controller('AppController', AppController);
@@ -315,9 +301,7 @@ jQuery(document).ready(function() {
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .controller('GridController', GridController);
@@ -339,10 +323,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .controller('HomeController', HomeController);
@@ -353,10 +334,7 @@ jQuery(document).ready(function() {
 }).call(this);
 
 /* global Storage:false, $local:false, _:false */
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .service('$storage', $Storage);
@@ -556,41 +534,28 @@ jQuery(document).ready(function() {
     };
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('components', []);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('directives', []);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('gettingStarted', []);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('layout', []);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('navigation', []);
 
 }).call(this);
 /* global jQuery:false */
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .directive('mzAnimations', mzAnimations);
@@ -741,10 +706,7 @@ jQuery(document).ready(function() {
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('components')
         .factory('componentsFactory', componentsFactory);
@@ -783,10 +745,7 @@ jQuery(document).ready(function() {
 
         }
     }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('components')
         .controller('ComponentsController', ComponentsController);
@@ -798,10 +757,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('components')
         .directive('components', components);
@@ -825,10 +781,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('components')
         .filter('componentsFilter', componentsFilter);
@@ -837,10 +790,7 @@ jQuery(document).ready(function() {
     function componentsFilter() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('components')
         .service('componentsService', componentsService)
@@ -853,10 +803,7 @@ jQuery(document).ready(function() {
     function componentsFactory() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .factory('directivesFactory', directivesFactory);
@@ -867,10 +814,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .config(directivesConfig);
@@ -881,10 +825,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .controller('directivesController', directivesController);
@@ -895,10 +836,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .directive('directives', directives);
@@ -922,10 +860,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .filter('directivesFilter', directivesFilter);
@@ -934,10 +869,7 @@ jQuery(document).ready(function() {
     function directivesFilter() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .service('directivesService', directivesService)
@@ -950,10 +882,7 @@ jQuery(document).ready(function() {
     function directivesFactory() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .factory('gettingStartedFactory', gettingStartedFactory);
@@ -964,10 +893,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .config(gettingStartedConfig);
@@ -995,10 +921,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .controller('gettingStartedController', gettingStartedController);
@@ -1009,10 +932,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .directive('gettingStarted', gettingStarted);
@@ -1036,10 +956,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .filter('gettingStartedFilter', gettingStartedFilter);
@@ -1048,10 +965,7 @@ jQuery(document).ready(function() {
     function gettingStartedFilter() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('gettingStarted')
         .service('gettingStartedService', gettingStartedService)
@@ -1064,10 +978,7 @@ jQuery(document).ready(function() {
     function gettingStartedFactory() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .factory('layoutFactory', layoutFactory);
@@ -1078,10 +989,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .config(layoutConfig);
@@ -1096,10 +1004,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .controller('layoutController', layoutController);
@@ -1110,10 +1015,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .directive('layout', layout);
@@ -1137,10 +1039,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .filter('layoutFilter', layoutFilter);
@@ -1149,10 +1048,7 @@ jQuery(document).ready(function() {
     function layoutFilter() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('layout')
         .service('layoutService', layoutService)
@@ -1165,10 +1061,7 @@ jQuery(document).ready(function() {
     function layoutFactory() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .factory('navigationFactory', navigationFactory);
@@ -1179,10 +1072,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .config(navigationConfig);
@@ -1193,10 +1083,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .controller('navigationController', navigationController);
@@ -1207,10 +1094,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .directive('navigation', navigation);
@@ -1234,10 +1118,7 @@ jQuery(document).ready(function() {
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .filter('navigationFilter', navigationFilter);
@@ -1246,10 +1127,7 @@ jQuery(document).ready(function() {
     function navigationFilter() {}
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('navigation')
         .service('navigationService', navigationService)

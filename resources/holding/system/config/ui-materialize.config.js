@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize')
         .config(uiMaterializeConfig)

@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.progress', [])
         .provider('mzProgressService', mzProgressService);
