@@ -1,6 +1,4 @@
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.bar', [])
         .service('$NavBarService', NavBarService);

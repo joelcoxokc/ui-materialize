@@ -1,6 +1,4 @@
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular.module('ui.materialize', [
         'ngAnimate',
         'ui.materialize.core',
@@ -10,10 +8,7 @@
     ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.blur', [])
         .directive('mzBlur', mzBlur);
@@ -39,10 +34,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.buttons', [])
         .directive('mzButton', mzButton);
@@ -68,10 +60,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.card', [])
         .directive('mzCard', mzCard);
@@ -97,10 +86,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.collapsible', [])
         .directive('mzCollapsible', mzCollapsible);
@@ -410,10 +396,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.dialog', [])
         .directive('mzDialog', mzDialog);
@@ -439,10 +422,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.dropdown', [])
         .directive('mzDropdown', mzDropdown);
@@ -468,10 +448,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.form', [])
         .directive('mzForm', mzForm);
@@ -497,10 +474,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize.components', [
             'mz.conponents.services',
@@ -527,10 +501,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.media', [])
         .directive('mzMedia', mzMedia);
@@ -556,10 +527,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.modal', [])
         .directive('mzModal', mzModal);
@@ -585,10 +553,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.notification', [])
         .directive('mzNotification', mzNotification);
@@ -614,10 +579,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.progress', [])
         .directive('mzProgress', mzProgress);
@@ -643,10 +605,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.ripple', [])
         .directive('mzRipple', mzRipple);
@@ -672,10 +631,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.select', [])
         .directive('mzSelect', mzSelect);
@@ -701,10 +657,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.shadow', [])
         .directive('mzShadow', mzShadow);
@@ -730,10 +683,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.tab', [])
         .directive('mzTab', mzTab);
@@ -770,10 +720,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.tab-content', [])
         .directive('mzTabContent', mzTabContent);
@@ -810,10 +757,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.table', [])
         .directive('mzTable', mzTable);
@@ -840,10 +784,7 @@
 }).call(this);
 
 /* global jQuery:false */
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.tabs', [
             'mz.components.tab',
@@ -900,10 +841,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.text-field', [])
         .directive('mzTextField', mzTextField);
@@ -929,10 +867,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.tooltip', [])
         .directive('mzTooltip', mzTooltip);
@@ -958,10 +893,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize.core', [
             'mz.core.controllers',
@@ -972,10 +904,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.materialize', [])
         .directive('mzMaterialize', mzMaterialize)
@@ -1011,10 +940,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.transclude-replace', [])
         .directive('ngTranscludeReplace', ngTranscludeReplace);
@@ -1050,10 +976,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.transclude', [])
         .directive('ngTransclude', ngTransclude)
@@ -1128,10 +1051,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.body', [])
         .directive('mzBody', mzBody);
@@ -1175,10 +1095,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.container', [])
         .directive('mzContainer', mzContainer);
@@ -1209,10 +1126,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.flex', [])
         .directive('mzFlex', mzFlex)
@@ -1251,10 +1165,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.footer', [])
         .directive('mzFooter', mzFooter);
@@ -1291,10 +1202,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.grid', [])
         .directive('mzCol', mzCol);
@@ -1348,10 +1256,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.include', [])
         .directive('mzInclude', mzInclude);
@@ -1372,9 +1277,7 @@
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize.layout', [
             'mz.layout.controllers',
@@ -1390,10 +1293,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.main', [])
         .directive('mzMain', mzMain);
@@ -1428,10 +1328,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.view', [])
         .directive('mzView', mzView);
@@ -1465,9 +1362,7 @@
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize.nav', [
             'mz.nav.services',
@@ -1483,10 +1378,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.action-group', [])
         .directive('mzNavActions', mzNavActions)
@@ -1625,10 +1517,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.action', [])
         .directive('navAction', navAction);
@@ -1723,10 +1612,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.bar', [])
         .directive('mzNav', mzNav);
@@ -1808,10 +1694,7 @@
 }).call(this);
 
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.brand', [])
         .directive('mzNavBrand', mzNavBrand);
@@ -1856,10 +1739,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.container', [])
         .directive('mzNavContainer', mzNavContainer);
@@ -1922,10 +1802,7 @@
 
 
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.footer', [])
         .directive('mzNavFooter', mzNavFooter);
@@ -2007,10 +1884,7 @@
 }).call(this);
 
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.side', [])
         .directive('mzNavLeft', mzNavLeft)
@@ -2146,10 +2020,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.toggle', [])
         .directive('mzToggleNav', mzToggleNav)
@@ -2218,10 +2089,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.button', [])
         .controller('mzButtonController', mzButtonController);
@@ -2238,10 +2106,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.card', [])
         .controller('mzCardController', mzCardController);
@@ -2258,10 +2123,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.collapsible', [])
         .controller('mzCollapsibleController', mzCollapsibleController);
@@ -2278,10 +2140,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.collection', [])
         .controller('mzCollectionController', mzCollectionController);
@@ -2298,10 +2157,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.dialog', [])
         .controller('mzDialogController', mzDialogController);
@@ -2318,10 +2174,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.dropdown', [])
         .controller('mzDropdownController', mzDropdownController);
@@ -2338,10 +2191,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.form', [])
         .controller('mzFormController', mzFormController);
@@ -2358,10 +2208,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers', [
             'mz.components.controllers.button',
@@ -2384,10 +2231,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.media', [])
         .controller('mzMediaController', mzMediaController);
@@ -2404,10 +2248,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.modal', [])
         .controller('mzModalController', mzModalController);
@@ -2424,10 +2265,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.notification', [])
         .controller('mzNotificationController', mzNotificationController);
@@ -2444,10 +2282,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.progress', [])
         .controller('mzProgressController', mzProgressController);
@@ -2464,10 +2299,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.ripple', [])
         .controller('mzRippleController', mzRippleController);
@@ -2484,10 +2316,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.select', [])
         .controller('mzSelectController', mzSelectController);
@@ -2504,10 +2333,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.table', [])
         .controller('mzTableController', mzTableController);
@@ -2524,10 +2350,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.tabs', [])
         .controller('mzTabsController', mzTabsController);
@@ -2544,10 +2367,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.text-field', [])
         .controller('mzTextFieldController', mzTextFieldController);
@@ -2564,10 +2384,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.controllers.tooltip', [])
         .controller('mzTooltipController', mzTooltipController);
@@ -2584,10 +2401,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.button', [])
         .provider('mzButtonService', mzButtonService);
@@ -2619,10 +2433,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.card', [])
         .provider('mzCardService', mzCardService);
@@ -2654,10 +2465,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.collapsible', [])
         .provider('mzCollapsibleService', mzCollapsibleService);
@@ -2689,10 +2497,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.collection', [])
         .provider('mzCollectionService', mzCollectionService);
@@ -2724,10 +2529,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.dialog', [])
         .provider('mzDialogService', mzDialogService);
@@ -2759,10 +2561,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.dropdown', [])
         .provider('mzDropdownService', mzDropdownService);
@@ -2794,10 +2593,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.form', [])
         .provider('mzFormService', mzFormService);
@@ -2829,10 +2625,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services', [
             'mz.components.services.button',
@@ -2855,10 +2648,7 @@
         ]);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.media', [])
         .provider('mzMediaService', mzMediaService);
@@ -2890,10 +2680,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.modal', [])
         .provider('mzModalService', mzModalService);
@@ -2925,10 +2712,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.notification', [])
         .provider('mzNotificationService', mzNotificationService);
@@ -2960,10 +2744,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.progress', [])
         .provider('mzProgressService', mzProgressService);
@@ -2995,10 +2776,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.ripple', [])
         .provider('mzRippleService', mzRippleService);
@@ -3030,10 +2808,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.select', [])
         .provider('mzSelectService', mzSelectService);
@@ -3065,10 +2840,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.table', [])
         .provider('mzTableService', mzTableService);
@@ -3100,10 +2872,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.tabs', [])
         .provider('mzTabsService', mzTabsService);
@@ -3135,10 +2904,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.text-field', [])
         .provider('mzTextFieldService', mzTextFieldService);
@@ -3170,10 +2936,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.services.tooltip', [])
         .provider('mzTooltipService', mzTooltipService);
@@ -3205,10 +2968,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.ctrl', [])
         .controller('mzController', mzController);
@@ -3272,33 +3032,24 @@
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.controllers', [
             'mz.core.ctrl'
         ]);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.controllers', []);
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.layout.services', []);
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.controllers', [
             'mz.nav.controllers.nav'
@@ -3306,10 +3057,7 @@
 
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.controllers.nav', [])
         .controller('mzNavController', mzNavController);
@@ -3361,9 +3109,7 @@
     }
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services', [
             'mz.nav.services.api',
@@ -3538,9 +3284,7 @@
         // .config(decorate)
 
 }).call(this);
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.bar', [])
         .service('$NavBarService', NavBarService);
@@ -3615,10 +3359,7 @@
 
 }).call(this);
 
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.footer', [])
         .service('$FooterNavService', $FooterNavService);
@@ -3638,10 +3379,7 @@
     }
 
 }).call(this);
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.left', [])
         .service('$LeftNavigationService', $LeftNavigationService);
@@ -3727,9 +3465,7 @@
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.right', [])
         .service('$RightNavigationService', RightNavigationService);
@@ -3831,9 +3567,7 @@
 
 }).call(this);
 
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.nav.services.nav', [])
         .service('$NavService', NavService);

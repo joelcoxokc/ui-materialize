@@ -1,6 +1,4 @@
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('ui.materialize')
         .factory( 'SideBarClass', SideBarClass )

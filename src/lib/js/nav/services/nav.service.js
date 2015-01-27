@@ -1,4 +1,4 @@
-;(function() { 'use strict';
+;function() { 'use strict';
     angular
         .module('mz.nav.services.nav', [])
         .service('$NavService', NavService);
@@ -18,7 +18,7 @@
         function Navigation(side, element, attrs, config, scope) { config=config||{};
 
             var _this = this;
-
+            
 
             this.side      = side;
             this.attrs     = attrs;
@@ -61,7 +61,7 @@
                 // isDefault ? _this.addClass(className) : _this.removeClass(className);
             }
 
-          }; // end Navigation function
+          }; // end function Navigation
 
         function protoBroadcast(msg, data)    { this.scope.$broadcast(msg, data);  };
 
@@ -100,6 +100,6 @@
             return 'is' + string.charAt(0).toUpperCase() + string.slice(1); }
 
 
-        } // end NavService function
+        } // end function NavService
 
     }).call(this);

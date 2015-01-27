@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('directives')
         .controller('directivesController', directivesController);

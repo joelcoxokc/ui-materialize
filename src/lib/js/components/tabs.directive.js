@@ -1,8 +1,5 @@
 /* global jQuery:false */
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.components.tabs', [
             'mz.components.tab',

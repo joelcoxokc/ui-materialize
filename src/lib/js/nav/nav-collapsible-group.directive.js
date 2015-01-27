@@ -1,4 +1,4 @@
-;(function() { 'use strict';
+;function() { 'use strict';
     angular
         .module('mz.nav.collapsible-group', ['mz.nav.collapse'])
         .directive('navCollapsibleGroup', navCollapsibleGroup)

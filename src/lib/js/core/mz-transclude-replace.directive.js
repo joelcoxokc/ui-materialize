@@ -1,7 +1,4 @@
-;(function() {
-
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('mz.core.transclude-replace', [])
         .directive('ngTranscludeReplace', ngTranscludeReplace);

@@ -1,7 +1,5 @@
 /* global _:false */
-;(function() {
-    'use strict';
-
+;function() { 'use strict';
     angular
         .module('core')
         .config(Core)
