@@ -26,6 +26,9 @@
 
         function link(scope, element, attrs) {
             jQuery(document).ready(function() {
-                element.children().ready(function(){$('ul.tabs').tabs();});  });  }
-        }
-    }).call(this);
+                element.children().ready(function(){$('ul.tabs').tabs();});  });
+          }
+
+      }
+
+  }).call(this);

@@ -9,9 +9,9 @@
         .constant('TimelineLite', TimelineLite)
         .constant('TweenMax', TweenMax)
         .constant('Cubic', Cubic)
-        .config(Configuration);
+        .config(Configuration)
+        ;
 
-        function Configuration(mzNavApiProvider) {
-            mzNavApiProvider.hideOn('navBar', 'home')
-        }
-})();
+        function Configuration(mzNavApiProvider) { mzNavApiProvider.hideOn('navBar', 'home') }
+
+  })();

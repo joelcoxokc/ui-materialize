@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('navigation')
-        .config(navigationConfig);
+        .config(navigationConfig)
+        ;
 
     /* @ngInject */
-    function navigationConfig() {
+    function navigationConfig() { }
 
-    }
-
-}).call(this);
+  }).call(this);

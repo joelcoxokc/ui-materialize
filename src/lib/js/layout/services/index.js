@@ -1,5 +1,7 @@
 ;(function() { 'use strict';
-    angular
-        .module('mz.layout.services', []);
 
-}).call(this);
+    angular
+        .module('mz.layout.services', [])
+        ;
+
+  }).call(this);

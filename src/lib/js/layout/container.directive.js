@@ -7,7 +7,6 @@
 
     /* @inject */
     function mzContainer() {
-
         return  { restrict: 'AC'
                 , require: '^mzMaterialize'
                 , scope:true
@@ -20,5 +19,7 @@
             element.addClass('container');
             element.addClass('mz-container');
           }
+
       }
+
   }).call(this);

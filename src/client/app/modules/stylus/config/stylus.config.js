@@ -2,11 +2,11 @@
 
     angular
         .module('stylus')
-        .config(stylusConfig);
+        .config(stylusConfig)
+        ;
 
     /* @ngInject */
     function stylusConfig($stateProvider) {
-
         $stateProvider
             .state( 'stylus',
                 { url          :  '/stylus'
@@ -35,6 +35,6 @@
                 , templateUrl  :  'app/modules/stylus/views/typography.html'
                 } )
             ;
-    }
+      }
 
-}).call(this);
+  }).call(this);

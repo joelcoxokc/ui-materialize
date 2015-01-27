@@ -12,6 +12,7 @@
                , transclude : true
                , link       : function link(scope, element, attrs) {}
                }; // templateUrl: 'templates/mzTooltip.view.html',
-        }
 
-    }).call(this);
+      }
+
+  }).call(this);

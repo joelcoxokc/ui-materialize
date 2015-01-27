@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('directives')
-        .controller('directivesController', directivesController);
+        .controller('directivesController', directivesController)
+        ;
 
     /* @ngInject */
-    function directivesController() {
+    function directivesController() { }
 
-    }
-
-}).call(this);
+  }).call(this);

@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('navigation')
-        .factory('navigationFactory', navigationFactory);
+        .factory('navigationFactory', navigationFactory)
+        ;
 
     /* @ngInject */
-    function navigationFactory() {
+    function navigationFactory() { }
 
-    }
-
-}).call(this);
+  }).call(this);

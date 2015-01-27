@@ -7,7 +7,6 @@
 
     /* @inject */
     function mzFlex() {
-
         return  { template   : '<div class="mz-flex" data-ng-transclude></div>'
                 , restrict   : 'E'
                 , scope      : {}
@@ -20,4 +19,5 @@
         function link(scope, element, attrs, ctrl) {}
 
       }
+
   }).call(this);

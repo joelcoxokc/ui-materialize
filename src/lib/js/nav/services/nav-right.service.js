@@ -1,13 +1,14 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.nav.services.right', [])
-        .service('$RightNavigationService', RightNavigationService);
-
+        .service('$RightNavigationService', RightNavigationService)
+        ;
 
     /* @ngInject */
     function RightNavigationService($NavService) {
-        var RightNavigation, defaults;
-
+        var RightNavigation // FIXME: Is this that weird interplay behavior with var and function hoisting?
+  
         RightNavigation.prototype = _.create($NavService.prototype, {'constructor':RightNavigation});
         RightNavigation.prototype.activate       = protoActivate;
         RightNavigation.prototype.open           = protoOpen;
