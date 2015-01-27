@@ -2,7 +2,8 @@
     angular
         .module('app.modules', [
             'gettingStarted',
-            'components'
+            'components',
+            'stylus'
         ]);
 
 }).call(this);

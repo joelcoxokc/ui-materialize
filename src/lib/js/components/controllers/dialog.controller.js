@@ -1,16 +1,10 @@
 ;(function() { 'use strict';
     angular
         .module('mz.components.controllers.dialog', [])
-        .controller('mzDialogController', mzDialogController);
-
+        .controller('mzDialogController', mzDialogController)
+        ;
     /* @ngAnotate */
     function mzDialogController($scope) {
-
         var _this = this;
-
-        this.init = function(element) {
-            this.element = element;
-        };
-    }
-
-}).call(this);
+        this.init = function(element) { this.element = element; };  }
+  }).call(this);

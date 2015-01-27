@@ -1,4 +1,5 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.nav.collapsible-group', ['mz.nav.collapse'])
         .directive('navCollapsibleGroup', navCollapsibleGroup)
@@ -7,12 +8,12 @@
     /* @ngInject */
     function navCollapsibleGroup() {
 
-        return {  templateUrl: 'nav/nav-collapsible-group.template.html',
-                  restrict   : 'E'             ,
-                  scope      : true            ,
-                  controller : controller      ,
-                  link       : link            };
-
+        return {  templateUrl: 'nav/nav-collapsible-group.template.html'
+               , restrict   : 'E'
+               , scope      : true
+               , controller : controller
+               , link       : link
+               };
         //////////////
 
         function controller() {}
@@ -25,10 +26,11 @@
                 ///  @scope   childClassList
                 ///  @scope   mobile
                 scope.childClassList = attrs.links;
-                attrs.mobile && (   scope.mobile = 'nav-mobile'   );
+                attrs.mobile &&( scope.mobile = 'nav-mobile' );
 
                 ///  @class   inner
                 ///  @class   element
+
                 inner.addClass('collapsible collapsible-accordion');
                 element.addClass('nav-collapsible-group');
 
@@ -37,6 +39,5 @@
 
                 jQuery(document).ready(function() {
                     attrs.links && $(element).find('.linked').addClass(attrs.links);  });
-
-            }
+            } // end function link
     } }).call(this);
