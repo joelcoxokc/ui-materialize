@@ -6,7 +6,6 @@
         ;
 
     /* @inject */
-
     function mzCard() {
         return { restrict   : 'E'
                , scope      : true

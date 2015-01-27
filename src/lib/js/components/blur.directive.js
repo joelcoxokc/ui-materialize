@@ -6,7 +6,6 @@
         ;
 
     /* @inject */
-
     function mzBlur() {
         return { restrict   : 'E'
                , scope      : true

@@ -1,25 +1,18 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.dialog', [])
-        .directive('mzDialog', mzDialog);
+        .directive('mzDialog', mzDialog)
+        ;
 
     /* @inject */
     function mzDialog() {
-        return {
-            // templateUrl: 'templates/mzDialog.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+                 // templateUrl: 'templates/mzDialog.view.html',
+               };
         }
-    }
 
-}).call(this);
+    }).call(this);

@@ -1,25 +1,17 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.shadow', [])
-        .directive('mzShadow', mzShadow);
+        .directive('mzShadow', mzShadow)
+        ;
 
     /* @inject */
     function mzShadow() {
-        return {
-            // templateUrl: 'templates/mzShadow.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+               }; // templateUrl: 'templates/mzShadow.view.html',
         }
-    }
 
-}).call(this);
+    }).call(this);

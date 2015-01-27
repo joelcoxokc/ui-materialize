@@ -1,25 +1,18 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.dropdown', [])
-        .directive('mzDropdown', mzDropdown);
+        .directive('mzDropdown', mzDropdown)
+        ;
 
     /* @inject */
     function mzDropdown() {
-        return {
-            // templateUrl: 'templates/mzDropdown.view.html',
-            restrict: 'E',
-            scope: true,
-            transclude: true,
-            link: link
-        };
-        ////////////////
-        ///
-        ///
-        function link(scope, element, attrs) {
-
-            ///////////////////////////////
-
+        return { restrict   : 'E'
+               , scope      : true
+               , transclude : true
+               , link       : function link(scope, element, attrs) {}
+               // templateUrl: 'templates/mzDropdown.view.html',
+               };
         }
-    }
 
-}).call(this);
+    }).call(this);
