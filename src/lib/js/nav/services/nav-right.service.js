@@ -25,7 +25,6 @@
         };
 
         function protoActivate() {
-            // this.resetClassList();
             var _this = this;
             this.startWatch();
             _.forEach(this.classes, function (className) {

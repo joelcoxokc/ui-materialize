@@ -32,9 +32,6 @@
             this.$navs[side].activate();
             this.invokeRegistry(side);
 
-
-
-
             $rootScope.$on('$stateChangeStart', function (event, state) {
 
                 // if (mzNavApi.config.navBar.hideOn[state.name]) {
@@ -55,13 +52,6 @@
 
             this.$settings[side].actions.push(action);
         }
-        // $scope.addClass = function(classList) {
-        //     this.element.addClass(classList)
-        // };
-        // $scope.removeClass = function(classList) {
-        //     this.element.addClass(classList)
-        // };
-
         function useService(service){
             var services;
 

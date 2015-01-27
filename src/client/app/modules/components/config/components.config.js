@@ -16,6 +16,15 @@
                       'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
                       'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
                 )
+
+            .state('components.buttons', {
+                url    : '/buttons'          ,
+                views  : {
+                      '@'     : {  templateUrl:'app/modules/components/views/buttons.view.html',
+                                   controller:'ComponentsController as vm'                        } ,
+                      'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
+                      'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
+                )
             ;
 
         /*  @ngInject */

@@ -735,6 +735,15 @@ jQuery(document).ready(function() {
                       'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
                       'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
                 )
+
+            .state('components.buttons', {
+                url    : '/buttons'          ,
+                views  : {
+                      '@'     : {  templateUrl:'app/modules/components/views/buttons.view.html',
+                                   controller:'ComponentsController as vm'                        } ,
+                      'nav'   : {  templateUrl:'app/core/views/header.view.html'                  } ,
+                      'footer': {  templateUrl:'app/core/views/footer.view.html'                  } } }
+                )
             ;
 
         /*  @ngInject */
@@ -758,6 +767,18 @@ jQuery(document).ready(function() {
 
 }).call(this);
 ;function() { 'use strict';
+    angular
+        .module('components')
+        .filter('componentsFilter', componentsFilter);
+
+    /* @ngInject */
+    function componentsFilter() {}
+
+}).call(this);
+;(function() {
+
+    'use strict';
+
     angular
         .module('components')
         .directive('components', components);
@@ -784,6 +805,7 @@ jQuery(document).ready(function() {
 ;function() { 'use strict';
     angular
         .module('components')
+<<<<<<< HEAD
         .filter('componentsFilter', componentsFilter);
 
     /* @ngInject */
@@ -793,6 +815,8 @@ jQuery(document).ready(function() {
 ;function() { 'use strict';
     angular
         .module('components')
+=======
+>>>>>>> 23822a501be114f13e5405a8d0de5cc4e6054888
         .service('componentsService', componentsService)
         .factory('componentsFactory', componentsFactory);
 
