@@ -54,9 +54,9 @@ nav-side-defaults(side, order)
         & > .mz-nav-side-heading
             nav-side-heading-defaults()
             .nav-action.header-action-huge
-                position absolute
-                widths(100px, true)
-                heights(100px, true)
+                position fixed
+                // widths(100px, true)
+                // heights(100px, true)
                 top 0
                 right 0
                 z-index 1003
@@ -143,14 +143,10 @@ nav-side-defaults(side, order)
     flex-direction column
     height 100%
     order -1
-    opacity 0
-    visibility hidden
     position relative
     transition all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
     box-shadow(4px 0 6px rgba(0,0,0,0.1))
-    // nav-side-open-widths()
-
-    // min-width $nav-side-width
+    width: 0px
 
     &.nav-left
         nav-side-defaults(left, -1)
@@ -158,8 +154,23 @@ nav-side-defaults(side, order)
     &.nav-right
         nav-side-defaults(right, 2)
 
-    &.has-fold
-        nav-side-fold-widths(true)
+    &.nav-viz-0
+        width 0px
+        min-width 0px
+        max-width 0px
+
+    &.nav-viz-thin
+        width 64px
+        min-width 64px
+        max-width 64px
+
+    &.nav-viz-fat
+        width 250px
+        min-width 250px
+        max-width 250px
+
+
+
 
 // .nav-right-container::-webkit-scrollbar {
 //     display: none;

@@ -2,18 +2,9 @@
 
     angular
         .module('mz.nav.toggle', [])
-        .directive('mzToggleNav', mzToggleNav)
         .directive('mzSideNavToggle', mzSideNavToggle)
         ;
 
-    /* @inject */
-    function mzToggleNav() {
-
-         return { restrict: 'A'
-                , require : '^mzMaterialize'
-                , scope   : { toggle:'@' }
-                , link    : function(scope, element, attrs, ctrl) {}
-                };   }
 
     /* @ngInject */
     function mzSideNavToggle() {
