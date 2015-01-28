@@ -16,8 +16,8 @@
         this.init = function(element) { this.element = element; };
 
         this.addNav = function(side, element, attrs, config, scope) {
-            var NavService = useService(side);
-            this.$navs[side] = new NavService(side, element, attrs, config, scope);
+            // var NavService = useService(side);
+            this.$navs[side] = new $NavBarService(side, element, attrs, config, scope);
             this.$navs[side].activate();
             this.invokeRegistry(side);
 
