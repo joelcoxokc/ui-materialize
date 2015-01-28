@@ -10,8 +10,8 @@
         return { restrict   : 'E'
                , scope      : true
                , transclude : true
-               , link       : function link(scope, element, attrs) { }
+               , link       : function link(scope, element, attrs) {}
                }; // templateUrl: 'templates/mzButton.view.html',
-        }
+      }
 
-    }).call(this);
+  }).call(this);

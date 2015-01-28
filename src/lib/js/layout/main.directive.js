@@ -15,11 +15,9 @@
                , link        : link
                };
 
-        ////////////////
-
         function link(scope, element, attrs) {
-          element.addClass('mz-main');
-        }
-
+            element.addClass('mz-main');
+          }
       }
+
   }).call(this);

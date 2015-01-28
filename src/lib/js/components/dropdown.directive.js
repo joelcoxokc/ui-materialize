@@ -11,8 +11,7 @@
                , scope      : true
                , transclude : true
                , link       : function link(scope, element, attrs) {}
-               // templateUrl: 'templates/mzDropdown.view.html',
-               };
-        }
+               }; // templateUrl: 'templates/mzDropdown.view.html',
+      }
 
-    }).call(this);
+  }).call(this);

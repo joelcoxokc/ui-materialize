@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('directives')
-        .factory('directivesFactory', directivesFactory);
+        .factory('directivesFactory', directivesFactory)
+        ;
 
     /* @ngInject */
-    function directivesFactory() {
+    function directivesFactory() { }
 
-    }
-
-}).call(this);
+  }).call(this);

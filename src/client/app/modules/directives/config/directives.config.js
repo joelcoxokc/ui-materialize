@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('directives')
-        .config(directivesConfig);
+        .config(directivesConfig)
+        ;
 
     /* @ngInject */
-    function directivesConfig() {
+    function directivesConfig() { }
 
-    }
-
-}).call(this);
+  }).call(this);

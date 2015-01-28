@@ -1,7 +1,9 @@
 ;(function() { 'use strict';
+
     angular
         .module('core')
-        .controller('GridController', GridController);
+        .controller('GridController', GridController)
+        ;
 
     /* @ngInject */
     function GridController($scope) {
@@ -10,13 +12,9 @@
         $scope.showOffsets = false;
 
         ///////////////////
-        $scope.toggleContainer = function() {
-            $scope.showContainer = !$scope.showContainer;
-        };
-        $scope.toggleOffsets = function () {
+        $scope.toggleContainer = function () { $scope.showContainer = !$scope.showContainer; };
+        $scope.toggleOffsets   = function () { $scope.showOffsets   = !$scope.showOffsets  ; };
 
-            $scope.showOffsets = !$scope.showOffsets;
-        };
-    }
+      }
 
-}).call(this);
+  }).call(this);

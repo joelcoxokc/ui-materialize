@@ -1,11 +1,11 @@
 ;(function() { 'use strict';
+
     angular
         .module('gettingStarted')
-        .controller('gettingStartedController', gettingStartedController);
+        .controller('gettingStartedController', gettingStartedController)
+        ;
 
     /* @ngInject */
-    function gettingStartedController() {
+    function gettingStartedController() { }
 
-    }
-
-}).call(this);
+  }).call(this);

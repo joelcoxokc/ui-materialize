@@ -15,12 +15,8 @@
                , link       : link
                };
 
-        ////////////////
-
         function link(scope, element, attrs, ctrl, transclude) {
             element.addClass('mz-footer');
-
-        }
-
+          }
       }
   }).call(this);

@@ -12,6 +12,6 @@
                , transclude : true
                , link       : function link(scope, element, attrs) {}
                }; // templateUrl: 'templates/mzSelect.view.html',
-        }
+      }
 
-    }).call(this);
+  }).call(this);

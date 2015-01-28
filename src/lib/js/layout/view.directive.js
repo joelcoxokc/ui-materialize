@@ -7,17 +7,12 @@
 
     /* @inject */
     function mzView() {
-
-        return { template: '<main class="mz-view"><ui-view class="mz-body col s12"></ui-view></main>'
-               , restrict: 'E'
-               , scope: true
-               , replace:true
-               , link: link
+        return { template : '<main class="mz-view"><ui-view class="mz-body col s12"></ui-view></main>'
+               , restrict : 'E'
+               , scope    : true
+               , replace  : true
+               , link     : function link(scope, element, attrs) {}
                };
-
-        //////////////
-
-        function link(scope, element, attrs) {}
-
       }
+
   }).call(this);

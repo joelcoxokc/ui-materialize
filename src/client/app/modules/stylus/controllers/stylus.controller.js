@@ -1,14 +1,11 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('stylus')
-        .controller('stylusController', stylusController);
+        .controller('stylusController', stylusController)
+        ;
 
     /* @ngInject */
-    function stylusController() {
+    function stylusController() { }
 
-    }
-
-}).call(this);
+  }).call(this);

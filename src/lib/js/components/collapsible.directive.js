@@ -13,6 +13,6 @@
                 , transclude  : true
                 , link        : function link(scope, element, attrs) {}
                 };
-        }
+      }
 
-    }).call(this);
+  }).call(this);

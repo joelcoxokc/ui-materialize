@@ -1,31 +1,21 @@
 ;(function() { 'use strict';
+
     angular
         .module('mz.components.services.ripple', [])
-        .provider('mzRippleService', mzRippleService);
+        .provider('mzRippleService', mzRippleService)
+        ;
 
     /* @ngAnotate */
     function mzRippleService() {
-
-        var _this = this;
-
-        this.init = function(element) {
-            this.element = element;
-        };
-
+        // var _this = this;
+        this.init = function(element) { this.element = element; };
 
         this.$get = function($injector) {
-
-            function Ripple() {
-                var _this;
-
-                _this = this;
-
-            }
-
+            function Ripple() { /* var _this = this; */ }
             Ripple.prototype.enable = function() {};
-
             return $injector.instantiate(Ripple);
-        }
-    }
+          }
 
-}).call(this);
+      }
+
+  }).call(this);

@@ -10,8 +10,8 @@
         return { restrict   : 'E'
                , scope      : true
                , transclude : true
-               , link       : function link(scope, element, attrs) { }
-               };  // templateUrl: 'templates/mzBlur.view.html',
-        }
+               , link       : function link(scope, element, attrs) {}
+               }; // templateUrl: 'templates/mzBlur.view.html',
+      }
 
-    }).call(this);
+  }).call(this);

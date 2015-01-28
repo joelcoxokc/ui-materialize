@@ -1,138 +1,133 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>App</title>
 
-    <!-- inject-vendor:css -->
-    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="../../bower_components/materialize/dist/css/materialize.css">
-    <link rel="stylesheet" href="../../bower_components/toastr/toastr.css">
-    <!-- endinject -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App</title>
 
-    <!-- inject-lib:css -->
-    <link rel="stylesheet" href="lib/styles/ui-materialize.css">
-    <!-- endinject -->
+<!-- inject-vendor:css -->
+<link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="../../bower_components/materialize/dist/css/materialize.css">
+<link rel="stylesheet" href="../../bower_components/toastr/toastr.css">
+<!-- endinject -->
 
-    <!-- inject:css -->
-    <link rel="stylesheet" href="styles/app.css">
-    <!-- endinject -->
+<!-- inject-lib:css -->
+<link rel="stylesheet" href="lib/styles/ui-materialize.css">
+<!-- endinject -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- inject:css -->
+<link rel="stylesheet" href="styles/app.css">
+<!-- endinject -->
 
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-
-  </head>
-  <body ng-controller="AppController as app" class="nav-fixed grey darken-3">
-
-    <mz-materialize>
-        <mz-body>
-            <mz-nav    view="nav" color='grey darken-4'></mz-nav>
-            <mz-main   view></mz-main>
-            <mz-footer view="footer" color="grey lighten-4"></mz-footer>
-        </mz-body>
-        <mz-nav-right side="right"
-                      initial  =fold
-                      on-open  =fold
-                      on-close =fold
-                      fixed=true
-                      front=true
-                      view="right">
-        </mz-nav-right>
-    </mz-materialize>
-
-    <!-- inject:new -->
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+</head>
 
 
-    <!-- inject-vendor:js -->
-    <script src="../../bower_components/angular/angular.js"></script>
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../../bower_components/moment/moment.js"></script>
-    <script src="../../bower_components/angular-route/angular-route.js"></script>
-    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
-    <script src="../../bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="../../bower_components/extras.angular.plus/ngplus-overlay.js"></script>
-    <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
-    <script src="../../bower_components/gsap/src/uncompressed/TweenMax.js"></script>
-    <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../../bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="../../bower_components/angular-scroll/angular-scroll.js"></script>
-    <script src="../../bower_components/showdown/src/showdown.js"></script>
-    <script src="../../bower_components/showdown/compressed/extensions/github.min.js"></script>
-    <script src="../../bower_components/showdown/compressed/extensions/prettify.min.js"></script>
-    <script src="../../bower_components/showdown/compressed/extensions/table.min.js"></script>
-    <script src="../../bower_components/showdown/compressed/extensions/twitter.min.js"></script>
-    <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="../../bower_components/toastr/toastr.js"></script>
-    <script src="../../bower_components/angular-markdown-directive/markdown.js"></script>
-    <!-- endinject -->
+<body ng-controller="AppController as app" class="nav-fixed grey darken-3">
 
-    <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+  <mz-materialize>
+    <mz-body>
+      <mz-nav    view="nav" color='grey darken-4'></mz-nav>
+      <mz-main   view></mz-main>
+      <mz-footer view="footer" color="grey lighten-4"></mz-footer></mz-body>
 
-    <!-- inject-lib:js -->
-    <script src="lib/scripts/ui-materialize.js"></script>
-    <script src="lib/templates/ui-materialize.templates.js"></script>
-    <!-- endinject -->
+    <mz-nav-right side="right"
+            initial  =fold
+            on-open  =fold
+            on-close =fold
+            fixed=true
+            front=true
+            view="right">
+            </mz-nav-right></mz-materialize>
 
-    <!-- inject:js -->
-    <script src="app/app.module.js"></script>
-    <script src="app/io.js"></script>
-    <script src="app/core/core.module.js"></script>
-    <script src="app/modules/app.modules.module.js"></script>
-    <script src="app/core/config/core.constants.js"></script>
-    <script src="app/core/config/routes.config.js"></script>
-    <script src="app/core/api/user.api.js"></script>
-    <script src="app/core/controllers/app.controller.js"></script>
-    <script src="app/core/controllers/grid.controller.js"></script>
-    <script src="app/core/controllers/home.controller.js"></script>
-    <script src="app/core/services/storage.service.js"></script>
-    <script src="app/modules/components/components.module.js"></script>
-    <script src="app/modules/directives/directives.module.js"></script>
-    <script src="app/modules/gettingStarted/gettingStarted.module.js"></script>
-    <script src="app/modules/layout/layout.module.js"></script>
-    <script src="app/modules/navigation/navigation.module.js"></script>
-    <script src="app/modules/stylus/stylus.module.js"></script>
-    <script src="app/core/directives/mzAnimations/mzAnimations.directive.js"></script>
-    <script src="app/modules/components/config/components.config.js"></script>
-    <script src="app/modules/components/controllers/components.controller.js"></script>
-    <script src="app/modules/directives/api/directives.api.js"></script>
-    <script src="app/modules/directives/config/directives.config.js"></script>
-    <script src="app/modules/directives/controllers/directives.controller.js"></script>
-    <script src="app/modules/directives/directives/directives.directive.js"></script>
-    <script src="app/modules/directives/filters/directives.filter.js"></script>
-    <script src="app/modules/directives/services/directives.service.js"></script>
-    <script src="app/modules/gettingStarted/api/gettingStarted.api.js"></script>
-    <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
-    <script src="app/modules/gettingStarted/controllers/gettingStarted.controller.js"></script>
-    <script src="app/modules/gettingStarted/filters/gettingStarted.filter.js"></script>
-    <script src="app/modules/gettingStarted/directives/gettingStarted.directive.js"></script>
-    <script src="app/modules/gettingStarted/services/gettingStarted.service.js"></script>
-    <script src="app/modules/layout/api/layout.api.js"></script>
-    <script src="app/modules/layout/config/layout.config.js"></script>
-    <script src="app/modules/layout/controllers/layout.controller.js"></script>
-    <script src="app/modules/layout/filters/layout.filter.js"></script>
-    <script src="app/modules/layout/directives/layout.directive.js"></script>
-    <script src="app/modules/layout/services/layout.service.js"></script>
-    <script src="app/modules/navigation/api/navigation.api.js"></script>
-    <script src="app/modules/navigation/config/navigation.config.js"></script>
-    <script src="app/modules/navigation/controllers/navigation.controller.js"></script>
-    <script src="app/modules/navigation/directives/navigation.directive.js"></script>
-    <script src="app/modules/navigation/services/navigation.service.js"></script>
-    <script src="app/modules/navigation/filters/navigation.filter.js"></script>
-    <script src="app/modules/stylus/controllers/stylus.controller.js"></script>
-    <script src="app/modules/stylus/config/stylus.config.js"></script>
-    <script src="templates/templates.js"></script>
-    <!-- endinject -->
+  <!-- inject-vendor:js -->
+  <script src="../../bower_components/angular/angular.js"></script>
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/moment/moment.js"></script>
+  <script src="../../bower_components/angular-route/angular-route.js"></script>
+  <script src="../../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../../bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+  <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
+  <script src="../../bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+  <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../../bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="../../bower_components/angular-scroll/angular-scroll.js"></script>
+  <script src="../../bower_components/showdown/src/showdown.js"></script>
+  <script src="../../bower_components/showdown/compressed/extensions/github.min.js"></script>
+  <script src="../../bower_components/showdown/compressed/extensions/prettify.min.js"></script>
+  <script src="../../bower_components/showdown/compressed/extensions/table.min.js"></script>
+  <script src="../../bower_components/showdown/compressed/extensions/twitter.min.js"></script>
+  <script src="../../bower_components/toastr/toastr.js"></script>
+  <script src="../../bower_components/angular-markdown-directive/markdown.js"></script>
+  <!-- endinject -->
 
-    <!-- endinject -->
-  </body>
+  <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+
+  <!-- inject-lib:js -->
+  <script src="lib/scripts/ui-materialize.js"></script>
+  <script src="lib/templates/ui-materialize.templates.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="app/app.module.js"></script>
+  <script src="app/io.js"></script>
+  <script src="app/core/core.module.js"></script>
+  <script src="app/modules/app.modules.module.js"></script>
+  <script src="app/core/api/user.api.js"></script>
+  <script src="app/core/config/core.constants.js"></script>
+  <script src="app/core/config/routes.config.js"></script>
+  <script src="app/core/controllers/app.controller.js"></script>
+  <script src="app/core/controllers/grid.controller.js"></script>
+  <script src="app/core/controllers/home.controller.js"></script>
+  <script src="app/core/services/storage.service.js"></script>
+  <script src="app/modules/components/components.module.js"></script>
+  <script src="app/modules/directives/directives.module.js"></script>
+  <script src="app/modules/gettingStarted/gettingStarted.module.js"></script>
+  <script src="app/modules/layout/layout.module.js"></script>
+  <script src="app/modules/navigation/navigation.module.js"></script>
+  <script src="app/modules/stylus/stylus.module.js"></script>
+  <script src="app/core/directives/mzAnimations/mzAnimations.directive.js"></script>
+  <script src="app/modules/components/config/components.config.js"></script>
+  <script src="app/modules/components/controllers/components.controller.js"></script>
+  <script src="app/modules/directives/api/directives.api.js"></script>
+  <script src="app/modules/directives/config/directives.config.js"></script>
+  <script src="app/modules/directives/controllers/directives.controller.js"></script>
+  <script src="app/modules/directives/directives/directives.directive.js"></script>
+  <script src="app/modules/directives/filters/directives.filter.js"></script>
+  <script src="app/modules/directives/services/directives.service.js"></script>
+  <script src="app/modules/gettingStarted/api/gettingStarted.api.js"></script>
+  <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
+  <script src="app/modules/gettingStarted/controllers/gettingStarted.controller.js"></script>
+  <script src="app/modules/gettingStarted/directives/gettingStarted.directive.js"></script>
+  <script src="app/modules/gettingStarted/filters/gettingStarted.filter.js"></script>
+  <script src="app/modules/gettingStarted/services/gettingStarted.service.js"></script>
+  <script src="app/modules/layout/api/layout.api.js"></script>
+  <script src="app/modules/layout/config/layout.config.js"></script>
+  <script src="app/modules/layout/controllers/layout.controller.js"></script>
+  <script src="app/modules/layout/directives/layout.directive.js"></script>
+  <script src="app/modules/layout/filters/layout.filter.js"></script>
+  <script src="app/modules/layout/services/layout.service.js"></script>
+  <script src="app/modules/navigation/api/navigation.api.js"></script>
+  <script src="app/modules/navigation/config/navigation.config.js"></script>
+  <script src="app/modules/navigation/controllers/navigation.controller.js"></script>
+  <script src="app/modules/navigation/directives/navigation.directive.js"></script>
+  <script src="app/modules/navigation/filters/navigation.filter.js"></script>
+  <script src="app/modules/navigation/services/navigation.service.js"></script>
+  <script src="app/modules/stylus/config/stylus.config.js"></script>
+  <script src="app/modules/stylus/controllers/stylus.controller.js"></script>
+  <script src="templates/templates.js"></script>
+  <!-- endinject -->
+
+</body>
 </html>

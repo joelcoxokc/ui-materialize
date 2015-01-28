@@ -2,11 +2,11 @@
 
     angular
         .module('stylus')
-        .config(stylusConfig);
+        .config(stylusConfig)
+        ;
 
     /* @ngInject */
     function stylusConfig($stateProvider) {
-
         $stateProvider
             .state('app.stylus',
                   { url   : '/stylus'
@@ -34,12 +34,11 @@
                   } )
             ;
 
-        /////////////
         function view(template, controller) {
             var tpl = {templateUrl:'app/modules/stylus/'+template}
             controller && (tpl.controller = controller)
             return {'@': tpl};
-        }
+          }
     }
 
-}).call(this);
+  }).call(this);
