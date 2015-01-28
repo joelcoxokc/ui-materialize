@@ -1,12 +1,11 @@
 ;(function() { 'use strict';
     angular
         .module('mz.nav.services.nav', [])
-        .service('$NavService', NavService);
+        .service('$NavService', NavService)
 
     /* @ngInject */
     function NavService() {
         var Navigation, defaults, services, sideDeligate;
-
 
         Navigation.prototype.broadcast = protoBroadcast;
         Navigation.prototype.emit      = protoEmit;
@@ -18,7 +17,7 @@
         function Navigation(side, element, attrs, config, scope) { config=config||{};
 
             var _this = this;
-            
+
 
             this.side      = side;
             this.attrs     = attrs;

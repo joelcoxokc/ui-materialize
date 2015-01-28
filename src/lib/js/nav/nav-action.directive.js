@@ -5,7 +5,10 @@
         .directive('navAction', navAction)
         ;
 
-    /* @ngInject */
+    /*
+
+    @ngInject
+    */
     function navAction() {
 
         return { templateUrl: 'nav/nav-action.template.html'

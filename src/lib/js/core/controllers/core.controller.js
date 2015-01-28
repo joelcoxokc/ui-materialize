@@ -12,7 +12,6 @@
 
         this.$navs = {};
         this.$settings = {  top:{} , bottom:{} , right:{actions:[]} , left:{}  };
-        console.log(mzNavApi);
 
         this.init = function(element) { this.element = element; };
 

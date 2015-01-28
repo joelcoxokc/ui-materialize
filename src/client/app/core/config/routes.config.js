@@ -3,46 +3,30 @@
     angular
         .module('core')
         .config(Core)
-        .run(runner)
         ;
 
     /* @ngInject */
-    function runner($rootScope) { }
-
-    /* @ngInject */
     function Core ($stateProvider, $urlRouterProvider) {
-        // console.log($NavigationProvider);
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/app/home');
 
         $stateProvider
-            .state('home',
-                { url   : '/'
-                , mzNav : { background: 'white'
-                          , links     : 'pink-text'
-                          }
-                , views : { '@'       : { templateUrl: 'app/core/views/home.view.html'
-                                        , controller : 'HomeController as vm'
-                                        }
-                          ,  nav      : { templateUrl: 'app/core/views/header.view.html'
-                                        }
-                          , footer    : { templateUrl: 'app/core/views/footer.view.html'
-                                        }
+            .state('app',
+                { url   : '/app'
+                , views : { 'nav'   :
+                              {templateUrl : 'app/core/views/header.view.html' }
+                          , 'right' :
+                              {templateUrl : 'app/core/views/right.view.html' }
+                          , 'footer':
+                              {templateUrl : 'app/core/views/footer.view.html' }
                           }
                 })
-            .state('grid',
-                { url   : '/grid'
-                , mzNav : { background: 'white'
-                          , links     : 'pink-text'
-                          }
-                , views : { '@'       : { templateUrl: 'app/core/views/grid.view.html'
-                                        }
-                          , nav       : { templateUrl: 'app/core/views/header.view.html'
-                                        }
+            .state('app.home',
+                { url   : '/home'
+                , views : { '@' :
+                            {templateUrl : 'app/core/views/home.view.html'   }
                           }
                 })
             ;
-
-      } // close function Core
-
-  }).call(this);
+      }
+}).call(this);

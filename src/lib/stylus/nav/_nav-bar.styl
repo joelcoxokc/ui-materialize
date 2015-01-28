@@ -18,6 +18,9 @@ nav,
         flex-direction row
         flex 1 0 auto
 
+    .mz-nav-content
+        flex-direction row
+        flex 1 0 auto
     .mz-nav-brand,
     .brand-logo
         position relative
@@ -26,6 +29,12 @@ nav,
         padding 0
         color white
         flex 0 0 $nav-side-width
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5)
+            display:none
 
 
 
