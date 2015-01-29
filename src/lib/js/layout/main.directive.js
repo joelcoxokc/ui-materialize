@@ -7,7 +7,6 @@
 
     /* @inject */
     function mzMain() {
-
         return { templateUrl : 'layout/main.template.html'
                , restrict    : 'E'
                , replace     : true

@@ -13,8 +13,6 @@
                 , link:link
                 };
 
-        ////////////////
-
         function link(scope, element, attrs, ctrl) {
             element.addClass('container');
             element.addClass('mz-container');
