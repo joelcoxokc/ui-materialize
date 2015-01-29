@@ -7,11 +7,13 @@
 
     /* @inject */
     function mzTable() {
-        return { restrict   : 'E'
-               , scope      : true
-               , transclude : true
-               , link       : function link(scope, element, attrs) {}
-               }; // templateUrl: 'templates/mzTable.view.html',
+        return  { template   : '<table class="mz-table" data-ng-transclude></table>'
+                , restrict   : 'E'
+                , scope      : true
+                , replace    : true
+                , transclude : true
+                , link       : function link(scope, element, attrs) {}
+                }; // templateUrl: 'templates/mzTable.view.html',
       }
 
   }).call(this);

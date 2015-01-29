@@ -11,8 +11,6 @@
                , link     : link
                };
 
-        ////////////////
-
         function link(scope, element, attrs, ctrl, transclude) {
             transclude(scope, function (cone) { element.append(cone); });
           }
