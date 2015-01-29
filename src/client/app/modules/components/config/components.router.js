@@ -13,7 +13,8 @@
             state('app.components-'+component,
                 { url   : '/components/'+component
                 , views : { '@' :
-                              {templateUrl : 'app/modules/components/views/'+component+'.html'  }
+                              {templateUrl : 'app/modules/components/views/'+component+'.html'
+                              , controller : 'ComponentsController as vm'}
                           }
                 });
           });
