@@ -1,17 +1,136 @@
-<mz-nav-side-heading>
-    <button type="button"
-            mz-toggle-right-nav
-            class="nav-side-toggle nav-action no-margin waves-effect waves-dark pink accent-2 "
-            icon="mdi-navigation-menu"
-            next-icon='mdi-navigation-arrow-forward'
-            header-action-huge
-            ><i class="mdi-navigation-menu"></i></button></mz-nav-side-heading>
+<side-header z-bg="grey darken-4"></side-header>
 
-<mz-nav-side-content>
-    <nav-collapsible-group></nav-collapsible-group>
+<side-content z-bg="grey darken-4">
+    <side-collapsible>
+        <side-collapse
+            waves=true
+            icon="mdi-image-color-lens"
+            header="Stylus">
+             <nav-action-group side="bottom" links="blue-text text-accent-2">
+                 <nav-action
+                      waves=true
+                      ui-sref='app.stylus-color'
+                      icon="mdi-editor-insert-chart">
+                      <span class="nav-action-text">Color</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      ui-sref='app.stylus-grid'
+                      icon="mdi-device-storage">
+                      <span class="nav-action-text">Grid</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      ui-sref='app.stylus-shadow'
+                      icon="mdi-device-now-widgets">
+                      <span class="nav-action-text">Shadow</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      ui-sref='app.stylus-table'
+                      icon="mdi-content-send">
+                      <span class="nav-action-text">Table</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      ui-sref='app.stylus-typography'
+                      icon="mdi-action-settings-power">
+                      <span class="nav-action-text">Typography</span>
+                </nav-action>
+            </nav-action-group>
+      </side-collapse>
+      <side-collapse
+            waves=true
+            icon="mdi-action-dashboard"
+            header="Components">
+              <nav-action-group side="bottom" links="blue-text text-accent-2">
+                 <nav-action data-ng-repeat="component in app.components"
+                      waves=true
+                      ui-sref="app.components-{{component}}"
+                      ><span class="nav-action-text">{{component}}</span>
+                </nav-action>
+                      <!-- icon="mdi-editor-insert-chart" -->
+            </nav-action-group>
+      </side-collapse>
+      <side-collapse
+            waves=true
+            icon="mdi-maps-layers"
+            header="Directives">
+              <nav-action-group side="bottom" links="blue-text text-accent-2">
+                 <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-editor-insert-chart">
+                      <span class="nav-action-text">mz-materialize</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-device-storage">
+                      <span class="nav-action-text">mz-body</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-device-now-widgets">
+                      <span class="nav-action-text">mz-nav</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-content-send">
+                      <span class="nav-action-text">mz-main</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-action-settings-power">
+                      <span class="nav-action-text">mz-view</span>
+                </nav-action>
+            </nav-action-group>
+      </side-collapse>
+      <side-collapse
+            waves=true
+            icon="mdi-action-autorenew"
+            header="Services">
+              <nav-action-group side="bottom" links="blue-text text-accent-2">
+                 <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-editor-insert-chart">
+                      <span class="nav-action-text">$Materialize</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-device-storage">
+                      <span class="nav-action-text">$mzNavigation</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-device-now-widgets">
+                      <span class="nav-action-text">$MenuService</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-content-send">
+                      <span class="nav-action-text">$ApplicationDelegate</span>
+                </nav-action>
+                <nav-action
+                      waves=true
+                      state='components'
+                      icon="mdi-action-settings-power">
+                      <span class="nav-action-text">$ApplicationConfig</span>
+                </nav-action>
+            </nav-action-group>
+      </side-collapse>
+
+    </side-collapsible>
     <nav-action-group side="bottom" links="blue-text text-accent-2">
         <nav-action
               waves='light'
               icon="fa fa-github"
               label="github"
-              ></nav-action></nav-action-group></mz-nav-side-content>
+              ></nav-action></nav-action-group></side-content>

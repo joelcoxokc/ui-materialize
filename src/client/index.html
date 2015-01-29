@@ -33,19 +33,21 @@
 </head>
 
 
-<body ng-controller="AppController as app" class="nav-fixed grey darken-3">
+<body ng-controller="AppController as app" class="nav-fixed grey lighten-3">
 
   <mz-materialize>
     <mz-body>
-      <mz-nav    view="nav" color='grey darken-4'></mz-nav>
-      <mz-main   view></mz-main>
-      <mz-footer view="footer" color="grey lighten-4"></mz-footer></mz-body>
+      <mz-nav-bar view="nav" fixed=true bg='grey darken-4'></mz-nav-bar>
+      <mz-main    view></mz-main>
+      <mz-footer  view="footer" color="grey lighten-4"></mz-footer></mz-body>
 
     <mz-nav-right
-            viz="thin fat thin 0"
+            fixed=true
+            viz="thin fat"
             view="right">
             </mz-nav-right></mz-materialize>
 
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
   <!-- inject-vendor:js -->
   <script src="../../bower_components/angular/angular.js"></script>
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
@@ -54,7 +56,6 @@
   <script src="../../bower_components/angular-animate/angular-animate.js"></script>
   <script src="../../bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="../../bower_components/extras.angular.plus/ngplus-overlay.js"></script>
-  <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
   <script src="../../bower_components/gsap/src/uncompressed/TweenMax.js"></script>
   <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="../../bower_components/lodash/dist/lodash.compat.js"></script>
@@ -65,6 +66,7 @@
   <script src="../../bower_components/showdown/compressed/extensions/table.min.js"></script>
   <script src="../../bower_components/showdown/compressed/extensions/twitter.min.js"></script>
   <script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
   <script src="../../bower_components/toastr/toastr.js"></script>
   <script src="../../bower_components/angular-markdown-directive/markdown.js"></script>
   <!-- endinject -->
@@ -88,39 +90,24 @@
   <script src="app/core/controllers/grid.controller.js"></script>
   <script src="app/core/controllers/home.controller.js"></script>
   <script src="app/core/services/storage.service.js"></script>
-  <script src="app/modules/components/components.module.js"></script>
+  <script src="app/modules/components/compnents.module.js"></script>
   <script src="app/modules/directives/directives.module.js"></script>
-  <script src="app/modules/layout/layout.module.js"></script>
   <script src="app/modules/gettingStarted/gettingStarted.module.js"></script>
-  <script src="app/modules/navigation/navigation.module.js"></script>
   <script src="app/modules/stylus/stylus.module.js"></script>
   <script src="app/core/directives/mzAnimations/mzAnimations.directive.js"></script>
-  <script src="app/modules/components/config/components.config.js"></script>
-  <script src="app/modules/components/controllers/components.controller.js"></script>
+  <script src="app/modules/components/config/components.router.js"></script>
   <script src="app/modules/directives/api/directives.api.js"></script>
   <script src="app/modules/directives/config/directives.config.js"></script>
   <script src="app/modules/directives/controllers/directives.controller.js"></script>
   <script src="app/modules/directives/directives/directives.directive.js"></script>
   <script src="app/modules/directives/filters/directives.filter.js"></script>
   <script src="app/modules/directives/services/directives.service.js"></script>
-  <script src="app/modules/layout/api/layout.api.js"></script>
-  <script src="app/modules/layout/config/layout.config.js"></script>
-  <script src="app/modules/layout/controllers/layout.controller.js"></script>
-  <script src="app/modules/layout/directives/layout.directive.js"></script>
-  <script src="app/modules/layout/filters/layout.filter.js"></script>
-  <script src="app/modules/layout/services/layout.service.js"></script>
   <script src="app/modules/gettingStarted/api/gettingStarted.api.js"></script>
   <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
   <script src="app/modules/gettingStarted/controllers/gettingStarted.controller.js"></script>
   <script src="app/modules/gettingStarted/directives/gettingStarted.directive.js"></script>
   <script src="app/modules/gettingStarted/filters/gettingStarted.filter.js"></script>
   <script src="app/modules/gettingStarted/services/gettingStarted.service.js"></script>
-  <script src="app/modules/navigation/api/navigation.api.js"></script>
-  <script src="app/modules/navigation/config/navigation.config.js"></script>
-  <script src="app/modules/navigation/controllers/navigation.controller.js"></script>
-  <script src="app/modules/navigation/filters/navigation.filter.js"></script>
-  <script src="app/modules/navigation/directives/navigation.directive.js"></script>
-  <script src="app/modules/navigation/services/navigation.service.js"></script>
   <script src="app/modules/stylus/config/stylus.config.js"></script>
   <script src="app/modules/stylus/controllers/stylus.controller.js"></script>
   <script src="templates/templates.js"></script>
@@ -138,39 +125,24 @@
   <script src="app/core/controllers/grid.controller.js"></script>
   <script src="app/core/controllers/home.controller.js"></script>
   <script src="app/core/services/storage.service.js"></script>
-  <script src="app/modules/components/components.module.js"></script>
+  <script src="app/modules/components/compnents.module.js"></script>
   <script src="app/modules/directives/directives.module.js"></script>
-  <script src="app/modules/layout/layout.module.js"></script>
   <script src="app/modules/gettingStarted/gettingStarted.module.js"></script>
-  <script src="app/modules/navigation/navigation.module.js"></script>
   <script src="app/modules/stylus/stylus.module.js"></script>
   <script src="app/core/directives/mzAnimations/mzAnimations.directive.js"></script>
-  <script src="app/modules/components/config/components.config.js"></script>
-  <script src="app/modules/components/controllers/components.controller.js"></script>
+  <script src="app/modules/components/config/components.router.js"></script>
   <script src="app/modules/directives/api/directives.api.js"></script>
   <script src="app/modules/directives/config/directives.config.js"></script>
   <script src="app/modules/directives/controllers/directives.controller.js"></script>
   <script src="app/modules/directives/directives/directives.directive.js"></script>
   <script src="app/modules/directives/filters/directives.filter.js"></script>
   <script src="app/modules/directives/services/directives.service.js"></script>
-  <script src="app/modules/layout/api/layout.api.js"></script>
-  <script src="app/modules/layout/config/layout.config.js"></script>
-  <script src="app/modules/layout/controllers/layout.controller.js"></script>
-  <script src="app/modules/layout/directives/layout.directive.js"></script>
-  <script src="app/modules/layout/filters/layout.filter.js"></script>
-  <script src="app/modules/layout/services/layout.service.js"></script>
   <script src="app/modules/gettingStarted/api/gettingStarted.api.js"></script>
   <script src="app/modules/gettingStarted/config/gettingStarted.config.js"></script>
   <script src="app/modules/gettingStarted/controllers/gettingStarted.controller.js"></script>
   <script src="app/modules/gettingStarted/directives/gettingStarted.directive.js"></script>
   <script src="app/modules/gettingStarted/filters/gettingStarted.filter.js"></script>
   <script src="app/modules/gettingStarted/services/gettingStarted.service.js"></script>
-  <script src="app/modules/navigation/api/navigation.api.js"></script>
-  <script src="app/modules/navigation/config/navigation.config.js"></script>
-  <script src="app/modules/navigation/controllers/navigation.controller.js"></script>
-  <script src="app/modules/navigation/filters/navigation.filter.js"></script>
-  <script src="app/modules/navigation/directives/navigation.directive.js"></script>
-  <script src="app/modules/navigation/services/navigation.service.js"></script>
   <script src="app/modules/stylus/config/stylus.config.js"></script>
   <script src="app/modules/stylus/controllers/stylus.controller.js"></script>
   <script src="templates/templates.js"></script>

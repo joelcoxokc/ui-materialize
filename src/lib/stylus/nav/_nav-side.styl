@@ -16,26 +16,25 @@ nav-side-fold-widths(fixed=false)
     min-width $nav-side-width-fold
     max-width $nav-side-width-fold
 
-nav-container-defaults()
+side-container-defaults()
     flex-container()
     transition all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
-    // background-color $dark-bg
     flex-direction column
     position relative
     z-index 1000
     heights(100%, true)
-    nav-side-open-widths()
 
-nav-side-heading-defaults()
+
+side-heading-defaults()
     flex-container()
     flex-direction column
     flex: 1 0 auto
-    heights($side-nav-heading-height, true)
+    heights($nav-side-heading-height, true)
 
     &.heading-tall
-        heights($side-nav-heading-height-tall, true)
+        heights($nav-side-heading-height-tall, true)
 
-nav-side-content-defaults()
+side-content-defaults()
     flex-container()
     flex-direction column
     flex: 1 0 auto
@@ -45,33 +44,22 @@ nav-side-defaults(side, order)
     /*
         ==================================== SIDE > CONTAINER
     */
-    & > .nav-{side}-container
-        nav-container-defaults()
+    & > .side-container
+        side-container-defaults()
         height 100%
         /*
             ========= > CONTAINER > HEADING
         */
-        & > .mz-nav-side-heading
-            nav-side-heading-defaults()
-            .nav-action.header-action-huge
-                position fixed
-                // widths(100px, true)
-                // heights(100px, true)
-                top 0
-                right 0
-                z-index 1003
-                border-radius 2px
-                box-shadow(-10px 10px 30px rgba(0,0,0,0.5) !important)
-                & > i
-                    font-size 3rem
-                    font-weight bold
+        & > .side-header
+            side-heading-defaults()
+
             &.has-large-action
-                heights(100px, true)
+                heights(40px, true)
         /*
             ========= > CONTAINER > CONTENT
         */
-        & > .mz-nav-side-content
-            nav-side-content-defaults()
+        & > .side-content
+            side-content-defaults()
             .nav-side-content-wrap
                 position absolute
                 top 0
@@ -82,77 +70,32 @@ nav-side-defaults(side, order)
                 height inherit
                 // overflow auto !important
 
-    /*
-        ==================================== SIDE OPEN
-    */
-    &.nav-{side}-open
-        opacity 1
-        visibility visible
-        width initial
-
-    /*
-        ==================================== SIDE FOLD
-    */
-    &.nav-{side}-fold
-        opacity 1
-        visibility visible
-        .nav-{side}-container
-            nav-side-fold-widths(true)
-            heights(100%, true)
-
-    /*
-        ==================================== SIDE FRONT
-    */
-    &.nav-{side}-front
-        .nav-{side}-container
-            z-index 1002
-
-    /*
-        ==================================== SIDE FIXED
-    */
-    &.nav-{side}-fixed
-        /*
-            =================== SIDE FIXED & OPEN
-        */
-        &.nav-{side}-open
-            .nav-{side}-container
-                nav-side-open-widths(true)
-        /*
-            =================== SIDE FIXED & FOLD
-        */
-        &.nav-{side}-fold
-            .nav-{side}-container
-                nav-side-fold-widths(true)
-        /*
-            =================== SIDE FIXED > CONTAINER
-        */
-        .nav-{side}-container
-            position fixed
-            top 0
-            if side is right
-                right 0
-            if side is left
-                left 0
-            nav-side-open-widths(true)
 
 /*
 ============================== NAV SIDE
 */
 .mz-side-nav
     flex-container()
-    flex-direction column
-    height 100%
-    order -1
-    position relative
-    transition all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
+    top:        $nav-bar-height
+    order:      -1
+    width:      0px
+    height:     100%
+    position:   relative
+    transition: all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
+    flex-direction: column
     box-shadow(4px 0 6px rgba(0,0,0,0.1))
-    width: 0px
 
     &.nav-left
+        left: 0
         nav-side-defaults(left, -1)
 
     &.nav-right
+        right: 0
         nav-side-defaults(right, 2)
+
+    &.nav-fixed
+        z-index 1000
+        position fixed
 
     &.nav-viz-0
         width 0px

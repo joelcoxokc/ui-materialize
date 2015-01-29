@@ -1,8 +1,8 @@
-<nav-brand ui-sref="app.home" class="waves-effect waves-light">
+<bar-brand ui-sref="app.home" class="waves-effect waves-light">
   <strong class="pink-text text-accent-2">ui</strong>Materialize
-</nav-brand>
+</bar-brand>
 
-<nav-content>
+<bar-content>
   <nav-action-group side="left" links="blue-text text-accent-1">
     <nav-action
       waves=true
@@ -10,6 +10,12 @@
       >Getting Started</nav-action>
 
     </nav-action-group>
-  <nav-action-group side="right" links="pink-text text-accent-1"></nav-action-group>
-
-  </nav-content>
+  <nav-action-group side="right" links="pink-text text-accent-1">
+      <button   type="button"
+                mz-toggle-right-nav
+                class="nav-side-toggle header-action-huge nav-action no-margin waves-effect waves-dark pink accent-2 "
+                icon="mdi-navigation-menu"
+                next-icon='mdi-navigation-arrow-forward'
+                header-action-huge
+                ></button></nav-action-group>
+  </bar-content>

@@ -6,34 +6,22 @@
         ;
 
     /* @ngAnotate */
-    function mzController($scope, $q, $RightNavigationService, $NavBarService, mzNavApi, $rootScope) {
+    function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, $NavBarService, mzNavApi, $rootScope) {
         // $scope.mzNav = mzNavApi;
         // var _this = this;
-
+        var sides = {
+            right : $RightNavigationService,
+            left  : $LeftNavigationService
+          };
         this.$navs = {};
         this.$settings = {  top:{} , bottom:{} , right:{actions:[]} , left:{}  };
 
         this.init = function(element) { this.element = element; };
 
-        this.addNav = function(side, element, attrs, config, scope) {
-            // var NavService = useService(side);
-            this.$navs[side] = new $NavBarService(side, element, attrs, config, scope);
+        this.addNav = function(scope, element, attrs, side) {
+            this.$navs[side] = new sides[side](scope, element, attrs);
             this.$navs[side].activate();
-            this.invokeRegistry(side);
-
-            $rootScope.$on('$stateChangeStart', function (event, state) {
-                // mzNavApi.config.navBar.hideOn[state.name] ? element.addClass('hidden') : element.removeClass('hidden');
-              });
-          }
-
-        this.invokeRegistry = function(side) {
-            _.forEach(this.$settings[side].actions, function(action){ _this.$navs[side][action](); });   }
-
-        this.registerAction = function(side, action){ this.$settings[side].actions.push(action); }
-
-        // function useService(service){
-        //     return { right:$RightNavigationService , top:$NavBarService }[service]; }
-
+          };
       }
 
   }).call(this);

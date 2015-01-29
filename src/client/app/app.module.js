@@ -8,6 +8,7 @@
             , 'btford.markdown'
             , 'hljs'
             , 'ui.materialize'
+
             , 'core'
             , 'app.modules'
             ]  );

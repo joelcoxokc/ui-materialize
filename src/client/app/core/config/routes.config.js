@@ -26,9 +26,8 @@
                 , views : { '@' :
                             {templateUrl : 'app/core/views/home.view.html'   }
                           }
+
                 })
             ;
       }
 }).call(this);
-
-

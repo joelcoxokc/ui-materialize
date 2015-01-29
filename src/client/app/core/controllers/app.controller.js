@@ -14,11 +14,28 @@
         // console.log(this.right.$toggles.open())
         // console.log($Navigation.navs.right)
 
-
+        this.components = getComponents();
 
         jQuery(document).ready(function() {
             $('.collapsible').collapsible();
         })
+        function getComponents() {
+              return [ 'buttons'
+                      , 'cards'
+                      , 'collapsible'
+                      , 'collections'
+                      , 'dialogs'
+                      , 'dropdowns'
+                      , 'forms'
+                      , 'media'
+                      , 'modals'
+                      , 'notifications'
+                      , 'progress'
+                      , 'select'
+                      , 'tabs'
+                      , 'tooltips'
+                ];
+            }
     }
 
 }).call(this);

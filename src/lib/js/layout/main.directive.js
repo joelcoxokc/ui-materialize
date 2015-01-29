@@ -10,7 +10,7 @@
 
         return { templateUrl : 'layout/main.template.html'
                , restrict    : 'E'
-               , transclude  : true
+               , replace     : true
                , scope       : { color:'@', view:'@'}
                , link        : link
                };

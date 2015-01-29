@@ -7,15 +7,17 @@
 
     /* @inject */
     function mzBody() {
-        return  { restrict:'E'
-                , require:'^mzMaterialize'
-                , scope:true
-                , link:link
+        return  { templateUrl : 'layout/body.template.html'
+                , require     : '^mzMaterialize'
+                , restrict    : 'E'
+                , transclude  : true
+                , replace     : true
+                , scope       : true
+                , link        : link
                 };
 
         function link(scope, element, attrs, ctrl, transclude) {
             ctrl.body = element;
-            element.addClass('mz-body');
           }
       }
   }).call(this);

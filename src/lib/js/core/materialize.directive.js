@@ -10,7 +10,7 @@
 
     /* @inject */
     function mzMaterialize() {
-        return { template  : '<div class="mz-materialize" ng-class="classList" data-ng-transclude></div>'
+        return { template  : '<main class="mz-materialize" ng-class="classList" data-ng-transclude></main>'
                , restrict  : 'E'
                , replace   : true
                , transclude: true

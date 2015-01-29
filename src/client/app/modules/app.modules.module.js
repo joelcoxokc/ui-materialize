@@ -3,8 +3,8 @@
     angular
         .module('app.modules',
             [ 'gettingStarted'
-            , 'components'
             , 'stylus'
+            , 'components'
             ]  );
 
   }).call(this);
