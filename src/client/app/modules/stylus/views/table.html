@@ -1,14 +1,197 @@
-<div class="section grey lighten-3">
-  <div class="col s12">
-    <div class='container'>
-      <div class="section pads-b-20">
+<div class="page">
 
-        <div class="col s12">
-          <h1 class="title white-text"
-            ><strong class="pink-text text-accent-1">mz</strong>Table</h1>
-            </div>
-        <div class='col s12'>
-          <h3 class="light indigo-text text-lighten-4 center-on-small-only"></h3>
-          </div>
+    <header class="page-header grey darken-3 z-depth-2">
+      <div class="container">
+        <div class="row">
 
-        </div></div></div></div>
+          <div class="col s12">
+            <h1 class="page-title white-text darken-4">
+              <strong class="pink-text text-accent-1">mz</strong>Table</h1></div>
+
+          <div class='col s12'>
+            <p class=" caption">Tables are a nice way to organize a lot of data. We provide a
+              few utility classes to help you style your table as easily as possible. In addition,
+              to improve mobile experience, all tables on mobile-screen widths are centered
+              automatically.</p></div>
+
+          </div></div></header>
+
+    <section class="section">
+      <div class='container page-content'>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+
+              <!-- description -->
+              <h3 class="thin">Borderless Table</h3>
+              <p>Tables are borderless by default.</p>
+              <!-- specimen -->
+              <table>
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+                </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;mz-table>
+  &lt;thead>
+    &lt;tr>
+        &lt;th data-field="id">Name&lt;/th>
+        &lt;th data-field="name">Item Name&lt;/th>
+        &lt;th data-field="price">Item Price&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>Alvin&lt;/td>
+      &lt;td>Eclair&lt;/td>
+      &lt;td>$0.87&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>Alan&lt;/td>
+      &lt;td>Jellybean&lt;/td>
+      &lt;td>$3.76&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>Jonathan&lt;/td>
+      &lt;td>Lollipop&lt;/td>
+      &lt;td>$7.00&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/mz-table>
+                </code></pre>
+
+
+              <!-- description -->
+              <h3 class="thin">Bordered Table</h3>
+              <p>Add <code class=" language-markup">class="bordered"</code> to the table tag for a bordered table</p>
+              <!-- specimen -->
+              <table class="bordered">
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+              </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;table class="bordered">
+  &hellip;
+&lt;/table>
+                </code></pre>
+
+
+              <!-- description -->
+              <h3 class="thin">Striped Table</h3>
+              <p>Add <code class=" language-markup">class="striped"</code> to the table tag for a bordered table</p>
+              <!-- specimen -->
+              <table class="striped">
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+                </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;table class="striped">
+  &hellip;
+&lt;/table>
+                </code></pre>
+
+
+              <!-- description -->
+              <h3 class="thin">Hoverable Table</h3>
+              <p>Add <code class=" language-markup">class="hoverable"</code> to the table tag for a bordered table</p>
+              <!-- specimen -->
+              <table class="striped">
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+                </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;table class="hoverable">
+  &hellip;
+&lt;/table>
+                </code></pre>
+
+
+              <!-- description -->
+              <h3 class="thin">Centered Table</h3>
+              <p>Add <code class=" language-markup">class="centered"</code> to the table tag for a bordered table</p>              
+              <!-- specimen -->
+              <table class="striped">
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+                </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;table class="centered">
+  &hellip;
+&lt;/table>
+                </code></pre>
+
+
+              <!-- description -->
+              <h3 class="thin">Responsive Table</h3>
+              <p>Add <code class=" language-markup">class="responsive-table"</code> to the table tag for a bordered table</p>
+              <!-- specimen -->
+              <table class="responsive-table">
+                <thead><tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                    </tr></thead>
+                <tbody>
+                  <tr><td>Alvin   </td><td>Eclair   </td><td>$0.87</td></tr>
+                  <tr><td>Alan    </td><td>Jellybean</td><td>$3.76</td></tr>
+                  <tr><td>Jonathan</td><td>Lollipop </td><td>$7.00</td></tr>
+                  </tbody>
+                </table>
+              <!-- example code -->
+              <pre><code no-escape hljs>
+&lt;table class="responsive-table">
+  &hellip;
+&lt;/table>
+                </code></pre>
+
+              </article></div></section>
+
+      </div></section>
+
+</div>
