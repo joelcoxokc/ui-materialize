@@ -94,7 +94,7 @@ action-group-defaults()
                 align-items center
                 flex 1 0 auto
                 & > .nav-action-text
-                    display none
+                    // display none
                     color white
 
                 & > i
@@ -127,6 +127,16 @@ action-group-defaults()
                         color white
                         & > i
                             color white
+        .side-collapsible.active
+            ul.nav-action-group,
+            .nav-action-group
+                & > li
+                    & > a
+
+                        &.nav-action-text
+                            padding-left 24px
+                            display: block !important
+
 
     &.nav-viz-fat
         .nav-action-group
@@ -151,18 +161,3 @@ action-group-defaults()
                     &:active,
                     &.active
                         background-color #000000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

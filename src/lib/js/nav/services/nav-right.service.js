@@ -20,6 +20,7 @@
             this.vizIndex  = 0;
 
             this.activate = function() {
+                this.element.addClass('start-viz-'+this.vizList[this.vizIndex]);
                 this.useViz(this.vizList[this.vizIndex]);
               };
 

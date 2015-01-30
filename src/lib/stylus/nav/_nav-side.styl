@@ -47,6 +47,8 @@ nav-side-defaults(side, order)
     & > .side-container
         side-container-defaults()
         height 100%
+        scroll-vertical()
+
         /*
             ========= > CONTAINER > HEADING
         */
@@ -88,32 +90,55 @@ nav-side-defaults(side, order)
     &.nav-left
         left: 0
         nav-side-defaults(left, -1)
+        .side-container
+            left: 0
 
     &.nav-right
         right: 0
         nav-side-defaults(right, 2)
+        .side-container
+            right: 0
 
     &.nav-fixed
-        z-index 1000
-        position fixed
-
-    &.nav-viz-0
+        .side-container
+            top: $nav-bar-height
+            z-index 1000
+            position fixed
+    &.start-viz-0
         width 0px
         min-width 0px
         max-width 0px
-
-    &.nav-viz-thin
+    &.start-viz-thin
         width 64px
         min-width 64px
         max-width 64px
 
-    &.nav-viz-fat
+    &.start-viz-fat
         width 250px
         min-width 250px
         max-width 250px
 
 
+    &.nav-viz-0
+        .side-container
+            width 0px
+            min-width 0px
+            max-width 0px
 
+    &.nav-viz-thin
+        .side-container
+            width 64px
+            min-width 64px
+            max-width 64px
+
+    &.nav-viz-fat
+        .side-container
+            width 250px
+            min-width 250px
+            max-width 250px
+
+
+    
 
 // .nav-right-container::-webkit-scrollbar {
 //     display: none;
