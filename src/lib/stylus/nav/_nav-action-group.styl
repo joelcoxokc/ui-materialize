@@ -96,6 +96,8 @@ action-group-defaults()
                 & > .nav-action-text
                     // display none
                     color white
+                    padding-left 24px
+
 
                 & > i
                     font-size 2rem
@@ -113,10 +115,11 @@ action-group-defaults()
                 & > a
 
                     heights($nav-action-width-fold, true)
-                    widths($nav-action-width-fold, true)
-                    text-align center
-                    align-items center
+                    align-items: center
                     justify-content center
+                    text-align: center
+                    .nav-action-text
+                        display:none
                     & > i
                         transition color 300ms ease
                         flex 1 0 auto
@@ -127,16 +130,6 @@ action-group-defaults()
                         color white
                         & > i
                             color white
-        .side-collapsible.active
-            ul.nav-action-group,
-            .nav-action-group
-                & > li
-                    & > a
-
-                        &.nav-action-text
-                            padding-left 24px
-                            display: block !important
-
 
     &.nav-viz-fat
         .nav-action-group

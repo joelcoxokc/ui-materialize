@@ -1,42 +1,120 @@
-<div class="section grey lighten-3">
-  <div class="col s12">
-    <div class='container'>
+<div class="page">
 
-      <div class="section pads-b-20">
+    <header class="page-header grey darken-3 z-depth-2">
+      <div class="container">
+        <div class="row">
 
-        <div class="col s12">
-          <h1 class="title grey-text darken-4">
-            <strong class="pink-text text-accent-1">mz</strong>Card</h1>
-        </div>
-        <div class='col s12'>
-          <h3 class="light indigo-text text-lighten-4 center-on-small-only"></h3>
-        </div>
+          <div class="col s12">
+            <h1 class="page-title white-text darken-4">
+              <strong class="pink-text text-accent-1">mz</strong>Tabs</h1></div>
 
-      </div>
+          <div class='col s12'>
+            <p class=" caption">
+              The tabs structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the corresponding tab id will become visible.
+              </p></div>
 
-        <!-- Cards Example -->
-      <div class="section pads-b-20">
-        <div class="col s12">
-          <div class="row">
-            <div class="col s12 m6">
+          </div></div></header>
 
-              <mz-card></mz-card>
+    <section class="section">
+      <div class='container page-content'>
 
-            </div>
-          </div>
-        </div>
-      </div>
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
 
-      <div class="section pads-b-20">
-        <div class="col s12">
-            <pre><code no-escape hljs>
+              <h3 class="thin">Tabs Structure</h3>
 
-            &lt;mz-card>
-            &lt;/mz-card>
+              <mz-tabs>
+                <tab-item toggle="tab1" active="true">Tab 1</tab-item>
+                <tab-item toggle="tab2">Tab 2</tab-item>
+                <tab-item toggle="tab3">Tab 3</tab-item>
+                <tab-item toggle="tab4">Tab 4</tab-item>
+              </mz-tabs>
 
-            </code></pre>
-        </div>
-      </div>
-    </div>
-  </div>
+              <div class="row">
+                  <div class="col s12">
+                    <mz-tab id="tab1" z-bg="grey" lb=4><h4 class="red-text text-lighten-3">Tab 1</h4></mz-tab>
+                    <mz-tab id="tab2" z-bg="grey" lb=4><h4 class="red-text text-lighten-3">Tab 2</h4></mz-tab>
+                    <mz-tab id="tab3" z-bg="grey" lb=4><h4 class="red-text text-lighten-3">Tab 3</h4></mz-tab>
+                    <mz-tab id="tab4" z-bg="grey" lb=4><h4 class="red-text text-lighten-3">Tab 4</h4></mz-tab>
+                  </div>
+              </div>
+
+              <pre><code no-escape hljs>
+
+
+    &lt;mz-tabs>
+        &lt;tab-item toggle="#tab1">Tab 1&lt;/tab-item>
+        &lt;tab-item toggle="#tab2">Tab 2&lt;/tab-item>
+        &lt;tab-item toggle="#tab3">Tab 3&lt;/tab-item>
+        &lt;tab-item toggle="#tab4">Tab 4&lt;/tab-item>
+    &lt;/mz-tabs>
+
+    &lt;mz-tab id="tab1">&lt;h4> Test 1 &lt;/h4>&lt;/mz-tab>
+    &lt;mz-tab id="tab2">&lt;h4> Test 2 &lt;/h4>&lt;/mz-tab>
+    &lt;mz-tab id="tab3">&lt;h4> Test 3 &lt;/h4>&lt;/mz-tab>
+    &lt;mz-tab id="tab4">&lt;h4> Test 4 &lt;/h4>&lt;/mz-tab>
+
+
+              </code></pre>
+
+              </article></div></section>
+
+
+        <section id="" class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">jQuery Plugin Initialization</h3>
+                <p>
+                  Tabs are initialized automatically, but if you add tabs dynamically you will have to initialize them like this.
+                </p>
+
+                <pre><code class="javascript" no-escape hljs>
+
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+});
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">jQuery Plugin Methods</h3>
+
+                <p>
+                  You can programmatically trigger a tab change with our select_tab method. You have to input the id of the tab you want to switch to. In the case of our demo it would be either test1, test2, test3, or test4.
+                </p>
+
+                <pre><code class="javascript" no-escape hljs>
+
+$(document).ready(function(){
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+});
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Preselecting a tab</h3>
+
+                <p>
+                  By default, the first tab is selected. But if this is not what you want, you can preselect a tab by either passing in the hash in the url ex:#test2. Or you can add the class active to the a tag.
+                </p>
+
+                <pre><code no-escape hljs>
+
+&lt;li class="tab col s2">&lt;a class="active" href="#test3">Test 3&lt;/a>&lt;/li>
+
+                </code></pre>
+                </article></div></section>
+
+      </div></section>
+
 </div>

@@ -1,113 +1,135 @@
-<div class="section grey lighten-3">
-  <div class="col s12">
-    <div class='container'>
+<div class="page">
 
-      <div class="section pads-b-20">
-
-        <div class="col s12">
-          <h1 class="title grey-text darken-4">
-            <strong class="pink-text text-accent-1">mz</strong>Collapsible</h1>
-        </div>
-        <div class='col s12'>
-          <h3 class="light indigo-text text-lighten-4 center-on-small-only"></h3>
-        </div>
-
-      </div>
-
-        <!-- Cards Example -->
-      <div class="section pads-b-20">
+    <header class="page-header grey darken-3 z-depth-2">
+      <div class="container">
         <div class="row">
+
           <div class="col s12">
-            <h1 class="pink-text accent-2">Basic</h1>
+            <h1 class="page-title white-text darken-4">
+              <strong class="pink-text text-accent-1">mz</strong>Collapsible</h1></div>
 
-            <ul class="collapsible" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-            </ul>
+          <div class='col s12'>
+            <p class=" caption">
+              Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.
 
-            <pre><code no-escape hljs>
+              </p></div>
 
-              &lt;mz-collapsible type=accordion>
-                  &lt;mz-collapse>
-                      &lt;collapse-header>
-                          &lt;i class="mdi-image-filter-drama">&lt;/i>First
-                      &lt;/collapse-header>
-                      &lt;collapse-body>
-                          &lt;p>Lorem ipsum dolor sit amet.&lt;/p>
-                      &lt;/collapse-body>
-                  &lt;/mz-collapse>
-              &lt;/mz-collapsible>
+          </div></div></header>
 
-            </code></pre>
+    <section class="section">
+      <div class='container page-content'>
 
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <h1 class="pink-text accent-2">Accordion</h1>
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
 
-            <ul class="collapsible" data-collapsible="accordion">
-              <li>
-                <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-            </ul>
+              <h3 class="thin">Collapsible HTML Structure</h3>
 
-            <pre><code no-escape hljs>
+              <mz-collapsible >
+                <li>
+                  <div collapse-header><i class="mdi-image-filter-drama"></i>First</div>
+                  <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div collapse-header><i class="mdi-maps-place"></i>Second</div>
+                  <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div collapse-header><i class="mdi-social-whatshot"></i>Third</div>
+                  <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+              </mz-collapsible>
 
-              &lt;mz-collapsible type=accordion>
+              <pre><code no-escape hljs>
 
-            </code></pre>
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <h1 class="pink-text accent-2">Expandable</h1>
-
-            <ul class="collapsible" data-collapsible="expandable">
-              <li>
-                <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-              </li>
-            </ul>
-
-            <pre><code no-escape hljs>
-
-              &lt;mz-collapsible type=expandable>
-            </code></pre>
-
-          </div>
-        </div>
-      </div>
+&lt;mz-collapsible type="accordion">
+    &lt;li>
+        &lt;div collapse-header>&lt;i class="mdi-image-filter-drama">&lt;/i>First&lt;/div>
+        &lt;div collapse-body>&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+    &lt;/li>
+    &lt;li>
+        &lt;div collapse-header>&lt;i class="mdi-maps-place">&lt;/i>Second&lt;/div>
+        &lt;div collapse-body>&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+    &lt;/li>
+    &lt;li>
+        &lt;div collapse-header>&lt;i class="mdi-social-whatshot">&lt;/i>Third&lt;/div>
+        &lt;div collapsible-body>&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+    &lt;/li>
+&lt;/mz-collapsible>
 
 
-    </div>
-  </div>
+              </code></pre>
+
+              </article></div></section>
+
+
+        <section id="" class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Accordion</h3>
+
+                <mz-collapsible type="accordion">
+                  <li>
+                    <div collapse-header><i class="mdi-image-filter-drama"></i>First</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                  <li>
+                    <div collapse-header><i class="mdi-maps-place"></i>Second</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                  <li>
+                    <div collapse-header><i class="mdi-social-whatshot"></i>Third</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                </mz-collapsible>
+                <pre><code no-escape hljs>
+
+&lt;mz-collapsible type=accordion>
+
+    &lt;-- collapse-header --!>
+    &lt;-- collapse-body --!>
+
+&lt;/mz-collapsible>
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Expandable</h3>
+
+                <mz-collapsible type=expandable>
+                  <li>
+                    <div collapse-header><i class="mdi-image-filter-drama"></i>First</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                  <li>
+                    <div collapse-header><i class="mdi-maps-place"></i>Second</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                  <li>
+                    <div collapse-header><i class="mdi-social-whatshot"></i>Third</div>
+                    <div collapse-body><p>Lorem ipsum dolor sit amet.</p></div>
+                  </li>
+                </mz-collapsible>
+
+                <pre><code no-escape hljs>
+
+&lt;mz-collapsible type=expandable>
+
+    &lt;-- collapse-header --!>
+    &lt;-- collapse-body --!>
+
+&lt;/mz-collapsible>
+
+
+                </code></pre>
+                </article></div></section>
+
+
+      </div></section>
+
 </div>

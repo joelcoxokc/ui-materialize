@@ -14,7 +14,7 @@
                   } )
             .state('app.stylus-color',
                   { url   : '/stylus/color'
-                  , views : view('views/color.html')
+                  , views : view('views/color.html', 'ColorController as vm')
                   } )
             .state('app.stylus-grid',
                   { url   : '/stylus/grid'

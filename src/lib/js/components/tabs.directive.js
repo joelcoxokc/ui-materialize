@@ -4,31 +4,64 @@
     angular
         .module('mz.components.tabs', [ 'mz.components.tab' , 'mz.components.tab-content' ])
         .directive('mzTabs', mzTabs)
+        .controller('tabsController', tabsController)
+        .service('$TabsService', TabsService)
         ;
+
+    function TabsService() {
+        var _this = this;
+        this.tabLength  = 0;
+        this.indicator = $('<div class="indicator"></div>');
+        this.tabItems  = {};
+
+        this.linkTab = function(element, id) {
+            this.tabItems[id].tab = element;
+          }
+
+      }
+    /* @ngInject */
+    function tabsController($scope, $TabsService) {
+        var _this = this;
+        angular.extend(this, $TabsService)
+        this.init = function(element, attrs) {
+            this.element = element;
+            this.attrs   = attrs;
+            this.element.append(this.indicator);
+          }
+
+        this.addTab  = function(element, attrs, scope) {
+            this.tabLength++;
+            this.tabItems[attrs.toggle] = {element:element, attrs:attrs, scope:scope};
+            this.setWidth();
+            this.tabItems[attrs.toggle].element.on('click', function() {
+              $('.mz-tab').removeClass('active');
+              _this.tabItems[attrs.toggle].tab.toggleClass('active')
+              });
+          }
+
+        this.setWidth = function() {
+            this.tabWidth = Math.floor(100 / this.tabLength) + '%'
+            angular.forEach(this.tabItems, function(item) {
+                item.element.css({width: _this.tabWidth } );
+              });
+          }
+      }
 
     /* @inject */
     function mzTabs() {
-        return { template   :  '<div class="tabs-wrapper">'+
-                                 '<div class="row white z-depth-1 pin-top" style="top: 0px;">'+
-                                   '<div class="container">'+
-                                     '<ul class="tabs" data-ng-transclude></ul></div></div></div>'
-               , restrict   : 'E'
-               , scope      : true
-               , transclude : true
-               , link       : link
+        return { templateUrl  : 'components/tabs.html'
+               , restrict     : 'E'
+               , scope        : true
+               , replace      : true
+               , transclude   : true
+               , controller   : 'tabsController as vm'
+               , link         : link
                };
-        // <li class="tab" ><a href="#tab1" class="">Typography</a></li>
-        // <li class="tab" ><a href="#tab2" class="">Grid</a></li>
-        // <li class="tab" ><a href="#tab4" class="active">Forms</a></li>
-        // <li class="tab" ><a href="#tab5" class="">Buttons</a></li>
-        // <li class="tab" ><a href="#tab6">Navbar</a></li>
-        // <li class="tab" ><a href="#tab7">Content</a></li>
 
-        function link(scope, element, attrs) {
-            jQuery(document).ready(function() {
-                element.children().ready(function(){$('ul.tabs').tabs();});  });
+        function link(scope, element, attrs, ctrl) {
+
+            ctrl.init(element.find('ul'), attrs);
           }
-
       }
 
   }).call(this);
