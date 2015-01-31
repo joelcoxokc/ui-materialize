@@ -22,6 +22,7 @@
             , 'mz.components.table'
             , 'mz.components.text-field'
             , 'mz.components.tooltip'
+            , 'mz.components.flow-text'
             ]  );
 
   }).call(this);

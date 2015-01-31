@@ -1,11 +1,11 @@
 ;(function() {'use-strict';
 
     angular
-      .module('core')
+      .module('mz.components.flow-text', [])
       .directive('flowText', flowText)
       ;
 
-    function flowToggle() {
+    function flowText() {
         return function (scope, element, attrs) {
             element.addClass('flow-text');
           }
