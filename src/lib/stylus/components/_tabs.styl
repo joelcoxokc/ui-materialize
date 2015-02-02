@@ -1,0 +1,43 @@
+.mz-tabs
+  height:      48px
+  width:       100%
+  position:    relative
+  margin:      0 auto
+  white-space: nowrap
+  background-color: #FFF
+
+  & > li.tab-item
+    display:     block
+    float:       left
+    margin:      0
+    padding:     0 20px
+    height:      48px
+    width:       15%
+    text-align:  center
+    line-height: 48px
+    letter-spacing:   .8px
+    text-transform:   uppercase
+    background-color: #fff
+    cursor: pointer
+
+    & > a
+      color:   grey
+      width:   100%
+      height:  100%
+      display: block
+      transition: color 0.28s ease
+      &:hover
+        color: lightn(grey, 20%)
+
+  & > .indicator
+    position: absolute
+    bottom: 0
+    height: 2px
+    background-color: grey
+
+ul.mz-tabs li.tab {padding:0;}
+
+.mz-tab
+  display:none
+  &.active
+    display:block

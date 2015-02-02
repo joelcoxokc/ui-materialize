@@ -1,10 +1,10 @@
-;(function() {
-    'use strict';
+;(function() { 'use strict';
 
     angular
-        .module('app.modules', [
-            'gettingStarted',
-            'components'
-        ]);
+        .module('app.modules',
+            [ 'gettingStarted'
+            , 'stylus'
+            , 'components'
+            ]  );
 
-}).call(this);
+  }).call(this);

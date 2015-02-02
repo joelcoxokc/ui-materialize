@@ -1,0 +1,156 @@
+action-group-defaults()
+
+    flex-container()
+    flex-direction column
+    flex    1 0 auto
+    margin  0
+    padding 0
+
+/*
+=========================================== NAV ACTION GROUP
+*/
+.nav-action-group
+    action-group-defaults()
+
+    &.nav-action-group-top
+        flex-direction column
+        justify-content flex-start
+    &.nav-action-group-bottom
+        flex-direction column
+        justify-content flex-end
+
+    &.nav-action-group-right
+        flex-direction row
+        justify-content flex-end
+    &.nav-action-group-left
+        flex-direction row
+        justify-content flex-start
+
+    & > ul
+        margin 0
+        height auto
+
+/*
+=========================================== NAV ACTION
+*/
+.nav-action
+    display block
+    margin-top 2px
+    heights($nav-action-width-fold, true)
+    widths($nav-action-width-fold, true)
+    background-color $dark-bg !important
+    color #eeeeee
+
+    text-align center
+    vertical-align middle
+    border none
+
+    box-shadow(inset -10px 10px 10px rgba(0,0,0,0.1) !important)
+    /*
+    =================== ACTION ICON
+    */
+    & > i
+        font-size 2rem
+    /*
+    =================== ACTION HOVER
+    */
+    &:hover
+        background-color #ff80ab !important
+        box-shadow(inset 0 0 0 rgba(0,0,0,0.1) !important)
+        > *
+            color $dark-bg !important
+    /*
+    =================== ACTION NO HOVER
+    */
+    &.no-margin
+        margin 0
+
+    &.header-action-huge
+        position fixed
+        top 0
+        right 0
+        heights(100px, true)
+        widths(100px, true)
+        z-index 1010
+        border-radius 2px
+        box-shadow(-10px 10px 30px rgba(0,0,0,0.5) !important)
+        & > i
+            font-size 3rem
+            font-weight bold
+
+
+/*
+=========================================== SIDE NAV - NAV ACTION
+*/
+.nav-right,
+.nav-left
+    ul.nav-action-group,
+    .nav-action-group
+        & > li
+            flex-container()
+            & > a
+                flex-container()
+                box-shadow(inset -10px 10px 10px rgba(0,0,0,0.1) !important)
+                align-items center
+                flex 1 0 auto
+                & > .nav-action-text
+                    // display none
+                    color white
+                    padding-left 24px
+
+
+                & > i
+                    font-size 2rem
+                &:hover,
+                &:active,
+                &.active
+                    background-color #ff4081
+                    box-shadow(inset 0 0 0 rgba(0,0,0,0.1) !important)
+
+
+    &.nav-viz-thin
+        .nav-action-group
+            & > li
+                flex-container()
+                & > a
+
+                    heights($nav-action-width-fold, true)
+                    align-items: center
+                    justify-content center
+                    text-align: center
+                    .nav-action-text
+                        display:none
+                    & > i
+                        transition color 300ms ease
+                        flex 1 0 auto
+                        align-self center
+                    &:hover,
+                    &:active,
+                    &.active
+                        color white
+                        & > i
+                            color white
+
+    &.nav-viz-fat
+        .nav-action-group
+            & > li
+                flex-container()
+                min-height 48px
+                max-height 48px
+                & > a
+                    flex-container()
+                    align-items center
+                    padding 4px 0px 4px 24px
+                    flex 1 0 auto
+                    min-height 48px
+                    max-height 48px
+
+                    & > .nav-action-text
+                        display block
+                        padding-left 24px
+                    & > i
+                        background-color none;
+                    &:hover,
+                    &:active,
+                    &.active
+                        background-color #000000

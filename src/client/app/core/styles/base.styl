@@ -1,19 +1,15 @@
-// html, body
-//   // background #f5f5f5
-//   width 100vw
-//   height 100vh
-//   overflow hidden
-// body
-//   scroll-vertical()
-
-// main
-//     height auto
-
-body
+.intro-section
+    flex 1 0 auto
+    // align-self stretch
+    background #363636
     background-image url('images/md-1.png')
-
-    background-size cover
-
+    background-size contain
+    background-position top right
+    background-attachment: fixed;
+    background-repeat: no-repeat
+    // min-width 100vw;
+    min-height 800px;
+    height 800px;
 
 h1.title
     font-weight 500
@@ -27,14 +23,13 @@ h3.intro-text
         font-weight 700
 
 .brand-logo
-  text-shadow(0 2px 4px rgba(0,0,0,.1))
+    text-shadow(0 2px 4px rgba(0,0,0,.1))
 
 .intro-devices
     margin 0 auto
     width 400px
     padding 20px
     border-radius(10px)
-
 
     .intro-device-inner
         background white
@@ -45,11 +40,89 @@ h3.intro-text
         height 50px
         box-shadow(0 2px 4px rgba(0,0,0,.3))
 
+.page
+    // position relative
+    // height 100%
+    header.page-header
+        height 500px
+        position relative
+        width 100%
 
 
+    .page-title
+        text-shadow 0 2px 2px rgba(0,0,0,0.1)
+    .caption
+        color white
+        font-size 18px
+    .page-content
+        margin-top -200px
+        position relative
+        .caption
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 30px;
 
-code
+
+pre code
   border-radius(5px)
-  background-color lightgrey
+
+  -webkit-box-shadow 0px 2px 4px rgba(0,0,0,0.3)
+  background-color lighgrey !important
+  background lighgrey !important
 
 
+  .tag
+      color: grey
+      .title
+          color: #0053D9
+
+.grid-example
+    border: 1px solid #eee
+    margin: 7px 0
+    text-align: center
+    line-height: 50px
+    font-size: 28px
+    background-color: #e91e63
+    color: white
+    padding: 0px
+
+.promo i
+    color: #e91e63
+    font-size: 7rem
+    display: block
+
+.shadow-demo
+    background-color: #26a69a
+    width: 125px
+    height: 125px
+    margin: 20px auto
+
+.dynamic-color .red,
+.dynamic-color .pink,
+.dynamic-color .purple,
+.dynamic-color .deep-purple,
+.dynamic-color .indigo,
+.dynamic-color .blue,
+.dynamic-color .light-blue,
+.dynamic-color .cyan,
+.dynamic-color .teal,
+.dynamic-color .green,
+.dynamic-color .light-green,
+.dynamic-color .lime,
+.dynamic-color .yellow,
+.dynamic-color .amber,
+.dynamic-color .orange,
+.dynamic-color .deep-orange,
+.dynamic-color .brown,
+.dynamic-color .grey,
+.dynamic-color .blue-grey
+    height: 55px;
+    width: 100%;
+    padding: 0 15px;
+    line-height: 55px;
+    font-weight: 500;
+    font-size: 12px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;

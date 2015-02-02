@@ -1,27 +1,21 @@
-<!-- <div class="nav-wrapper">
-  <div class="container"> -->
-    <mz-nav-brand ui-sref="home" class="waves-effect waves-light">
-      <strong class="pink-text text-accent-2">ui</strong>Materialize
-    </mz-nav-brand>
+<bar-brand ui-sref="app.home" class="waves-effect waves-light">
+  <strong class="pink-text text-accent-2">ui</strong>Materialize
+</bar-brand>
 
-    <nav-action-group side="left" links="blue-text text-accent-1">
-      <nav-action
-        waves=true
-        state=gettingStarted
-        >Getting Started</nav-action>
-      <!-- <nav-action
-        waves=true
-        state=grid
-        >Grid</nav-action>
-      <nav-action
-        waves=true
-        state=components
-        >Components</nav-action> -->
+<bar-content>
+  <nav-action-group side="left" links="blue-text text-accent-1">
+    <nav-action
+      waves=true
+      state=gettingStarted
+      >Getting Started</nav-action>
 
     </nav-action-group>
-    <nav-action-group side="right" links="pink-text text-accent-1">
-      <li><a href="#" class="linked" mz-side-nav-toggle="right" toggle='open'><i class="mdi-navigation-menu"></i></a></li>
-      <!-- <li class="waves-effect waves-light"><a class="pink-text" href="">JavaScript</a></li> -->
-    </nav-action-group>
-<!--   </div>
-</div> -->
+  <nav-action-group side="right" links="pink-text text-accent-1">
+      <button   type="button"
+                mz-toggle-right-nav
+                class="nav-side-toggle header-action-huge nav-action no-margin waves-effect waves-dark pink accent-2 "
+                icon="mdi-navigation-menu"
+                next-icon='mdi-navigation-arrow-forward'
+                header-action-huge
+                ></button></nav-action-group>
+  </bar-content>

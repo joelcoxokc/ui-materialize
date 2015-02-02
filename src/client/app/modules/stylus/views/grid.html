@@ -1,0 +1,262 @@
+<div class="page">
+
+    <header class="page-header grey darken-3 z-depth-2">
+      <div class="container">
+        <div class="row">
+
+          <div class="col s12">
+            <h1 class="page-title white-text darken-4">
+              <strong class="pink-text text-accent-1">mz</strong>Col</h1></div>
+
+          <div class='col s12'>
+            <p class=" caption">
+              We are using a standard 12 column fluid responsive grid system.The grid helps you layout your page in an ordered, easy fashion
+              </p></div>
+
+          </div></div>
+
+    </header>
+
+    <section class="section page-content">
+      <div class="row">
+        <div class="col s10 offset-s1">
+
+          <div class="card white">
+            <div class="card-content">
+              <h3 class="thin">Container</h3>
+              <p>
+                The container class is not strictly part of the grid but is important in laying out content. It allows you to center your page content. The container class is set to ~70% of the window width. It helps you center and contain your page content. We use the container to contain our body content.
+              </p>
+              </div>
+            <mz-animations></mz-animations>
+            <div class="card-content">
+              <pre><code no-escape hljs>
+
+                &lt;div class="container">
+                  &lt;!-- Page Content goes here -->
+                &lt;/div>
+
+              </code></pre>
+            </div>
+          </div>
+
+        </div></div></section>
+
+    <section class="section">
+      <div class='container'>
+
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Introduction</h3>
+              <p>
+                Take a look at this section to quickly understand how the grid works!
+              </p>
+
+              <h3 class="thin pink-text">12 Columns</h3>
+              <p>
+                Our standard grid has 12 columns. No matter the size of the browser, each of these columns will always have an equal width.
+              </p>
+
+              <div class="row">
+                <div class="col s1 grid-example"><span class="flow-text">1 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">2 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">3 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">4 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">5 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">6 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">7 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">8 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">9 </span></div>
+                <div class="col s1 grid-example"><span class="flow-text">10</span></div>
+                <div class="col s1 grid-example"><span class="flow-text">11</span></div>
+                <div class="col s1 grid-example"><span class="flow-text">12</span></div>
+              </div>
+              <pre><code no-escape hljs>
+
+&lt;mz-row>
+    &lt;mz-col s=1>1&lt;/mz-col>
+    &lt;mz-col s=1>2&lt;/mz-col>
+    &lt;mz-col s=1>3&lt;/mz-col>
+    &lt;mz-col s=1>4&lt;/mz-col>
+    &lt;mz-col s=1>5&lt;/mz-col>
+    &lt;mz-col s=1>6&lt;/mz-col>
+    &lt;mz-col s=1>7&lt;/mz-col>
+    &lt;mz-col s=1>8&lt;/mz-col>
+    &lt;mz-col s=1>9&lt;/mz-col>
+    &lt;mz-col s=1>10&lt;/mz-col>
+    &lt;mz-col s=1>11&lt;/mz-col>
+    &lt;mz-col s=1>12&lt;/mz-col>
+&lt;/mz-row>
+
+              </code></pre>
+              <p>
+                Note: For now, just know that the s1 stands for small-1 which in plain English means "1 column on small screens".
+              </p>
+
+              </article></div></section>
+
+
+        <section id="" class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Columns live inside Rows</h3>
+                <p>
+                  Remember when you are creating your layout that all columns must be contained inside a row and that you must add the col class to your inner divs to make them into columns
+                </p>
+
+                <div class="row">
+                  <div class="col s12 grid-example"><span class="flow-text">This div is 12-columns wide</span></div>
+                  <div class="col s6 grid-example"><span class="flow-text">This div is 6-columns wide</span></div>
+                  <div class="col s6 grid-example"><span class="flow-text">This div is 6-columns wide</span></div>
+                </div>
+                <pre><code no-escape hljs>
+
+&lt;mz-row>
+    &lt;mz-col s=12>This div is 12-columns wide&lt;/mz-col>
+    &lt;mz-col s=6>This div is 6-columns wide&lt;/mz-col>
+    &lt;mz-col s=6>This div is 6-columns wide&lt;/mz-col>
+&lt;/mz-row>
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Offsets</h3>
+                <p>
+                  To offset, simply add offset-s2 to the class where s signifies the screen class-prefix (s = small, m = medium, l = large) and the number after is the number of columns you want to offset by.
+                </p>
+                <div class="row">
+                  <div class="col s12 grid-example"><span class="flow-text">This div is 12-columns wide on all screen sizes</span></div>
+                  <div class="col s6 offset-s6 grid-example"><span class="flow-text">6-columns (offset-by-6)</span></div>
+                </div>
+                <pre><code no-escape hljs>
+
+&lt;mz-row>
+    &lt;mz-col s=12>This div is 12-columns wide on all screen sizes&lt;/mz-col>
+    &lt;mz-col s=6 offset=6>6-columns (offset-by-6)lt;/mz-col>
+&lt;/mz-row>
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Creating Layouts</h3>
+                <p>
+                  Here we will show you how to create some commonly used layouts with our grid system. Hopefully these will get you more comfortable with laying out elements. To keep these demos simple, the ones here will not be responsive.
+                </p>
+                <div class="row">
+                    <div class="col s6">
+                        <h4>Section</h4>
+                        <p>
+                          The section class is used for simple top and bottom padding. Just add the section class to your div's containing large blocks of content.
+                        </p>
+                    </div>
+                    <div class="col s6">
+                        <h4>Section</h4>
+                        <p>
+                          Dividers are 1 pixel lines that help break up your content. Just add the divider to a div in between your content.
+                        </p>
+                    </div>
+                </div>
+                <h3 class="thin">Example Sections and Dividers</h3>
+                <div class="divider"></div>
+                <div class="section">
+                  <h5>Section 1</h5>
+                  <p>Stuff</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                  <h5>Section 2</h5>
+                  <p>Stuff</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                  <h5>Section 3</h5>
+                  <p>Stuff</p>
+                </div>
+                <pre><code no-escape hljs>
+
+&lt;div class="divider">&lt;/div>
+&lt;div class="section">
+    &lt;h5>Section 1&lt;/h5>
+    &lt;p>Stuff&lt;/p>
+&lt;/div>
+&lt;div class="divider">&lt;/div>
+&lt;div class="section">
+    &lt;h5>Section 2&lt;/h5>
+    &lt;p>Stuff&lt;/p>
+&lt;/div>
+&lt;div class="divider">&lt;/div>
+&lt;div class="section">
+    &lt;h5>Section 3&lt;/h5>
+    &lt;p>Stuff&lt;/p>
+&lt;/div>
+
+                </code></pre>
+                </article></div></section>
+
+        <section class="col s12">
+            <div class="card white">
+              <article class="card-content">
+
+                <h3 class="thin">Example Promotion Table</h3>
+                <p>
+                  If we want 3 divs that are equal size, we define the divs with a width of 4-columns, 4+4+4 = 12, which nicely adds up to 12. Inside those divs, we can put our content. Take our front page content for example. We've modified it slightly for the sake of this example.
+                </p>
+                <div class="row">
+                  <div class="col s4">
+                    <div class="center promo promo-example">
+                      <i class="mdi-image-flash-on"></i>
+                      <p class="promo-caption">Speeds up development</p>
+                      <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+                    </div>
+                  </div>
+                  <div class="col s4">
+                    <div class="center promo promo-example">
+                      <i class="mdi-social-group"></i>
+                      <p class="promo-caption">User Experience Focused</p>
+                      <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+                    </div>
+                  </div>
+                  <div class="col s4">
+                    <div class="center promo promo-example">
+                      <i class="mdi-action-settings"></i>
+                      <p class="promo-caption">Easy to work with</p>
+                      <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+                    </div>
+                  </div>
+                </div>
+                <pre><code no-escape hljs>
+
+&lt;mz-row>
+
+    &lt;mz-col s=4>
+        &lt;!-- Promo Content 1 goes here -->
+    &lt;/mz-col>
+    &lt;mz-col s=4>
+        &lt;!-- Promo Content 2 goes here -->
+    &lt;/mz-col>
+    &lt;mz-col s=4>
+        &lt;!-- Promo Content 3 goes here -->
+    &lt;/mz-col>
+
+&lt;/mz-row>
+
+                </code></pre>
+                </article></div></section>
+
+      </div></section>
+
+</div>
+
+<!-- <div class="section no-pad-bot indigo z-depth-1"> </div> -->

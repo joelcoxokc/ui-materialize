@@ -1,12 +1,11 @@
-;(function() {
-    'use strict';
+;(function() { 'use strict';
 
-    angular.module('core', [
-        'duScroll',
-        'ngAnimate',
-        'ui.router',
-        'ngSanitize',
-        'ngplus'
-    ]);
+    angular.module('core',
+        [ 'duScroll'
+        , 'ngAnimate'
+        , 'ui.router'
+        , 'ngSanitize'
+        , 'ngplus'
+        ]  );
 
-}).call(this);
+  }).call(this);

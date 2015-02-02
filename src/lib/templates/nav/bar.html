@@ -1,0 +1,7 @@
+<nav class="mz-nav-bar" data-ng-class="{
+        'bar-fixed' : fixed,
+        'bar-small' : size==='small',
+        'bar-medium': size==='medium',
+        'bar-large' : size==='large'
+    }">
+    <div data-ng-if="view" class="bar-container {{bg}}" ui-view="{{view}}"></div></nav>

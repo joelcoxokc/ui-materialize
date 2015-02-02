@@ -1,13 +1,12 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('core')
-        .controller('AppController', AppController);
+        .controller('AppController', AppController)
+        ;
 
     /* @ngInject */
-    function AppController($scope, $storage, TweenMax, Cubic, EventDispatcher, mzNavApi) {
+    function AppController($scope, $storage, TweenMax, Cubic) {
 
         // console.log(mzNavApi)
         // console.log(EventDispatcher);
@@ -15,10 +14,28 @@
         // console.log(this.right.$toggles.open())
         // console.log($Navigation.navs.right)
 
+        this.components = getComponents();
 
         jQuery(document).ready(function() {
             $('.collapsible').collapsible();
         })
+        function getComponents() {
+              return [ 'buttons'
+                      , 'cards'
+                      , 'collapsible'
+                      , 'collections'
+                      , 'dialogs'
+                      , 'dropdowns'
+                      , 'forms'
+                      , 'media'
+                      , 'modals'
+                      , 'notifications'
+                      , 'progress'
+                      , 'select'
+                      , 'tabs'
+                      , 'tooltips'
+                ];
+            }
     }
 
 }).call(this);

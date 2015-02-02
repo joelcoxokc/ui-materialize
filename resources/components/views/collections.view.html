@@ -1,0 +1,36 @@
+<mz-tabs>
+    <!-- <mz-tab link="#tab1" name="Typeography"></mz-tab> -->
+    <mz-tab link="#tab2" name="collections"></mz-tab>
+    <mz-tab link="#tab3" name="Buttons" class=''></mz-tab>
+    <!-- <mz-tab link="#tab4" name="NavBar"></mz-tab> -->
+    <!-- <mz-tab link="#tab5" name="Content"></mz-tab> --></mz-tabs>
+<!-- <mz-tab-content target='#tab1'></mz-tab-content> -->
+<!-- <mz-tab-content target='#tab2'></mz-tab-content> -->
+<mz-tab-content target='tab2' class="col s12">
+    <div class="container">
+        <h1 class="pink-text text-accent-1">Collections</h1>
+        <div class="row">
+            <mz-col s=12>
+                <mz-collection>
+                    <mz-collection-item data-ng-repeat="user in vm.users">
+                        <header class="mz-collection-item-heading">
+                            <div class="mz-collection-item-heading-left"> <span class="{{user.color}} white-text lighten-2 icon-circle-user">{{ user.first | limitTo:1 }}</span></div>
+                            <div class="mz-collection-item-heading-title">{{ user.first}} {{user.last }}</div>
+                            <div class="mz-collection-item-heading-middle">{{ user.messages[0].title }}</div>
+                            <div class="mz-collection-item-heading-right">
+                                <i class="mdi-action-done"></i>
+                                <i class="mdi-action-history"></i>
+                                <i class="mdi-content-create"></i>
+                                <i class="mdi-navigation-more-vert"></i></div></header>
+                        <section class="mz-collection-item-content">
+                            <span class="">{{user.messages[0].text}}</span></section>
+                      </mz-collection-item></mz-collection>
+              </mz-col></div></div></mz-tab-content>
+<mz-tab-content target='tab3' class="col s12">
+    <div class="container">
+        <h1>Buttons</h1>
+        <div class="valign-demo valign-wrapper">
+            <h5>This should be vertically aligned</h5></div>
+      </div></mz-tab-content>
+<!-- <mz-tab-content target='#tab4'></mz-tab-content> -->
+<!-- <mz-tab-content target='#tab5'></mz-tab-content> -->

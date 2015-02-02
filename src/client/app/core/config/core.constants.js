@@ -8,5 +8,10 @@
         .constant('moment', moment)
         .constant('TimelineLite', TimelineLite)
         .constant('TweenMax', TweenMax)
-        .constant('Cubic', Cubic);
-})();
+        .constant('Cubic', Cubic)
+        .config(Configuration)
+        ;
+
+        function Configuration(mzNavApiProvider) { mzNavApiProvider.hideOn('navBar', 'home') }
+
+  })();

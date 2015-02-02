@@ -1,0 +1,44 @@
+
+
+$vendor(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+
+$create-side-varient(side=false, side-label, side2=false, side2-label, size=false)
+    if side and side2 and size
+
+        &-{side}{side2}-{size}
+            padding-{side-label} size
+            padding-{side2-label} size
+
+    else if side and side2
+
+        &-{side}{side2}
+            padding-{side-label} $defaults-size
+            padding-{side2-label} $defaults-size
+
+    else if side and size
+
+        &-{side}-{size}
+            padding-{side-label} size
+
+    else if side
+
+        &-{side}
+            padding-{side-label} $defaults-size
+
+    else
+        &
+            padding $defaults-size
+
+all-widths(width)
+    width:width
+    min-width:width
+    max-width:width
+
+all-heights(height)
+    height:height
+    min-height:height
+    // max-height:height
+

@@ -1,14 +1,11 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('gettingStarted')
-        .factory('gettingStartedFactory', gettingStartedFactory);
+        .factory('gettingStartedFactory', gettingStartedFactory)
+        ;
 
     /* @ngInject */
-    function gettingStartedFactory() {
+    function gettingStartedFactory() { }
 
-    }
-
-}).call(this);
+  }).call(this);

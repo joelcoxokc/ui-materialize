@@ -1,0 +1,51 @@
+nav,
+.mz-nav-bar
+    flex 1 0 auto
+    flex-container()
+    height     $nav-bar-height
+    min-height $nav-bar-height
+    max-height $nav-bar-height
+    position   relative
+    box-shadow( 0 0 0 rgba(0,0,0,0))
+
+    .bar-container
+        flex-container()
+        flex-direction row
+        flex 1 0 auto
+        max-height $nav-bar-height
+        box-shadow(0 4px 6px rgba(0,0,0,0.2))
+
+    .bar-content
+        flex-container()
+        flex-direction row
+        flex 1 0 auto
+
+    &.bar-fixed
+
+        .bar-container
+            top      0
+            left     0
+            width    100%
+            position fixed
+            z-index  1001
+            box-shadow(0 4px 6px rgba(0,0,0,0.2))
+
+    &.bar-hidden
+        display none
+
+    .bar-brand,
+    .brand-logo
+        position relative
+        font-size 2.1rem
+        text-align center
+        padding 0
+        color white
+        flex 0 0 $nav-side-width
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5)
+            display:none
+
+

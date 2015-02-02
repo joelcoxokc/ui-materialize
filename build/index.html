@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>App</title>
 
-    <!-- inject-vendor:css -->
-    <link rel="stylesheet" href="/content/vendor.min-01a3ae75.css">
-    <!-- endinject -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App</title>
 
-    <!-- inject-libs:css -->
-    <link rel="stylesheet" href="/content/ui-materialize.min-c9dd74f9.css">
-    <!-- endinject -->
+<!-- inject-vendor:css -->
+<link rel="stylesheet" href="vendor/vendor.min.css">
+<!-- endinject -->
 
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/content/all.min-ec6c381f.css">
-    <!-- endinject -->
+<!-- inject-lib:css -->
+<link rel="stylesheet" href="lib/ui-materialize.css">
+<!-- endinject -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- inject:css -->
+<link rel="stylesheet" href="content/app.css">
+<!-- endinject -->
 
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-    <script>
-        window.log = function(name){
-            var args = Array.prototype.slice.call(arguments).slice(1)
-            console.log.apply(console, ['['+arguments[0]+']'].concat(args));
-        }
-    </script>
-  </head>
-  <body ng-controller="AppController as app" class="nav-fixed grey darken-3">
-    <!-- <div class="bg-container">
-        <div class="shape-1 blue"></div>
-    </div> -->
-    <mz-materialize>
-        <!-- <mz-side-nav fixed=true side="left" class="grey darken-4"></mz-side-nav> -->
-        <mz-body>
-            <mz-nav color='grey darken-4' fixed="true" view="nav">
-            </mz-nav>
-            <mz-view></mz-view>
-        </mz-body>
-        <mz-nav-right fixed=true side="right" class=""></mz-nav-right>
-    </mz-materialize>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+</head>
 
-    <!-- inject-vendor:js -->
-    <script src="/vendor.min-ae4f556a.js"></script>
-    <!-- endinject -->
 
-    <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+<body ng-controller="AppController as app" class="nav-fixed grey lighten-3">
 
-    <!-- inject-libs:js -->
-    <script src="/ui-materialize.js"></script>
-    <script src="/ui-materialize.templates.js"></script>
-    <!-- endinject -->
+  <mz-materialize>
+    <mz-body>
+      <mz-nav-bar view="nav" fixed=true bg='grey darken-4'></mz-nav-bar>
+      <mz-main    view></mz-main>
+      <mz-footer  view="footer" color="grey lighten-4"></mz-footer></mz-body>
 
-    <!-- inject:js -->
-    <script src="/all.min-d20c6655.js"></script>
-    <!-- endinject -->
-    <script>
-    </script>
-  </body>
+    <mz-nav-right
+            fixed=true
+            viz="thin fat"
+            view="right">
+            </mz-nav-right></mz-materialize>
+
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <!-- inject-vendor:js -->
+  <script src="vendor/vendor.min.js"></script>
+  <!-- endinject -->
+
+  <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+
+  <!-- inject-lib:js -->
+  <script src="lib/ui-materialize.js"></script>
+  <script src="lib/ui-materialize.templates.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="app.js"></script>
+  <script src="templates.js"></script>
+  <!-- endinject -->
+
+</body>
 </html>

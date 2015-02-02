@@ -1,12 +1,11 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('gettingStarted')
-        .filter('gettingStartedFilter', gettingStartedFilter);
+        .filter('gettingStartedFilter', gettingStartedFilter)
+        ;
 
     /* @ngInject */
     function gettingStartedFilter() {}
 
-}).call(this);
+  }).call(this);

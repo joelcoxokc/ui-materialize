@@ -1,10 +1,9 @@
-;(function() {
-
-    'use strict';
+;(function() { 'use strict';
 
     angular
         .module('core')
-        .factory('User', User);
+        .factory('User', User)
+        ;
 
     /* @inject */
     function User($http) {
@@ -13,33 +12,22 @@
         var api = join('/api', 'users');
 
         // Define the public api
-        var instance = {
-            all: all,
-            one: one,
-            create: create,
-            update: update,
-            destroy: destroy
-        };
-        return instance;
+        return  { all:all , one:one , create:create , update:update , destroy:destroy };
 
         ////////////////
 
         /**
-         * one                         |  description.
+         * all                         |  description.
          * @return {Promise}  |  $http |  promise a collection of all models.
          */
-        function all () {
-            return $http.get(api);
-        }
+        function all () { return $http.get(api); }
 
         /**
          * one                         |  description.
          * @param  {Integer}  |  id    |  requested model id
          * @return {Promise}  |  $http |  promise a single instance of the requested model.
          */
-        function one (id) {
-            return $http.get(join(api, id));
-        }
+        function one (id) { return $http.get(join(api, id)); }
 
         /**
          * create                      |  description.
@@ -48,13 +36,9 @@
          */
         function create (data) {
             return $http.post(api, data)
-                .then(function (response) {
-                    return response.data;
-                })
-                .catch(function (err) {
-                    return err;
-                });
-        }
+                .then(function (response) { return response.data; })
+                .catch(function (err) { return err; });
+          }
 
         /**
          * update                      |  description.
@@ -64,13 +48,10 @@
          */
         function update (id, data) {
             return $http.put(join(api, id), data)
-                .then(function (response) {
-                    return response.data;
-                })
-                .catch(function (err) {
-                    return err;
-                });
-        }
+                .then(function (response) { return response.data; })
+                .catch(function (err) { return err; });
+          }
+
         /**
          * destroy                     |  description.
          * @param  {Integer}  |  id    |  model id.
@@ -78,13 +59,9 @@
          */
         function destroy (id) {
             return $http.delete(join(api, id))
-                .then(function (response) {
-                    return response.data;
-                })
-                .catch(function (err) {
-                    return err;
-                });
-        }
+                .then(function (response) { return response.data; })
+                .catch(function (err) { return err; });
+          }
 
         /**
          * join                 | create a url string from the given arguments.
@@ -92,7 +69,8 @@
          */
         function join() {
             return Array.prototype.slice.call(arguments).join('/');
-        }
-    }
+          }
 
-}).call(this);
+      } // end function User
+
+  }).call(this);
