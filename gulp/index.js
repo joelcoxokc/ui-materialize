@@ -13,7 +13,12 @@
         , start  : use('dev','start' )
         , vendor : use('dev','vendor')
         };
-    Tasks.stage = {};
+    Tasks.stage =
+        { lib    : use('stage','lib'   )
+        , client : use('stage','client')
+        , start  : use('stage','start' )
+        , vendor : use('stage','vendor')
+        };
         // { lib    :  require('./stage/stage.lib'   )
         // , clent  :  require('./stage/stage.client')
         // , start  :  require('./stage/stage.start' )
@@ -59,6 +64,12 @@
                         }
                     }
                 }
+            , stage: {
+                    lib: {},
+                    client: {},
+                    vendor: {}
+                }
+
             }[task][name]  );  };
 
     })(module.exports);

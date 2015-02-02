@@ -73,68 +73,68 @@
                                                // 'dev:client:images'     ,
                                                'dev:client:inject'     )  );
 
-// //  ####  STAGE  #####
+//  ####  STAGE  #####
 
-//                                         /*======  STAGE  ======*/
-//     gulp                                /*=====================*/
-//         .task(  'stage'  ,
-//             $.sequence(
-//                 'stage:lib',
-//                 'stage:vendor'
-//                 // 'stage:client'  ,
-//                 // 'stage:start'
-//                 )  );
+                                        /*======  STAGE  ======*/
+    gulp                                /*=====================*/
+        .task(  'stage'  ,
+            $.sequence(
+                'stage:client',
+                'stage:vendor',
+                'stage:lib',
+                'stage:start'
+                )  );
 
-
-// /*======================================================================== STAGE START
-// */  gulp
-//         .task(  'stage:server'  ,  stage.server  )
-//         .task(  'stage:watch'   ,  stage.watch   )
-//         .task(  'stage:start'   ,  $.sequence(
-//                                     'stage:watch'   ,
-//                                     'stage:server'  )  );
-
-
-// /*======================================================================== STAGE VENDOR
-// */  gulp
-//         .task(  'stage:vendor:styles'   ,  stage.vendor.styles   )
-//         .task(  'stage:vendor:scripts'  ,  stage.vendor.scripts  )
-//         .task(  'stage:vendor:inject'   ,  stage.vendor.inject   )
-//         .task(  'stage:vendor'          ,  $.sequence(
-//                                             'stage:vendor:styles'   ,
-//                                             'stage:vendor:scripts'  ,
-//                                             'stage:vendor:inject'   )  );
+/*======================================================================== STAGE START
+*/  gulp
+        .task(  'stage:server'  ,  stage.start.server  )
+        .task(  'stage:watch'   ,  stage.start.watch   )
+        .task(  'stage:start'   ,  $.sequence(
+                                    'stage:watch'   ,
+                                    'stage:server'  )  );
 
 
-// /*======================================================================== STAGE LIB
-// */  gulp
-//         .task(  'stage:lib:templates'  ,  stage.lib.templates  )
-//         .task(  'stage:lib:scripts'    ,  stage.lib.scripts    )
-//         .task(  'stage:lib:analyze'    ,  stage.lib.analyze    )
-//         .task(  'stage:lib:styles'     ,  stage.lib.styles     )
-//         .task(  'stage:lib:inject'     ,  stage.lib.inject     )
-//         .task(  'stage:lib:fonts'      ,  stage.lib.fonts      )
-//         .task(  'stage:lib'            ,  $.sequence(
-//                                             'stage:lib:templates'  ,
-//                                             'stage:lib:scripts'    ,
-//                                             'stage:lib:analyze'    ,
-//                                             'stage:lib:styles'     ,
-//                                             'stage:lib:inject'     )  );
+/*======================================================================== STAGE VENDOR
+*/  gulp
+        .task(  'stage:vendor:styles'   ,  stage.vendor.styles   )
+        .task(  'stage:vendor:scripts'  ,  stage.vendor.scripts  )
+        .task(  'stage:vendor:inject'   ,  stage.vendor.inject   )
+        .task(  'stage:vendor'          ,  $.sequence(
+                                            'stage:vendor:styles'   ,
+                                            'stage:vendor:scripts'  ,
+                                            'stage:vendor:inject'   )  );
 
 
-// /*======================================================================== STAGE CLIENT
-// */  gulp
-//         .task(  'stage:client:templates'  ,  stage.client.templates  )
-//         .task(  'stage:client:analyze'    ,  stage.client.analyze    )
-//         .task(  'stage:client:scripts'    ,  stage.client.scripts    )
-//         .task(  'stage:client:styles'     ,  stage.client.styles     )
-//         .task(  'stage:client:inject'     ,  stage.client.inject     )
-//         .task(  'stage:client'            ,  $.sequence(
-//                                                'stage:client:templates'  ,
-//                                                'stage:client:analyze'    ,
-//                                                'stage:client:scripts'    ,
-//                                                'stage:client:styles'     ,
-//                                                'stage:client:inject'     )  );
+/*======================================================================== STAGE LIB
+*/  gulp
+        .task(  'stage:lib:templates'  ,  stage.lib.templates  )
+        .task(  'stage:lib:scripts'    ,  stage.lib.scripts    )
+        .task(  'stage:lib:analyze'    ,  stage.lib.analyze    )
+        .task(  'stage:lib:styles'     ,  stage.lib.styles     )
+        .task(  'stage:lib:inject'     ,  stage.lib.inject     )
+        .task(  'stage:lib:fonts'      ,  stage.lib.fonts      )
+        .task(  'stage:lib'            ,  $.sequence(
+                                            'stage:lib:templates'  ,
+                                            'stage:lib:scripts'    ,
+                                            'stage:lib:fonts' ,
+                                            'stage:lib:styles'     ,
+                                            'stage:lib:inject'     )  );
+
+/*======================================================================== STAGE CLIENT
+*/  gulp
+        .task(  'stage:client:templates'  ,  stage.client.templates  )
+        .task(  'stage:client:analyze'    ,  stage.client.analyze    )
+        .task(  'stage:client:scripts'    ,  stage.client.scripts    )
+        .task(  'stage:client:styles'     ,  stage.client.styles     )
+        .task(  'stage:client:inject'     ,  stage.client.inject     )
+        .task(  'stage:client:images'     ,  stage.client.images     )
+        .task(  'stage:client'            ,  $.sequence(
+                                               'stage:client:templates'  ,
+                                               // 'stage:client:analyze'    ,
+                                               'stage:client:scripts'    ,
+                                               'stage:client:styles'     ,
+                                               'stage:client:images'     ,
+                                               'stage:client:inject'     )  );
 
     // //  ####  DEPLOY  #####
 
