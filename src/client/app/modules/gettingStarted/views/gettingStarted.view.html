@@ -8,7 +8,7 @@
                     >Let's Start Building a Fantastic <strong class="pink-text text-accent-1"
                         > User Interface</strong></h3></div></div>
         <div class="section">
-            <a class="btn pink accent-1 btn-large waves-effect waves-light"
+            <a class="btn pink accent-1 btn-large waves-effect waves-light" href="ui-materialize.zip"
                 >Download <i class="mdi-file-file-download right"></i></a></div></div></div>
 <div class="row">
     <div class="container">
@@ -16,20 +16,18 @@
             <div class='col s6'>
                 <div class="card white darken-1">
                     <div class="card-content ">
-                        <h1 class="card-title indigo-text"><strong>Download ui-material</strong></h1>
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                          I am convenient because I require little markup to use effectively.</p></div>
+                        <h1 class="card-title indigo-text">Download ui-materialize</h1>
+                        <p>Checkout the Latest Release</p></div>
                     <div class="card-action">
-                      <a class="btn pink accent-1 white-text waves-effect waves-light" href="#"
+                      <a class="btn pink accent-1 white-text waves-effect waves-light" href="https://github.com/joelcoxokc/ui-materialize"
                           >ui-materialize</a></div></div></div>
             <div class='col s6'>
                 <div class="card white darken-1">
                     <div class="card-content ">
                         <h1 class="card-title indigo-text">Download Materialize<strong>CSS</strong></h1>
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                          I am convenient because I require little markup to use effectively.</p></div>
+                        <p>Latest Release</p></div>
                     <div class="card-action">
-                        <a class="btn pink accent-1 white-text waves-effect waves-light" href='#'
+                        <a class="btn pink accent-1 white-text waves-effect waves-light" href="https://github.com/Dogfalo/materialize"
                             >MaterializeCss</a></div></div></div></div>
         <div class="row">
             <div class='col s12'>
@@ -50,28 +48,53 @@
                 <div class="card white">
                     <div class="card-content">
                         <h1 class="pink-text text-accent-1"><strong>HTML Setup</strong></h1>
-                        <p class="">In Order for ui-materialize to work properly, we must layout our initail HTML<br>
-                          The best way to do this is using either ng-include, or multiple views from the first page.</p>
+                        <p class="">In Order for ui-materialize to work properly, we must wrap our application in the mz-materialize directive</p>
+                        <p class=""> If using side navs, wrap the application inside the mz-body directive, leaving the mz-nav-{side} on the outside</p>
+                        <p class=""> If using the nav-nav-bar, this remains inside the mz-body</p>
                         <p class=""></p></div>
                     <div class="card-action">
 
 
-<pre><code no-escape hljs>
-        &lt;html>
-            &lt;body class="nav-fixed">
+       <pre><code no-escape hljs>
+        &lt;html ng-app="app">
+            &lt;body>
 
-                &lt;mz-nav color="white" fixed=true>
-                    &lt;div ng-include="'path/to/nav.template.html'">&lt;/div>
-                &lt;/mz-nav>
+                &lt;mz-materialize>
 
-                &lt;mz-view>&lt;/mz-view>
+                    &lt;mz-body>
+                        &lt;mz-nav-bar view="nav-bar" fixed=true>&lt;/mz-nav-bar>
 
-                &lt;mz-footer color="grey darken-3">
-                    &lt;div ng-include="'path/to/footer.template.html'">&lt;/div>
-                &lt;/mz-footer>
+                        &lt;mz-main view>&lt;/mz-main>
+
+                        &lt;mz-footer view="footer">&lt;/mz-footer>
+                    &lt;/mz-body>
+
+                    &lt;mz-nav-right view="nav-right" viz="thin fat" fixed=true>&lt;/mz-nav-right>
+
+                &lt;/mz-materialize>
+
 
             &lt;/body>
-        &lt;/html></code></pre></div></div></div></div>
+        &lt;/html></code></pre>
+
+        <p>Here is how you can set up the ui-router to work with your views</p>
+       <pre><code no-escape hljs>
+       $stateProvider
+           .state('app', {
+               url: '/app',
+               views: {
+                   'nav-bar': { templateUrl: '/pathToNavBar.html'}
+                   'nav-right': { templateUrl: '/pathToNavRight.html'}
+                   'footer': { templateUrl: '/pathToFooter.html'}
+               }
+           })
+           .state('app.home', {
+               url: '/home',
+               views: {
+                   '@': { templateUrl: '/pathToHomeView.html'}
+               }
+           });
+       </code></pre></div></div></div></div>
 
       </div>
   </div>

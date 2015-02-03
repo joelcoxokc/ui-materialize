@@ -7,18 +7,17 @@
     /* @ngInject */
     function gettingStartedConfig($stateProvider) {
         $stateProvider
-            .state('gettingStarted',
+            .state('app.gettingStarted',
                 { url   : '/gettingStarted'
                 , mzNav : { background: 'white'
                           , links     : 'orange-text'
                           }
-                , views:  { '@'       : { templateUrl : 'app/modules/gettingStarted/views/gettingStarted.view.html'
-                                        , controller  : 'gettingStartedController as vm'
-                                        }
-                          , nav       : { templateUrl : 'app/core/views/header.view.html'
-                                        }
+                , views:  { '@'  :
+                              { templateUrl : 'app/modules/gettingStarted/views/gettingStarted.view.html'
+                              , controller  : 'gettingStartedController as vm'
+                              }
                           }
-                }   );
+                });
       }
 
   }).call(this);
