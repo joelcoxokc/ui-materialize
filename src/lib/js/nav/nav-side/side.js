@@ -21,7 +21,7 @@
             scope.view = attrs.view;
             scope.settings = {side:side};
             element.addClass('nav-'+side);
-            attrs.fixed && element.addClass('nav-fixed');
+            attrs.fixed &&( element.addClass('nav-fixed') );
             ctrl.addNav(scope, element, attrs, side);
           };
       }

@@ -14,7 +14,7 @@
                };
         function link(scope, element, attrs, ctrl, transclude) {
             var config = {};
-            var side = attrs.side || 'top'; // FIXME: I reveresed these terms. Is this correct?
+            var side = attrs.side || 'top';
             scope.side = side;
             config.fixed = !!attrs.fixed;
             config[attrs.size] = !!attrs.size;

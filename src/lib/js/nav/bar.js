@@ -14,8 +14,8 @@
                 , link: link
                 };
         function link(scope, element, attrs, ctrl, transclude) {
-            attrs.fixed && element.addClass('bar-fixed')
-            attrs.size  && element.addClass('bar-'+attrs.size)
+            attrs.fixed &&( element.addClass('bar-fixed') );
+            attrs.size  &&( element.addClass('bar-'+attrs.size) );
             jQuery(document).ready(function() {
                 if (scope.brand) {
                     $(element).find('.bar-content')

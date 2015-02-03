@@ -317,7 +317,7 @@
                 , link        : link
                 };
         function link(scope, element, attrs) {
-            scope.type = scope.type || 'accordion';
+            scope.type ||( scope.type = 'accordion' );
           }
       }
     function collapseHeader() {
@@ -403,7 +403,7 @@
                 selectedItem = item;
                 selectedItemIndex = itemIndex;
                 item.$isSelected = true;
-                (  item.onSelect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
+                item.onSelect &&( item.onSelect() );
                 if (shouldEmitEvent) {
                     $scope.$emit('$mzCollectionItem.change', { type:'item' , itemIndex:itemIndex , item:item });  }
                 this.expandItem(item);   };
@@ -413,7 +413,7 @@
                     selectedItem = selectedItemIndex = null;
                     item.$isSelected = false;
                     item.$isExpanded = false;
-                    (  item.onDeselect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
+                    item.onDeselect &&( item.onDeselect() );
                     item.$broadcast && item.$broadcast('$itemDeselected');  }  };
 
             this.foldItem   = function (item) {};
@@ -1210,9 +1210,9 @@
         function link(scope, element, attrs, ctrl, transclude) {
 
             var inner = element.children();
-            scope.icon   =  attrs.icon  || null;
-            scope.link   =  attrs.link  || null;
-            scope.label  =  attrs.label || null;
+            scope.icon  ||( attrs.icon  = null );
+            scope.link  ||( attrs.link  = null );
+            scope.label ||( attrs.label = null );
             scope.waves  = (attrs.waves ? 'waves-effect waves-'+attrs.waves : '');
             transclude(scope, function (clone){ inner.append(clone); });   }
 
@@ -1344,7 +1344,7 @@
 
         function link(scope, element, attrs, ctrl, transclude) {
             var config = {};
-            var side = attrs.side || 'top'; // FIXME: I reveresed these terms. Is this correct?
+            var side = attrs.side || 'top';
 
             scope.side = side;
             config.fixed = !!attrs.fixed;
@@ -2160,9 +2160,9 @@
             ///  @scope state  |  set the state for ui-sref if attribute is passed
             ///  @scope link   |  set the link for href if attribute is passed
             ///  @scope waves  |  set waves on scope, or default wave is specified. otherwise no waves used
-            scope.state = attrs.state  || null;
-            scope.link  = attrs.link   || null;
-            scope.icon  = attrs.icon   || null;
+            scope.state ||( attrs.state  = null );
+            scope.link  ||( attrs.link   = null );
+            scope.icon  ||( attrs.icon   = null );
 
             // FIXME: What's the new behavior here?
 
@@ -2623,7 +2623,7 @@
         Navigation.prototype.watch     = protoWatch;
 
 
-        function Navigation(side, element, attrs, config, scope) { config=config||{};
+        function Navigation(side, element, attrs, config, scope) { config = config||{};
 
             var _this = this;
 

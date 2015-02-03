@@ -28,7 +28,7 @@
             //////     @jQuery   apply jQuery methods when dom is ready;
             jQuery(document).ready(function() {
                 // Dynamically addClasses to all nav-sides inner links from the "link" attr
-                attrs.links && $(element).find('.linked').addClass(attrs.links);  });
+                attrs.links &&( $(element).find('.linked').addClass(attrs.links) );  });
           }
       }
   }).call(this);

@@ -9,8 +9,8 @@
     function zBg() {
         return function link(scope, element, attrs) {
             element.addClass(attrs.zBg);
-            attrs.db && element.addClass('darken-' +attrs.db);
-            attrs.lb && element.addClass('lighten-'+attrs.lb);
+            attrs.db &&( element.addClass('darken-' +attrs.db) );
+            attrs.lb &&( element.addClass('lighten-'+attrs.lb) );
           };
       }
 
@@ -18,8 +18,8 @@
     function zText() {
         return function link(scope, element, attrs) {
             element.addClass(attrs.zText + '-text');
-            attrs.lt && element.addClass('text-lighten-'+attrs.lt);
-            attrs.dt && element.addClass('text-darken-' +attrs.dt);
+            attrs.lt &&( element.addClass('text-lighten-'+attrs.lt) );
+            attrs.dt &&( element.addClass('text-darken-' +attrs.dt) );
           };
       }
 
