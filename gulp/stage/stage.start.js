@@ -27,4 +27,4 @@
     // Private Helper: Given any number of arguments, build string like "arg0/arg1/arg2"
     function join() { return _.map(arguments, function(arg){return arg.replace(/^\//, '');}).join('/'); }
 
-    })(module.exports);
+  })(module.exports);

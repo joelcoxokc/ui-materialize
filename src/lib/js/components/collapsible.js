@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.collapsible', [])
         .directive('mzCollapsible', mzCollapsible)
@@ -16,19 +15,13 @@
                 , replace     : true
                 , link        : link
                 };
-        function link(scope, element, attrs) {
-            scope.type = scope.type || 'accordion';
-          }
-      }
-    function collapseHeader() {
-        return function link(scope, element, attrs) {
-            element.addClass('collapsible-header');
-          }
+        function link(scope, element, attrs) { scope.type ||( scope.type = 'accordion' ); }
       }
 
+    function collapseHeader() {
+        return function link(scope, element, attrs) { element.addClass('collapsible-header'); }   }
+
     function collapseBody() {
-        return function link(scope, element, attrs) {
-            element.addClass('collapsible-body');
-          }
-      }
+        return function link(scope, element, attrs) { element.addClass('collapsible-body'  ); }   }
+
   }).call(this);

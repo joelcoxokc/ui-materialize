@@ -3,29 +3,13 @@
         .module('ui.materialize')
         .config(uiMaterializeConfig)
         .run( uiMaterializeRun )
+        ;
 
     /* @ngInject */
     function uiMaterializeRun($rootScope) {
-
-        var mzNavDefaults;
-
-        mzNavDefaults = {
-            background:'white',
-            logo:'orange',
-            links:'orange-text',
-            fixed:true
-        };
-
-        $rootScope.$mzNav = mzNavDefaults;
-
+        $rootScope.$mzNav = { background:'white' , logo:'orange' , links:'orange-text' , fixed:true };  // default values
         $rootScope.$on('$stateChangeStart', function (event, state) {
-            if(state.mvNav){
-                _.assign($rootScope.$mzNav, state.mzNav);
-            }
-        });
-
-
-        ///////////////////
+            state.mvNav &&( _.assign($rootScope.$mzNav, state.mzNav); );   });
 
         /**
          * isNavFixed
@@ -33,15 +17,10 @@
          * @return {Boolean} boolean switch.
          */
 
-        $rootScope.$mzNavReset = function() {
-            $rootScope.$mzNav = mvNavDefaults;
-
-        };
-    }
+        $rootScope.$mzNavReset = function() { $rootScope.$mzNav = mvNavDefaults; };
+      }
 
     /* @ngInject */
-    function uiMaterializeConfig() {
+    function uiMaterializeConfig() {}
 
-    }
-
-}).call(this);
+  }).call(this);

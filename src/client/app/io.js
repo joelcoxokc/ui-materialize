@@ -1,6 +1,5 @@
 /* global jQuery:false, TimelineLite:false, TweenMax:false, Cubic:false */
 jQuery(document).ready(function() { 'use strict';
-
     var $nav = $('.io-nav');
 
     var $intro      = $('.intro');
@@ -59,4 +58,3 @@ jQuery(document).ready(function() { 'use strict';
       }
 
   });
-

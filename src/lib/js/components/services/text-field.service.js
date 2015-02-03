@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.text-field', [])
         .provider('mzTextFieldService', mzTextFieldService)
@@ -15,7 +14,6 @@
             TextField.prototype.enable = function() {};
             return $injector.instantiate(TextField);
           }
-
       }
 
   }).call(this);

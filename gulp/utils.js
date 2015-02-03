@@ -131,7 +131,7 @@
             log('stderr: '+stderr);
             error && log('exec error: '+error);   }
         function karmaCompleted() {  child && child.kill() ; done();  }
-        }; // end function Utils.startTests
+      }; // end function Utils.startTests
 
     /**
      * Formatter for bytediff to display the size changes after processing
@@ -177,7 +177,6 @@
             .pipe(plug.minifyCss({}))
             .pipe(plug.bytediff.stop(Utils.bytediffFormatter))
             .pipe(gulp.dest(  dest || paths.build+'content'  ))   // destination
-            ;
-        };
+            ;  };
 
     })(module.exports);

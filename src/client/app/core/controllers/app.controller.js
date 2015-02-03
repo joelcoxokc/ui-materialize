@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('core')
         .controller('AppController', AppController)
@@ -20,22 +19,22 @@
             $('.collapsible').collapsible();
         })
         function getComponents() {
-              return [ 'buttons'
-                      , 'cards'
-                      , 'collapsible'
-                      , 'collections'
-                      , 'dialogs'
-                      , 'dropdowns'
-                      , 'forms'
-                      , 'media'
-                      , 'modals'
-                      , 'notifications'
-                      , 'progress'
-                      , 'select'
-                      , 'tabs'
-                      , 'tooltips'
-                ];
+            return  [ 'buttons'
+                    , 'cards'
+                    , 'collapsible'
+                    , 'collections'
+                    , 'dialogs'
+                    , 'dropdowns'
+                    , 'forms'
+                    , 'media'
+                    , 'modals'
+                    , 'notifications'
+                    , 'progress'
+                    , 'select'
+                    , 'tabs'
+                    , 'tooltips'
+                    ];
             }
-    }
+      }
 
-}).call(this);
+  }).call(this);

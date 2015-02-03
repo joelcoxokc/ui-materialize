@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('gettingStarted')
         .controller('gettingStartedController', gettingStartedController)

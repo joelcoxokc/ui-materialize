@@ -7,17 +7,14 @@
     /* @ngInject */
     function ComponentsController() {
         $(document).ready(function() {
-
-            $('.dropdown-button').dropdown(
-                { constrain_width : false
-                , outDuration     : 225
-                , inDuration      : 300
-                , alignment       : 'left'
-                , gutter          : 0
-                , hover           : false
-                })
-            ;
-          })
+            $('.dropdown-button').dropdown( { constrain_width : false
+                                            , outDuration     : 225
+                                            , inDuration      : 300
+                                            , alignment       : 'left'
+                                            , gutter          : 0
+                                            , hover           : false
+                                            } );
+          });
       }
 
   }).call(this);

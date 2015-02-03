@@ -8,9 +8,9 @@
 
 /////////////////////////////
 ///     Module Dependencies
-var _       = require('lodash'),
-        express = require('express'),
-        controller = require('./user.controller');
+var _          = require('lodash');
+var express    = require('express');
+var controller = require('./user.controller');
 
 ////////////////////////////
 ///
@@ -27,27 +27,27 @@ User.router = function (app) {
 
     // @method GET
     // @url    /messages
-    router.get('/',         controller.index);
+    router.get('/'        , controller.index);
 
     // @method GET
     // @url    /messages/:id
-    router.get('/:id',      controller.show);
+    router.get('/:id'     , controller.show);
 
     // @method POST
     // @url    /messages
-    router.post('/',        controller.create);
+    router.post('/'       , controller.create);
 
     // @method PUT
     // @url    /messages/:id
-    router.put('/:id',      controller.update);
+    router.put('/:id'     , controller.update);
 
     // @method DELETE
     // @url    /messages/:id
-    router.delete('/:id',   controller.destroy);
+    router.delete('/:id'  , controller.destroy);
 
     //////
     ///     @app    Tell the express app to use this router for any routes prepended with /api/messages
     //////
     app.use('/api/users', router);
 
-};
+  };

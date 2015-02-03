@@ -453,7 +453,8 @@ jQuery(document).ready(function() { 'use strict';
     // @method         get   $storage.get will retrive requested Storage values from wither the chache or localStorage
     // @condition            If chache[key] is not defined, the we use the actual value viw
     $Storage.prototype.get = function(key) {
-        return (  this._storage[key] ||( this._storage[key] = new Item(key) )  );   };
+        return (  this._storage[key] ||( this._storage[key] = new Item(key) )  );
+      };
 
     ////////////////// remove
     // @method         remove  remove unecessart properties

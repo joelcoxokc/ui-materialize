@@ -6,4 +6,5 @@
         , 'ui.materialize.layout'
         , 'ui.materialize.components'
         ]  );
+
     }).call(this);

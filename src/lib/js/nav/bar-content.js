@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.content', [])
         .directive('barContent', barContent)
@@ -17,19 +16,13 @@
                , transclude  : true
                , link        : link
                };
-
-        /////////////
-
         function link(scope, element, attrs, ctrl, transclude) {
             element.addClass('bar-content');
-
             transclude(scope, function (clone){ element.append(clone)});
-
-
             jQuery(document).ready(function(){
-                if (scope.brand) {
-                  $(element).before('<a class="mz-nav-brand brand-logo href="#">'+scope.brand+'</a>'); }
+                (scope.brand) &&( $(element).before('<a class="mz-nav-brand brand-logo href="#">'+scope.brand+'</a>'); );
               });
           }
       } // end function mzNavBrand
+
   }).call(this);

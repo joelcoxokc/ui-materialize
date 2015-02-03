@@ -16,27 +16,17 @@
 
 
     function EventDispatcher(){
-
         var that_ = this;
-        this.init = 'initialized'
-
-        function eventDispatcher(){
-
-            this._listeners = {};
-        }
+        this.init = 'initialized';
+        function eventDispatcher(){ this._listeners = {}; }
 
         /**
         * Add a listener on the object
         * @param type : Event type
         * @param listener : Listener callback
         */
-        EventDispatcher.addEventListener = function(type,listener) {
-            if (!this._listeners[type]) {
-                this._listeners[type] = [];
-            }
-            this._listeners[type].push(listener)
-        };
-
+        EventDispatcher.addEventListener = function(type, listener) {
+            (  this._listeners[type] ||( this._listeners[type] = [] )  ).push(listener);   }
 
         /**
            * Remove a listener on the object
@@ -44,49 +34,27 @@
            * @param listener : Listener callback
            */
         EventDispatcher.addEventListener.removeEventListener = function(type,listener) {
-          if (this._listeners[type]) {
-            var index = this._listeners[type].indexOf(listener);
+            var i = (  this._listeners[type] || []  ).indexOf(listener);
+            i >= 0  &&( this._listeners[type].splice(i, 1) );   }
 
-            if (index!==-1) {
-                this._listeners[type].splice(index,1);
-            }
-          }
-        };
-
-
-        /**
-        * Dispatch an event to all registered listener
-        * @param Mutiple params available, first must be string
-        */
-        EventDispatcher.dispatchEvent = function() {
-            var listeners;
-
-            if (typeof arguments[0] !== 'string'){
-                console.warn('EventDispatcher','First params must be an event type (String)')
-            } else {
+            /**
+            * Dispatch an event to all registered listener
+            * @param Mutiple params available, first must be string
+            */
+            EventDispatcher.dispatchEvent = function() {
+                var listeners;
+                if (typeof arguments[0] !== 'string') {
+                    console.warn('EventDispatcher','First params must be an event type (String)');  return;   }
                 listeners = this._listeners[arguments[0]];
-
                 for (var key in listeners) {
                     //This could use .apply(arguments) instead, but there is currently a bug with it.
-                    listeners[key](arguments[0],arguments[1],arguments[2],arguments[3],arguments[4],arguments[5],arguments[6]);
-                }
-            }
-        };
+                    listeners[key](arguments[0],arguments[1],arguments[2],arguments[3],arguments[4],arguments[5],arguments[6]);  }
+              }
 
-         /////
-        //////////////////////////////
-        //////////////////////////////////////////////////////
-            that_.$get = function($injector) {
-                var events = eventDispatcher
-                return events
-            }
+            that_.$get = function($injector) { return eventDispatcher; };
 
+        } // end function EventDipatcher
 
+      }
 
-        //////////////////////////////////////////////////////
-        //////////////////////////////
-        // console.log(_this.navs);
-
-    }
-
-}).call(this);
+  }).call(this);

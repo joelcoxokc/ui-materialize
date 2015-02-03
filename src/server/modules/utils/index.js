@@ -31,7 +31,6 @@ exports.Utility = Utility;
 ///     @class Utility
 ///
 function Utility() {
-
     var _this = this;
     this.debug = debug;
 
@@ -60,7 +59,7 @@ function Utility() {
     //
     this.three = function (param) {};
 
-}
+  }
 
 ///////////////////////////////////////////
 //////     @Public    Methods

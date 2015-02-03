@@ -1,25 +1,17 @@
-;(function(){
-
-  'use strict';
-
+;(function(){ 'use strict';
     angular
         .module('ui.materialize.api')
-        .provider('$System', System);
+        .provider('$System', System)
+        ;
 
         function System() {
-
             var _this = this;
 
             // Initialize this api
-            this.initialize = function(params) {
+            this.initialize = function(params) {};
 
-            }
+          this.$get = function() {  return {};  };
 
-            this.$get = function() {
-                var instance = {};
-                return instance;
-            }
+      }
 
-        }
-
-}).call(this);
+  }).call(this);

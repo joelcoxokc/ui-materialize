@@ -1,6 +1,5 @@
 /* global jQuery:false */
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.tabs', [ 'mz.components.tab' , 'mz.components.tab-content' ])
         .directive('mzTabs', mzTabs)
@@ -13,12 +12,9 @@
         this.tabLength  = 0;
         this.indicator = $('<div class="indicator"></div>');
         this.tabItems  = {};
-
-        this.linkTab = function(element, id) {
-            this.tabItems[id].tab = element;
-          }
-
+        this.linkTab = function(element, id) { this.tabItems[id].tab = element; }
       }
+
     /* @ngInject */
     function tabsController($scope, $TabsService) {
         var _this = this;
@@ -34,34 +30,29 @@
             this.tabItems[attrs.toggle] = {element:element, attrs:attrs, scope:scope};
             this.setWidth();
             this.tabItems[attrs.toggle].element.on('click', function() {
-              $('.mz-tab').removeClass('active');
-              _this.tabItems[attrs.toggle].tab.toggleClass('active')
+                $('.mz-tab').removeClass('active');
+                _this.tabItems[attrs.toggle].tab.toggleClass('active')
               });
           }
 
         this.setWidth = function() {
             this.tabWidth = Math.floor(100 / this.tabLength) + '%'
-            angular.forEach(this.tabItems, function(item) {
-                item.element.css({width: _this.tabWidth } );
-              });
-          }
-      }
+            angular.forEach(  this.tabItems, function(item) { item.element.css({width:_this.tabWidth}); }  );
+          };
+
+      } // end function tabsController
 
     /* @inject */
     function mzTabs() {
-        return { templateUrl  : 'components/tabs.html'
-               , restrict     : 'E'
-               , scope        : true
-               , replace      : true
-               , transclude   : true
-               , controller   : 'tabsController as vm'
-               , link         : link
-               };
-
-        function link(scope, element, attrs, ctrl) {
-
-            ctrl.init(element.find('ul'), attrs);
-          }
+        return  { templateUrl  : 'components/tabs.html'
+                , restrict     : 'E'
+                , scope        : true
+                , replace      : true
+                , transclude   : true
+                , controller   : 'tabsController as vm'
+                , link         : link
+                };
+        function link(scope, element, attrs, ctrl) { ctrl.init(element.find('ul'), attrs); };
       }
 
   }).call(this);

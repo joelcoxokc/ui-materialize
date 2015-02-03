@@ -43,6 +43,4 @@ api(app);
 
 ///////////////
 //   Starte listening
-app.listen(app.get('port'), function() {
-    console.log('Express App Listening on ', app.get('port')) ;
-});
+app.listen(app.get('port'), function() { console.log('Express App Listening on ', app.get('port')); });

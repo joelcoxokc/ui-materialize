@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.layout.container', [])
         .directive('mzContainer', mzContainer)
@@ -12,7 +11,6 @@
                 , scope:true
                 , link:link
                 };
-
         function link(scope, element, attrs, ctrl) {
             element.addClass('container');
             element.addClass('mz-container');

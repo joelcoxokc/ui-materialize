@@ -8,14 +8,14 @@
 /////////////////////////////
 ///     Module Dependencies
 var User    = require('./user.model'),
-    _          = require('lodash');
+    _       = require('lodash');
 
 exports.index   = function (req, res) {
     User.index(function (err, result) {
-        if (err) {res.send(404);}
+        if (err) { res.send(404); }
         res.send(result);
-    });
-};
+      });
+  };
 exports.create  = function (req, res) {};
 exports.show    = function (req, res) {};
 exports.update  = function (req, res) {};
