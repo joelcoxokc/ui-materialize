@@ -126,12 +126,14 @@
         .task(  'stage:client:styles'     ,  stage.client.styles     )
         .task(  'stage:client:inject'     ,  stage.client.inject     )
         .task(  'stage:client:images'     ,  stage.client.images     )
+        .task(  'stage:client:assets'     ,  stage.client.assets     )
         .task(  'stage:client'            ,  $.sequence(
                                                'stage:client:templates'  ,
                                                // 'stage:client:analyze'    ,
                                                'stage:client:scripts'    ,
                                                'stage:client:styles'     ,
                                                'stage:client:images'     ,
+                                               'stage:client:assets'     ,
                                                'stage:client:inject'     )  );
 
     // //  ####  DEPLOY  #####

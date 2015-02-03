@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('app',
             [ 'ngAnimate'
@@ -8,16 +7,15 @@
             , 'btford.markdown'
             , 'hljs'
             , 'ui.materialize'
-
             , 'core'
             , 'app.modules'
-            ]  );
+            ]  )
+        ;
 
   }).call(this);
 
 /* global jQuery:false, TimelineLite:false, TweenMax:false, Cubic:false */
 jQuery(document).ready(function() { 'use strict';
-
     var $nav = $('.io-nav');
 
     var $intro      = $('.intro');
@@ -77,9 +75,7 @@ jQuery(document).ready(function() { 'use strict';
 
   });
 
-
 ;(function() { 'use strict';
-
     angular.module('core',
         [ 'duScroll'
         , 'ngAnimate'
@@ -91,13 +87,13 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-
     angular
         .module('app.modules',
             [ 'gettingStarted'
             , 'stylus'
             , 'components'
-            ]  );
+            ]  )
+        ;
 
   }).call(this);
 
@@ -178,6 +174,65 @@ jQuery(document).ready(function() { 'use strict';
 
   }).call(this);
 
+;(function() { 'use strict';
+    angular
+        .module('core')
+        .controller('AppController', AppController)
+        ;
+
+    /* @ngInject */
+    function AppController($scope, $storage, TweenMax, Cubic) {
+
+        this.components = getComponents();
+
+        function getComponents() {
+            return  [ 'buttons'
+                    , 'cards'
+                    , 'collapsible'
+                    , 'collections'
+                    , 'dialogs'
+                    , 'dropdowns'
+                    , 'forms'
+                    , 'media'
+                    , 'modals'
+                    , 'notifications'
+                    , 'progress'
+                    , 'select'
+                    , 'tabs'
+                    , 'tooltips'
+                    ];
+            }
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('core')
+        .controller('GridController', GridController)
+        ;
+
+    /* @ngInject */
+    function GridController($scope) {
+        $scope.showContainer = true;
+        $scope.showOffsets = false;
+        $scope.toggleContainer = function () { $scope.showContainer = !$scope.showContainer; };
+        $scope.toggleOffsets   = function () { $scope.showOffsets   = !$scope.showOffsets  ; };
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('core')
+        .controller('HomeController', HomeController)
+        ;
+
+    /* @ngInject */
+    function HomeController($storage) {}
+
+  }).call(this);
+
 /* global toastr:false, moment:false, TimelineLite:false, TweenMax:false, Cubic:false */
 (function() {
     'use strict';
@@ -205,9 +260,7 @@ jQuery(document).ready(function() { 'use strict';
 
     /* @ngInject */
     function Core ($stateProvider, $urlRouterProvider) {
-
         $urlRouterProvider.otherwise('/app/home');
-
         $stateProvider
             .state('app',
                 { url   : '/app'
@@ -228,82 +281,7 @@ jQuery(document).ready(function() { 'use strict';
                 })
             ;
       }
-}).call(this);
-;(function() { 'use strict';
-
-    angular
-        .module('core')
-        .controller('AppController', AppController)
-        ;
-
-    /* @ngInject */
-    function AppController($scope, $storage, TweenMax, Cubic) {
-
-        // console.log(mzNavApi)
-        // console.log(EventDispatcher);
-        // this.right = $Navigation.navs.right;
-        // console.log(this.right.$toggles.open())
-        // console.log($Navigation.navs.right)
-
-        this.components = getComponents();
-
-        jQuery(document).ready(function() {
-            $('.collapsible').collapsible();
-        })
-        function getComponents() {
-              return [ 'buttons'
-                      , 'cards'
-                      , 'collapsible'
-                      , 'collections'
-                      , 'dialogs'
-                      , 'dropdowns'
-                      , 'forms'
-                      , 'media'
-                      , 'modals'
-                      , 'notifications'
-                      , 'progress'
-                      , 'select'
-                      , 'tabs'
-                      , 'tooltips'
-                ];
-            }
-    }
-
-}).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('core')
-        .controller('GridController', GridController)
-        ;
-
-    /* @ngInject */
-    function GridController($scope) {
-
-        $scope.showContainer = true;
-        $scope.showOffsets = false;
-
-        ///////////////////
-        $scope.toggleContainer = function () { $scope.showContainer = !$scope.showContainer; };
-        $scope.toggleOffsets   = function () { $scope.showOffsets   = !$scope.showOffsets  ; };
-
-      }
-
   }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('core')
-        .controller('HomeController', HomeController)
-        ;
-
-    /* @ngInject */
-    function HomeController($storage) {}
-
-  }).call(this);
-
 ;(function() {'use-strict';
 
     angular
@@ -315,18 +293,16 @@ jQuery(document).ready(function() { 'use strict';
         return function (scope, element, attrs) {
             element.on('click', function() {
                 angular.forEach($('.flow-text-demo').find('p'), function(item){
-                  console.log(item);
-                    angular.element(item).toggleClass('flow-text');
-                  });
-            });
-          }
+                    console.log(item);
+                    angular.element(item).toggleClass('flow-text');   });
+              });
+          };
       }
 
-  }).call(this)
+  }).call(this);
 
 /* global Storage:false, $local:false, _:false */
 ;(function() { 'use strict';
-
     angular
         .module('core')
         .service('$storage', $Storage)
@@ -453,8 +429,7 @@ jQuery(document).ready(function() { 'use strict';
     // @method         get   $storage.get will retrive requested Storage values from wither the chache or localStorage
     // @condition            If chache[key] is not defined, the we use the actual value viw
     $Storage.prototype.get = function(key) {
-        return (  this._storage[key] ||( this._storage[key] = new Item(key) )  );
-      };
+        return (  this._storage[key] ||( this._storage[key] = new Item(key) )  );   };
 
     ////////////////// remove
     // @method         remove  remove unecessart properties
@@ -479,23 +454,21 @@ jQuery(document).ready(function() { 'use strict';
 
   }).call(this);
 ;(function() { 'use strict';
-
     angular.module('components', []);
 
   }).call(this);
+
+;(function() { 'use strict';
+    angular.module('directives', []);
+
+  }).call(this);
+
 ;(function() { 'use strict';
     angular.module('gettingStarted', []);
 
   }).call(this);
 
 ;(function() { 'use strict';
-
-    angular.module('directives', []);
-
-  }).call(this);
-
-;(function() { 'use strict';
-
     angular.module('stylus', []);
 
   }).call(this);
@@ -579,8 +552,7 @@ jQuery(document).ready(function() { 'use strict';
                     , {rotation:'-180deg', autoAlpha:0, ease:Cubic.easeIn}
                     ];
 
-                var tl = new TimelineLite();
-                tl
+                ( new TimelineLite() )
                     .add(pinks)
                     .add(indigos)
                     .add(whites)
@@ -589,22 +561,19 @@ jQuery(document).ready(function() { 'use strict';
                     ;
 
                 function grey1s() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($grey1.slice(0, 2), 0.5, anim.six[0], 3)
                         .from($grey1.slice(2, 4), 0.5, anim.six[1], 3)
                         ;  }
                 function grey2s() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from([$grey2[4], $grey2[6]], 0.5, anim.five[0], 2.5)
                         .from([$grey2[5], $grey2[7]], 0.5, anim.five[1], 2.5)
                         .from([$grey2[0], $grey2[1], $grey2[8], $grey2[9]], 0.5, anim.six[1], 3)
                         .from([$grey2[2], $grey2[3], $grey2[10], $grey2[11]], 0.5, anim.six[0], 3)
                         ;  }
                 function whites() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from([$white[6], $white[8]],  0.5, anim.four[1], 2)
                         .from([$white[7], $white[9]],  0.5, anim.four[0], 2)
                         .from([$white[4], $white[10]], 0.5, anim.five[1], 2.5)
@@ -613,8 +582,7 @@ jQuery(document).ready(function() { 'use strict';
                         .from([$white[2], $white[3], $white[14], $white[15]], 0.5, anim.six[0], 3)
                         ;  }
                 function indigos() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($indigo.slice(8, 10), 0.5, anim.one)
                         .from([$indigo[6], $indigo[10]], 0.5, anim.three[1], 1.5)
                         .from([$indigo[7], $indigo[11]], 0.5, anim.three[0], 1.5)
@@ -626,8 +594,7 @@ jQuery(document).ready(function() { 'use strict';
                         .from([$indigo[0], $indigo[16]], 0.5, anim.six[1], 3)
                         ;  }
                 function pinks() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($pink1, 0.5, anim.one)
                         .from($pink2[0], 0.5, anim.two[0], 0.5)
                         .from($pink2[1], 0.5, anim.two[1], 0.5)
@@ -689,120 +656,19 @@ jQuery(document).ready(function() { 'use strict';
     /* @ngInject */
     function ComponentsController() {
         $(document).ready(function() {
-
-            $('.dropdown-button').dropdown(
-                { constrain_width : false
-                , outDuration     : 225
-                , inDuration      : 300
-                , alignment       : 'left'
-                , gutter          : 0
-                , hover           : false
-                })
-            ;
-          })
+            $('.dropdown-button').dropdown( { constrain_width : false
+                                            , outDuration     : 225
+                                            , inDuration      : 300
+                                            , alignment       : 'left'
+                                            , gutter          : 0
+                                            , hover           : false
+                                            } );
+          });
       }
 
   }).call(this);
 
 ;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .factory('gettingStartedFactory', gettingStartedFactory)
-        ;
-
-    /* @ngInject */
-    function gettingStartedFactory() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .config(gettingStartedConfig)
-        ;
-
-    /* @ngInject */
-    function gettingStartedConfig($stateProvider) {
-        $stateProvider
-            .state('gettingStarted',
-                { url   : '/gettingStarted'
-                , mzNav : { background: 'white'
-                          , links     : 'orange-text'
-                          }
-                , views:  { '@'       : { templateUrl : 'app/modules/gettingStarted/views/gettingStarted.view.html'
-                                        , controller  : 'gettingStartedController as vm'
-                                        }
-                          , nav       : { templateUrl : 'app/core/views/header.view.html'
-                                        }
-                          }
-                }   );
-      }
-
-  }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .controller('gettingStartedController', gettingStartedController)
-        ;
-
-    /* @ngInject */
-    function gettingStartedController() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .directive('gettingStarted', gettingStarted)
-        ;
-
-    /* @ngInject */
-    function gettingStarted() {
-        return  { restrict  : 'EA'
-                , scope     : true
-                , template  : '<div data-ng-transclude></div>'
-                , transclude: true
-                , controller: 'gettingStartedController as vm'
-                , link      : function link(scope, element, attrs, ctrl, transclude) {}
-                };   }
-
-  }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .filter('gettingStartedFilter', gettingStartedFilter)
-        ;
-
-    /* @ngInject */
-    function gettingStartedFilter() {}
-
-  }).call(this);
-
-;(function() { 'use strict';
-
-    angular
-        .module('gettingStarted')
-        .service('gettingStartedService', gettingStartedService)
-        .factory('gettingStartedFactory', gettingStartedFactory)
-        ;
-
-    /* @ngInject */
-    function gettingStartedService() {}
-
-    /* @ngInject */
-    function gettingStartedFactory() {}
-
-  }).call(this);
-
-;(function() { 'use strict';
-
     angular
         .module('directives')
         .factory('directivesFactory', directivesFactory)
@@ -814,19 +680,6 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-
-    angular
-        .module('directives')
-        .controller('directivesController', directivesController)
-        ;
-
-    /* @ngInject */
-    function directivesController() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-
     angular
         .module('directives')
         .config(directivesConfig)
@@ -838,7 +691,17 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
+    angular
+        .module('directives')
+        .controller('directivesController', directivesController)
+        ;
 
+    /* @ngInject */
+    function directivesController() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
     angular
         .module('directives')
         .directive('directives', directives)
@@ -857,7 +720,6 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-
     angular
         .module('directives')
         .service('directivesService', directivesService)
@@ -873,7 +735,6 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-
     angular
         .module('directives')
         .filter('directivesFilter', directivesFilter)
@@ -884,8 +745,97 @@ jQuery(document).ready(function() { 'use strict';
 
   }).call(this);
 
-;(function() {'use strict';
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .factory('gettingStartedFactory', gettingStartedFactory)
+        ;
 
+    /* @ngInject */
+    function gettingStartedFactory() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .controller('gettingStartedController', gettingStartedController)
+        ;
+
+    /* @ngInject */
+    function gettingStartedController() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .config(gettingStartedConfig)
+        ;
+
+    /* @ngInject */
+    function gettingStartedConfig($stateProvider) {
+        $stateProvider
+            .state('app.gettingStarted',
+                { url   : '/gettingStarted'
+                , mzNav : { background: 'white'
+                          , links     : 'orange-text'
+                          }
+                , views:  { '@'  :
+                              { templateUrl : 'app/modules/gettingStarted/views/gettingStarted.view.html'
+                              , controller  : 'gettingStartedController as vm'
+                              }
+                          }
+                });
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .directive('gettingStarted', gettingStarted)
+        ;
+
+    /* @ngInject */
+    function gettingStarted() {
+        return  { restrict  : 'EA'
+                , scope     : true
+                , template  : '<div data-ng-transclude></div>'
+                , transclude: true
+                , controller: 'gettingStartedController as vm'
+                , link      : function link(scope, element, attrs, ctrl, transclude) {}
+                };   }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .filter('gettingStartedFilter', gettingStartedFilter)
+        ;
+
+    /* @ngInject */
+    function gettingStartedFilter() {}
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .service('gettingStartedService', gettingStartedService)
+        .factory('gettingStartedFactory', gettingStartedFactory)
+        ;
+
+    /* @ngInject */
+    function gettingStartedService() {}
+
+    /* @ngInject */
+    function gettingStartedFactory() {}
+
+  }).call(this);
+
+;(function() {'use strict';
     angular
         .module('stylus')
         .config(stylusConfig)
@@ -894,43 +844,23 @@ jQuery(document).ready(function() { 'use strict';
     /* @ngInject */
     function stylusConfig($stateProvider) {
         $stateProvider
-            .state('app.stylus',
-                  { url   : '/stylus'
-                  , views : view('views/stylus.view.html', 'stylusController as vm')
-                  } )
-            .state('app.stylus-color',
-                  { url   : '/stylus/color'
-                  , views : view('views/color.html', 'ColorController as vm')
-                  } )
-            .state('app.stylus-grid',
-                  { url   : '/stylus/grid'
-                  , views : view('views/grid.html', 'GridController as vm')
-                  } )
-            .state('app.stylus-shadow',
-                  { url   : '/stylus/shadow'
-                  , views : view('views/shadow.html')
-                  } )
-            .state('app.stylus-table',
-                  { url   :  '/stylus/table'
-                  , views : view('views/table.html')
-                  } )
-            .state('app.stylus-typography',
-                  { url   :  '/stylus/typography'
-                  , views : view('views/typography.html')
-                  } )
+            .state('app.stylus'           , { url:'/stylus'           , views:view('views/stylus.view.html', 'stylusController as vm') })
+            .state('app.stylus-color'     , { url:'/stylus/color'     , views:view('views/color.html'      , 'ColorController as vm' ) })
+            .state('app.stylus-grid'      , { url:'/stylus/grid'      , views:view('views/grid.html'       , 'GridController as vm'  ) })
+            .state('app.stylus-shadow'    , { url:'/stylus/shadow'    , views:view('views/shadow.html'     ) })
+            .state('app.stylus-table'     , { url:'/stylus/table'     , views:view('views/table.html'      ) })
+            .state('app.stylus-typography', { url:'/stylus/typography', views:view('views/typography.html' ) })
             ;
 
         function view(template, controller) {
-            var tpl = {templateUrl:'app/modules/stylus/'+template}
-            controller && (tpl.controller = controller)
-            return {'@': tpl};
-          }
+            var tpl = { templateUrl:'app/modules/stylus/'+template };
+            controller &&( tpl.controller = controller );
+            return {'@': tpl};  }
     }
 
   }).call(this);
 
 ;(function () { 'use strict'
-
     angular
       .module('stylus')
       .controller('ColorController', ColorController)
@@ -938,31 +868,22 @@ jQuery(document).ready(function() { 'use strict';
 
     function ColorController() {
         $('.dynamic-color .col div').each(function(index, item) {
-
             var color = $(this).css('background-color');
             var classList = $(this).attr('class');
-            $(this).text(rgb2hex(color) + ' ' +classList)
+            $(this).text(rgb2hex(color)+' '+classList)
             console.log($(this).css);
-
-          })
+          }); // end function call .each(){...};
 
           function rgb2hex(rgb) {
-            if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
-
-            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-            function hex(x) {
-                return ("0" + parseInt(x).toString(16)).slice(-2);
+              if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
+              rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+              function hex(x) { return ('0'+parseInt(x).toString(16)).slice(-2); }
+              return "#"+hex(rgb[1])+hex(rgb[2])+hex(rgb[3]);
             }
-            return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-          }
       }
-
-
-
   }).call(this);
 
 ;(function() { 'use strict';
-
     angular
         .module('stylus')
         .controller('stylusController', stylusController)

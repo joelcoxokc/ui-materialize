@@ -63,6 +63,10 @@
                 .pipe(gulp.dest(paths.build + '/content/images'))
                 ;
           },
+        assets: function() {
+            gulp.src('./src/client/ui-materialize.zip')
+              .pipe(gulp.dest(paths.build));
+          },
         inject: function() {
             var source = gulp.src( [paths.build + '*.js',paths.build + '/content/**/*', ] , {read:false});
 
