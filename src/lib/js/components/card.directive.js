@@ -5,6 +5,8 @@
         .directive('mzCard', mzCard)
         .directive('cardTitle', cardTitle)
         .directive('cardContent', cardContent)
+        .directive('cardImage', cardImage)
+        .directive('cardReveal', cardReveal)
         .directive('cardAction', cardAction)
         ;
 
@@ -19,8 +21,16 @@
                };
         function link(scope, element, attrs, ctrl, transclude) {
             element.addClass('mz-card');
+            attrs.size && element.addClass(attrs.size);
+
+            (attrs.type === 'panel') && isPanel();
+
             transclude(scope, function (clone) {element.append(clone)})
 
+            function isPanel() {
+                element.removeClass('card');
+                element.addClass('card-panel');
+              }
           }
       }
 
@@ -52,8 +62,33 @@
                  , restrict   : 'EA'
                  , transclude : true
                  };
-          function link(scope, element, attrs, ctrl, transclude) {
-            }
+          function link(scope, element, attrs, ctrl, transclude) {}
+        }
+
+      /* @ngInject */
+      function cardImage() {
+
+          return { template   : '<div class="card-image" data-ng-transclude></div>'
+                 , link       : link
+                 , scope      : true
+                 , replace    : true
+                 , restrict   : 'EA'
+                 , transclude : true
+                 };
+          function link(scope, element, attrs, ctrl, transclude) {}
+        }
+
+       /* @ngInject */
+      function cardReveal() {
+
+          return { template   : '<div class="card-reveal" data-ng-transclude></div>'
+                 , link       : link
+                 , scope      : true
+                 , replace    : true
+                 , restrict   : 'EA'
+                 , transclude : true
+                 };
+          function link(scope, element, attrs, ctrl, transclude) {}
         }
 
       /* @ngInject */
