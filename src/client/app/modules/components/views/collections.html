@@ -25,12 +25,12 @@
 
               <h1 class="pink-text accent-2">Basic</h1>
 
-              <ul class="collection">
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-              </ul>
+              <mz-collection>
+                <collection-item>Alvin</collection-item>
+                <collection-item>Alvin</collection-item>
+                <collection-item>Alvin</collection-item>
+                <collection-item>Alvin</collection-item>
+              </mz-collection>
 
               <pre><code no-escape hljs>
 
@@ -61,29 +61,29 @@
 
                 <h1 class="pink-text accent-2">Links</h1>
 
-                <div class="collection">
-                  <a class="collection-item">Alvin</a>
-                  <a class="collection-item active">Alvin</a>
-                  <a class="collection-item">Alvin</a>
-                  <a class="collection-item">Alvin</a>
-                </div>
+                <mz-collection class="collection">
+                  <collection-link >Alvin</collection-link>
+                  <collection-link active=true>Alvin</collection-link>
+                  <collection-link >Alvin</collection-link>
+                  <collection-link >Alvin</collection-link>
+                </mz-collection>
 
                 <pre><code no-escape hljs>
 
                   &lt;mz-collection>
 
-                      &lt;collection-item ui-sref="some-state">
+                      &lt;collection-link ui-sref="some-state">
                           Alvin
-                      &lt;/collection-item>
-                      &lt;collection-item ui-sref="some-state" class="active">
+                      &lt;/collection-link>
+                      &lt;collection-link active="true" ui-sref="some-state">
                           Alvin
-                      &lt;/collection-item>
-                      &lt;collection-item ui-sref="some-state">
+                      &lt;/collection-link>
+                      &lt;collection-link ui-sref="some-state">
                           Alvin
-                      &lt;/collection-item>
-                      &lt;collection-item ui-sref="some-state">
+                      &lt;/collection-link>
+                      &lt;collection-link ui-sref="some-state">
                           Alvin
-                      &lt;/collection-item>
+                      &lt;/collection-link>
 
                   &lt;/mz-collection>
 
@@ -96,13 +96,13 @@
 
                 <h1 class="pink-text accent-2">Headers</h1>
 
-                <ul class="collection with-header">
-                  <li class="collection-header"><h4>First Names</h4></li>
-                  <li class="collection-item">Alvin</li>
-                  <li class="collection-item">Alvin</li>
-                  <li class="collection-item">Alvin</li>
-                  <li class="collection-item">Alvin</li>
-                </ul>
+                <mz-collection class="collection with-header">
+                  <collection-header><h4>First Names</h4></collection-header>
+                  <collection-item>Alvin</collection-item>
+                  <collection-item>Alvin</collection-item>
+                  <collection-item>Alvin</collection-item>
+                  <collection-item>Alvin</collection-item>
+                </mz-collection>
 
                 <pre><code no-escape hljs>
 
@@ -136,13 +136,13 @@
 
                 <h1 class="pink-text accent-2">Secondary Content</h1>
 
-                <ul class="collection with-header">
-                  <li class="collection-header"><h4>First Names</h4></li>
-                  <li class="collection-item"><div>Alvin<a class="secondary-content"><i class="secondary-content mdi-content-send"></i></a></div></li>
-                  <li class="collection-item"><div>Alvin<a class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
-                  <li class="collection-item"><div>Alvin<a class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
-                  <li class="collection-item"><div>Alvin<a class="secondary-content"><i class="mdi-content-send"></i></a></div></li>
-                </ul>
+                <mz-collection class="with-header">
+                  <collection-header><h4>First Names</h4></collection-header>
+                  <collection-item>Alvin<item-secondary icon="mdi-content-send"></item-secondary></collection-item>
+                  <collection-item>Alvin<item-secondary icon="mdi-content-send"></item-secondary></collection-item>
+                  <collection-item>Alvin<item-secondary icon="mdi-content-send"></item-secondary></collection-item>
+                  <collection-item>Alvin<item-secondary icon="mdi-content-send"></item-secondary></collection-item>
+                </mz-collection>
 
                 <pre><code no-escape hljs>
 
