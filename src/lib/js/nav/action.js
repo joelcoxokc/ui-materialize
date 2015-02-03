@@ -17,13 +17,13 @@
                 , link       : link
                 };
         function link(scope, element, attrs, ctrl, transclude) {
-            var inner = element.children();
-            scope.icon   ||( attrs.icon  = null );
-            scope.link   ||( attrs.link  = null );
-            scope.label  ||( attrs.label = null );
-            scope.waves  = (attrs.waves ? 'waves-effect waves-'+attrs.waves : '');
-            transclude(scope, function (clone){ inner.append(clone); });
-          }
-      }
+
+            var inner   = element.children();
+            scope.icon  = attrs.icon  || null;
+            scope.link  = attrs.link  || null;
+            scope.label = attrs.label || null;
+            scope.waves = (attrs.waves ? 'waves-effect waves-'+attrs.waves : '');
+
+            transclude(scope, function (clone){ inner.append(clone); });   }
 
   }).call(this);

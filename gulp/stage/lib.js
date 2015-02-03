@@ -58,6 +58,7 @@
                     ;
               },
             fonts: function() {
+
                 return gulp.src(paths.fonts)
                     .pipe(gulp.dest(paths.build + '/fonts'))
                     .pipe(gulp.dest(paths.build + '/font'));
@@ -69,7 +70,7 @@
                     .pipe(  $.inject(source, {relative:true, name:'inject-lib'})  )
                     .pipe(  gulp.dest(paths.build))
                     ;
-              }
-            };
+                  }
+              };
           };
     })(module.exports);
