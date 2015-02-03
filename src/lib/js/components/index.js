@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular.module('ui.materialize.components',
             [ 'mz.components.services'
             , 'mz.components.controllers'

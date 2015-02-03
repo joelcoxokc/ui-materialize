@@ -15,7 +15,5 @@
         , 'mz.nav.side.content'
         , 'mz.nav.side.collapsible'
         ]  );
+
   }).call(this);
-
-
-

@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.services.footer', [])
         .service('$FooterNavService', $FooterNavService)
@@ -11,7 +10,7 @@
         this.watch = function() {
             // this.scope.$watchCollection('open', function() {
             // });
-          }
+          };
       }
 
   }).call(this);

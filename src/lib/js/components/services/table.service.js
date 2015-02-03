@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.table', [])
         .provider('mzTableService', mzTableService)
@@ -15,7 +14,6 @@
             Table.prototype.enable = function() {};
             return $injector.instantiate(Table);
           }
-
       }
 
   }).call(this);

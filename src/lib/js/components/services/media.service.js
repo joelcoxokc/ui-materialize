@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.media', [])
         .provider('mzMediaService', mzMediaService)
@@ -15,7 +14,6 @@
             Media.prototype.enable = function() {};
             return $injector.instantiate(Media);
           }
-
       }
 
   }).call(this);

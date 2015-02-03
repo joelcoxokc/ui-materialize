@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.modal', [])
         .provider('mzModalService', mzModalService)
@@ -15,7 +14,6 @@
             Modal.prototype.enable = function() {};
             return $injector.instantiate(Modal);
           }
-
       }
 
   }).call(this);

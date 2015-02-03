@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.progress', [])
         .provider('mzProgressService', mzProgressService)
@@ -15,7 +14,6 @@
             Progress.prototype.enable = function() {};
             return $injector.instantiate(Progress);
           }
-
       }
 
   }).call(this);

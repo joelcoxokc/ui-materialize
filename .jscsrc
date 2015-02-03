@@ -1,7 +1,6 @@
 {
     "excludeFiles": ["node_modules/**", "bower_components/**"],
 
-
     "requireCurlyBraces": [
         "if",
         "else",

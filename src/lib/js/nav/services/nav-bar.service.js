@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.services.bar', [])
         .service('$NavBarService', NavBarService);
@@ -7,7 +6,6 @@
     /* @ngInject */
     function NavBarService($NavService, $rootScope) {
         var defaults;
-
         var NavBar = function(side, element, attrs, config) {
             $NavService.apply(this, arguments);
             // var _this = this;
@@ -42,15 +40,13 @@
             var _this = this; // FIXME: do we need `_this` and not just `this`
             _.forEach(  config.hideOn, function (state) { _this.hideOn[state] = true; }  );
             console.log(this.hideOn);
-            this.watchStates();
-          }
+            this.watchStates();   };
 
         return NavBar;
 
         // /// service helpers
         //
         // function createClass(side) { return 'nav-'+side; }
-
       }
 
   }).call(this);

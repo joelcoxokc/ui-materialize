@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.side.collapse', [])
         .directive('sideCollapse', sideCollapse)
@@ -7,22 +6,17 @@
 
     /* @ngInject */
     function sideCollapse() {
-
-        return { templateUrl : 'nav/side-collapse.html'
-               , restrict    : 'E'
-               , require     : '^sideCollapsible'
-               , scope       : { header:'@' }
-               , replace     : true
-               , transclude  : true
-               , link        : link
-               };
-
-        ///////////////////
-
+        return  { templateUrl : 'nav/side-collapse.html'
+                , restrict    : 'E'
+                , require     : '^sideCollapsible'
+                , scope       : { header:'@' }
+                , replace     : true
+                , transclude  : true
+                , link        : link
+                };
         function link(scope, element, attrs, ctrl, transclude) {
-            var inner, defaults;
-
-            inner = element.children();
+            var defaults;
+            var inner = element.children();
 
             ///  @scope state  |  set the state for ui-sref if attribute is passed
             ///  @scope link   |  set the link for href if attribute is passed
@@ -45,4 +39,5 @@
             // });
           }
       }
+
   }).call(this);

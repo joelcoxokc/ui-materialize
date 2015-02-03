@@ -92,8 +92,7 @@
         ///  @mz-collection  LINK
             function link(scope, element, attrs, ctrl) {
               // ctrl.init(element);
-              ///////////////////////////////
-              }
+            }
 
       } // end function mzCollection
 
@@ -111,8 +110,6 @@
             api.add(scope);
             $content = $(element).find('.mz-collection-item-content');
             element.bind('click', toggleItemOpenState);
-
-            ///////////////////////////////
 
             scope.onSelect = function() {
                 (new TimelineLite())

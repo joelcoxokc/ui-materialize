@@ -8,7 +8,7 @@
 
 /////////////////////////////
 ///     Module Dependencies
-var _    = require('lodash');
+var _  = require('lodash');
 
 /////////////////////////////
 ///     Expose Auth for access to the Auth's functionality.

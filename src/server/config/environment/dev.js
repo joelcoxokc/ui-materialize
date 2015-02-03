@@ -5,40 +5,37 @@
 ///     2014, JoelCox
 ///
 'use strict';
+
 /////////////////////////////
 ///     Module Dependencies
-var express = require('express'),
-    path    = require('path');
+var express = require('express');
+var path    = require('path');
 
-var configuation = {
+var configuation =
+    { DATABASE_URI: ''
+    , someAPI     : { API_ID       : ''
+                    , API_KEY      : ''
+                    , API_TOKEN    : ''
+                    , API_SECRET   : ''
+                    , API_CALLBACK : ''
+                    }
+    , anotherAPI  : { API_ID       : ''
+                    , API_KEY      : ''
+                    , API_TOKEN    : ''
+                    , API_SECRET   : ''
+                    , API_CALLBACK : ''
+                    }
+    };
 
-    DATABASE_URI:      '',
-
-    someAPI: {
-        API_ID:        '',
-        API_KEY:       '',
-        API_TOKEN:     '',
-        API_SECRET:    '',
-        API_CALLBACK:  '',
-    },
-
-    anotherAPI: {
-        API_ID:        '',
-        API_KEY:       '',
-        API_TOKEN:     '',
-        API_SECRET:    '',
-        API_CALLBACK:  '',
-    }
-};
 var reload = require('connect-livereload');
+
 /////////////////////////////////
 ///     @Environment Configuation
 ///     @NODE_ENV        development
 ///
 module.exports = function(app) {
-
-    app.set('env',     'development');
-    app.set('config',  configuation);
+    app.set('env'    , 'development');
+    app.set('config' , configuation);
     app.set('tmpPath', rootDir('.tmp'));
     app.set('appPath', rootDir('src/client'));
 
@@ -49,8 +46,5 @@ module.exports = function(app) {
     app.use('/', express.static('./.tmp/'));
     app.use('/', express.static('./'));
 
-    function rootDir(arg) {
-        return path.join(app.get('root'), arg);
-    }
-
-};
+    function rootDir(arg) { return path.join(app.get('root'), arg); }
+  };

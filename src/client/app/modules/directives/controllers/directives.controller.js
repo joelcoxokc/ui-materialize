@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('directives')
         .controller('directivesController', directivesController)

@@ -26,9 +26,7 @@ describe('$storage', function() {
             var thing, value;
             thing     = $storage.set('thing', {});
             thing.one = 1;
-
             thing.save();
-
             value = JSON.parse(localStorage.getItem('thing'));
             expect(value.one).to.be(1);   });
         it('Should Store objects in localStorage', function() {
@@ -38,13 +36,12 @@ describe('$storage', function() {
             storedObject.person.first = 'John';
             storedObject.person.last = 'Doe';
             storedObject.save();
-            obj          = JSON.parse(localStorage.getItem('object'));
+            obj = JSON.parse(localStorage.getItem('object'));
             expect(obj.person.first + ' ' + obj.person.last).to.be('John Doe');   });
         it('Should remove a specific key from storage', function() {
             var val = $storage.set('value');
             val.name = 'John Doe';
             val.save();
-
             var value;
             $storage.remove('value');
             value = localStorage.getItem('value');
@@ -58,10 +55,8 @@ describe('$storage', function() {
             var val      = $storage.set('value');
             val.name = 'John Doe';
             val.save();
-
             var value = JSON.parse(localStorage.getItem('value'));
             expect(val.name).to.be(value.name);
-
             val.remove();
             value = localStorage.getItem('value');
             expect(value).to.be(null);   });
@@ -72,7 +67,6 @@ describe('$storage', function() {
         beforeEach(inject(function($injector, $controller, $rootScope) {
             $storage = $injector('$storage');
             console.log($storage);
-
             mainScope = $rootScope.$new();
             $controller('MainController', {$scope: mainScope, $storage:store});
             childScope = mainScope.$new();
@@ -82,7 +76,6 @@ describe('$storage', function() {
             // store.sync(mainScope, 'person');
             mainScope.person.name = 'John Doe';
             mainScope.person.age = 23;
-
             // console.log(mainScope.person);
             // var value = localStorage.getItem('person');
             // console.log(value);

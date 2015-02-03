@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.controllers.collection', [])
         .controller('mzCollectionController', mzCollectionController)

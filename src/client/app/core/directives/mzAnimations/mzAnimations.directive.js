@@ -77,8 +77,7 @@
                     , {rotation:'-180deg', autoAlpha:0, ease:Cubic.easeIn}
                     ];
 
-                var tl = new TimelineLite();
-                tl
+                ( new TimelineLite() )
                     .add(pinks)
                     .add(indigos)
                     .add(whites)
@@ -87,22 +86,19 @@
                     ;
 
                 function grey1s() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($grey1.slice(0, 2), 0.5, anim.six[0], 3)
                         .from($grey1.slice(2, 4), 0.5, anim.six[1], 3)
                         ;  }
                 function grey2s() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from([$grey2[4], $grey2[6]], 0.5, anim.five[0], 2.5)
                         .from([$grey2[5], $grey2[7]], 0.5, anim.five[1], 2.5)
                         .from([$grey2[0], $grey2[1], $grey2[8], $grey2[9]], 0.5, anim.six[1], 3)
                         .from([$grey2[2], $grey2[3], $grey2[10], $grey2[11]], 0.5, anim.six[0], 3)
                         ;  }
                 function whites() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from([$white[6], $white[8]],  0.5, anim.four[1], 2)
                         .from([$white[7], $white[9]],  0.5, anim.four[0], 2)
                         .from([$white[4], $white[10]], 0.5, anim.five[1], 2.5)
@@ -111,8 +107,7 @@
                         .from([$white[2], $white[3], $white[14], $white[15]], 0.5, anim.six[0], 3)
                         ;  }
                 function indigos() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($indigo.slice(8, 10), 0.5, anim.one)
                         .from([$indigo[6], $indigo[10]], 0.5, anim.three[1], 1.5)
                         .from([$indigo[7], $indigo[11]], 0.5, anim.three[0], 1.5)
@@ -124,8 +119,7 @@
                         .from([$indigo[0], $indigo[16]], 0.5, anim.six[1], 3)
                         ;  }
                 function pinks() {
-                    var timeline = new TimelineLite();
-                    timeline
+                    ( new TimelineLite() )
                         .from($pink1, 0.5, anim.one)
                         .from($pink2[0], 0.5, anim.two[0], 0.5)
                         .from($pink2[1], 0.5, anim.two[1], 0.5)

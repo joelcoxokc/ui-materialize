@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.services.left', [])
         .service('$LeftNavigationService', $LeftNavigationService)
@@ -36,7 +35,6 @@
 
         // return String "nav-left-STRING_VALUE_RECEIVED"
         function useClass(value) { return that_.classList+'-'+value; }
-
       }
 
   }).call(this);

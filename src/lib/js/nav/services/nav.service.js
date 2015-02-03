@@ -13,11 +13,8 @@
         Navigation.prototype.unfix     = protoUnfix;
         Navigation.prototype.watch     = protoWatch;
 
-
         function Navigation(side, element, attrs, config, scope) { config=config||{};
-
             var _this = this;
-
 
             this.side      = side;
             this.attrs     = attrs;
@@ -52,13 +49,14 @@
 
             function resetClassList() { _.forEach(this.config, this.createClassList); }
 
+
             /// Private Methods
 
             function createClassList(isDefault, classEnding) {
                 var className = _this.class+'-'+classEnding;
                 _this.classes[classEnding] = className;
                 // isDefault ? _this.addClass(className) : _this.removeClass(className);
-            }
+              }
 
           }; // end function Navigation
 
@@ -95,9 +93,7 @@
                 scope[createDefault(diffs[key] || key)] = value; });
             return scope;  };
 
-        function createDefault(string) {
-            return 'is' + string.charAt(0).toUpperCase() + string.slice(1); }
-
+        function createDefault(string) { return 'is'+string.charAt(0).toUpperCase() + string.slice(1); }
 
         } // end function NavService
 

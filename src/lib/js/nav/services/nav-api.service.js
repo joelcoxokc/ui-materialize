@@ -1,5 +1,4 @@
 ;(function(){ 'use strict';
-
     angular
         .module('mz.nav.services.api', [])
         .provider('mzNavApi', mzNavApi)
@@ -22,8 +21,6 @@
         this.hideOn = function(navType, state) {
             this.config[navType] || console.error('Nav type does not exist');
             this.config[navType].hideOn[state] = true;   };
-
-        //////////////////////////////////////////////////////
 
         this.$get = function($injector) {
             function Nav($NavService){  _.assign(this, _this.config);  this.config = _this.config;  };

@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.services.right', [])
         .service('$RightNavigationService', $RightNavigationService)
@@ -34,8 +33,8 @@
                 this.element.addClass('nav-viz-'+(  this.viz = viz  ));
               };
 
-            this.activate()
-        }
+            this.activate();
+        };
       }
 
   }).call(this);

@@ -7,9 +7,7 @@
 
     /* @ngInject */
     function Core ($stateProvider, $urlRouterProvider) {
-
         $urlRouterProvider.otherwise('/app/home');
-
         $stateProvider
             .state('app',
                 { url   : '/app'
@@ -30,4 +28,4 @@
                 })
             ;
       }
-}).call(this);
+  }).call(this);

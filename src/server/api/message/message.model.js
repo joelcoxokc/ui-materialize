@@ -8,8 +8,8 @@
 
 /////////////////////////////
 ///     Module Dependencies
-var _     = require('lodash'),
-    bogan = require('boganipsum'); // Used for generating random text
+var _     = require('lodash');
+var bogan = require('boganipsum'); // Used for generating random text
 
 ////////////////////////
 //
@@ -19,23 +19,16 @@ module.exports = new Message();
 
 function Message(app) {
     this.messages = new GenerateRandomMessages();
-
     this.idCount = 10;
-
-    this.increment = function() {
-        this.idCount++;
-        return this.idCount;
-    };
-}
+    this.increment = function() { return ++this.idCount; };
+  }
 
 ////////////////////////////////////
 //
 //  @index
 //  @param      param
 //  @param      cb
-Message.prototype.index   = function (cb) {
-    cb(null, this.messages);
-};
+Message.prototype.index   = function (cb) { cb(null, this.messages); };
 
 ////////////////////////////////////
 //
@@ -43,13 +36,9 @@ Message.prototype.index   = function (cb) {
 //  @param      param
 //  @param      cb
 Message.prototype.show    = function (param, cb) {
-    var message =    _(this.messages).find({id:param});
-    if (message) {
-        cb(null, message);
-    } else {
-        cb('Message Cannot be found', null);
-    }
-};
+    var message = _(this.messages).find( {id:param} );
+    message ? cb(null, message) : cb('Message Cannot be found', null) ;
+  };
 
 ////////////////////////////////////
 //
@@ -60,7 +49,7 @@ Message.prototype.create  = function (message, cb) {
     message.id = this.increment();
     this.messages.push(message);
     cb(null, message);
-};
+  };
 
 ////////////////////////////////////
 //
@@ -79,10 +68,9 @@ Message.prototype.destroy = function (param, cb) {};
 // Simply generates random messages
 function GenerateRandomMessages() {
     return _.map(_.range(10), function (val) {
-        return {
-            id: val,
-            title: bogan({paragraphs: 1}).split(' ')[0],
-            text:  bogan({paragraphs: 1})
-        };
-    });
-}
+        return  { id    : val
+                , title : bogan( {paragraphs:1} ).split(' ')[0]
+                , text  : bogan( {paragraphs:1} )
+                };
+      });
+  }

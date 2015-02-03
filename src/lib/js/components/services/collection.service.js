@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.collection', [])
         .provider('mzCollectionService', mzCollectionService)
@@ -15,7 +14,6 @@
             Collection.prototype.enable = function() {};
             return $injector.instantiate(Collection);
           }
-
       }
 
   }).call(this);

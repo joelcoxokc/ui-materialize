@@ -1,121 +1,66 @@
 <side-header z-bg="grey darken-4"></side-header>
 
 <side-content z-bg="grey darken-4">
-    <side-collapsible>
-        <side-collapse
-            waves=true
-            icon="mdi-image-color-lens"
-            header="Stylus">
-             <nav-action-group side="bottom" links="blue-text text-accent-2">
-                 <nav-action
-                      waves=true
-                      ui-sref='app.stylus-color'>
-                      <span class="nav-action-text">Color</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      ui-sref='app.stylus-grid'>
-                      <span class="nav-action-text">Grid</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      ui-sref='app.stylus-shadow'>
-                      <span class="nav-action-text">Shadow</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      ui-sref='app.stylus-table'>
-                      <span class="nav-action-text">Table</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      ui-sref='app.stylus-typography'>
-                      <span class="nav-action-text">Typography</span>
-                </nav-action>
-            </nav-action-group>
-      </side-collapse>
-      <side-collapse
-            waves=true
-            icon="mdi-action-dashboard"
-            header="Components">
-              <nav-action-group side="bottom" links="blue-text text-accent-2">
-                 <nav-action data-ng-repeat="component in app.components"
-                      waves=true
-                      ui-sref="app.components-{{component}}"
-                      ><span class="nav-action-text">{{component}}</span>
-                </nav-action>
-                      <!-- icon="mdi-editor-insert-chart" -->
-            </nav-action-group>
-      </side-collapse>
-      <side-collapse
-            waves=true
-            icon="mdi-maps-layers"
-            header="Directives">
-              <nav-action-group side="bottom" links="blue-text text-accent-2">
-                 <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">mz-materialize</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">mz-body</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">mz-nav</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">mz-main</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">mz-view</span>
-                </nav-action>
-            </nav-action-group>
-      </side-collapse>
-      <side-collapse
-            waves=true
-            icon="mdi-action-autorenew"
-            header="Services">
-              <nav-action-group side="bottom" links="blue-text text-accent-2">
-                 <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">$Materialize</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">$mzNavigation</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">$MenuService</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">$ApplicationDelegate</span>
-                </nav-action>
-                <nav-action
-                      waves=true
-                      state='components'>
-                      <span class="nav-action-text">$ApplicationConfig</span>
-                </nav-action>
-            </nav-action-group>
-      </side-collapse>
 
-    </side-collapsible>
-    <nav-action-group side="bottom" links="blue-text text-accent-2">
-        <nav-action
-              waves='light'
-              icon="fa fa-github"
-              label="github"
-              ></nav-action></nav-action-group></side-content>
+<side-collapsible>
+    <side-collapse
+      waves=true
+      icon="mdi-image-color-lens"
+      header="Stylus">
+        <nav-action-group side="bottom" links="blue-text text-accent-2">
+            <nav-action waves=true ui-sref='app.stylus-color'     ><span class="nav-action-text">Color</span></nav-action>
+            <nav-action waves=true ui-sref='app.stylus-grid'      ><span class="nav-action-text">Grid</span></nav-action>
+            <nav-action waves=true ui-sref='app.stylus-shadow'    ><span class="nav-action-text">Shadow</span></nav-action>
+            <nav-action waves=true ui-sref='app.stylus-table'     ><span class="nav-action-text">Table</span></nav-action>
+            <nav-action waves=true ui-sref='app.stylus-typography'><span class="nav-action-text">Typography</span></nav-action>
+          </nav-action-group>
+      </side-collapse>
+    <side-collapse
+      waves=true
+      icon="mdi-action-dashboard"
+      header="Components">
+        <nav-action-group side="bottom" links="blue-text text-accent-2">
+           <nav-action
+             data-ng-repeat="component in app.components"
+             waves=true
+             ui-sref="app.components-{{component}}">
+               <span class="nav-action-text">{{component}}</span>
+             </nav-action>
+             <!-- icon="mdi-editor-insert-chart" -->
+           </nav-action-group>
+      </side-collapse>
+    <side-collapse
+      waves=true
+      icon="mdi-maps-layers"
+      header="Directives">
+        <nav-action-group side="bottom" links="blue-text text-accent-2">
+            <nav-action waves=true state='components'><span class="nav-action-text">mz-materialize</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">mz-body</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">mz-nav</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">mz-main</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">mz-view</span></nav-action>
+          </nav-action-group>
+      </side-collapse>
+    <side-collapse
+      waves=true
+      icon="mdi-action-autorenew"
+      header="Services">
+        <nav-action-group side="bottom" links="blue-text text-accent-2">
+            <nav-action waves=true state='components'><span class="nav-action-text">$Materialize</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">$mzNavigation</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">$MenuService</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">$ApplicationDelegate</span></nav-action>
+            <nav-action waves=true state='components'><span class="nav-action-text">$ApplicationConfig</span></nav-action>
+          </nav-action-group>
+      </side-collapse>
+  </side-collapsible>
+
+<nav-action-group side="bottom" links="blue-text text-accent-2">
+    <nav-action
+      waves='light'
+      icon="fa fa-github"
+      label="github">
+      </nav-action>
+  </nav-action-group>
+
+</side-content>

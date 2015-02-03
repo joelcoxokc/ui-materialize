@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.layout.body', [])
         .directive('mzBody', mzBody)
@@ -15,9 +14,7 @@
                 , scope       : true
                 , link        : link
                 };
-
-        function link(scope, element, attrs, ctrl, transclude) {
-            ctrl.body = element;
-          }
+        function link(scope, element, attrs, ctrl, transclude) { ctrl.body = element; }
       }
+
   }).call(this);

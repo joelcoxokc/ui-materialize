@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.button', [])
         .provider('mzButtonService', mzButtonService)
@@ -15,7 +14,6 @@
             Buttons.prototype.enable = function() {};
             return $injector.instantiate(Buttons);
           }
-
       }
 
-}).call(this);
+  }).call(this);

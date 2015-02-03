@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.nav.controllers.nav', [])
         .controller('mzNavController', mzNavController)
@@ -9,7 +8,7 @@
     function mzNavController($scope) {
         // var classNames;
         // var _this = this;
-        $scope.$watch(  function (value){ /* console.log(value) */ }  )
+        $scope.$watch(  function (value){ /* console.log(value) */ }  );
       }
 
   }).call(this);

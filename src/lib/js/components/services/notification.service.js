@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.notification', [])
         .provider('mzNotificationService', mzNotificationService)
@@ -15,7 +14,6 @@
             Notifications.prototype.enable = function() {};
             return $injector.instantiate(Notifications);
           }
-
       }
 
   }).call(this);

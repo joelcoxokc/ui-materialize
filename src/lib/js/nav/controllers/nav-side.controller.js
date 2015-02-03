@@ -5,10 +5,10 @@
         ;
 
     function navSideCtrl ($scope, $RightNavigationService, $LeftNavigationService) {
-        var sides = {
-            right : $RightNavigationService,
-            left  : $LeftNavigationService
-          };
+        var sides =
+              { right : $RightNavigationService
+              , left  : $LeftNavigationService
+              };
 
         this.init = function(scope, element, attrs, side) {
             this[side] = new sides[side](scope, element, attrs);
