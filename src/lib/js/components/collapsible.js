@@ -15,7 +15,10 @@
                 , replace     : true
                 , link        : link
                 };
-        function link(scope, element, attrs) { scope.type ||( scope.type = 'accordion' ); }
+        function link(scope, element, attrs) {
+            scope.type ||( scope.type = 'accordion' );
+            $(element).collapsible();
+          }
       }
 
     function collapseHeader() {

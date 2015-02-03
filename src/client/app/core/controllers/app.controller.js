@@ -15,9 +15,9 @@
 
         this.components = getComponents();
 
-        jQuery(document).ready(function() {
-            $('.collapsible').collapsible();
-        })
+        // jQuery(document).ready(function() {
+
+        // })
         function getComponents() {
             return  [ 'buttons'
                     , 'cards'
