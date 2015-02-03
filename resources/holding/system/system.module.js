@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-    angular
-        .module('ui.materialize.system', []);
+    angular.module('ui.materialize.system', []);
 
-}).call(this);
+    }).call(this);

@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.select', [])
         .provider('mzSelectService', mzSelectService)
@@ -15,7 +14,6 @@
             Select.prototype.enable = function() {};
             return $injector.instantiate(Select);
           }
-
       }
 
   }).call(this);

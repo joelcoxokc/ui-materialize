@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.controllers.button', [])
         .controller('mzButtonController', mzButtonController)

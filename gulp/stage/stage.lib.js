@@ -71,4 +71,4 @@
             .pipe(  gulp.dest(config.client.root))
             ;  };
 
-    })(module.exports);
+  })(module.exports);

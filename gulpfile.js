@@ -1,7 +1,5 @@
-(function (){
-
+(function (){ 'use strict';
     /* jshint camelcase:false */
-    'use strict';
 
     var gulp = require('gulp');
     var $    =  require('gulp-load-plugins')({lazy:false});
@@ -15,20 +13,19 @@
                                         /*======  DEV  ======*/
     gulp                                /*=====================*/
         .task(  'dev'  ,
-            $.sequence(
-                'dev:lib',
-                'dev:vendor',
-                'dev:client',
-                'dev:start'
-                )  );
+                $.sequence(  'dev:lib'    ,
+                             'dev:vendor' ,
+                             'dev:client' ,
+                             'dev:start'  )  )
+        ;
 
 /*======================================================================== DEV START
 */  gulp
         .task(  'dev:server'  ,  dev.start.server  )
         .task(  'dev:watch'   ,  dev.start.watch   )
-        .task(  'dev:start'   ,  $.sequence(
-                                    'dev:watch'   ,
-                                    'dev:server'  )  );
+        .task(  'dev:start'   ,  $.sequence( 'dev:watch'   ,
+                                             'dev:server'  )  )
+        ;
 
 
 /*======================================================================== DEV VENDOR
@@ -36,10 +33,10 @@
         .task(  'dev:vendor:styles'   ,  dev.vendor.styles   )
         .task(  'dev:vendor:scripts'  ,  dev.vendor.scripts  )
         .task(  'dev:vendor:inject'   ,  dev.vendor.inject   )
-        .task(  'dev:vendor'          ,  $.sequence(
-                                            'dev:vendor:styles'   ,
-                                            'dev:vendor:scripts'  ,
-                                            'dev:vendor:inject'   )  );
+        .task(  'dev:vendor'          ,  $.sequence( 'dev:vendor:styles'   ,
+                                                     'dev:vendor:scripts'  ,
+                                                     'dev:vendor:inject'   )  )
+        ;
 
 
 /*======================================================================== DEV LIB
@@ -50,12 +47,12 @@
         .task(  'dev:lib:styles'     ,  dev.lib.styles     )
         .task(  'dev:lib:inject'     ,  dev.lib.inject     )
         .task(  'dev:lib:fonts'      ,  dev.lib.fonts      )
-        .task(  'dev:lib'            ,  $.sequence(
-                                            'dev:lib:templates'  ,
-                                            'dev:lib:scripts'    ,
-                                            // 'dev:lib:analyze' ,
-                                            'dev:lib:styles'     ,
-                                            'dev:lib:inject'     )  );
+        .task(  'dev:lib'            ,  $.sequence(  'dev:lib:templates'  ,
+                                                     'dev:lib:scripts'    ,
+                                                     // 'dev:lib:analyze' ,
+                                                     'dev:lib:styles'     ,
+                                                     'dev:lib:inject'     )  )
+        ;
 
 /*======================================================================== DEV CLIENT
 */  gulp
@@ -71,7 +68,8 @@
                                                'dev:client:scripts'    ,
                                                'dev:client:styles'     ,
                                                // 'dev:client:images'     ,
-                                               'dev:client:inject'     )  );
+                                               'dev:client:inject'     )  )
+        ;
 
 //  ####  STAGE  #####
 
@@ -128,12 +126,14 @@
         .task(  'stage:client:styles'     ,  stage.client.styles     )
         .task(  'stage:client:inject'     ,  stage.client.inject     )
         .task(  'stage:client:images'     ,  stage.client.images     )
+        .task(  'stage:client:assets'     ,  stage.client.assets     )
         .task(  'stage:client'            ,  $.sequence(
                                                'stage:client:templates'  ,
                                                // 'stage:client:analyze'    ,
                                                'stage:client:scripts'    ,
                                                'stage:client:styles'     ,
                                                'stage:client:images'     ,
+                                               'stage:client:assets'     ,
                                                'stage:client:inject'     )  );
 
     // //  ####  DEPLOY  #####
@@ -185,5 +185,4 @@
     //                                            'deploy:client:scripts'    ,
     //                                            'deploy:client:styles'     )  );
 
-
-})();
+  })();

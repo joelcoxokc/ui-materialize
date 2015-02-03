@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.ripple', [])
         .provider('mzRippleService', mzRippleService)
@@ -15,7 +14,6 @@
             Ripple.prototype.enable = function() {};
             return $injector.instantiate(Ripple);
           }
-
       }
 
   }).call(this);

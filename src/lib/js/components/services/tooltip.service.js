@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.tooltip', [])
         .provider('mzTooltipService', mzTooltipService)
@@ -15,7 +14,6 @@
             Tooltip.prototype.enable = function() {};
             return $injector.instantiate(Tooltip);
           }
-
       }
 
   }).call(this);

@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.form', [])
         .provider('mzFormService', mzFormService)
@@ -15,7 +14,6 @@
             Form.prototype.enable = function() {};
             return $injector.instantiate(Form);
           }
-
       }
 
   }).call(this);

@@ -1,6 +1,5 @@
 /* global Storage:false, $local:false, _:false */
 ;(function() { 'use strict';
-
     angular
         .module('core')
         .service('$storage', $Storage)

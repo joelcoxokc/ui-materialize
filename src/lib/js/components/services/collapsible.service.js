@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.collapsible', [])
         .provider('mzCollapsibleService', mzCollapsibleService)

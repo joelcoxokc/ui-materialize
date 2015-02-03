@@ -1,26 +1,23 @@
 /* jshint camelcase:false */
-var gulp = require('gulp');
+var gulp   = require('gulp');
 var browserSync = require('browser-sync');
-var del = require('del');
-var glob = require('glob');
-var karma = require('karma').server;
-var merge = require('merge-stream');
-var paths = require('./gulp.config.json');
-var plato = require('plato');
-var plug = require('gulp-load-plugins')();
+var del    = require('del');
+var glob   = require('glob');
+var karma  = require('karma').server;
+var merge  = require('merge-stream');
+var paths  = require('./gulp.config.json');
+var plato  = require('plato');
+var plug   = require('gulp-load-plugins')();
 var reload = browserSync.reload;
 
 var colors = plug.util.colors;
-var env = plug.util.env;
-var log = plug.util.log;
-var port = process.env.PORT || 9000;
-
+var env    = plug.util.env;
+var log    = plug.util.log;
+var port   = process.env.PORT || 9000;
 
 var utils = require('./gulp/utils');
 var stage = require('./gulp/gulp.stage');
 var dev = require('./gulp/gulp.dev');
-
-
 
 /**
  * Helper tasks
@@ -33,11 +30,11 @@ var dev = require('./gulp/gulp.dev');
 gulp
     .task('help', plug.taskListing)
     .task('clean', function(cb) {
-        log('Cleaning: ' + plug.util.colors.blue(paths.build));
-
+        log('Cleaning: '+plug.util.colors.blue(paths.build));
         var delPaths = [].concat(paths.build, paths.report, paths.tmp.root);
         del(delPaths, cb);
-    });
+      })
+    ;
 
 /**
  * scripts
@@ -51,16 +48,15 @@ gulp
  */
 gulp
     .task('scripts',
-        plug.sequence(
-            'templatecache',
-            'analyze',
-            'vendor:js',
-            'js'
-        ))
+          plug.sequence( 'templatecache',
+                         'analyze',
+                         'vendor:js',
+                         'js'   ) )
     .task('templatecache', stage.templatecache)
     .task('analyze', stage.analyze)
     .task('vendor:js', stage.vendor.js)
     .task('js', stage.js)
+    ;
 
 /**
  * styles
@@ -71,34 +67,31 @@ gulp
  * @return {Stream}
  */
 gulp
-    .task('stage:libs',
-        plug.sequence(
-            'stage:libs:styl',
-            'stage:libs:js',
-            'stage:libs:templates'
-        ))
-    .task('stage:libs:styl', stage.styl({
-        src:paths.libs.styl,
-        name:'ui-materialize.min.css',
-        dest:paths.build + 'content'
-    }))
-    .task('stage:libs:js', dev.js({
-        src: paths.libs.scripts,
-        name: 'ui-materialize.js',
-        dest: paths.build,
-    }))
-    .task('stage:libs:templates', dev.templates({
-        src: paths.libs.templates,
-        name:'ui-materialize.templates.js',
-        dest: paths.build,
-        config: {
-            module:'ui.materialize',
-            standalone: false,
-            root:'templates/',
-            base:__dirname + '/src/libs/ui-materialize'
-        }
-    }))
-
+    .task( 'stage:libs' ,
+           plug.sequence( 'stage:libs:styl',
+                          'stage:libs:js',
+                          'stage:libs:templates'  ) )
+    .task( 'stage:libs:styl' ,
+           stage.styl( { src : paths.libs.styl
+                       , name: 'ui-materialize.min.css'
+                       , dest: paths.build + 'content'
+                       }   ) )
+    .task( 'stage:libs:js' ,
+           dev.js( { src : paths.libs.scripts
+                   , name: 'ui-materialize.js'
+                   , dest: paths.build
+                   }   ) )
+    .task( 'stage:libs:templates' ,
+           dev.templates( { src   : paths.libs.templates
+                          , name  : 'ui-materialize.templates.js'
+                          , dest  : paths.build
+                          , config: { module    : 'ui.materialize'
+                                    , standalone: false
+                                    , root      : 'templates/'
+                                    , base      : __dirname+'/src/libs/ui-materialize'
+                                    }
+                          }))
+    ;
 
 /**
  * styles
@@ -110,10 +103,8 @@ gulp
  */
 gulp
     .task('styles',
-        plug.sequence(
-            'css',
-            'vendor:css'
-        ))
+        plug.sequence( 'css',
+                       'vendor:css'  ) )
     .task('css', stage.css)
     .task('vendor:css', stage.vendor.css)
 
@@ -126,8 +117,8 @@ gulp
  * @return {Stream}
  */
 gulp
-    .task('assets',
-        ['fonts','images'])
+    .task( 'assets',
+           ['fonts','images']  )
     .task('fonts', stage.fonts)
     .task('images', stage.images)
 
@@ -144,22 +135,20 @@ gulp
  * @return {Stream}
  */
 gulp
-    .task('stage',
-        plug.sequence(
-            'clean',
-            'stage:libs',
-            'stage:scripts',
-            'stage:styles',
-            'stage:inject',
-            'stage:assets',
-            'stage:notify'
-        ))
+    .task( 'stage',
+           plug.sequence( 'clean',
+                          'stage:libs',
+                          'stage:scripts',
+                          'stage:styles',
+                          'stage:inject',
+                          'stage:assets',
+                          'stage:notify'  ) )
     .task('stage:scripts', ['scripts'])
-    .task('stage:styles',  ['styles'])
-    .task('stage:assets',  ['assets'])
-    .task('stage:inject',  stage.inject)
-    .task('stage:notify',  stage.notify)
-    .task('stage:watch',   stage.watch)
+    .task('stage:styles' , ['styles'])
+    .task('stage:assets' , ['assets'])
+    .task('stage:inject' , stage.inject)
+    .task('stage:notify' , stage.notify)
+    .task('stage:watch'  , stage.watch)
 
 /**
  * Build
@@ -178,47 +167,45 @@ gulp.task('build', ['stage'])
  */
 gulp
     .task('dev:scripts',
-        [
-            'dev:js',
-            'dev:libs:js',
-            'dev:templates',
-            'dev:libs:templates',
-            'dev:vendor:js'
-        ]
-    )
-    .task('dev:js', ['dev:analyze'], dev.js({
-        src: paths.js,
-        name:'app.js',
-        dest:paths.tmp.scriptsPath
-    }))
-    .task('dev:libs:js', dev.js({
-        src: paths.libs.scripts,
-        name: 'ui-materialize.js',
-        dest: paths.libs.dest,
-    }))
-    .task('dev:analyze', dev.analyze)
-    .task('dev:templates', dev.templates({
-        src:paths.htmltemplates,
-        name:'templates.js',
-        dest:paths.tmp.templatesPath,
-        config: {
-            module: 'core',
-            standalone: false,
-            root: 'app/'
-        }
-    }))
-    .task('dev:libs:templates', dev.templates({
-        src: paths.libs.templates,
-        name:'ui-materialize.templates.js',
-        dest: paths.libs.dest,
-        config: {
-            module:'ui.materialize',
-            standalone: false,
-            root:'templates/',
-            base:__dirname + '/src/libs/ui-materialize'
-        }
-    }))
+          [ 'dev:js'
+          , 'dev:libs:js'
+          , 'dev:templates'
+          , 'dev:libs:templates'
+          , 'dev:vendor:js'
+          ]  )
+    .task( 'dev:js',
+           ['dev:analyze'],
+           dev.js({ src: paths.js
+                  , name:'app.js'
+                  , dest:paths.tmp.scriptsPath
+                  }  ) )
+    .task( 'dev:libs:js',
+        dev.js({ src : paths.libs.scripts
+               , name: 'ui-materialize.js'
+               , dest: paths.libs.dest
+               }  ) )
+    .task( 'dev:analyze', dev.analyze )
+    .task( 'dev:templates',
+        dev.templates({ src   : paths.htmltemplates
+                      , name  : 'templates.js'
+                      , dest  : paths.tmp.templatesPath
+                      , config: { module    : 'core'
+                                , standalone: false
+                                , root      : 'app/'
+                                }
+                      }))
+    .task( 'dev:libs:templates',
+           dev.templates({ src   : paths.libs.templates
+                         , name:'ui-materialize.templates.js'
+                         , dest: paths.libs.dest
+                         , config: { module    : 'ui.materialize'
+                                   , standalone: false
+                                   , root      : 'templates/'
+                                   , base      : __dirname+'/src/libs/ui-materialize'
+                                   }
+                         }))
     .task('dev:vendor:js', dev.vendor.js)
+    ;
 
 /**
  * dev:styles
@@ -228,27 +215,22 @@ gulp
  * @task dev:vendor.css
  */
 gulp
-    .task('dev:styles',
-        [
-            'dev:css',
-            'dev:styl',
-            'dev:libs:styl',
-            'dev:vendor:css'
-        ]
-    )
+    .task( 'dev:styles', [ 'dev:css'
+                         , 'dev:styl'
+                         , 'dev:libs:styl'
+                         , 'dev:vendor:css'
+                         ])
     .task('dev:css', dev.css)
-    .task('dev:client:styl', dev.styl({
-        src:paths.styl.index,
-        name:'app.styl.min.css',
-        dest:paths.tmp.stylesPath
-    }))
-
-    .task('dev:libs:styl', dev.styl({
-        src:paths.libs.styl,
-        name:'ui-materialize.css',
-        dest: paths.libs.dest,
-    }))
+    .task('dev:client:styl', dev.styl({ src : paths.styl.index
+                                      , name: 'app.styl.min.css'
+                                      , dest: paths.tmp.stylesPath
+                                      }  ) )
+    .task('dev:libs:styl', dev.styl({ src:paths.libs.styl
+                                    , name:'ui-materialize.css'
+                                    , dest: paths.libs.dest
+                                    }  ) )
     .task('dev:vendor:css', dev.vendor.css)
+    ;
 
 /**
  * dev:styles
@@ -257,30 +239,26 @@ gulp
  * @task dev:fonts
  */
 gulp
-    .task('dev:assets',
-        [
-            'dev:images',
-            'dev:fonts'
-        ])
+    .task('dev:assets', [ 'dev:images'
+                        , 'dev:fonts'
+                        ]  )
     .task('dev:images', dev.images)
-    .task('dev:fonts', dev.fonts);
-
+    .task('dev:fonts', dev.fonts)
+    ;
 
 gulp
-    .task('dev',
-        plug.sequence(
-            'clean',
-            'dev:scripts',
-            'dev:styles',
-            'dev:assets',
-            'dev:inject',
-            'dev:watch',
-            'dev:server'
-            // 'serve-dev-debug'
-        ))
+    .task( 'dev',
+           plug.sequence( 'clean',
+                          'dev:scripts',
+                          'dev:styles',
+                          'dev:assets',
+                          'dev:inject',
+                          'dev:watch',
+                          'dev:server'  ) ) // 'serve-dev-debug'
     .task('dev:inject', dev.inject)
-    .task('dev:watch', dev.watch)
+    .task('dev:watch' , dev.watch)
     .task('dev:server', dev.server)
+    ;
 
 /**
  * Run specs once and exit
@@ -288,9 +266,7 @@ gulp
  *    gulp test --startServers
  * @return {Stream}
  */
-gulp.task('test', function(done) {
-    utils.startTests(true /*singleRun*/ , done);
-});
+gulp.task('test', function(done) { utils.startTests(true /*singleRun*/ , done); });
 
 /**
  * Run specs and wait.
@@ -298,55 +274,31 @@ gulp.task('test', function(done) {
  * To start servers and run midway specs as well:
  *    gulp autotest --startServers
  */
-gulp.task('autotest', function(done) {
-    utils.startTests(false /*singleRun*/ , done);
-});
+gulp.task('autotest', function(done) {  utils.startTests(false /*singleRun*/ , done);  });
 
 /**
  * serve the dev environment, with debug,
  * and with node inspector
  */
-gulp.task('serve-dev-debug', function() {
-    utils.serve({
-        mode: 'dev',
-        debug: '--debug'
-    });
-});
+gulp.task('serve-dev-debug', function() {  utils.serve({ mode:'dev' , debug: '--debug' });  });
 
 /**
  * serve the dev environment, with debug-brk,
  * and with node inspector
  */
-gulp.task('serve-dev-debug-brk', function() {
-    utils.serve({
-        mode: 'dev',
-        debug: '--debug-brk'
-    });
-});
+gulp.task('serve-dev-debug-brk', function() {  utils.serve({ mode:'dev' , debug:'--debug-brk' });  });
 
 /**
  * serve the dev environment
  */
-gulp.task('serve-dev', function() {
-    utils.serve({
-        mode: 'dev'
-    });
-});
+gulp.task('serve-dev', function() {  utils.serve({  mode:'dev' });  });
 
 /**
  * serve the build environment
  */
-gulp.task('serve-build', function() {
-    utils.serve({
-        mode: 'build'
-    });
-});
+gulp.task('serve-build', function() {  utils.serve({ mode:'build' });  });
 
 /**
  * Backwards compatible call to make stage and build equivalent
  */
 gulp.task('serve-stage', ['serve-build'], function() {});
-
-
-
-

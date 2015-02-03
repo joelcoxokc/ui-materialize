@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.core.transclude', [])
         .directive('ngTransclude', ngTransclude)
@@ -17,7 +16,6 @@
     /* @inject */
     function ngTransclude() {
         return { restrict:'EAC' , link:link };
-
         function link(scope, element, attrs, ctrl, transclude) {
             var iScopeType = attrs.ngTransclude || 'sibling';
             switch (iScopeType) {
@@ -42,8 +40,8 @@
                             if (!toClone.$parent) { break; }
                             toClone = toClone.$parent;   }
                         transclude(toClone, function (clone){ element.empty();  element.append(clone); });  }
-                } // end switch
-            } // end function link
-        } // end ngTransclude
+              } // end switch
+          } // end function link
+      } // end ngTransclude
 
-    }).call(this);
+  }).call(this);

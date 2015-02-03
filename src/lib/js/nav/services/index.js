@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module(  'mz.nav.services',
             [ 'mz.nav.services.api'

@@ -1,5 +1,4 @@
 (function() { 'use strict';
-
     angular.module(  'ui.materialize.layout',
         [ 'mz.layout.controllers'
         , 'mz.layout.container'

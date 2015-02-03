@@ -1,9 +1,10 @@
 ;(function() { 'use strict';
     angular
         .module('ui.materialize')
-        .filter('uiMaterializeFilter', uiMaterializeFilter);
+        .filter('uiMaterializeFilter', uiMaterializeFilter)
+        ;
 
     /* @ngInject */
     function uiMaterializeFilter() {}
 
-}).call(this);
+  }).call(this);

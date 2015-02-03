@@ -45,7 +45,7 @@
 
                 jQuery(document).ready(function() {
                     attrs.links && $(element).find('.linked').addClass(attrs.links);
-                    // $('.collapsible').collapsible();
+                    $(element).collapsible();
                 });
             } // end function link
     } }).call(this);

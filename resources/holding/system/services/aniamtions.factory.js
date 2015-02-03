@@ -2,15 +2,16 @@
     angular
         .module('ui.materialize')
         .factory( 'SideBarClass', SideBarClass )
+        ;
 
     /* @ngInject */
     function SideBarClass($animate, TweenMax, TimelineLight, Cubic) {
         return function() {
-            var inEffect        = effect.enter,
-            outEffect       = effect.leave,
-            outEffectLeave  = effect.inverse || effect.leave,
-            fx_type         = effect.animation;
-            this.addClass = function(element, className, done){
+          var inEffect        = effect.enter;
+          var outEffect       = effect.leave;
+          var outEffectLeave  = effect.inverse || effect.leave;
+          var fx_type         = effect.animation;
+          this.addClass = function(element, className, done){
                 // if(className){
                 //   // var options = Assist.parseClassList(element);
                 //   options.motion = 'enter';
@@ -30,8 +31,8 @@
                 //   done();
                 // }
               };
-        }
+          }; // end return function(){...};
 
-    }
+      }
 
-}).call(this);
+  }).call(this);

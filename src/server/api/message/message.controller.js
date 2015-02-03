@@ -7,15 +7,16 @@
 
 /////////////////////////////
 ///     Module Dependencies
-var Message    = require('./message.model'),
-    _          = require('lodash');
+var Message = require('./message.model');
+var _       = require('lodash');
 
-exports.index   = function (req, res) {
+exports.index = function (req, res) {
     Message.index(function (err, result) {
-        if (err) {res.send(404);}
+        if (err) { res.send(404); }
         res.send(result);
-    });
-};
+      });
+  };
+
 exports.create  = function (req, res) {};
 exports.show    = function (req, res) {};
 exports.update  = function (req, res) {};

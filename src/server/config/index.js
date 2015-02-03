@@ -21,25 +21,17 @@ var methodOverride    = require('method-override'),
 ///     @Expose     conig module
 ///     @dir        ./config
 ///
-module.exports      = function (app) {
-
-    app.use(bodyParser
-      .urlencoded({extended:false}));
+module.exports = function (app) {
+    app.use(  bodyParser.urlencoded({ extended:false })  );
     // app.use(connectLivereload());
     app.use(bodyParser.json());
     app.use(methodOverride());
     // app.use(  morgan('dev')         );
 
     // Root path of server
-    //
-    app.set('root', path.normalize(__dirname + '/../..'));
-
+    app.set('root', path.normalize( __dirname+'/../..' ));
     // Server port
-    //
     app.set('port', process.env.PORT || 9000);
-
     // Set environment Variables
-    //
     environment.runEnvironment(app);
-
-};
+  };

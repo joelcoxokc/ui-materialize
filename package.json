@@ -1,33 +1,27 @@
-{
-  "name": "mvvm-demo",
-  "version": "0.0.2",
-  "description": "AngularJS Modular Demo",
-  "authors": [
-    "John Papa"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/joelcoxokc/mvvm-demo",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joelcoxokc/mvvm-demo.git"
-  },
-  "scripts": {
-    "start": "node src/server/app.js",
-    "test": "gulp test"
-  },
-  "dependencies": {
-    "body-parser": "^1.8.2",
-    "boganipsum": "^0.1.0",
-    "colors": "^1.0.3",
-    "compression": "^1.1.0",
-    "cors": "^2.2.0",
-    "express": "^4.9.3",
-    "lodash": "^2.4.1",
-    "method-override": "^1.0.0",
-    "morgan": "^1.1.1",
-    "serve-favicon": "^2.0.1"
-  },
-  "devDependencies": {
+{ "name": "mvvm-demo"
+  , "version"     : "0.0.2"
+  , "description" : "AngularJS Modular Demo"
+  , "authors"     : [ "John Papa" ]
+  , "license"     : "MIT"
+  , "homepage"    : "https://github.com/joelcoxokc/mvvm-demo"
+  , "repository"  : { "type": "git"
+                    , "url" : "https://github.com/joelcoxokc/mvvm-demo.git"
+                    }
+  , "scripts"     : { "start": "node src/server/app.js"
+                    , "test" : "gulp test"
+                    }
+  , "dependencies": { "body-parser"    : "^1.8.2"
+                    , "boganipsum"     : "^0.1.0"
+                    , "colors"         : "^1.0.3"
+                    , "compression"    : "^1.1.0"
+                    , "cors"           : "^2.2.0"
+                    , "express"        : "^4.9.3"
+                    , "lodash"         : "^2.4.1"
+                    , "method-override": "^1.0.0"
+                    , "morgan"         : "^1.1.1"
+                    , "serve-favicon"  : "^2.0.1"
+                    }
+  , "devDependencies": {
     "browser-sync": "^1.6.5",
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",

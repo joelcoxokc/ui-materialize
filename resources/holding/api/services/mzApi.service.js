@@ -1,16 +1,12 @@
-;(function(){
-
-  'use strict';
-
+;(function(){ 'use strict';
     angular
         .module('ui.materialize.api')
         .provider('$mzApi', mzApi)
         .config(function () {
-
             console.log();
+          }  )
+        ;
             // var API = mzNav_APIProvider
-
-
 
             // API
             //     .new({
@@ -121,13 +117,12 @@
             //             label: 'lg',
             //             scope: 'atLarge',
             //             class: 'nav-right-lg'})
-        })
 
         /* @ngInject */
         function mzApi($LayoutProvider, $SystemProvider, $ComponentsProvider, $MenuProvider, EventDispatcherProvider, $NavProvider) {
         // function mzApi() {
         //
-            var evet = EventDispatcherProvider
+            var evet = EventDispatcherProvider;
             // console.log(evet);
             var _this = this;
 
@@ -141,12 +136,7 @@
 
             this.$get = function() {
                 // console.log(_this.$menu)
-                return {
+                return {};  };
+          }
 
-                }
-
-            }
-
-        }
-
-}).call(this);
+  }).call(this);

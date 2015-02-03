@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('app',
             [ 'ngAnimate'
@@ -8,9 +7,9 @@
             , 'btford.markdown'
             , 'hljs'
             , 'ui.materialize'
-
             , 'core'
             , 'app.modules'
-            ]  );
+            ]  )
+        ;
 
   }).call(this);

@@ -8,15 +8,14 @@
 
 /////////////////////////////
 ///     Module Dependencies
-var _    = require('lodash'),
-    auth    = require('./auth'),
-    utils   = require('./utils');
+var _     = require('lodash'),
+    auth  = require('./auth'),
+    utils = require('./utils');
 
 /////////////////////////////////
 ///     @Expose     conig
 ///
 module.exports      = function () {
-
     // this.auth   = auth;
     // this.utils  = utils;
-};
+  };

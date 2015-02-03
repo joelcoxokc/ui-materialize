@@ -17,8 +17,6 @@ var User  = require('./user');
 ///     @Module            Api
 ///
 module.exports = function(app) {
-
     Message.router(app);
     User.router(app);
-
-};
+  };

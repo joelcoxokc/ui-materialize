@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.components.services.dialog', [])
         .provider('mzDialogService', mzDialogService)
@@ -15,7 +14,6 @@
             Dialog.prototype.enable = function() {};
             return $injector.instantiate(Dialog);
           }
-
       }
 
   }).call(this);

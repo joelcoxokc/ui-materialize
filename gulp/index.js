@@ -31,45 +31,43 @@
     function options(task, name) {
         // Given a task ('dev') and a name ('lib' | 'client' | 'vendor' ),
         // return options obj configured to the purpose { autoprefix:{..}, templateName:{..}, ..}
-        return (
-            { dev:
-                { lib:
-                    { autpPrefix:
-                        { browsers: ['last 2 versions']
-                        , cascade:  false
+        return  { dev:
+                    { lib:
+                        { autpPrefix:
+                            { browsers : ['last 2 versions']
+                            , cascade  : false
+                            }
+                        , templateName:
+                            'ui-materialize.templates.js'
+                        , ngTemplate:
+                            { module     : 'ui.materialize'
+                            , standalone : false
+                            , root       : 'templates/'
+                            }
                         }
-                    , templateName:
-                        'ui-materialize.templates.js'
-                    , ngTemplate:
-                        { module:     'ui.materialize'
-                        , standalone: false
-                        , root:       'templates/'
+                    , client:
+                        { autpPrefix:
+                            { browsers : ['last 2 versions']
+                            , cascade  : false
+                            }
+                        , ngTemplates:
+                            { module     : 'core'
+                            , standalone : false
+                            , root       : 'app/'
+                            }
+                        }
+                    , vendor:
+                        { autpPrefix:
+                            { browsers : ['last 2 versions']
+                            , cascade  :  false
+                            }
                         }
                     }
-                , client:
-                    { autpPrefix:
-                        { browsers: ['last 2 versions']
-                        , cascade:  false
-                        }
-                    , ngTemplates:
-                        { module:     'core'
-                        , standalone: false
-                        , root:       'app/'
-                        }
+                , stage:
+                    { lib    : {}
+                    , client : {}
+                    , vendor : {}
                     }
-                , vendor:
-                    { autpPrefix:
-                        { browsers: ['last 2 versions']
-                        , cascade:  false
-                        }
-                    }
-                }
-            , stage: {
-                    lib: {},
-                    client: {},
-                    vendor: {}
-                }
+                }[task][name];   };
 
-            }[task][name]  );  };
-
-    })(module.exports);
+  })(module.exports);

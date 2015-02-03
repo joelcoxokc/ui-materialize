@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular
         .module('mz.core.ctrl', [])
         .controller('mzController', mzController)

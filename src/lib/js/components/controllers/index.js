@@ -1,5 +1,4 @@
 ;(function() { 'use strict';
-
     angular.module('mz.components.controllers',
         [ 'mz.components.controllers.button'
         , 'mz.components.controllers.card'
