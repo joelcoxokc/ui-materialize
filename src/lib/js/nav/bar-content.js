@@ -20,7 +20,7 @@
             element.addClass('bar-content');
             transclude(scope, function (clone){ element.append(clone)});
             jQuery(document).ready(function(){
-                (scope.brand) &&( $(element).before('<a class="mz-nav-brand brand-logo href="#">'+scope.brand+'</a>'); );
+                (scope.brand) &&( $(element).before('<a class="mz-nav-brand brand-logo href="#">'+scope.brand+'</a>') )
               });
           }
       } // end function mzNavBrand

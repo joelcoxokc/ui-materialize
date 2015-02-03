@@ -28,9 +28,9 @@
             attrs.mobile &&( scope.mobile = 'nav-mobile' );
             ///  @class   inner
             ///  @class   element
-            attrs.side && globalSides[attrs.side] &&( element.addClass('side-collapsible-'+attrs.side); }
+            attrs.side && globalSides[attrs.side] &&( element.addClass('side-collapsible-'+attrs.side) )
             jQuery(document).ready(function() {
-                attrs.links &&( $(element).find('.linked').addClass(attrs.links) );
+                attrs.links &&( $(element).find('.linked').addClass(attrs.links) )
                 // $('.collapsible').collapsible();
               });
           } // end function link

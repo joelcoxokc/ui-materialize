@@ -24,6 +24,6 @@
             scope.label = attrs.label || null;
             scope.waves = (attrs.waves ? 'waves-effect waves-'+attrs.waves : '');
 
-            transclude(scope, function (clone){ inner.append(clone); });   }
+            transclude(scope, function (clone){ inner.append(clone); });   /**/}
 
-  }).call(this);
+      } }).call(this);
