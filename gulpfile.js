@@ -3,17 +3,19 @@
 
     var gulp = require('gulp');
     var $    =  require('gulp-load-plugins')({lazy:false});
-
     var tasks = require('./gulp/index');
     var dev   = tasks.dev;
     var stage = tasks.stage;
+
 
 //  ####  DEV  #####
 
                                         /*======  DEV  ======*/
     gulp                                /*=====================*/
         .task(  'dev'  ,
-                $.sequence(  'dev:lib'    ,
+                $.sequence(
+                             'dev:reset'  ,
+                             'dev:lib'    ,
                              'dev:vendor' ,
                              'dev:client' ,
                              'dev:start'  )  )
@@ -23,6 +25,8 @@
 */  gulp
         .task(  'dev:server'  ,  dev.start.server  )
         .task(  'dev:watch'   ,  dev.start.watch   )
+        .task(  'dev:clear'   ,  tasks.reset.clear   )
+        .task(  'dev:reset'   ,  tasks.reset.index   )
         .task(  'dev:start'   ,  $.sequence( 'dev:watch'   ,
                                              'dev:server'  )  )
         ;

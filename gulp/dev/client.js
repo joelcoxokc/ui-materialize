@@ -1,11 +1,13 @@
 (function () {
     /* jshint camelcase:false */
 
+
     module.exports = function($, merge, utils, gulp, options, paths) {
         var jadeFilter    = $.filter('**/*.jade');
         var stylusFilter  = $.filter('**/*.styl');
 
         return  {
+
             analyze: function() {
                 var jshint = utils.analyzejshint( paths.client.scripts );
                 var jscs   = utils.analyzejscs( paths.client.scripts );

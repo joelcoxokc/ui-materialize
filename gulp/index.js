@@ -7,6 +7,7 @@
     var gulp       =  require('gulp');
     var nib        =  require('nib');
 
+    Tasks.reset  = require('./reset')($, gulp, paths)
     Tasks.dev =
         { lib    : use('dev','lib'   )
         , client : use('dev','client')
