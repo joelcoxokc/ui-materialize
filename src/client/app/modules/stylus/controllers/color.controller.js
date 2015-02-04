@@ -13,6 +13,7 @@
           }); // end function call .each(){...};
 
           function rgb2hex(rgb) {
+
               if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
               rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
               function hex(x) { return ('0'+parseInt(x).toString(16)).slice(-2); }

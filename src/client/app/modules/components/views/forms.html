@@ -11,7 +11,7 @@
           <div class='col s12'>
             <h3 z-text=white>Coming Soon</h3>
             <p class=" caption">
-
+                Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.
               </p></div>
 
           </div></div></header>
@@ -23,10 +23,467 @@
           <div class="card white">
             <article class="card-content">
 
-              <h3 class="thin"></h3>
+              <h3 class="thin">Input fields</h3>
+              <p>Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a .input-field div wrapping your input and label. This helps our jQuery animate the label. This is only used in our Input and Textarea form elements.</p>
+              <p>If you don't want the Green and Red validation states, just remove the validate class from your inputs.</p>
+
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="last_name" type="text" class="validate">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="username" type="text" class="validate">
+                      <label for="username">Username</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code no-escape hljs>
+              &lt;div class="row">
+                  &lt;form class="col s12">
+                    &lt;div class="row">
+                      &lt;div class="input-field col s6">
+                        &lt;input id="first_name" type="text" class="validate">
+                        &lt;label for="first_name">First Name&lt;/label>
+                      &lt;/div>
+                      &lt;div class="input-field col s6">
+                        &lt;input id="last_name" type="text" class="validate">
+                        &lt;label for="last_name">Last Name&lt;/label>
+                      &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row">
+                      &lt;div class="input-field col s12">
+                        &lt;input id="username" type="text" class="validate">
+                        &lt;label for="username">Username&lt;/label>
+                      &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row">
+                      &lt;div class="input-field col s12">
+                        &lt;input id="password" type="password" class="validate">
+                        &lt;label for="password">Password&lt;/label>
+                      &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row">
+                      &lt;div class="input-field col s12">
+                        &lt;input id="email" type="email" class="validate">
+                        &lt;label for="email">Email&lt;/label>
+                      &lt;/div>
+                    &lt;/div>
+                  &lt;/form>
+                &lt;/div>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Icon Prefixes</h3>
+              <p>You can add an icon prefix to make the form input label even more clear. Just add an icon with the class prefix before the input and label.</p>
+
+
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="mdi-action-account-circle prefix"></i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <i class="mdi-communication-phone prefix"></i>
+                      <input id="icon_telephone" type="tel" class="validate">
+                      <label for="icon_telephone">Telephone</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code no-escape hljs>
+              &lt;div class="row">
+                &lt;form class="col s12">
+                  &lt;div class="row">
+                    &lt;div class="input-field col s6">
+                      &lt;i class="mdi-action-account-circle prefix">&lt;/i>
+                      &lt;input id="icon_prefix" type="text" class="validate">
+                      &lt;label for="icon_prefix">First Name&lt;/label>
+                    &lt;/div>
+                    &lt;div class="input-field col s6">
+                      &lt;i class="mdi-communication-phone prefix">&lt;/i>
+                      &lt;input id="icon_telephone" type="tel" class="validate">
+                      &lt;label for="icon_telephone">Telephone&lt;/label>
+                    &lt;/div>
+                  &lt;/div>
+                &lt;/form>
+              &lt;/div>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Textarea</h3>
+              <p>Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing. You must have a .input-field div wrapping your input and label. This helps our jQuery animate the label. This is only used in our Input and Textarea form elements.</p>
+
+              <strong>Textareas will auto resize to the text inside.</strong>
+
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea class="materialize-textarea"></textarea>
+                      <label>Textarea</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code no-escape hljs>
+              &lt;div class="row">
+                &lt;form class="col s12">
+                  &lt;div class="row">
+                    &lt;div class="input-field col s12">
+                      &lt;textarea class="materialize-textarea">&lt;/textarea>
+                      &lt;label>Textarea&lt;/label>
+                    &lt;/div>
+                  &lt;/div>
+                &lt;/form>
+              &lt;/div>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Icon Prefixes</h3>
+              <p>You can add an icon prefix to make the form input label even more clear. Just add an icon with the class prefix before the input and label.</p>
+
+              <strong>Textareas will auto resize to the text inside.</strong>
+
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <i class="mdi-editor-mode-edit prefix"></i>
+                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+
+                      <label for="icon_prefix2">First Name</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <pre><code no-escape hljs>
+              &lt;div class="row">
+                &lt;form class="col s12">
+                  &lt;div class="row">
+                    &lt;div class="input-field col s6">
+                      &lt;i class="mdi-editor-mode-edit prefix">&lt;/i>
+                      &lt;textarea id="icon_prefix2" class="materialize-textarea">&lt;/textarea>
+
+                      &lt;label for="icon_prefix2">First Name&lt;/label>
+                    &lt;/div>
+                  &lt;/div>
+                &lt;/form>
+              &lt;/div>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Select</h3>
+              <p>Select allows user input through specified options.</p>
+              <label>Materialize Select</label>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+              <strong>You can add the class browser-default to get the browser default.</strong>
+
+              <label>Browser Select</label>
+              <select class="browser-default">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
 
               <pre><code no-escape hljs>
-&lt;mz-form>&lt;/mz-form>
+              &lt;label>Materialize Select&lt;/label>
+              &lt;select>
+                &lt;option value="" disabled selected>Choose your option&lt;/option>
+                &lt;option value="1">Option 1&lt;/option>
+                &lt;option value="2">Option 2&lt;/option>
+                &lt;option value="3">Option 3&lt;/option>
+              &lt;/select>
+
+              &lt;label>Browser Select&lt;/label>
+              &lt;select class="browser-default">
+                &lt;option value="" disabled selected>Choose your option&lt;/option>
+                &lt;option value="1">Option 1&lt;/option>
+                &lt;option value="2">Option 2&lt;/option>
+                &lt;option value="3">Option 3&lt;/option>
+              &lt;/select>
+              </code></pre>
+
+              </article></div></section>
+
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Disabled Styles</h3>
+              <p>You can also add disabled to the select element to make the whole thing disabled. Or if you add disabled to the options, the individual options will be unselectable.</p>
+              <label>Materialize Disabled</label>
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+
+              <label>Browser Disabled</label>
+              <select class="browser-default">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+
+              <pre><code no-escape hljs>
+              &lt;label>Materialize Disabled&lt;/label>
+              &lt;select>
+                &lt;option value="" disabled selected>Choose your option&lt;/option>
+                &lt;option value="1">Option 1&lt;/option>
+                &lt;option value="2">Option 2&lt;/option>
+                &lt;option value="3">Option 3&lt;/option>
+              &lt;/select>
+
+              &lt;label>Browser Disabled&lt;/label>
+              &lt;select class="browser-default">
+                &lt;option value="" disabled selected>Choose your option&lt;/option>
+                &lt;option value="1">Option 1&lt;/option>
+                &lt;option value="2">Option 2&lt;/option>
+                &lt;option value="3">Option 3&lt;/option>
+              &lt;/select>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Initialization</h3>
+              <p>You must initialize the select element as shown below. In addition, you will need a separate call for any dynamically generated select elements your page generates.</p>
+
+
+              <pre><code no-escape hljs>
+              $(document).ready(function() {
+                $('select').material_select();
+              });
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Radio Buttons</h3>
+              <p>Radio Buttons are used when the user must make only one selection out of a group of items</p>
+
+              <form action="#">
+                <p>
+                  <input name="group1" type="radio" id="test1" />
+                  <label for="test1">Red</label>
+                </p>
+                <p>
+                  <input name="group1" type="radio" id="test2" />
+                  <label for="test2">Yellow</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group1" type="radio" id="test3"  />
+                  <label for="test3">Green</label>
+                </p>
+                  <p>
+                    <input name="group1" type="radio" id="test4" disabled="disabled" />
+                    <label for="test4">Brown</label>
+                </p>
+              </form>
+
+              <p>Add radio buttons to a group by adding the name attribute along with the same corresponding value for each of the radio buttons in the group. Create disabled radio buttons by adding the disabled attribute as shown below.</p>
+
+              <pre><code no-escape hljs>
+              &lt;form action="#">
+                &lt;p>
+                  &lt;input name="group1" type="radio" id="test1" />
+                  &lt;label for="test1">Red&lt;/label>
+                &lt;/p>
+                &lt;p>
+                  &lt;input name="group1" type="radio" id="test2" />
+                  &lt;label for="test2">Yellow&lt;/label>
+                &lt;/p>
+                &lt;p>
+                  &lt;input class="with-gap" name="group1" type="radio" id="test3"  />
+                  &lt;label for="test3">Green&lt;/label>
+                &lt;/p>
+                  &lt;p>
+                    &lt;input name="group1" type="radio" id="test4" disabled="disabled" />
+                    &lt;label for="test4">Brown&lt;/label>
+                &lt;/p>
+              &lt;/form>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Options</h3>
+              <p>To create a radio button with a gap, add class="with-gap" to your input. See the example below.</p>
+              <p>
+                <input class="with-gap" name="group3" type="radio" id="test5" checked />
+                <label for="test5">Red</label>
+              </p>
+
+
+              <p>Add radio buttons to a group by adding the name attribute along with the same corresponding value for each of the radio buttons in the group. Create disabled radio buttons by adding the disabled attribute as shown below.</p>
+
+              <pre><code no-escape hljs>
+              &lt;p>
+                &lt;input class="with-gap" name="group3" type="radio" id="test5" checked />
+                &lt;label for="test5">Red&lt;/label>
+              &lt;/p>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Checkboxes</h3>
+              <form action="#">
+                <p>
+                  <input type="checkbox" id="test5" />
+                  <label for="test5">Red</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test6" checked="checked" />
+                  <label for="test6">Yellow</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+                  <label for="test7">Green</label>
+                </p>
+                  <p>
+                    <input type="checkbox" id="test8" disabled="disabled" />
+                    <label for="test8">Brown</label>
+                </p>
+              </form>
+
+
+              <pre><code no-escape hljs>
+              &lt;form action="#">
+                &lt;p>
+                  &lt;input type="checkbox" id="test5" />
+                  &lt;label for="test5">Red&lt;/label>
+                &lt;/p>
+                &lt;p>
+                  &lt;input type="checkbox" id="test6" checked="checked" />
+                  &lt;label for="test6">Yellow&lt;/label>
+                &lt;/p>
+                &lt;p>
+                  &lt;input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+                  &lt;label for="test7">Green&lt;/label>
+                &lt;/p>
+                  &lt;p>
+                    &lt;input type="checkbox" id="test8" disabled="disabled" />
+                    &lt;label for="test8">Brown&lt;/label>
+                &lt;/p>
+              &lt;/form>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Range</h3>
+              <p>Add a range slider for values with a wide range. This one is set to be a number between 0 and 100.</p>
+              <form action="#">
+                <p class="range-field">
+                  <input type="range" id="test5" min="0" max="100" />
+                </p>
+              </form>
+
+
+              <pre><code no-escape hljs>
+              &lt;form action="#">
+                &lt;p class="range-field">
+                  &lt;input type="range" id="test5" min="0" max="100" />
+                &lt;/p>
+              &lt;/form>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Date Picker</h3>
+              <p>We use a modified version of pickadate.js to create a materialized date picker. Test it out below!</p>
+              <input type="date" class="datepicker">
+
+
+              <pre><code no-escape hljs>
+              &lt;input type="date" class="datepicker">
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Initialization</h3>
+              <p>At this time, not all pickadate.js options are working with our implementation</p>
+
+              <pre><code no-escape hljs>
+              $('.datepicker').pickadate();
               </code></pre>
 
               </article></div></section>
