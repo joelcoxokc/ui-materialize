@@ -1,0 +1,338 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nav-bar",
+				"nav-bar-height-xl"
+			],
+			[
+				"flex-",
+				"flex-container"
+			],
+			[
+				"nav",
+				"NavBarService"
+			],
+			[
+				"Nav",
+				"NavBar"
+			],
+			[
+				"on",
+				"onState"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"colo",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"edit",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"color in",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"scope",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"socpe",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"scop",
+				"Toggle ScopeAlways"
+			],
+			[
+				"align",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 567.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize"
+	],
+	"file_history":
+	[
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/server/api/user/index.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/ui-materialize.zip",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/server/api/index.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/server/config/environment/development.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/server/config/environment/ui-materialize.sublime-project",
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/User/PersistentRegexHighlight.sublime-settings",
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/Colorsublime - Themes/Brogrammer.tmTheme",
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/PersistentRegexHighlight/PersistentRegexHighlight.sublime-settings",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/core/views/header.view.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/core/views/right.view.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/index.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/core/config/routes.config.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/deploy.sh",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/config/environment/production.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/auth/index.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/user/index.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/index.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/config/index.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/gulpFile.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/index.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/config/settings.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/config/environment/development.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/auth/auth.controller.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/user/user.controller.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/server/api/user/user.model.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/client/app/app.js",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/bower.json",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/client/index.html",
+		"/Users/joelcox1/Dev/projects/craftreactor/craftreactor/.bowerrc",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/utility/_vars.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/nav/_nav-bar.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/templates/layout/main.template.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/core/_base.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/core/controllers/mz.controller.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/bar.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/services/nav-bar.service.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/form.directive.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/collection.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/templates/components/collection.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/templates/components/collection-item.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/__collection.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/button.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulpfile.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/nav-side/side-collapse.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/stage/client.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/action.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/card.directive.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/core/views/home.view.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/modules/gettingStarted/config/gettingStarted.config.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/modules/gettingStarted/views/gettingStarted.view.html",
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/nav/_side-collapsible.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/nav/_nav-action-group.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/stylus/nav/_nav-side.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/core/controllers/app.controller.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/components/collapsible.js",
+		"/Users/joelcox1/Library/Application Support/Sublime Text 3/Packages/Theme - Brogrammer/brogrammer.tmTheme",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/nav-side/side-collapsible.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/pseudoclassical/stack.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/pseudoclassical/queue.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/prototypal/queue.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/prototypal/stack.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/functional-shared/stack.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/functional/queue.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/functional/stack.js",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/SpecRunner.html",
+		"/Users/joelcox1/Dev/HRs/data-structures/data-structures/sprint-one/src/functional-shared/queue.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/dev/vendor.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/dev/lib.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/dev/client.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/README.md",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/lib/js/nav/bar-content.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/modules/components/config/components.router.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/app/modules/components/views/cards.html",
+		"/Users/joelcox1/.zshrc",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/stage/lib.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/build/content/app.css",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/build/index.html",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/build/templates.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/stage/vendor.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/stage/start.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/server/config/environment/stage.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/stage/gulp.stage.js",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/src/client/content/index.styl",
+		"/Users/joelcox1/Dev/projects/ui-materialize/ui-materialize/gulp/index.js"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			".bar-container",
+			"min-height",
+			"NavBar",
+			"addClass",
+			"xs",
+			"$nav-bar-height",
+			"collectionHeader",
+			"collectionLink",
+			"collectionItem",
+			"mzCollectionItem",
+			"attrs",
+			"cardImage",
+			"returnValue",
+			"dev",
+			"DEV",
+			"dev",
+			"DEV",
+			"dev",
+			"DEV",
+			"theme"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.scope_viewer":
+	{
+		"height": 110.0
+	},
+	"project": "ui-materialize.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

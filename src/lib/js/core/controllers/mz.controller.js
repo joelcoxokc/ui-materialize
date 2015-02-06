@@ -5,7 +5,7 @@
         ;
 
     /* @ngAnotate */
-    function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, $NavBarDelegate, mzNavApi, $rootScope) {
+    function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, mzNavApi, $rootScope) {
         // $scope.mzNav = mzNavApi;
         // var _this = this;
         var sides = {
