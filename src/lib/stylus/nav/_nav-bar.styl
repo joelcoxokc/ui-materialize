@@ -1,3 +1,12 @@
+bar-size(size)
+    min-height : size
+    max-height : size
+    height     : size
+    .bar-container
+        min-height : size
+        max-height : size
+        height     : size
+
 nav,
 .mz-nav-bar
     flex 1 0 auto
@@ -7,8 +16,10 @@ nav,
     max-height $nav-bar-height
     position   relative
     box-shadow( 0 0 0 rgba(0,0,0,0))
+    transition all 400ms cubic-bezier(0.19,0.99,0.01,0.99)
 
     .bar-container
+        transition all 400ms cubic-bezier(0.19,0.99,0.01,0.99)
         flex-container()
         flex-direction row
         flex 1 0 auto
@@ -38,14 +49,38 @@ nav,
         position relative
         font-size 2.1rem
         text-align center
+        font-weight 100
         padding 0
         color white
         flex 0 0 $nav-side-width
+        transition all 400ms cubic-bezier(0.19,0.99,0.01,0.99) 0s
 
         &:nth-child(2),
         &:nth-child(3),
         &:nth-child(4),
         &:nth-child(5)
             display:none
+
+    &.bar-xs
+        bar-size($nav-bar-height-xs)
+
+    &.bar-sm
+        bar-size($nav-bar-height-sm)
+
+    &.bar-md
+        bar-size($nav-bar-height-md)
+
+    &.bar-lg
+        bar-size($nav-bar-height-lg)
+
+    &.bar-xl
+        bar-size($nav-bar-height-xl)
+        .bar-brand,.brand-logo
+            min-width 600px
+            line-height $nav-bar-height-xl + 100px
+            font-size 4rem
+            font-weight 100
+            transition all 400ms cubic-bezier(0.19,0.99,0.01,0.99) 200ms
+
 
 

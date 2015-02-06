@@ -5,7 +5,7 @@
         ;
 
     /* @ngAnotate */
-    function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, mzNavApi, $rootScope) {
+    function mzController($scope, $q, $RightNavigationService, $NavBarService, $LeftNavigationService, mzNavApi, $rootScope) {
         // $scope.mzNav = mzNavApi;
         // var _this = this;
         var sides = {
@@ -18,7 +18,7 @@
         this.init = function(element) { this.element = element; };
 
         this.addBar = function(scope, element, attrs, id) {
-            $NavBarDelegate.addBar(scope, element, attrs, id);
+            $NavBarService.add(scope, element, attrs);
           };
 
         this.addNav = function(scope, element, attrs, side) {

@@ -4,4 +4,5 @@
         'bar-medium': size==='medium',
         'bar-large' : size==='large'
     }">
-    <div data-ng-if="view" class="bar-container {{bg}}" ui-view="{{view}}"></div></nav>
+    <div data-ng-if="view" class="bar-container {{bg}}" ui-view="{{view}}"></div>
+    <div data-ng-if="!view" class="bar-container {{bg}}" data-ng-transclude></div></nav>

@@ -25,7 +25,7 @@ side-container-defaults()
     heights(100%, true)
 
 
-side-heading-defaults()
+side-header-defaults()
     flex-container()
     flex-direction column
     flex: 1 0 auto
@@ -54,7 +54,7 @@ nav-side-defaults(side, order)
             ========= > CONTAINER > HEADING
         */
         & > .side-header
-            side-heading-defaults()
+            side-header-defaults()
 
             &.has-large-action
                 heights(40px, true)
@@ -79,7 +79,7 @@ nav-side-defaults(side, order)
 */
 .mz-side-nav
     flex-container()
-    top:        $nav-bar-height
+    top:        0
     order:      -1
     width:      0px
     position:   relative
@@ -102,8 +102,8 @@ nav-side-defaults(side, order)
 
     &.nav-fixed
         .side-container
-            top: $nav-bar-height
-            z-index 1000
+            top: 0
+            z-index 1004
             position fixed
     &.start-viz-0
         width 0px

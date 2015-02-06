@@ -21,8 +21,11 @@
                 })
             .state('app.home',
                 { url   : '/home'
+                , mzBar : {size: 'xl'}
                 , views : { '@' :
                             {templateUrl : 'app/core/views/home.view.html'   }
+                          , 'right' :
+                            {templateUrl : 'app/core/views/right.view.html' }
                           }
 
                 })

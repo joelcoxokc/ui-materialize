@@ -6,16 +6,18 @@
 
     /* @inject */
     function mzNavBar($rootScope, $document) {
-        return  { templateUrl: 'nav/bar.html'
-                , restrict: 'E'
-                , replace : true
-                , require:'^mzMaterialize'
-                , scope: { view:'@' , bg:'@' , side:'@' , fixed:'@' , brand:'@' , size: '@' }
-                , link: link
+        return  { templateUrl : 'nav/bar.html'
+                , restrict    : 'E'
+                , require     : '^mzMaterialize'
+                , scope       : { view:'@' , bg:'@' , side:'@' , fixed:'@' , brand:'@' , size: '@' }
+                , replace     : true
+                , transclude  : true
+                , link        : link
                 };
         function link(scope, element, attrs, ctrl, transclude) {
             attrs.fixed &&( element.addClass('bar-fixed') );
             attrs.size  &&( element.addClass('bar-'+attrs.size) );
+            ctrl.addBar(scope, element, attrs);
             jQuery(document).ready(function() {
                 if (scope.brand) {
                     $(element).find('.bar-content')
