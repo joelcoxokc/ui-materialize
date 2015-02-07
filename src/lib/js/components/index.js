@@ -4,6 +4,7 @@
             , 'mz.components.controllers'
             , 'mz.components.blur'
             , 'mz.components.button'
+            , 'mz.components.action-btn'
             , 'mz.components.card'
             , 'mz.components.collapsible'
             , 'mz.components.collection'
