@@ -27,34 +27,26 @@
               <p>You can add a divider doing the following.</p>
                 <pre><code no-escape hljs> &lt;li class="divider">&lt;/li></code></pre>
 
-              <!-- Dropdown Trigger -->
-              <button type="button" class='dropdown-button btn mz-btn' data-activates='dropdown1'>Drop Me!</button>
 
               <!-- Dropdown Structure -->
-              <ul id='dropdown1' class='dropdown-content'>
+              <mz-dropdown>
                 <li><a>one</a></li>
                 <li><a>two</a></li>
                 <li class="divider"></li>
                 <li><a>three</a></li>
-              </ul>
-
+                <li><a>four</a></li>
+              </mz-dropdown>
 
               <pre><code no-escape hljs>
 
               <!-- Dropdown Trigger -->
-              &lt;mz-btn class='dropdown-button btn'
-                      mz-drop-toggle='dropdown1'
-                      >Drop Me!&lt;/mz-btn>
-
-              &lt;!-- Dropdown Structure -->
-              &lt;mz-drop id="dropdown1">
-
-                  &lt;li>&lt;a href="#!">one&lt;/a>&lt;/li>
-                  &lt;li>&lt;a href="#!">two&lt;/a>&lt;/li>
-                  &lt;li class="divider">&lt;/li>
-                  &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
-
-              &lt;/mz-drop>
+              &lt;mz-dropdown>
+                &lt;li>&lt;a>one&lt;/a>&lt;/li>
+                &lt;li>&lt;a>two&lt;/a>&lt;/li>
+                &lt;li class="divider">&lt;/li>
+                &lt;li>&lt;a>three&lt;/a>&lt;/li>
+                &lt;li>&lt;a>four&lt;/a>&lt;/li>
+              &lt;/mz-dropdown>
 
               </code></pre>
 
