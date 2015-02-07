@@ -1,4 +1,6 @@
-angular.module("ui.materialize").run(["$templateCache", function($templateCache) {$templateCache.put("components/blur.template.html","");
+angular.module("ui.materialize").run(["$templateCache", function($templateCache) {$templateCache.put("components/action-btn.html","<div\n    data-ng-mouseenter=\"icon=nextIcon\"\n    data-ng-mouseleave=\"icon=oldIcon\"\n    class=\"mz-action-btn\">\n  <div class=\"action-btn-container\">\n    <a\n      class=\"waves-effect waves-light btn action-btn mz-btn btn-floating btn-large {{btnBg}}\">\n      <i data-ng-class=\"icon\"></i>\n    </a>\n  </div>\n</div>");
+$templateCache.put("components/action-list.html","<div class=\"action-list-container\">\n  <div class=\"action-list\" data-ng-transclude></div>\n </div>");
+$templateCache.put("components/blur.template.html","");
 $templateCache.put("components/button.template.html","");
 $templateCache.put("components/card.template.html","<div class=\"card\"></div>\n");
 $templateCache.put("components/collapsible.html","<ul class=\"mz-collapsible collapsible\" data-collapsible=\"{{type}}\" data-ng-transclude></ul>");
