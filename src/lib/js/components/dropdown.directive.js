@@ -93,7 +93,7 @@
 
 
     /* @inject */
-    function mzDropdownToggle() {
+    function mzDropdownToggle($document) {
         return  { restrict   : 'A'
                 , require    : '^mzDropdown'
                 , scope      : true
