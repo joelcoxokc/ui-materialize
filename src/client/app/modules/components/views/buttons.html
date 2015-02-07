@@ -18,27 +18,111 @@
             <article class="card-content">
 
               <h3 class="thin">Action Buttons</h3>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="row">
+                <div class="col s6">
+                  <mz-action-btn viz="left" size="large"
+                              size="large"
+                              icon="mdi-content-add"
+                              next-icon="mdi-content-create"
+                              btn-bg="red">
 
-              <mz-action-btn viz="right" size="large">
-                <action-btn
-                          type=floating
-                          size="large"
-                          icon="mdi-content-create"
-                          class="waves-effect waves-light red"></action-btn>
+                    <action-list>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                    </action-list>
 
-                <action-list>
-                  <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
-                  <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
-                  <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
-                </action-list>
+                  </mz-action-btn>
+                </div>
+                <div class="col s6">
+                  <mz-action-btn viz="top" size="large"
+                              size="large"
+                              icon="mdi-content-add"
+                              next-icon="mdi-content-create"
+                              btn-bg="red" class="pull-left">
 
-              </mz-action-btn>
+                    <action-list>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                    </action-list>
+
+                  </mz-action-btn>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <mz-action-btn viz="bottom" size="large"
+                              size="large"
+                              icon="mdi-content-add"
+                              next-icon="mdi-content-create"
+                              btn-bg="red" class="pull-right">
+
+                    <action-list>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                    </action-list>
+
+                  </mz-action-btn>
+                </div>
+                <div class="col s6">
+                  <mz-action-btn viz="right" size="large"
+                              size="large"
+                              icon="mdi-content-add"
+                              next-icon="mdi-content-create"
+                              btn-bg="red" class="">
+
+                    <action-list>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                      <mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light"></mz-btn>
+                    </action-list>
+
+                  </mz-action-btn>
+                </div>
+              </div>
+
+              <h4>Options</h4>
+              <ul>
+                <li><strong>viz</strong>: the direction in which the sub actions become visisble</li>
+                <li><strong>Size:</strong>: The Size of the initial floating button</li>
+                <li><strong>Icon</strong>: The initial Icon Shown</li>
+                <li><strong>next-icon</strong>: The Next Icon to be displayed. </li>
+                <li><strong>NOTE</strong>: If a a next-icon="" exists, the current icon will be replaced on mouseenter </li>
+
+              </ul>
 
               <pre><code no-escape hljs>
 
-              &lt;mz-btn type="raised" waves=light>Stuff&lt;/mz-btn>
-              &lt;mz-btn type="raised" waves=light icon="mdi-file-cloud left">&lt;/mz-btn>
-              &lt;mz-btn type="raised" waves=light icon="mdi-file-cloud right">&lt;/mz-btn>
+&lt;mz-action-btn viz="right"
+                  size="large"
+                  icon="mdi-content-add"
+                  next-icon="mdi-content-create"
+                  btn-bg="red">
+
+    &lt;action-list>
+      &lt;mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light">&lt;/mz-btn>
+      &lt;mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light">&lt;/mz-btn>
+      &lt;mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light">&lt;/mz-btn>
+      &lt;mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light">&lt;/mz-btn>
+      &lt;mz-btn type=floating size="medium" icon="mdi-content-add" class="waves-effect waves-light">&lt;/mz-btn>
+    &lt;/action-list>
+
+&lt;/mz-action-btn>
 
               </code></pre>
 

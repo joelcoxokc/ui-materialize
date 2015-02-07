@@ -1,1 +1,11 @@
-<div class="mz-action-btn" data-ng-transclude></div>
+<div
+    data-ng-mouseenter="icon=nextIcon"
+    data-ng-mouseleave="icon=oldIcon"
+    class="mz-action-btn">
+  <div class="action-btn-container">
+    <a
+      class="waves-effect waves-light btn action-btn mz-btn btn-floating btn-large {{btnBg}}">
+      <i data-ng-class="icon"></i>
+    </a>
+  </div>
+</div>

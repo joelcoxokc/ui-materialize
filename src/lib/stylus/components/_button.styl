@@ -2,82 +2,207 @@ $btn-padding   = {'xs': 10px, 'sm': 12px, 'md': 14px, 'lg': 16px, 'xl': 26px}
 $btn-font-size = {'xs': 11px, 'sm': 11px, 'md': 13px, 'lg': 14px, 'xl': 16px}
 $btn-icon-size = {'xs': 13px, 'sm': 15px, 'md': 20px, 'lg': 24px, 'xl': 28px}
 
-// .mz-btn
-//     z-index: 2
-//     display: inline-block
-//     vertical-align: top
-//     margin: 0
-//     padding: 0
-//     border: none
-//     border-radius: 0
-//     background-color: transparent
-//     font-weight: 400
-//     text-align: center
-//     text-transform: uppsercase
-//     cursor: pointer
+$mz-action-btn-size = 80px;
+
+// METHODS
+btn-sizes(prop)
+    if prop is width
+        min-width     : $mz-action-btn-size !important
+        max-width     : $mz-action-btn-size !important
+        width         : $mz-action-btn-size !important
+    if prop is height
+        height        : $mz-action-btn-size !important
+        min-height    : $mz-action-btn-size !important
+        max-height    : $mz-action-btn-size !important
+
+normalize-action-btn-flex-box()
+    flex-container();
+    flex            : 1 0 auto
+    align-items     : center
+    justify-content : center
+
+action-btn-direction-varients(direction, prop)
+
+    flex-direction     : direction
+    btn-sizes(property);
+
+    & > .action-list          ,
+    & > .action-btn-container ,
+    & > .action-list-container
+        btn-sizes(property);
+        flex-direction   : direction
 
 
-//     &,
-//     &:hover,
-//     &:active,
-//     &focus
-//         text-decoration: none
-//         outline: none
+make-btn-transition(size, duration, delay, anim)
+    &.btn-position-{size}
+        transition width duration anim delay, height duration anim delay
 
-//     &::-moz-focus-inner
-//         border: none
-//         padding: none
-
-//     .ripple
-//         z-index: -1
+mz-btn-transition-varients()
+    for i in 1..12
+        index = (i - 1)
+        time = (index * 100)/(3)
+        delay = unit(time, 'ms')
+        make-btn-transition(index, 300ms, delay, cubic-bezier(0.19,0.99,0.01,0.99))
 
 
-// for size in $btn-sizes
+
 
 
 .mz-action-btn
-  position relative
-  flex-container()
-  flex-direction row
-  align-items center
+    flex-container()
+    position        : relative
+    align-items     : center
+    min-width 300px
+    max-width 600px
 
+    .action-btn-container
+        normalize-action-btn-flex-box()
+        btn-sizes(width);
+        btn-sizes(height);
 
-  &.mz-action-btn-large
-    padding 10px
-
-  .action-btn
-    & > i
-      transition all 400ms cubic-bezier(0.19,0.99,0.01,0.99)
-
-  .action-list
-
-    position relative
-    width 500px
+    .action-btn
+        normalize-action-btn-flex-box()
+        btn-sizes(width);
+        btn-sizes(height);
+        margin           : 0
+        & > i
+            transition all 800ms cubic-bezier(0.19,0.99,0.01,0.99)
 
     .action-list-container
-      position relative
-      height 52px
-      width 500px
-      display flex
-      align-items center
-      .mz-btn
-        width 0
-        height 0
-        overflow hidden
-        transition width 400ms cubic-bezier(0.19,0.99,0.01,0.99), height 400ms cubic-bezier(0.19,0.99,0.01,0.99)
-        for i in 2..12
-          delay = (i - 1)*(100)/(3)
-          &:nth-child({i})
-            transition width 400ms cubic-bezier(0.19,0.99,0.01,0.99) unit(delay, 'ms'), height 400ms cubic-bezier(0.19,0.99,0.01,0.99) unit(delay, 'ms')
+        normalize-action-btn-flex-box()
 
-  &:hover
-    .action-btn
-      & > i
-        transform-rotate(270deg)
     .action-list
-      .mz-btn
-        width 37px
-        height 37px
+        normalize-action-btn-flex-box()
 
+    .mz-btn
+        width         : 0px
+        height        : 0px
+        margin-bottom : 0 !important
+        mz-btn-transition-varients()
+
+    &.action-btn-top
+        width        :$mz-action-btn-size
+        max-width    : $mz-action-btn-size
+        min-width    : $mz-action-btn-size
+        max-height   : 80px
+        overflow     : visible
+        action-btn-direction-varients(column, width)
+
+        & > .action-btn-container
+            order: 1
+
+        & > .action-list-container
+            flex-container()
+            btn-sizes(width)
+            order           : -1
+            flex            : 1 0 auto
+            position        : relative
+            flex-direction  : column
+            height          : 100%
+            justify-content : flex-end
+
+            .action-list
+                flex-container()
+                btn-sizes(width)
+                flex            : 1 0 auto
+                top             : 0
+                left            : 0
+                width           : 80px
+                height          : 300px
+                position        : relative
+                max-height      : 600px
+                min-height      : 300px
+                align-items     : center
+                flex-direction  : column
+                justify-content : flex-end
+
+                .mz-btn
+                    margin-left   : 0
+                    margin-right  : 0
+                    margin-bottom : 16px !important
+
+
+    &.action-btn-bottom
+        width      : $mz-action-btn-size
+        max-width  : $mz-action-btn-size
+        min-width  : $mz-action-btn-size
+        max-height : 80px
+        overflow   : visible
+        action-btn-direction-varients(column, width)
+
+        & > .action-btn-container
+            order  : -1
+
+        & > .action-list-container
+            btn-sizes(width)
+            flex-container()
+            order           : 1
+            height          : 100%
+            position        : relative
+            flex-direction  : column
+            justify-content : flex-start
+
+            .action-list
+                flex-container()
+                btn-sizes(width)
+                position        : relative
+                width           : 80px
+                height          : 300px
+                max-height      : 600px
+                min-height      : 300px
+                align-items     : center
+                flex-direction  : column
+                justify-content : flex-start
+
+                .mz-btn
+                    margin-right : 0
+                    margin-left  : 0
+                    margin-top   : 16px !important
+
+    &.action-btn-left
+        action-btn-direction-varients(row, height)
+
+        & > .action-btn-container
+            order: 1
+
+        & > .action-list-container
+            btn-sizes(height)
+            order           : -1
+            left            : -140px
+            justify-content : flex-end
+
+            .action-list
+                btn-sizes(height)
+                position        : relative
+                justify-content : flex-end
+
+    &.action-btn-right
+        action-btn-direction-varients(row, height)
+
+        & > .action-btn-container
+            order: -1
+
+        & > .action-list-container
+            btn-sizes(height)
+            order           : 1
+            right           : -140px
+            justify-content : flex-start
+
+            .action-list
+                position        : relative
+                justify-content : flex-start
+
+                .mz-btn:nth-child(1)
+                    position    : relative
+                    margin-left : 16px
+
+    &:hover
+
+        .action-btn
+            & > i
+                transform: rotate(360deg)
+        .mz-btn
+            width  : 37px
+            height : 37px
 
 
