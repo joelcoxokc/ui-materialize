@@ -21,7 +21,7 @@
             ctrl.viz = scope.viz
             var btn = angular.element(element.children('a'));
 
-            btn.addClass('btn-'+scope.size)
+            // btn.addClass('btn-'+scope.size)
 
 
             scope.oldIcon = attrs.icon;

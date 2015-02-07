@@ -200,7 +200,7 @@
             ctrl.viz = scope.viz
             var btn = angular.element(element.children('a'));
 
-            btn.addClass('btn-'+scope.size)
+            // btn.addClass('btn-'+scope.size)
 
 
             scope.oldIcon = attrs.icon;
@@ -934,164 +934,6 @@
 
 ;(function() { 'use strict';
     angular
-        .module('mz.core.colors', [])
-        .directive('zBg', zBg)
-        .directive('zText', zText)
-        ;
-
-    /* @inject */
-    function zBg() {
-        return function link(scope, element, attrs) {
-            element.addClass(attrs.zBg);
-            attrs.db &&( element.addClass('darken-' +attrs.db) );
-            attrs.lb &&( element.addClass('lighten-'+attrs.lb) );
-          };
-      }
-
-    /* @inject */
-    function zText() {
-        return function link(scope, element, attrs) {
-            element.addClass(attrs.zText + '-text');
-            attrs.lt &&( element.addClass('text-lighten-'+attrs.lt) );
-            attrs.dt &&( element.addClass('text-darken-' +attrs.dt) );
-          };
-      }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular.module(  'ui.materialize.core',
-        [ 'mz.core.materialize'
-        , 'mz.core.controllers'
-        , 'mz.core.transclude'
-        , 'mz.core.transclude-replace'
-        , 'mz.core.colors'
-        , 'mz.core.waves'
-        ]  );
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.core.materialize', [])
-        .directive('mzMaterialize', mzMaterialize)
-        .run(mzRunner)
-        ;
-
-    function mzRunner($rootScope) { $rootScope.$toggleLeftSideNav = function() {}; }
-
-    /* @inject */
-    function mzMaterialize() {
-        return  { template  : '<main class="mz-materialize" ng-class="classList" data-ng-transclude></main>'
-                , restrict  : 'E'
-                , replace   : true
-                , transclude: true
-                , scope     : true
-                , controller: 'mzController as mz'
-                , link      : link
-                };
-
-       function link(scope, element, attrs, ctrl, transclude) {
-            element.addClass('mz-materialize');
-            $('body').addClass('has-flex');
-            $('html').addClass('has-flex');
-            scope.classList = {};
-            ctrl.init(element);
-          }
-
-      } // end function mzMaterailize
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.core.transclude-replace', [])
-        .directive('ngTranscludeReplace', ngTranscludeReplace)
-        ;
-
-    /* @inject */
-    function ngTranscludeReplace() {
-        return { terminal : true
-               , restrict : 'EA'
-               , link     : link
-               };
-
-        function link(scope, element, attrs, ctrl, transclude) {
-            if (!transclude) {
-                $log.error('orphan', 'Illegal use of ngTranscludeReplace directive in the template.'+
-                     ' Must have a parent directive that requires transclusion. ');
-                return; }
-            transclude(function (clone) { clone.length ? $element.replaceWith(clone) : $element.remove(); });
-          }
-
-      } // end function ngTranscludeReplace
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.core.transclude', [])
-        .directive('ngTransclude', ngTransclude)
-        .config(transcludeHelper)
-        ;
-
-    /* @ngInject */
-    function transcludeHelper($provide) {
-        $provide.decorator(  'ngTranscludeDirective',
-            [ '$delegate'
-            , function ($delegate) { $delegate.shift();  return $delegate; }
-            ]   );
-      }
-
-    /* @inject */
-    function ngTransclude() {
-        return { restrict:'EAC' , link:link };
-        function link(scope, element, attrs, ctrl, transclude) {
-            var iScopeType = attrs.ngTransclude || 'sibling';
-            switch (iScopeType) {
-                case 'sibling':
-                    transclude(function (clone) {  element.empty();  element.append(clone);  });
-                    break;
-                case 'parent':
-                    transclude(scope, function (clone) {  element.empty();  element.append(clone);  });
-                    break;
-                case 'child':
-                    var iChildScope = scope.$new();
-                    transclude(iChildScope, function (clone) {
-                        element.empty();
-                        element.append(clone);
-                        element.on('$destroy', iChildScope.$destroy());   });
-                    break;
-                default:
-                    var count = parseInt(iScopeType);
-                    if (!isNaN(count)) {
-                        var toClone = scope;
-                        for (var idx = 0; idx < count; idx++) {
-                            if (!toClone.$parent) { break; }
-                            toClone = toClone.$parent;   }
-                        transclude(toClone, function (clone){ element.empty();  element.append(clone); });  }
-              } // end switch
-          } // end function link
-      } // end ngTransclude
-
-  }).call(this);
-
-;(function (){'use strict'
-    angular
-        .module('mz.core.waves', [])
-        // .directive('waves', waves)
-        ;
-
-    function waves() {
-        return function (scope, element, attrs) {
-            jQuery(document).ready(function() { element.addClass('waves-effect waves-'+attrs.waves); });
-          };
-      }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
         .module('mz.layout.body', [])
         .directive('mzBody', mzBody)
         ;
@@ -1267,6 +1109,164 @@
                 , replace  : true
                 , link     : function link(scope, element, attrs) {}
                 };
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.core.colors', [])
+        .directive('zBg', zBg)
+        .directive('zText', zText)
+        ;
+
+    /* @inject */
+    function zBg() {
+        return function link(scope, element, attrs) {
+            element.addClass(attrs.zBg);
+            attrs.db &&( element.addClass('darken-' +attrs.db) );
+            attrs.lb &&( element.addClass('lighten-'+attrs.lb) );
+          };
+      }
+
+    /* @inject */
+    function zText() {
+        return function link(scope, element, attrs) {
+            element.addClass(attrs.zText + '-text');
+            attrs.lt &&( element.addClass('text-lighten-'+attrs.lt) );
+            attrs.dt &&( element.addClass('text-darken-' +attrs.dt) );
+          };
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular.module(  'ui.materialize.core',
+        [ 'mz.core.materialize'
+        , 'mz.core.controllers'
+        , 'mz.core.transclude'
+        , 'mz.core.transclude-replace'
+        , 'mz.core.colors'
+        , 'mz.core.waves'
+        ]  );
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.core.materialize', [])
+        .directive('mzMaterialize', mzMaterialize)
+        .run(mzRunner)
+        ;
+
+    function mzRunner($rootScope) { $rootScope.$toggleLeftSideNav = function() {}; }
+
+    /* @inject */
+    function mzMaterialize() {
+        return  { template  : '<main class="mz-materialize" ng-class="classList" data-ng-transclude></main>'
+                , restrict  : 'E'
+                , replace   : true
+                , transclude: true
+                , scope     : true
+                , controller: 'mzController as mz'
+                , link      : link
+                };
+
+       function link(scope, element, attrs, ctrl, transclude) {
+            element.addClass('mz-materialize');
+            $('body').addClass('has-flex');
+            $('html').addClass('has-flex');
+            scope.classList = {};
+            ctrl.init(element);
+          }
+
+      } // end function mzMaterailize
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.core.transclude-replace', [])
+        .directive('ngTranscludeReplace', ngTranscludeReplace)
+        ;
+
+    /* @inject */
+    function ngTranscludeReplace() {
+        return { terminal : true
+               , restrict : 'EA'
+               , link     : link
+               };
+
+        function link(scope, element, attrs, ctrl, transclude) {
+            if (!transclude) {
+                $log.error('orphan', 'Illegal use of ngTranscludeReplace directive in the template.'+
+                     ' Must have a parent directive that requires transclusion. ');
+                return; }
+            transclude(function (clone) { clone.length ? $element.replaceWith(clone) : $element.remove(); });
+          }
+
+      } // end function ngTranscludeReplace
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.core.transclude', [])
+        .directive('ngTransclude', ngTransclude)
+        .config(transcludeHelper)
+        ;
+
+    /* @ngInject */
+    function transcludeHelper($provide) {
+        $provide.decorator(  'ngTranscludeDirective',
+            [ '$delegate'
+            , function ($delegate) { $delegate.shift();  return $delegate; }
+            ]   );
+      }
+
+    /* @inject */
+    function ngTransclude() {
+        return { restrict:'EAC' , link:link };
+        function link(scope, element, attrs, ctrl, transclude) {
+            var iScopeType = attrs.ngTransclude || 'sibling';
+            switch (iScopeType) {
+                case 'sibling':
+                    transclude(function (clone) {  element.empty();  element.append(clone);  });
+                    break;
+                case 'parent':
+                    transclude(scope, function (clone) {  element.empty();  element.append(clone);  });
+                    break;
+                case 'child':
+                    var iChildScope = scope.$new();
+                    transclude(iChildScope, function (clone) {
+                        element.empty();
+                        element.append(clone);
+                        element.on('$destroy', iChildScope.$destroy());   });
+                    break;
+                default:
+                    var count = parseInt(iScopeType);
+                    if (!isNaN(count)) {
+                        var toClone = scope;
+                        for (var idx = 0; idx < count; idx++) {
+                            if (!toClone.$parent) { break; }
+                            toClone = toClone.$parent;   }
+                        transclude(toClone, function (clone){ element.empty();  element.append(clone); });  }
+              } // end switch
+          } // end function link
+      } // end ngTransclude
+
+  }).call(this);
+
+;(function (){'use strict'
+    angular
+        .module('mz.core.waves', [])
+        // .directive('waves', waves)
+        ;
+
+    function waves() {
+        return function (scope, element, attrs) {
+            jQuery(document).ready(function() { element.addClass('waves-effect waves-'+attrs.waves); });
+          };
       }
 
   }).call(this);
@@ -2091,6 +2091,20 @@
 
   }).call(this);
 
+;(function() { 'use strict';
+    angular
+        .module('mz.layout.controllers', [])
+        ;
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.layout.services', [])
+        ;
+
+  }).call(this);
+
 // ;(function() { 'use strict';
 //     angular
 //         .module('mz.core.ctrl', [])
@@ -2153,20 +2167,6 @@
             this.$navs[side].activate();
           };
       }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.layout.controllers', [])
-        ;
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.layout.services', [])
-        ;
 
   }).call(this);
 

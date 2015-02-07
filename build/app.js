@@ -462,12 +462,12 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-    angular.module('directives', []);
+    angular.module('gettingStarted', []);
 
   }).call(this);
 
 ;(function() { 'use strict';
-    angular.module('gettingStarted', []);
+    angular.module('directives', []);
 
   }).call(this);
 
@@ -673,100 +673,12 @@ jQuery(document).ready(function() { 'use strict';
 
 ;(function() { 'use strict';
     angular
-        .module('directives')
-        .factory('directivesFactory', directivesFactory)
-        ;
-
-    /* @ngInject */
-    function directivesFactory() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('directives')
-        .config(directivesConfig)
-        ;
-
-    /* @ngInject */
-    function directivesConfig() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('directives')
-        .directive('directives', directives)
-        ;
-
-    /* @ngInject */
-    function directives() {
-        return  { restrict  : 'EA'
-                , scope     : true
-                , template  : '<div data-ng-transclude></div>'
-                , transclude: true
-                , controller: 'directivesController as vm'
-                , link      : function link(scope, element, attrs, ctrl, transclude) {}
-                };
-      }
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('directives')
-        .controller('directivesController', directivesController)
-        ;
-
-    /* @ngInject */
-    function directivesController() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('directives')
-        .filter('directivesFilter', directivesFilter)
-        ;
-
-    /* @ngInject */
-    function directivesFilter() {}
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('directives')
-        .service('directivesService', directivesService)
-        .factory('directivesFactory', directivesFactory)
-        ;
-
-    /* @ngInject */
-    function directivesService() {}
-
-    /* @ngInject */
-    function directivesFactory() {}
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
         .module('gettingStarted')
         .factory('gettingStartedFactory', gettingStartedFactory)
         ;
 
     /* @ngInject */
     function gettingStartedFactory() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('gettingStarted')
-        .controller('gettingStartedController', gettingStartedController)
-        ;
-
-    /* @ngInject */
-    function gettingStartedController() { }
 
   }).call(this);
 
@@ -791,6 +703,17 @@ jQuery(document).ready(function() { 'use strict';
                           }
                 });
       }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .controller('gettingStartedController', gettingStartedController)
+        ;
+
+    /* @ngInject */
+    function gettingStartedController() { }
 
   }).call(this);
 
@@ -835,6 +758,83 @@ jQuery(document).ready(function() { 'use strict';
 
     /* @ngInject */
     function gettingStartedFactory() {}
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .factory('directivesFactory', directivesFactory)
+        ;
+
+    /* @ngInject */
+    function directivesFactory() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .config(directivesConfig)
+        ;
+
+    /* @ngInject */
+    function directivesConfig() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .controller('directivesController', directivesController)
+        ;
+
+    /* @ngInject */
+    function directivesController() { }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .directive('directives', directives)
+        ;
+
+    /* @ngInject */
+    function directives() {
+        return  { restrict  : 'EA'
+                , scope     : true
+                , template  : '<div data-ng-transclude></div>'
+                , transclude: true
+                , controller: 'directivesController as vm'
+                , link      : function link(scope, element, attrs, ctrl, transclude) {}
+                };
+      }
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .filter('directivesFilter', directivesFilter)
+        ;
+
+    /* @ngInject */
+    function directivesFilter() {}
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
+        .service('directivesService', directivesService)
+        .factory('directivesFactory', directivesFactory)
+        ;
+
+    /* @ngInject */
+    function directivesService() {}
+
+    /* @ngInject */
+    function directivesFactory() {}
 
   }).call(this);
 
