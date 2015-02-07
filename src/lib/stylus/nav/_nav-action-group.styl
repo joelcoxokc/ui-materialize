@@ -15,14 +15,15 @@ action-group-defaults()
     &.nav-action-group-top
         flex-direction column
         justify-content flex-start
+
     &.nav-action-group-bottom
         flex-direction column
         justify-content flex-end
 
-    &.nav-action-group-right
+    &.action-group-right
         flex-direction row
         justify-content flex-end
-    &.nav-action-group-left
+    &.action-group-left
         flex-direction row
         justify-content flex-start
 
@@ -67,14 +68,14 @@ action-group-defaults()
         margin 0
 
     &.header-action-huge
-        position fixed
+        position relative
+
         top 0
-        right 0
         heights(100px, true)
         widths(100px, true)
         z-index 1010
         border-radius 2px
-        box-shadow(-10px 10px 30px rgba(0,0,0,0.5) !important)
+        box-shadow(-2px 4px 6px rgba(0,0,0,0.3) !important)
         & > i
             font-size 3rem
             font-weight bold

@@ -82,6 +82,7 @@ a
         height $nav-bar-height
 
     .mz-main
+        position relative
         box-sizing(border-box)
         // flex: 1 0 auto
         // flex-container()
@@ -93,6 +94,7 @@ a
         // flex: 1 0 auto
 
     .mz-body
+        position relative
         box-sizing(border-box)
         // 2scroll-vertical()
         flex-direction column
@@ -106,6 +108,7 @@ a
         flex: 1
 
     footer
+        position relative
         // box-sizing(border-box)
         // flex: 1 0 auto
 
@@ -160,3 +163,7 @@ a
     background-color rgba(0,0,0,0.6)
     z-index 1
     filter blur(30px)
+
+
+nav ul li:hover
+    background: none

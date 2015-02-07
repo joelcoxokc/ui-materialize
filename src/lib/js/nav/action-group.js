@@ -24,7 +24,7 @@
             /* set child classlist on scope to be picked up by the mz-action directive */
             scope.childClassList = attrs.links;
             attrs.mobile && (scope.mobile = 'nav-mobile');
-            scope.side = 'nav-action-group-'+scope.side;
+            element.addClass('action-group-'+scope.side)
             //////     @jQuery   apply jQuery methods when dom is ready;
             jQuery(document).ready(function() {
                 // Dynamically addClasses to all nav-sides inner links from the "link" attr

@@ -85,19 +85,21 @@ nav-side-defaults(side, order)
     position:   relative
     transition: all 200ms cubic-bezier(0.19,0.99,0.01,0.99)
     flex-direction: column
-    box-shadow(4px 0 6px rgba(0,0,0,0.1))
     flex        1 0 auto
 
     &.nav-left
+        box-shadow(4px 0px 6px rgba(0,0,0,0.1))
         left: 0
         nav-side-defaults(left, -1)
         .side-container
             left: 0
 
     &.nav-right
+        box-shadow(-4px 0px 6px rgba(0,0,0,0.3))
         right: 0
         nav-side-defaults(right, 2)
         .side-container
+            box-shadow(-4px 0px 6px rgba(0,0,0,0.3))
             right: 0
 
     &.nav-fixed

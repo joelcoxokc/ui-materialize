@@ -27,7 +27,7 @@
             scope.$on('$destroy', function(){ element.unbind('click', cycle); });
             function cycle(){
                 ctrl.$navs[side].cycle();
-                element.toggleClass('next');
+                $('.nav-side-toggle').toggleClass('next');
               }
           }
       }

@@ -9,7 +9,7 @@
         return  { templateUrl: 'layout/footer.template.html'
                 , restrict   : 'E'
                 , scope      : { color:'@', view:'@'}
-                , transclude : true
+                , replace    : true
                 , link       : link
                 };
         function link(scope, element, attrs, ctrl, transclude) { element.addClass('mz-footer'); }
