@@ -7,60 +7,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>App</title>
 
-<!-- inject-vendor:css -->
-<link rel="stylesheet" href="vendor/vendor.min.css">
-<!-- endinject -->
+<!-- HEAD --><!-- inject-vendor:css --><link rel="stylesheet" href="vendor/vendor.min.css"><!-- endinject --><!-- inject-lib:css --><link rel="stylesheet" href="lib/ui-materialize.css"><!-- endinject --><!-- inject:css --><link rel="stylesheet" href="content/app.css"><!-- endinject --><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]--><link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css"><script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script><!-- END:HEAD -->
 
-<!-- inject-lib:css -->
-<link rel="stylesheet" href="lib/ui-materialize.css">
-<!-- endinject -->
-
-<!-- inject:css -->
-<link rel="stylesheet" href="content/app.css">
-<!-- endinject -->
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 </head>
-
 
 <body ng-controller="AppController as app" class="nav-fixed grey lighten-3">
 
   <mz-materialize>
+
     <mz-body>
       <mz-nav-bar view="nav" fixed=true bg='grey darken-4'></mz-nav-bar>
       <mz-main    view></mz-main>
-      <mz-footer  view="footer" color="grey lighten-4"></mz-footer></mz-body>
+      <mz-footer  view="footer" color="grey darken-3"></mz-footer>
+    </mz-body>
 
-    <mz-nav-right
-            fixed=true
-            viz="thin fat"
-            view="right">
-            </mz-nav-right></mz-materialize>
+    <mz-nav-right view="right" fixed=true viz="0 fat"></mz-nav-right>
 
-  <script src="../../bower_components/jquery/dist/jquery.js"></script>
-  <!-- inject-vendor:js -->
-  <script src="vendor/vendor.min.js"></script>
-  <!-- endinject -->
+  </mz-materialize>
 
-  <script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
-
-  <!-- inject-lib:js -->
-  <script src="lib/ui-materialize.js"></script>
-  <script src="lib/ui-materialize.templates.js"></script>
-  <!-- endinject -->
-
-  <!-- inject:js -->
-  <script src="app.js"></script>
-  <script src="templates.js"></script>
-  <!-- endinject -->
-
+<!-- BODY --><script src="../../bower_components/jquery/dist/jquery.js"></script><!-- inject-vendor:js --><script src="vendor/vendor.min.js"></script><!-- endinject --><script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script><!-- inject-lib:js --><script src="lib/ui-materialize.js"></script><script src="lib/ui-materialize.templates.js"></script><!-- endinject --><!-- inject:js --><script src="app.js"></script><script src="templates.js"></script><!-- endinject --><!-- END:BODY -->
 </body>
 </html>

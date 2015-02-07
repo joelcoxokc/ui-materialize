@@ -97,6 +97,58 @@ jQuery(document).ready(function() { 'use strict';
 
   }).call(this);
 
+/* global toastr:false, moment:false, TimelineLite:false, TweenMax:false, Cubic:false */
+(function() {
+    'use strict';
+
+    angular
+        .module('core')
+        .constant('toastr', toastr)
+        .constant('moment', moment)
+        .constant('TimelineLite', TimelineLite)
+        .constant('TweenMax', TweenMax)
+        .constant('Cubic', Cubic)
+        .config(Configuration)
+        ;
+
+        function Configuration(mzNavApiProvider) { mzNavApiProvider.hideOn('navBar', 'home') }
+
+  })();
+
+/* global _:false */
+;(function() { 'use strict';
+    angular
+        .module('core')
+        .config(Core)
+        ;
+
+    /* @ngInject */
+    function Core ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/app/home');
+        $stateProvider
+            .state('app',
+                { url   : '/app'
+                , views : { 'nav'   :
+                              {templateUrl : 'app/core/views/header.view.html' }
+                          , 'right' :
+                              {templateUrl : 'app/core/views/right.view.html' }
+                          , 'footer':
+                              {templateUrl : 'app/core/views/footer.view.html' }
+                          }
+                })
+            .state('app.home',
+                { url   : '/home'
+                , mzBar : {size: 'xl'}
+                , views : { '@' :
+                            {templateUrl : 'app/core/views/home.view.html'   }
+                          , 'right' :
+                            {templateUrl : 'app/core/views/right.view.html' }
+                          }
+
+                })
+            ;
+      }
+  }).call(this);
 ;(function() { 'use strict';
 
     angular
@@ -230,74 +282,6 @@ jQuery(document).ready(function() { 'use strict';
 
     /* @ngInject */
     function HomeController($storage) {}
-
-  }).call(this);
-
-/* global toastr:false, moment:false, TimelineLite:false, TweenMax:false, Cubic:false */
-(function() {
-    'use strict';
-
-    angular
-        .module('core')
-        .constant('toastr', toastr)
-        .constant('moment', moment)
-        .constant('TimelineLite', TimelineLite)
-        .constant('TweenMax', TweenMax)
-        .constant('Cubic', Cubic)
-        .config(Configuration)
-        ;
-
-        function Configuration(mzNavApiProvider) { mzNavApiProvider.hideOn('navBar', 'home') }
-
-  })();
-
-/* global _:false */
-;(function() { 'use strict';
-    angular
-        .module('core')
-        .config(Core)
-        ;
-
-    /* @ngInject */
-    function Core ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/app/home');
-        $stateProvider
-            .state('app',
-                { url   : '/app'
-                , views : { 'nav'   :
-                              {templateUrl : 'app/core/views/header.view.html' }
-                          , 'right' :
-                              {templateUrl : 'app/core/views/right.view.html' }
-                          , 'footer':
-                              {templateUrl : 'app/core/views/footer.view.html' }
-                          }
-                })
-            .state('app.home',
-                { url   : '/home'
-                , views : { '@' :
-                            {templateUrl : 'app/core/views/home.view.html'   }
-                          }
-
-                })
-            ;
-      }
-  }).call(this);
-;(function() {'use-strict';
-
-    angular
-      .module('core')
-      .directive('flowToggle', flowToggle)
-      ;
-
-    function flowToggle() {
-        return function (scope, element, attrs) {
-            element.on('click', function() {
-                angular.forEach($('.flow-text-demo').find('p'), function(item){
-                    console.log(item);
-                    angular.element(item).toggleClass('flow-text');   });
-              });
-          };
-      }
 
   }).call(this);
 
@@ -453,6 +437,25 @@ jQuery(document).ready(function() { 'use strict';
         return scope;   };
 
   }).call(this);
+;(function() {'use-strict';
+
+    angular
+      .module('core')
+      .directive('flowToggle', flowToggle)
+      ;
+
+    function flowToggle() {
+        return function (scope, element, attrs) {
+            element.on('click', function() {
+                angular.forEach($('.flow-text-demo').find('p'), function(item){
+                    console.log(item);
+                    angular.element(item).toggleClass('flow-text');   });
+              });
+          };
+      }
+
+  }).call(this);
+
 ;(function() { 'use strict';
     angular.module('components', []);
 
@@ -464,12 +467,12 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
-    angular.module('gettingStarted', []);
+    angular.module('stylus', []);
 
   }).call(this);
 
 ;(function() { 'use strict';
-    angular.module('stylus', []);
+    angular.module('gettingStarted', []);
 
   }).call(this);
 
@@ -608,6 +611,27 @@ jQuery(document).ready(function() { 'use strict';
   }).call(this);
 
 ;(function() { 'use strict';
+    angular
+        .module('components')
+        .controller('ComponentsController', ComponentsController)
+        ;
+
+    /* @ngInject */
+    function ComponentsController() {
+        $(document).ready(function() {
+            $('.dropdown-button').dropdown( { constrain_width : false
+                                            , outDuration     : 225
+                                            , inDuration      : 300
+                                            , alignment       : 'left'
+                                            , gutter          : 0
+                                            , hover           : false
+                                            } );
+          });
+      }
+
+  }).call(this);
+
+;(function() { 'use strict';
 
     angular
       .module('components')
@@ -647,27 +671,6 @@ jQuery(document).ready(function() { 'use strict';
         }
 
   }).call(this);
-;(function() { 'use strict';
-    angular
-        .module('components')
-        .controller('ComponentsController', ComponentsController)
-        ;
-
-    /* @ngInject */
-    function ComponentsController() {
-        $(document).ready(function() {
-            $('.dropdown-button').dropdown( { constrain_width : false
-                                            , outDuration     : 225
-                                            , inDuration      : 300
-                                            , alignment       : 'left'
-                                            , gutter          : 0
-                                            , hover           : false
-                                            } );
-          });
-      }
-
-  }).call(this);
-
 ;(function() { 'use strict';
     angular
         .module('directives')
@@ -722,6 +725,17 @@ jQuery(document).ready(function() { 'use strict';
 ;(function() { 'use strict';
     angular
         .module('directives')
+        .filter('directivesFilter', directivesFilter)
+        ;
+
+    /* @ngInject */
+    function directivesFilter() {}
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('directives')
         .service('directivesService', directivesService)
         .factory('directivesFactory', directivesFactory)
         ;
@@ -734,14 +748,63 @@ jQuery(document).ready(function() { 'use strict';
 
   }).call(this);
 
-;(function() { 'use strict';
+;(function() {'use strict';
     angular
-        .module('directives')
-        .filter('directivesFilter', directivesFilter)
+        .module('stylus')
+        .config(stylusConfig)
         ;
 
     /* @ngInject */
-    function directivesFilter() {}
+    function stylusConfig($stateProvider) {
+        $stateProvider
+            .state('app.stylus'           , { url:'/stylus'           , views:view('views/stylus.view.html', 'stylusController as vm') })
+            .state('app.stylus-color'     , { url:'/stylus/color'     , views:view('views/color.html'      , 'ColorController as vm' ) })
+            .state('app.stylus-grid'      , { url:'/stylus/grid'      , views:view('views/grid.html'       , 'GridController as vm'  ) })
+            .state('app.stylus-shadow'    , { url:'/stylus/shadow'    , views:view('views/shadow.html'     ) })
+            .state('app.stylus-table'     , { url:'/stylus/table'     , views:view('views/table.html'      ) })
+            .state('app.stylus-typography', { url:'/stylus/typography', views:view('views/typography.html' ) })
+            ;
+
+        function view(template, controller) {
+            var tpl = { templateUrl:'app/modules/stylus/'+template };
+            controller &&( tpl.controller = controller );
+            return {'@': tpl};  }
+    }
+
+  }).call(this);
+
+;(function () { 'use strict'
+    angular
+      .module('stylus')
+      .controller('ColorController', ColorController)
+      ;
+
+    function ColorController() {
+        $('.dynamic-color .col div').each(function(index, item) {
+            var color = $(this).css('background-color');
+            var classList = $(this).attr('class');
+            $(this).text(rgb2hex(color)+' '+classList)
+            console.log($(this).css);
+          }); // end function call .each(){...};
+
+          function rgb2hex(rgb) {
+
+              if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
+              rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+              function hex(x) { return ('0'+parseInt(x).toString(16)).slice(-2); }
+              return "#"+hex(rgb[1])+hex(rgb[2])+hex(rgb[3]);
+            }
+      }
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('stylus')
+        .controller('stylusController', stylusController)
+        ;
+
+    /* @ngInject */
+    function stylusController() { }
 
   }).call(this);
 
@@ -753,17 +816,6 @@ jQuery(document).ready(function() { 'use strict';
 
     /* @ngInject */
     function gettingStartedFactory() { }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('gettingStarted')
-        .controller('gettingStartedController', gettingStartedController)
-        ;
-
-    /* @ngInject */
-    function gettingStartedController() { }
 
   }).call(this);
 
@@ -788,6 +840,17 @@ jQuery(document).ready(function() { 'use strict';
                           }
                 });
       }
+
+  }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('gettingStarted')
+        .controller('gettingStartedController', gettingStartedController)
+        ;
+
+    /* @ngInject */
+    function gettingStartedController() { }
 
   }).call(this);
 
@@ -832,64 +895,5 @@ jQuery(document).ready(function() { 'use strict';
 
     /* @ngInject */
     function gettingStartedFactory() {}
-
-  }).call(this);
-
-;(function() {'use strict';
-    angular
-        .module('stylus')
-        .config(stylusConfig)
-        ;
-
-    /* @ngInject */
-    function stylusConfig($stateProvider) {
-        $stateProvider
-            .state('app.stylus'           , { url:'/stylus'           , views:view('views/stylus.view.html', 'stylusController as vm') })
-            .state('app.stylus-color'     , { url:'/stylus/color'     , views:view('views/color.html'      , 'ColorController as vm' ) })
-            .state('app.stylus-grid'      , { url:'/stylus/grid'      , views:view('views/grid.html'       , 'GridController as vm'  ) })
-            .state('app.stylus-shadow'    , { url:'/stylus/shadow'    , views:view('views/shadow.html'     ) })
-            .state('app.stylus-table'     , { url:'/stylus/table'     , views:view('views/table.html'      ) })
-            .state('app.stylus-typography', { url:'/stylus/typography', views:view('views/typography.html' ) })
-            ;
-
-        function view(template, controller) {
-            var tpl = { templateUrl:'app/modules/stylus/'+template };
-            controller &&( tpl.controller = controller );
-            return {'@': tpl};  }
-    }
-
-  }).call(this);
-
-;(function () { 'use strict'
-    angular
-      .module('stylus')
-      .controller('ColorController', ColorController)
-      ;
-
-    function ColorController() {
-        $('.dynamic-color .col div').each(function(index, item) {
-            var color = $(this).css('background-color');
-            var classList = $(this).attr('class');
-            $(this).text(rgb2hex(color)+' '+classList)
-            console.log($(this).css);
-          }); // end function call .each(){...};
-
-          function rgb2hex(rgb) {
-              if (/^#[0-9A-F]{6}$/i.test(rgb)) { return rgb; }
-              rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-              function hex(x) { return ('0'+parseInt(x).toString(16)).slice(-2); }
-              return "#"+hex(rgb[1])+hex(rgb[2])+hex(rgb[3]);
-            }
-      }
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('stylus')
-        .controller('stylusController', stylusController)
-        ;
-
-    /* @ngInject */
-    function stylusController() { }
 
   }).call(this);

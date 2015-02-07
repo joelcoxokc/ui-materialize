@@ -9,6 +9,174 @@
 
     }).call(this);
 
+// ;(function() { 'use strict';
+//     angular
+//         .module('mz.components.collection', [])
+//         .directive('mzCollection', mzCollection)
+//         .directive('mzCollectionItem', mzCollectionItem)
+//         // .service('mzCollectionItemService', mzCollectionItemService)
+//         // .controller('mzCollectionController', mzCollectionController)
+//         ;
+
+//     /* @inject */
+//     function mzCollection() {
+//         return { scope:{} , restrict: 'E' , controller: controller , link:link };
+//         // template: '<section class="mz-collection" data-ng-transclude></section>', scope:true, replace:true, transclude:true,
+
+//         ///  @mz-collection  CONTROLLER
+//         function controller($scope, $animate) {
+//             // var itemHasOptions,  showItemOptions, itemClasses, itemindexes;
+//             // var _this = this;
+
+//             var selectedItem      = null;
+//             var selectedItemIndex = null;
+//             var collectionClasses =
+//                 { hasItems:    'mz-c-has-items'
+//                 , hasExpanded: 'mz-c-has-expanded'
+//                 };
+
+//             this.isOpen      = false;
+//             this.itemindexes = {};
+//             this.items       = [];
+//             this.itemClasses =
+//                 { $hasOptions:  'mz-ci-has-options'
+//                 , $isSelected:  'mz-ci-selected'
+//                 , $isExpanded:  'mz-ci-expanded'
+//                 , $isFolded:    'mz-ci-folded'
+//                 , $hasIcon:     'mz-ci-has-icon'
+//                 };
+
+//             this.selectedIndex = function() { return this.items.indexOf(selectedItem); };
+
+//             this.setItemDefaults = function (item) {
+//                 item.$isSelected  = false;
+//                 item.$hasOptions  ||( item.$hasOptions = false );
+//                 item.$isExpanded  ||( item.$isExpanded = false );
+//                 item.$isFolded    ||( item.$isFolded   = true  );
+//                 item.$hasIcon     ||( item.$hasIcon    = true  );
+//                 return item;  };
+
+//             this.add = function(item) {
+//                 item = this.setItemDefaults(item);
+//                 this.items[item.$index] = item;  };
+
+//             this.remove = function(item) {
+//                 var itemIndex = this.items.indexOf(item);
+//                 if (index === -1) { return; }
+//                 // If the item is currently selected, deselect it.
+//                 if (item.$itemSelected) { this.deselect(item); }
+//                 this.items.splice(itemIndex, 1);  };
+
+//             this.select = function(item, shouldEmitEvent) {
+//                 if (item.$index === selectedItemIndex) { return this.deselect(item); }
+//                 var itemIndex;
+//                 if (!item.$id && item.$id !== 0) { return; }
+//                 itemIndex = item.$index;
+//                 if (!_this.items[itemIndex]) {
+//                     console.error('Unable to find item at index of', sopeIndex);
+//                     return;  }
+//                 if (selectedItem) { this.deselect(selectedItem); }
+//                 selectedItem = item;
+//                 selectedItemIndex = itemIndex;
+//                 item.$isSelected = true;
+//                 (  item.onSelect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
+//                 if (shouldEmitEvent) {
+//                     $scope.$emit('$mzCollectionItem.change', { type:'item' , itemIndex:itemIndex , item:item });  }
+//                 this.expandItem(item);   };
+
+//             this.deselect = function(item) {
+//                 if (item.$isSelected) {
+//                     selectedItem = selectedItemIndex = null;
+//                     item.$isSelected = false;
+//                     item.$isExpanded = false;
+//                     (  item.onDeselect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
+//                     item.$broadcast && item.$broadcast('$itemDeselected');  }  };
+
+//             this.foldItem   = function (item) {};
+
+//             this.expandItem = function (item) {};
+
+//             this.toggleItemSelected = function() {  this.isOpen = !this.isOpen;  };
+
+//             } // end function controller
+
+//         ///  @mz-collection  LINK
+//             function link(scope, element, attrs, ctrl) {
+//               // ctrl.init(element);
+//             }
+
+//       } // end function mzCollection
+
+//     /* @inject */
+//     function mzCollectionItem($animate, $document) {
+//         return { restrict:'E' , require:'^mzCollection' , link:link };
+
+//         //////     @mz-collection-item  LINK
+//         function link(scope, element, attrs, api) {
+//             var $content;
+//             element.addClass('mz-collection-item');
+//             // console.log(scope.$id);
+//             scope.$element = element;
+//             scope.attrs    = attrs;
+//             api.add(scope);
+//             $content = $(element).find('.mz-collection-item-content');
+//             element.bind('click', toggleItemOpenState);
+
+//             scope.onSelect = function() {
+//                 (new TimelineLite())
+//                     .to(element, 0.2,
+//                         { ease        : Cubic.easeInOut
+//                         , marginTop   : '10px'
+//                         , marginBottom: '10px'
+//                         , boxShadow   : '0 8px 15px rgba(0,0,0,0.1)'
+//                         , marginLeft  : '-80'
+//                         , marginRight : '-80'
+//                         , width       : '+=160px'
+//                         }  )
+//                     .to($content, 0.2,
+//                         { ease     : Cubic.easeIn
+//                         , display  : 'block'
+//                         , maxHeight: '100%'
+//                         , autoAlpha: 1
+//                         }, 0.1  )
+//                     ;  };
+
+//             scope.onDeselect = function() {
+//                 TweenMax.to(scope.$element, 0.2,
+//                     { ease        : Cubic.easeInOut
+//                     , marginLeft  : '0'
+//                     , marginRight : '0'
+//                     , width       : '-=160px'
+//                     , marginTop   : '0'
+//                     , marginBottom: '0'
+//                     }   );
+//                 TweenMax.to($content, 0.2,
+//                     { ease     : Cubic.easeIn
+//                     , autoAlpha: 0
+//                     , maxHeight: '0%'
+//                     , display  :'none'
+//                     }   );
+//                 }; // end function scope.onDeselect
+
+//             /**
+//              * toggleItemOpenState
+//              * Case for whether user selects a link
+//              * @param  {Object} event Click
+//              */
+//             function toggleItemOpenState(event) {
+//                 event.preventDefault();
+//                 scope.$apply(function() {  api.select(scope);  });
+//                 // console.log(api.selectedIndex());
+//               }
+
+//             scope.$on('$destroy', function() {  element.unbind('click', toggleItemOpenState);  });
+
+//           }; // end function link
+
+//       } // end directive mzCollectionItem
+
+//   }).call(this);
+
 ;(function() { 'use strict';
     angular
         .module('mz.components.blur', [])
@@ -34,20 +202,19 @@
 
     /* @inject */
     function mzBtn() {
-        return  { template   : '<a><i data-ng-if="icon" data-ng-class="icon"></i></a>'
+        return  { template   : '<a class="btn mz-btn"><i data-ng-if="icon" data-ng-class="icon"></i></a>'
                 , restrict   : 'E'
                 , replace    : true
-                , scope      : {icon:'@'}
+                , scope      : {icon:'@', type:'@', size: '@'}
                 , link       : link
                 , transclude : true
                 };
         function link(scope, element, attrs, ctrl, transclude) {
-            $(document).ready(function() {
-                element.addClass('mz-btn btn');
-                var type = 'btn-'+( attrs.type || 'raised' );
-                element.addClass(type);
-                transclude(scope, function (clone) {element.append(clone); });
-              });
+            scope.type &&( element.addClass('btn-'+scope.type) )
+            scope.size &&( element.addClass('btn-'+scope.size) )
+
+            transclude(scope, function (clone) {element.append(clone); });
+
           }
       }
 
@@ -193,167 +360,100 @@
     angular
         .module('mz.components.collection', [])
         .directive('mzCollection', mzCollection)
-        .directive('mzCollectionItem', mzCollectionItem)
-        // .service('mzCollectionItemService', mzCollectionItemService)
-        // .controller('mzCollectionController', mzCollectionController)
+        .directive('collectionItem', collectionItem)
+        .directive('collectionLink', collectionLink)
+        .directive('collectionHeader', collectionHeader)
+        .directive('itemSecondary', itemSecondary)
         ;
 
     /* @inject */
     function mzCollection() {
-        return { scope:{} , restrict: 'E' , controller: controller , link:link };
-        // template: '<section class="mz-collection" data-ng-transclude></section>', scope:true, replace:true, transclude:true,
-
-        ///  @mz-collection  CONTROLLER
-        function controller($scope, $animate) {
-            // var itemHasOptions,  showItemOptions, itemClasses, itemindexes;
-            // var _this = this;
-
-            var selectedItem      = null;
-            var selectedItemIndex = null;
-            var collectionClasses =
-                { hasItems:    'mz-c-has-items'
-                , hasExpanded: 'mz-c-has-expanded'
+        return  { templateUrl : 'components/collection.html'
+                , scope      : {}
+                , restrict   : 'E'
+                , controller : controller
+                , replace    : true
+                , transclude : true
+                , link       : link
                 };
 
-            this.isOpen      = false;
-            this.itemindexes = {};
-            this.items       = [];
-            this.itemClasses =
-                { $hasOptions:  'mz-ci-has-options'
-                , $isSelected:  'mz-ci-selected'
-                , $isExpanded:  'mz-ci-expanded'
-                , $isFolded:    'mz-ci-folded'
-                , $hasIcon:     'mz-ci-has-icon'
-                };
+        function controller($scope) {}
 
-            this.selectedIndex = function() { return this.items.indexOf(selectedItem); };
-
-            this.setItemDefaults = function (item) {
-                item.$isSelected  = false;
-                item.$hasOptions  ||( item.$hasOptions = false );
-                item.$isExpanded  ||( item.$isExpanded = false );
-                item.$isFolded    ||( item.$isFolded   = true  );
-                item.$hasIcon     ||( item.$hasIcon    = true  );
-                return item;  };
-
-            this.add = function(item) {
-                item = this.setItemDefaults(item);
-                this.items[item.$index] = item;  };
-
-            this.remove = function(item) {
-                var itemIndex = this.items.indexOf(item);
-                if (index === -1) { return; }
-                // If the item is currently selected, deselect it.
-                if (item.$itemSelected) { this.deselect(item); }
-                this.items.splice(itemIndex, 1);  };
-
-            this.select = function(item, shouldEmitEvent) {
-                if (item.$index === selectedItemIndex) { return this.deselect(item); }
-                var itemIndex;
-                if (!item.$id && item.$id !== 0) { return; }
-                itemIndex = item.$index;
-                if (!_this.items[itemIndex]) {
-                    console.error('Unable to find item at index of', sopeIndex);
-                    return;  }
-                if (selectedItem) { this.deselect(selectedItem); }
-                selectedItem = item;
-                selectedItemIndex = itemIndex;
-                item.$isSelected = true;
-                (  item.onSelect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
-                if (shouldEmitEvent) {
-                    $scope.$emit('$mzCollectionItem.change', { type:'item' , itemIndex:itemIndex , item:item });  }
-                this.expandItem(item);   };
-
-            this.deselect = function(item) {
-                if (item.$isSelected) {
-                    selectedItem = selectedItemIndex = null;
-                    item.$isSelected = false;
-                    item.$isExpanded = false;
-                    (  item.onDeselect || angular.noop  )(); // FIXME: item.onSelect && item.onSelect();
-                    item.$broadcast && item.$broadcast('$itemDeselected');  }  };
-
-            this.foldItem   = function (item) {};
-
-            this.expandItem = function (item) {};
-
-            this.toggleItemSelected = function() {  this.isOpen = !this.isOpen;  };
-
-            } // end function controller
-
-        ///  @mz-collection  LINK
-            function link(scope, element, attrs, ctrl) {
-              // ctrl.init(element);
-            }
+        function link(scope, element, attrs, ctrl) {}
 
       } // end function mzCollection
 
     /* @inject */
-    function mzCollectionItem($animate, $document) {
-        return { restrict:'E' , require:'^mzCollection' , link:link };
+    function collectionItem($animate, $document) {
+        return  { templateUrl : 'components/collection-item.html'
+                , require     :'^mzCollection'
+                , restrict    :'E'
+                , replace     : true
+                , transclude  : true
+                , link        :link
+                };
 
-        //////     @mz-collection-item  LINK
+        /////////////
+
+        function link(scope, element, attrs, api) {};
+
+      }
+
+
+    /* @inject */
+    function collectionLink() {
+        return  { template    : '<a class="collection-item" data-ng-transclude></a>'
+                , require     : '^mzCollection'
+                , restrict    : 'E'
+                , replace     : true
+                , transclude  : true
+                , link        : link
+                };
+
+        /////////////
+
         function link(scope, element, attrs, api) {
-            var $content;
-            element.addClass('mz-collection-item');
-            // console.log(scope.$id);
-            scope.$element = element;
-            scope.attrs    = attrs;
-            api.add(scope);
-            $content = $(element).find('.mz-collection-item-content');
-            element.bind('click', toggleItemOpenState);
+            attrs.active &&(element.addClass('active'))
+          };
 
-            scope.onSelect = function() {
-                (new TimelineLite())
-                    .to(element, 0.2,
-                        { ease        : Cubic.easeInOut
-                        , marginTop   : '10px'
-                        , marginBottom: '10px'
-                        , boxShadow   : '0 8px 15px rgba(0,0,0,0.1)'
-                        , marginLeft  : '-80'
-                        , marginRight : '-80'
-                        , width       : '+=160px'
-                        }  )
-                    .to($content, 0.2,
-                        { ease     : Cubic.easeIn
-                        , display  : 'block'
-                        , maxHeight: '100%'
-                        , autoAlpha: 1
-                        }, 0.1  )
-                    ;  };
+      }
 
-            scope.onDeselect = function() {
-                TweenMax.to(scope.$element, 0.2,
-                    { ease        : Cubic.easeInOut
-                    , marginLeft  : '0'
-                    , marginRight : '0'
-                    , width       : '-=160px'
-                    , marginTop   : '0'
-                    , marginBottom: '0'
-                    }   );
-                TweenMax.to($content, 0.2,
-                    { ease     : Cubic.easeIn
-                    , autoAlpha: 0
-                    , maxHeight: '0%'
-                    , display  :'none'
-                    }   );
-                }; // end function scope.onDeselect
+    /* @inject */
+    function collectionHeader() {
+        return  { template    : '<div class="collection-header" data-ng-transclude></div>'
+                , require     : '^mzCollection'
+                , restrict    : 'E'
+                , replace     : true
+                , transclude  : true
+                , link        : link
+                };
 
-            /**
-             * toggleItemOpenState
-             * Case for whether user selects a link
-             * @param  {Object} event Click
-             */
-            function toggleItemOpenState(event) {
-                event.preventDefault();
-                scope.$apply(function() {  api.select(scope);  });
-                // console.log(api.selectedIndex());
+        /////////////
+
+        function link(scope, element, attrs, api) {};
+
+      }
+    /* @inject */
+    function itemSecondary() {
+        return  { template    : '<a class="secondary-content" data-ng-transclude></a>'
+                , require     : '^mzCollection'
+                , restrict    : 'E'
+                , replace     : true
+                , transclude  : true
+                , link        : link
+                };
+
+        /////////////
+
+        function link(scope, element, attrs, api) {
+
+            if(attrs.icon) {
+                var icon = angular.element('<i class="'+attrs.icon+'"></i>')
+                element.append(icon);
               }
+          };
 
-            scope.$on('$destroy', function() {  element.unbind('click', toggleItemOpenState);  });
-
-          }; // end function link
-
-      } // end directive mzCollectionItem
+      }
 
   }).call(this);
 
@@ -977,7 +1077,7 @@
         return  { templateUrl: 'layout/footer.template.html'
                 , restrict   : 'E'
                 , scope      : { color:'@', view:'@'}
-                , transclude : true
+                , replace    : true
                 , link       : link
                 };
         function link(scope, element, attrs, ctrl, transclude) { element.addClass('mz-footer'); }
@@ -1108,7 +1208,7 @@
             /* set child classlist on scope to be picked up by the mz-action directive */
             scope.childClassList = attrs.links;
             attrs.mobile && (scope.mobile = 'nav-mobile');
-            scope.side = 'nav-action-group-'+scope.side;
+            element.addClass('action-group-'+scope.side)
             //////     @jQuery   apply jQuery methods when dom is ready;
             jQuery(document).ready(function() {
                 // Dynamically addClasses to all nav-sides inner links from the "link" attr
@@ -1224,16 +1324,18 @@
 
     /* @inject */
     function mzNavBar($rootScope, $document) {
-        return  { templateUrl: 'nav/bar.html'
-                , restrict: 'E'
-                , replace : true
-                , require:'^mzMaterialize'
-                , scope: { view:'@' , bg:'@' , side:'@' , fixed:'@' , brand:'@' , size: '@' }
-                , link: link
+        return  { templateUrl : 'nav/bar.html'
+                , restrict    : 'E'
+                , require     : '^mzMaterialize'
+                , scope       : { view:'@' , bg:'@' , side:'@' , fixed:'@' , brand:'@' , size: '@' }
+                , replace     : true
+                , transclude  : true
+                , link        : link
                 };
         function link(scope, element, attrs, ctrl, transclude) {
             attrs.fixed &&( element.addClass('bar-fixed') );
             attrs.size  &&( element.addClass('bar-'+attrs.size) );
+            ctrl.addBar(scope, element, attrs);
             jQuery(document).ready(function() {
                 if (scope.brand) {
                     $(element).find('.bar-content')
@@ -1900,6 +2002,40 @@
 
   }).call(this);
 
+// ;(function() { 'use strict';
+//     angular
+//         .module('mz.core.ctrl', [])
+//         .controller('mzController', mzController)
+//         ;
+
+//     /* @ngAnotate */
+//     function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, $NavBarService, mzNavApi, $rootScope) {
+//         // $scope.mzNav = mzNavApi;
+//         // var _this = this;
+//         var sides = {
+//             right : $RightNavigationService,
+//             left  : $LeftNavigationService
+//           };
+//         this.$navs = {};
+//         this.$settings = {  top:{} , bottom:{} , right:{actions:[]} , left:{}  };
+
+//         this.init = function(element) { this.element = element; };
+
+//         this.addNav = function(scope, element, attrs, side) {
+//             this.$navs[side] = new sides[side](scope, element, attrs);
+//             this.$navs[side].activate();
+//           };
+//       }
+
+//   }).call(this);
+
+;(function() { 'use strict';
+    angular
+        .module('mz.core.controllers', [ 'mz.core.ctrl' ])
+        ;
+
+  }).call(this);
+
 ;(function() { 'use strict';
     angular
         .module('mz.core.ctrl', [])
@@ -1907,30 +2043,27 @@
         ;
 
     /* @ngAnotate */
-    function mzController($scope, $q, $RightNavigationService, $LeftNavigationService, $NavBarService, mzNavApi, $rootScope) {
+    function mzController($scope, $q, $RightNavigationService, $NavBarService, $LeftNavigationService, mzNavApi, $rootScope) {
         // $scope.mzNav = mzNavApi;
         // var _this = this;
         var sides = {
             right : $RightNavigationService,
             left  : $LeftNavigationService
           };
-        this.$navs = {};
-        this.$settings = {  top:{} , bottom:{} , right:{actions:[]} , left:{}  };
+        this.$navs   = {};
+        this.$settings = {  bar:{} , footer:{} , right:{actions:[]} , left:{}  };
 
         this.init = function(element) { this.element = element; };
+
+        this.addBar = function(scope, element, attrs, id) {
+            $NavBarService.add(scope, element, attrs);
+          };
 
         this.addNav = function(scope, element, attrs, side) {
             this.$navs[side] = new sides[side](scope, element, attrs);
             this.$navs[side].activate();
           };
       }
-
-  }).call(this);
-
-;(function() { 'use strict';
-    angular
-        .module('mz.core.controllers', [ 'mz.core.ctrl' ])
-        ;
 
   }).call(this);
 
@@ -2173,7 +2306,7 @@
             scope.$on('$destroy', function(){ element.unbind('click', cycle); });
             function cycle(){
                 ctrl.$navs[side].cycle();
-                element.toggleClass('next');
+                $('.nav-side-toggle').toggleClass('next');
               }
           }
       }
@@ -2299,52 +2432,52 @@
 ;(function() { 'use strict';
     angular
         .module('mz.nav.services.bar', [])
-        .service('$NavBarService', NavBarService);
+        .factory('$NavBarService', NavBarService)
+        .run(function($rootScope, $NavBarService){
+          $rootScope.$on('$stateChangeStart', function(event, state){
+            if(state.mzBar){
+              angular.forEach(state.mzBar, function (value, method){
+                  $NavBarService[method](value)
+                })
+            } else {
+              angular.forEach($NavBarService.defaults, function (value, method){
+                  $NavBarService[method](value)
+                })
+            }
+          })
+        })
 
     /* @ngInject */
     function NavBarService($NavService, $rootScope) {
-        var defaults;
-        var NavBar = function(side, element, attrs, config) {
-            $NavService.apply(this, arguments);
-            // var _this = this;
-            this.hideOn = {};
-          };
 
-        NavBar.prototype = _.create($NavService.prototype, {'constructor':NavBar});
+        var defaults = { size:'sm' };
+        var $navBars = {};
 
-        NavBar.prototype.activate = function() { this.resetClassList();
-          /* this.onOpen = this.addEventListener('open', this.open); */   };
-
-        NavBar.prototype.expand = function(value, classList) { console.log(this)
-            this.element.addClass(classList);
-            this.broadcast('nav:'+this.side+':opened');   };
-
-        NavBar.prototype.collapse = function(value, classList) {
-            this.element.removeClass(classList);
-            this.broadcast('nav:'+this.side+':closed');   };
-
-        NavBar.prototype.hide = function(value, classList) {
-            this.element.addClass(classList);
-            this.broadcast('nav:'+this.side+':folded');   };
-
-        NavBar.prototype.show = function(value, classList) {
-            this.element.removeClass(classList);
-            this.broadcast('nav:'+this.side+':unfold');   };
-
-        NavBar.prototype.watchStates = function(state) {
-            /* var _this = this; */ };
-
-        NavBar.prototype.$delegateStates = function(config) {
-            var _this = this; // FIXME: do we need `_this` and not just `this`
-            _.forEach(  config.hideOn, function (state) { _this.hideOn[state] = true; }  );
-            console.log(this.hideOn);
-            this.watchStates();   };
-
+        var NavBar = {
+          defaults : defaults,
+          add      : add,
+          size     : size
+        }
         return NavBar;
 
-        // /// service helpers
-        //
-        // function createClass(side) { return 'nav-'+side; }
+        //////////////
+
+        function add(scope, element, attrs) {
+          $navBars[scope.$id]         = {};
+          $navBars[scope.$id].scope   = scope;
+          $navBars[scope.$id].element = element;
+          $navBars[scope.$id].attrs   = attrs;
+          $navBars[scope.$id].size    = attrs.size;
+        }
+
+        function size(newSize) {
+          angular.forEach($navBars, function (bar){
+              bar.element.removeClass('bar-' + bar.size)
+              bar.size = newSize;
+              bar.element.addClass('bar-' + bar.size);
+            });
+        }
+
       }
 
   }).call(this);
