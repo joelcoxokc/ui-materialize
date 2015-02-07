@@ -5,7 +5,10 @@
         ;
 
     /* @ngInject */
-    function AppController($scope, $storage, TweenMax, Cubic) {
+    function AppController($scope, $storage, TweenMax, Cubic, $mzNotify) {
+        console.log($mzNotify)
+
+        $mzNotify.error('Hello There')
 
         this.components = getComponents();
 

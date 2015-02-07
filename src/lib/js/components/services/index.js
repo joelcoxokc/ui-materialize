@@ -17,6 +17,7 @@
         , 'mz.components.services.text-field'
         , 'mz.components.services.ripple'
         , 'mz.components.services.tooltip'
+        , 'mz.components.services.notify'
         ]  );
 
   }).call(this);
