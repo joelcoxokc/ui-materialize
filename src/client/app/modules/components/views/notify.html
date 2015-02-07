@@ -9,7 +9,7 @@
               <strong class="pink-text text-accent-1">mz</strong>Dialog</h1></div>
 
           <div class='col s12'>
-            <h3 z-text=white>Coming Soon</h3>
+            <!-- <h3 z-text=white>Coming Soon</h3> -->
             <p class=" caption">
 
               </p></div>
@@ -23,10 +23,30 @@
           <div class="card white">
             <article class="card-content">
 
-              <h3 class="thin"></h3>
+              <h3 class="thin">Toast</h3>
+              <p>mzNotify or Toastr can be used one of two ways</p>
+              <p>Use the service $Notify</p>
+              <p>Or use the directive mz-notify</p>
+              <mz-btn type="raised" class="waves-effect waves-light" mz-notify-success="Yolo">Notify</mz-btn>
+              <pre><code no-escape hljs>
+
+(function(){
+
+  angular
+    .module('app')
+    .controller('AppCtrl', AppCtrl);
+
+    function AppCtrl($Notify) {
+      $Notify.success('Yolo');
+    }
+
+})();
+              </code></pre>
 
               <pre><code no-escape hljs>
-&lt;mz-dialog>&lt;/mz-dialog>
+
+&lt;mz-btn type="raised" mz-notify-success="Yolo">Notify&lt;/mz-btn>
+
               </code></pre>
 
               </article></div></section>

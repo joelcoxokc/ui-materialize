@@ -24,6 +24,7 @@
                       , 'collapsible'
                       , 'collections'
                       , 'dialogs'
+                      , 'notify'
                       , 'dropdowns'
                       , 'forms'
                       , 'media'

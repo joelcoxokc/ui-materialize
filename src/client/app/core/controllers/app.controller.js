@@ -6,9 +6,8 @@
 
     /* @ngInject */
     function AppController($scope, $storage, TweenMax, Cubic, $mzNotify) {
-        console.log($mzNotify)
 
-        $mzNotify.error('Hello There')
+        $mzNotify.error('Welcome')
 
         this.components = getComponents();
 
@@ -18,6 +17,7 @@
                     , 'collapsible'
                     , 'collections'
                     , 'dialogs'
+                    , 'notify'
                     , 'dropdowns'
                     , 'forms'
                     , 'media'
