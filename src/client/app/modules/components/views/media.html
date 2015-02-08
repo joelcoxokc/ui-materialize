@@ -6,10 +6,11 @@
 
           <div class="col s12">
             <h1 class="page-title white-text darken-4">
-              <strong class="pink-text text-accent-1">mz</strong>Media</h1></div>
+              <strong class="pink-text text-accent-1">mz</strong>MaterialBox</h1></div>
 
           <div class='col s12'>
-            <h3 z-text=white>Coming Soon</h3>
+            <p class="flow-text light" z-text=white>Material box is a material design implementation of the Lightbox plugin. When a user clicks on an image that can be enlarged. Material box centers the image and enlarges it in a smooth, non-jarring manner. To dismiss the image, the user can either click on the image again, scroll away, or press the ESC key.</p>
+
             <p class=" caption">
 
               </p></div>
@@ -23,12 +24,153 @@
           <div class="card white">
             <article class="card-content">
 
-              <h3 class="thin"></h3>
+              <h3 class="thin">Example</h3>
+
+              <mz-material-box>
+                <img class="materialboxed" width="650" src="content/images/sample-1.jpg">
+              </mz-material-box>
 
               <pre><code no-escape hljs>
-&lt;mz-media>&lt;/mz-media>
+&lt;mz-material-box>
+    &lt;img class="materialboxed" width="650" src="content/images/sample-1.jpg">
+&lt;/mz-material-box>
               </code></pre>
 
+              </article></div></section>
+
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Caption</h3>
+              <p class=" caption">It is very easy to add a short caption to your photo. Just add the caption as a data-caption attribute.</p>
+
+              <mz-material-box>
+                <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg">
+              </mz-material-box>
+
+              <pre><code no-escape hljs>
+&lt;mz-material-box>
+    &lt;img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg">
+&lt;/mz-material-box>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">Slider</h3>
+              <p class=" caption">Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.</p>
+
+              <p class=" caption"><strong>Note: This is also Hammer.js compatible! Try swiping with your finger to scroll through the slider.</strong></p>
+
+
+              <mz-slider indicators=false>
+                <ul class="slides">
+                  <li>
+                    <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                    <div class="caption left-align">
+                      <h3>Left Aligned Caption</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                    <div class="caption right-align">
+                      <h3>Right Aligned Caption</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                </ul>
+              </mz-slider>
+
+              <pre><code no-escape hljs>
+&lt;mz-slider>
+    &lt;ul class="slides">
+        &lt;li>
+            &lt;img src="http://lorempixel.com/580/250/nature/1"> &lt;!-- random image -->
+            &lt;div class="caption center-align">
+                &lt;h3>This is our big Tagline!&lt;/h3>
+                &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+        &lt;/li>
+        &lt;li>
+            &lt;img src="http://lorempixel.com/580/250/nature/2"> &lt;!-- random image -->
+            &lt;div class="caption left-align">
+                &lt;h3>Left Aligned Caption&lt;/h3>
+                &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+        &lt;/li>
+        &lt;li>
+            &lt;img src="http://lorempixel.com/580/250/nature/3"> &lt;!-- random image -->
+            &lt;div class="caption right-align">
+                &lt;h3>Right Aligned Caption&lt;/h3>
+                &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+        &lt;/li>
+        &lt;li>
+            &lt;img src="http://lorempixel.com/580/250/nature/4"> &lt;!-- random image -->
+            &lt;div class="caption center-align">
+                &lt;h3>This is our big Tagline!&lt;/h3>
+                &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+            &lt;/div>
+        &lt;/li>
+    &lt;/ul>
+&lt;/mz-slider>
+              </code></pre>
+
+              </article></div></section>
+
+        <section class="col s12">
+          <div class="card white">
+            <article class="card-content">
+
+              <h3 class="thin">mzSlider Options</h3>
+                    <h5 class="light pink-text text-lighten-2">indicators="{Boolean}"</h5>
+                    <p class="caption bold grey-text text-darken-2">Set to false to hide slide indicators. (Default: True)</p>
+<pre>
+  <code no-escape hljs>
+&lt;mz-slider indicators=true>
+  </code>
+</pre>
+                    <h5 class="light pink-text text-lighten-2">slider-height="{Integer}"</h5>
+                    <p class="caption bold grey-text text-darken-2">Set height of slider. (Default: 400)</p>
+<pre>
+  <code no-escape hljs>
+&lt;mz-slider slider-height=400>
+  </code>
+</pre>
+                    <h5 class="light pink-text text-lighten-2">transition="{Integer}"</h5>
+                    <p class="caption bold grey-text text-darken-2">Set the duration of the transition animation in ms. (Default: 500)</p>
+<pre>
+  <code no-escape hljs>
+&lt;mz-slider transition=400>
+  </code>
+</pre>
+                    <h5 class="light pink-text text-lighten-2">interval="{Integer}"</h5>
+                    <p class="caption bold grey-text text-darken-2">Set the duration between transitions in ms. (Default: 6000)</p>
+<pre>
+  <code no-escape hljs>
+&lt;mz-slider interval=6000>
+  </code>
+</pre>
               </article></div></section>
 
       </div></section>

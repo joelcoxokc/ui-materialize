@@ -20,8 +20,8 @@
 
        function link(scope, element, attrs, ctrl, transclude) {
             element.addClass('mz-materialize');
-            $('body').addClass('has-flex');
-            $('html').addClass('has-flex');
+            // $('body').addClass('has-flex');
+            // $('html').addClass('has-flex');
             scope.classList = {};
             ctrl.init(element);
           }

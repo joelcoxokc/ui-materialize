@@ -24,6 +24,8 @@
             , 'mz.components.tooltip'
             , 'mz.components.flow-text'
             , 'mz.components.notify'
+            , 'mz.components.material-box'
+            , 'mz.components.slider'
             ]  );
 
   }).call(this);

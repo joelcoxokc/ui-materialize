@@ -6,7 +6,7 @@
 
           <div class="col s12">
             <h1 class="page-title white-text darken-4">
-              <strong class="pink-text text-accent-1">mz</strong>Dialog</h1></div>
+              <strong class="pink-text text-accent-1">mz</strong>Notify</h1></div>
 
           <div class='col s12'>
             <!-- <h3 z-text=white>Coming Soon</h3> -->
@@ -24,9 +24,10 @@
             <article class="card-content">
 
               <h3 class="thin">Toast</h3>
-              <p>mzNotify or Toastr can be used one of two ways</p>
-              <p>Use the service $Notify</p>
-              <p>Or use the directive mz-notify</p>
+              <p class=" caption">mzNotify or Toastr can be used one of two ways</p>
+              <p class=" caption">Use the service $Notify</p>
+              <br>
+              <br>
               <mz-btn type="raised" class="waves-effect waves-light" mz-notify-success="Yolo">Notify</mz-btn>
               <pre><code no-escape hljs>
 
@@ -43,9 +44,20 @@
 })();
               </code></pre>
 
+              <br>
+              <br>
+              <br>
+              <p class=" caption">Or use the directive mz-notify</p>
+              <br>
+              <br>
+              <br>
+
+
               <pre><code no-escape hljs>
 
 &lt;mz-btn type="raised" mz-notify-success="Yolo">Notify&lt;/mz-btn>
+
+&lt;mz-btn type="raised" mz-notify-success notify-message="Yolo" notify-options="someOptions">Notify&lt;/mz-btn>
 
               </code></pre>
 
