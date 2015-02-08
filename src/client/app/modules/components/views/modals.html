@@ -9,10 +9,10 @@
               <strong class="pink-text text-accent-1">mz</strong>Modal</h1></div>
 
           <div class='col s12'>
-            <h3 z-text=white>Coming Soon</h3>
-            <p class=" caption">
-
-              </p></div>
+               <p class="flow-text light" z-text=white>
+                Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link of the trigger. To add a close button, just add the class .modal-close to your button.
+              </p>
+          </div>
 
           </div></div></header>
 
@@ -23,7 +23,17 @@
           <div class="card white">
             <article class="card-content">
 
-              <h3 class="thin"></h3>
+              <h3 class="thin">Example</h3>
+
+              <button mz-toggle-modal="#modal1" class="waves-effect waves-light btn">Modal</button>
+
+              <mz-modal id="modal1">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+                <div class="action-bar">
+                  <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
+                </div>
+              </mz-modal>
 
               <pre><code no-escape hljs>
 &lt;mz-modal>&lt;/mz-modal>

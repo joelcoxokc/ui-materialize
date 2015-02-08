@@ -65,7 +65,7 @@
       ]
     }
   },
-  "main": "gulpfile.js",
+  "main": ["build/lib/ui-materialize.css", "build/lib/ui-materialize.js", "build/lib/ui-materialize.templates.js"],
   "keywords": [
     "material",
     "material",
